@@ -6,8 +6,9 @@
   <link rel="shortcut icon" href="<?php echo base_url($brand); ?>">
   <!-- css bootsrap 4.0 beta -->
   <link rel="stylesheet" href="<?php echo base_url('asset/css/bootstrap.min.css'); ?>">
-  <!-- css font awesome -->
-  <link rel="stylesheet" href="<?php echo base_url('asset/css/font-awesome.min.css'); ?>">
+  <!-- google material icon -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
   <!-- css font css pribadi -->
   <link rel="stylesheet" href="<?php echo base_url('asset/css/custom.css'); ?>">
   <!-- jquery terlebih dahulu -->
@@ -20,12 +21,12 @@
 <body>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-2">
+      <div class="col-md-2" style="background-color: #1da9f4">
         <div class="row bts-ats">
           <div class="col-md-4">
             <img src="<?php echo base_url('asset/img/users/'.$users->profile) ?>" width="100%">
           </div>
-          <div class="col-md-8"><?php echo $users->username; ?></div>
+          <div class="col-md-8 text-light"><?php echo $users->username; ?></div>
         </div>
         <?php $this->view($aside); ?>
       </div>
@@ -37,8 +38,8 @@
         <div class="container-fluid">
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Link</a>
