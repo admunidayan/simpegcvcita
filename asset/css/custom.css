@@ -80,7 +80,7 @@ body{
 	font-size: 13px;
     height: auto!important;
     color: rgba(0,0,0,.7);
-    padding: 15px 0 15px 24px!important;
+    padding: 10px 0 10px 10px!important;
     line-height: 1em!important;
 }
 .linkmenu:hover{
