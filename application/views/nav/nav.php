@@ -119,6 +119,13 @@
 					<div class="col-md-10">Lokasi kerja</div>
 				</div>
 			</li>
-		</a>
+		</a><hr/>
+		<li class="linkmenu">
+			<div class="row">
+				<div class="col-md-2 text-center"></div>
+				<div class="col-md-10">Laporan</div>
+			</div>
+		</li>
+		
 	</ul>
 </div>
