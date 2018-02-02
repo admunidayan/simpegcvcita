@@ -43,7 +43,7 @@
             <ul class="navbar-nav mr-auto">
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Laporan
+                  <i class="material-icons">library_books</i> Laporan
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="#">Unit Kerja Dan Satuan Kerja</a>
@@ -52,9 +52,6 @@
                   <a class="dropdown-item" href="#">Status Pegawai dan Golongan</a>
                   <a class="dropdown-item" href="#">Struktural dan Fungsional</a>
                 </div>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
               </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
