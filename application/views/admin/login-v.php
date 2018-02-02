@@ -16,20 +16,20 @@
 			<h1 class="text-center border border-top-0 border-left-0 border-right-0 border-secondary bts-bwh">LOGIN</h1>
 			<form action="<?php echo base_url('index.php/login/proses_login/') ?>" method="post">
 				<div class="form-group">
-					<label for="exampleInputEmail1">NIPD / Nomor Stambuk</label>
-					<input type="text" name="username" class="form-control form-control-lg border border-info" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter NIM">
-					<small id="emailHelp" class="form-text text-muted">We'll never share your username with anyone else.</small>
+					<label for="username">Username</label>
+					<input type="text" name="username" class="form-control form-control-lg border border-info" id="username" aria-describedby="userhelp" placeholder="Masukan Username Anda">
+					<small id="userhelp" class="form-text text-muted">Kami tidak pernah menampilkan username anda ke pihak lainnya.</small>
 				</div>
 				<div class="form-group">
 					<label for="exampleInputPassword1">Password</label>
 					<input type="password" name="password" class="form-control form-control-lg border border-info" id="exampleInputPassword1" placeholder="Password">
-					<small id="emailHelp" class="form-text text-muted">The Password must be more than 8 caracter</small>
+					<small id="emailHelp" class="form-text text-muted">Password minimal 8 karakter</small>
 				</div>
-				<button type="submit" style="width:100%;" class="btn btn-info btn-lg">Submit</button>
+				<button type="submit" style="width:100%;" class="btn btn-info btn-lg">Masuk</button>
 			</form>
 			<div class="row bts-ats">
-				<div class="col">forgot password</div>
-				<div class="col" style="text-align: right">Register Now</div>
+				<div class="col">Lupa Password</div>
+				<div class="col" style="text-align: right">Daftar Sekarang</div>
 			</div>
 			<div class="text-center">
 				<p class="text-secondary bts-ats">Copy Right <?php echo @$brand.' '.date('Y'); ?></p>
