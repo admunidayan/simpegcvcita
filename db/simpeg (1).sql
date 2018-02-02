@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 02 Feb 2018 pada 07.03
+-- Generation Time: 02 Feb 2018 pada 07.12
 -- Versi Server: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -267,6 +267,70 @@ CREATE TABLE `tbl_data_seminar` (
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `tbl_groups`
+--
+
+CREATE TABLE `tbl_groups` (
+  `id` mediumint(8) UNSIGNED NOT NULL,
+  `name` varchar(20) NOT NULL,
+  `description` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data untuk tabel `tbl_groups`
+--
+
+INSERT INTO `tbl_groups` (`id`, `name`, `description`) VALUES
+(1, 'admin', 'Administrator'),
+(2, 'members', 'General User'),
+(3, 'prodi', 'Program Studi'),
+(4, 'fakultas', 'Fakultas'),
+(5, 'rektor', 'Pimpinan Universitas'),
+(6, 'pr1', 'Wakil Rektor 1'),
+(7, 'pr2', 'Wakil Rektor 2'),
+(8, 'pr3', 'Wakil Rektor 3'),
+(9, 'pr4', 'Wakil Rektor 4'),
+(10, '54211', 'S1 Agroteknologi'),
+(11, '55201', 'S1 Teknik Informatika'),
+(12, '87203', 'S1 Pendidikan Ekonomi'),
+(13, '84202', 'S1 Pendidikan Matematika'),
+(14, '21201', 'S1 Teknik Mesin'),
+(15, '63201', 'S1 Ilmu Administrasi Negara'),
+(16, '61201', 'S1 Manajemen'),
+(17, '88203', 'S1 Pendidikan Bahasa Inggris'),
+(18, '69201', 'S1 Sosiologi'),
+(19, '22201', 'S1 Teknik Sipil'),
+(20, '74201', 'S1 Ilmu Hukum'),
+(21, '62201', 'S1 Akuntansi'),
+(22, '87201', 'S1 Pendidikan Sejarah'),
+(23, '54243', 'S1 Budidaya Perairan'),
+(24, '13201', 'S1 Kesehatan Masyarakat'),
+(25, '63101', 'S2 Ilmu Administrasi Negara'),
+(26, 'ekonomi', 'Fakultas Ekonomi'),
+(27, 'hukum', 'Fakultas Hukum'),
+(28, 'sospol', 'Fakultas Ilmu Sosial dan Ilmu Politik'),
+(29, 'fkip', 'Fakultas Keguruan dan Ilmu Pendidikan'),
+(30, 'fkm', 'Fakultas Kesehatan Masyarakat'),
+(31, 'perikanan', 'Fakultas Perikanan'),
+(32, 'pertanian', 'Fakultas Pertanian'),
+(33, 'teknik', 'Fakultas Teknik');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tbl_login_attempts`
+--
+
+CREATE TABLE `tbl_login_attempts` (
+  `id` int(11) NOT NULL,
+  `ip_address` varchar(15) DEFAULT NULL,
+  `login` varchar(100) DEFAULT NULL,
+  `time` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `tbl_master_eselon`
 --
 
@@ -419,6 +483,78 @@ CREATE TABLE `tbl_master_unit_kerja` (
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `tbl_users`
+--
+
+CREATE TABLE `tbl_users` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `id_mhs_pt` int(11) DEFAULT NULL,
+  `ip_address` varchar(15) NOT NULL,
+  `username` varchar(100) DEFAULT NULL,
+  `password` varchar(255) NOT NULL,
+  `repassword` varchar(114) DEFAULT NULL,
+  `salt` varchar(255) DEFAULT NULL,
+  `email` varchar(100) NOT NULL,
+  `activation_code` varchar(40) DEFAULT NULL,
+  `forgotten_password_code` varchar(40) DEFAULT NULL,
+  `forgotten_password_time` int(11) UNSIGNED DEFAULT NULL,
+  `remember_code` varchar(40) DEFAULT NULL,
+  `created_on` int(11) UNSIGNED NOT NULL,
+  `last_login` int(11) UNSIGNED DEFAULT NULL,
+  `active` tinyint(1) UNSIGNED DEFAULT NULL,
+  `first_name` varchar(50) DEFAULT NULL,
+  `last_name` varchar(50) DEFAULT NULL,
+  `company` varchar(100) DEFAULT NULL,
+  `phone` varchar(20) DEFAULT NULL,
+  `hostname` varchar(20) DEFAULT NULL,
+  `port` varchar(20) DEFAULT NULL,
+  `userfeeder` varchar(114) DEFAULT NULL,
+  `passfeeder` varchar(114) DEFAULT NULL,
+  `jabatan` int(11) NOT NULL,
+  `profile` varchar(114) NOT NULL DEFAULT 'avatar.jpg'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data untuk tabel `tbl_users`
+--
+
+INSERT INTO `tbl_users` (`id`, `id_mhs_pt`, `ip_address`, `username`, `password`, `repassword`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`, `hostname`, `port`, `userfeeder`, `passfeeder`, `jabatan`, `profile`) VALUES
+(1, NULL, '127.0.0.1', 'administrator', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', NULL, '', 'admin@admin.com', '', NULL, NULL, NULL, 1268889823, 1517307686, 1, 'Admin', 'istrator', 'ADMIN', '08239566666', 'localhost', '8082', '091006', 'palagimatA', 3, 'avatar.jpg'),
+(11, NULL, '::1', 'ejhayoe', '$2y$08$3MEZ57khaMGLalzJbgj2sO4AfPz.BE4rPiKsZzjTiFXz2mhaiJxey', NULL, NULL, 'rezarafiqmz@gmail.com', NULL, 'HgHGT8nTbx-vwX.KhYj.aO7310ba3a7e1f005e75', 1476697891, NULL, 1476177802, 1482244469, 1, 'Reza', 'Rafiq MZ', '', '082395606666', 'localhost', '8082', '091006', 'palagimatA', 0, 'unidayan-reza-rafiq-mz-20161220-1482244516.jpg'),
+(12, NULL, '::1', 'tes', '$2y$08$V5c8KPik1dfx3dEUBw.O6.QEw5/ZMoeT5SethGiLx5v/Mkj4bTI9S', NULL, NULL, 'testing@gmail.com', NULL, NULL, NULL, NULL, 1476372787, NULL, NULL, 'tesa', 'tesa', 'Unidayan', '82240761006', NULL, NULL, NULL, NULL, 0, 'users-tesa-20161213-1481668077.png'),
+(13, NULL, '::1', 'proadm', '$2y$08$3ewVrGpkSakAtRZ1XSJBWeIU8kAORP7JChaWbvKUPmqbHDPbzZOj.', NULL, NULL, 'admin.prodi@und.ac.id', NULL, NULL, NULL, NULL, 1478446694, 1478446711, 1, 'Prodi', 'Administrator', NULL, '082312345678', 'localhost', '8083', '', '', 0, 'avatar.jpg'),
+(14, 2170, '::1', '12221058', '$2y$08$EE6eXKnDt0Q24x.iXSykpOOnOVIeyq5DOAbEy5Mb2is1b7dVABwMW', NULL, NULL, 'krisnilda@unidayan.ac.id', NULL, NULL, NULL, NULL, 1516544965, 1516864598, 1, 'Krisnilda', 'Jois', NULL, '082395606666', NULL, NULL, NULL, NULL, 0, 'avatar.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tbl_users_groups`
+--
+
+CREATE TABLE `tbl_users_groups` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `user_id` int(11) UNSIGNED NOT NULL,
+  `group_id` mediumint(8) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data untuk tabel `tbl_users_groups`
+--
+
+INSERT INTO `tbl_users_groups` (`id`, `user_id`, `group_id`) VALUES
+(1, 1, 1),
+(2, 1, 2),
+(18, 13, 6),
+(42, 12, 4),
+(43, 12, 27),
+(44, 12, 28),
+(45, 12, 29),
+(46, 11, 3),
+(47, 14, 2);
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `tbl_user_login`
 --
 
@@ -515,6 +651,18 @@ ALTER TABLE `tbl_data_seminar`
   ADD PRIMARY KEY (`id_seminar`);
 
 --
+-- Indexes for table `tbl_groups`
+--
+ALTER TABLE `tbl_groups`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_login_attempts`
+--
+ALTER TABLE `tbl_login_attempts`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tbl_master_eselon`
 --
 ALTER TABLE `tbl_master_eselon`
@@ -593,6 +741,18 @@ ALTER TABLE `tbl_master_unit_kerja`
   ADD PRIMARY KEY (`id_unit_kerja`);
 
 --
+-- Indexes for table `tbl_users`
+--
+ALTER TABLE `tbl_users`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_users_groups`
+--
+ALTER TABLE `tbl_users_groups`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tbl_user_login`
 --
 ALTER TABLE `tbl_user_login`
@@ -663,6 +823,16 @@ ALTER TABLE `tbl_data_riwayat_pangkat`
 ALTER TABLE `tbl_data_seminar`
   MODIFY `id_seminar` int(50) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT for table `tbl_groups`
+--
+ALTER TABLE `tbl_groups`
+  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+--
+-- AUTO_INCREMENT for table `tbl_login_attempts`
+--
+ALTER TABLE `tbl_login_attempts`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `tbl_master_eselon`
 --
 ALTER TABLE `tbl_master_eselon`
@@ -727,6 +897,16 @@ ALTER TABLE `tbl_master_status_pegawai`
 --
 ALTER TABLE `tbl_master_unit_kerja`
   MODIFY `id_unit_kerja` int(50) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `tbl_users`
+--
+ALTER TABLE `tbl_users`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+--
+-- AUTO_INCREMENT for table `tbl_users_groups`
+--
+ALTER TABLE `tbl_users_groups`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 --
 -- AUTO_INCREMENT for table `tbl_user_login`
 --
