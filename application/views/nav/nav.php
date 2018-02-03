@@ -123,21 +123,33 @@
 		<a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
 			<li class="linkmenu">
 				<div class="row">
-					<div class="col-md-2 text-center"><i class="material-icons">library_books</i></div>
-					<div class="col-md-10">laporan</div>
+					<div class="col-md-2 text-center"><i class="material-icons">settings_applications</i></div>
+					<div class="col-md-10">Setting</div>
 				</div>
 			</li>
 		</a>
 		<div class="collapse" id="collapseExample">
-			<div class="card card-body">
-				Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+			<div class="">
+				<ul>
+					<a href="<?php echo base_url('index.php/admin/dashboard/') ?>">
+						<li class="linkmenu">
+							<div class="row">
+								<div class="col-md-2 text-center"><i class="material-icons">account_circle</i> </div>
+								<div class="col-md-10">Users</div>
+							</div>
+						</li>
+					</a>
+					<a href="<?php echo base_url('index.php/admin/dashboard/') ?>">
+						<li class="linkmenu">
+							<div class="row">
+								<div class="col-md-2 text-center"><i class="material-icons">account_balance</i> </div>
+								<div class="col-md-10">Instansi</div>
+							</div>
+						</li>
+					</a>
+				</ul>
 			</div>
 		</div>
-		<li class="linkmenu">
-			<div class="row">
-				<div class="col-md-2 text-center"></div>
-				<div class="col-md-10"></div>
-			</div>
-		</li>
+		<div style="margin-bottom: 40px"></div>
 	</ul>
 </div>

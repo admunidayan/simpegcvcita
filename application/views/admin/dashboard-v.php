@@ -22,13 +22,12 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-2" style="background-color: #1da9f4">
-        <div class="row bts-ats">
-          <div class="col-md-4">
-            <img src="<?php echo base_url('asset/img/users/'.$users->profile) ?>" width="100%">
-          </div>
-          <div class="col-md-8 text-light">
-            <?php echo $users->username; ?><br/>
-            <span class="text-dark"><?php echo $users->email; ?></span>
+        <h2 class="text-light text-center" style="margin-top: 20px "><?php echo $infopt->alias_pt; ?></h2>
+        <div class="media">
+          <img class="rounded-circle align-self-center mr-3" src="<?php echo base_url('asset/img/users/'.$users->profile) ?>" alt="<?php echo $users->profile;?>" width="50px">
+          <div class="media-body">
+            <h5 class="mt-0 text-light"><?php echo $users->username; ?></h5>
+            <span class="text-dark text-sm"><?php echo $users->email; ?></span>
           </div>
         </div>
         <?php $this->view($aside); ?>

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 02 Feb 2018 pada 07.23
+-- Generation Time: 03 Feb 2018 pada 14.54
 -- Versi Server: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -324,6 +324,7 @@ INSERT INTO `tbl_groups` (`id`, `name`, `description`) VALUES
 CREATE TABLE `tbl_info_pt` (
   `id_info_pt` int(11) NOT NULL,
   `nama_info_pt` varchar(114) DEFAULT NULL,
+  `alias_pt` varchar(114) DEFAULT NULL,
   `kode_pt` varchar(114) DEFAULT NULL,
   `kontak_1` varchar(50) DEFAULT NULL,
   `kontak_2` varchar(50) DEFAULT NULL,
@@ -340,8 +341,8 @@ CREATE TABLE `tbl_info_pt` (
 -- Dumping data untuk tabel `tbl_info_pt`
 --
 
-INSERT INTO `tbl_info_pt` (`id_info_pt`, `nama_info_pt`, `kode_pt`, `kontak_1`, `kontak_2`, `kontak_3`, `kontak_4`, `header_pt`, `alamat_pt`, `slogan`, `logo_pt`, `logo_kecil_pt`) VALUES
-(1, 'SIMPEG', '00001', '1111-11111-1111', '1111-11111-1111', '1111-11111-1111', '1111-11111-1111', NULL, 'alamatnya disini', 'Akhlak dan Budaya', 'logo.png', 'logo.png');
+INSERT INTO `tbl_info_pt` (`id_info_pt`, `nama_info_pt`, `alias_pt`, `kode_pt`, `kontak_1`, `kontak_2`, `kontak_3`, `kontak_4`, `header_pt`, `alamat_pt`, `slogan`, `logo_pt`, `logo_kecil_pt`) VALUES
+(1, 'Sistem Informasi Kepegawaian', 'SIMPEG', '00001', '1111-11111-1111', '1111-11111-1111', '1111-11111-1111', '1111-11111-1111', NULL, 'alamatnya disini', 'Akhlak dan Budaya', 'logo.png', 'logo.png');
 
 -- --------------------------------------------------------
 
@@ -547,7 +548,7 @@ CREATE TABLE `tbl_users` (
 --
 
 INSERT INTO `tbl_users` (`id`, `id_mhs_pt`, `ip_address`, `username`, `password`, `repassword`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`, `hostname`, `port`, `userfeeder`, `passfeeder`, `jabatan`, `profile`) VALUES
-(1, NULL, '127.0.0.1', 'administrator', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', NULL, '', 'admin@admin.com', '', NULL, NULL, NULL, 1268889823, 1517552287, 1, 'Admin', 'istrator', 'ADMIN', '08239566666', 'localhost', '8082', '091006', 'palagimatA', 3, 'avatar.jpg'),
+(1, NULL, '127.0.0.1', 'administrator', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', NULL, '', 'admin@admin.com', '', NULL, NULL, NULL, 1268889823, 1517661990, 1, 'Admin', 'istrator', 'ADMIN', '08239566666', 'localhost', '8082', '091006', 'palagimatA', 3, 'avatar.jpg'),
 (11, NULL, '::1', 'ejhayoe', '$2y$08$3MEZ57khaMGLalzJbgj2sO4AfPz.BE4rPiKsZzjTiFXz2mhaiJxey', NULL, NULL, 'rezarafiqmz@gmail.com', NULL, 'HgHGT8nTbx-vwX.KhYj.aO7310ba3a7e1f005e75', 1476697891, NULL, 1476177802, 1482244469, 1, 'Reza', 'Rafiq MZ', '', '082395606666', 'localhost', '8082', '091006', 'palagimatA', 0, 'unidayan-reza-rafiq-mz-20161220-1482244516.jpg'),
 (12, NULL, '::1', 'tes', '$2y$08$V5c8KPik1dfx3dEUBw.O6.QEw5/ZMoeT5SethGiLx5v/Mkj4bTI9S', NULL, NULL, 'testing@gmail.com', NULL, NULL, NULL, NULL, 1476372787, NULL, NULL, 'tesa', 'tesa', 'Unidayan', '82240761006', NULL, NULL, NULL, NULL, 0, 'users-tesa-20161213-1481668077.png'),
 (13, NULL, '::1', 'proadm', '$2y$08$3ewVrGpkSakAtRZ1XSJBWeIU8kAORP7JChaWbvKUPmqbHDPbzZOj.', NULL, NULL, 'admin.prodi@und.ac.id', NULL, NULL, NULL, NULL, 1478446694, 1478446711, 1, 'Prodi', 'Administrator', NULL, '082312345678', 'localhost', '8083', '', '', 0, 'avatar.jpg'),
