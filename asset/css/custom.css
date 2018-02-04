@@ -108,3 +108,6 @@ body{
     vertical-align: middle;
     border-top: 1px solid #e9ecef;
 }
+.bg-app{
+	background-color: #1da9f4
+}
