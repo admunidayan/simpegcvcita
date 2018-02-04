@@ -23,9 +23,9 @@ class Pegawai extends CI_Controller {
                 $data['aside'] = 'nav/nav';
                 $data['page'] = 'admin/pegawai-v';
                 $jumlah = $this->Pegawai_m->jumlah_data();
-                $config['base_url'] = base_url().'/admin/pegawai/index/';
+                $config['base_url'] = base_url().'/index.php/admin/pegawai/index/';
                 $config['total_rows'] = $jumlah;
-                $config['per_page'] = '10';
+                $config['per_page'] = '20';
                 $config['first_page'] = 'Awal';
                 $config['last_page'] = 'Akhir';
                 $config['next_page'] = '&laquo;';
