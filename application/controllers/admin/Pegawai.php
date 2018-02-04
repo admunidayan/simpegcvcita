@@ -61,5 +61,30 @@ class Pegawai extends CI_Controller {
             redirect(base_url('index.php/admin//login'));
         }
     }
+    public function detail($id){
+        if ($this->ion_auth->logged_in()) {
+            $level = array('admin','members');
+            if (!$this->ion_auth->in_group($level)) {
+                $pesan = 'Anda tidak memiliki Hak untuk Mengakses halaman ini';
+                $this->session->set_flashdata('message', $pesan );
+                redirect(base_url('index.php/admin/dashboard'));
+            }else{
+                $result = $this->Pegawai_m->detail_data('data_pegawai','id_pegawai',$id);
+                // echo "<pre>";print_r($result);echo "<pre/>";exit();
+                $data['title'] = $result->nama_pegawai;
+                $data['infopt'] = $this->Admin_m->info_pt(1);
+                $data['brand'] = 'asset/img/lembaga/'.$this->Admin_m->info_pt(1)->logo_pt;
+                $data['users'] = $this->ion_auth->user()->row();
+                $data['aside'] = 'nav/nav';
+                $data['page'] = 'admin/detail-pegawai-v';
+                // pagging setting
+                $this->load->view('admin/dashboard-v',$data);
+            }
+        }else{
+            $pesan = 'Login terlebih dahulu';
+            $this->session->set_flashdata('message', $pesan );
+            redirect(base_url('index.php/admin//login'));
+        }
+    }
 }
 ?>

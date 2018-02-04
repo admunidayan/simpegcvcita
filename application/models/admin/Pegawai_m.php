@@ -24,6 +24,11 @@ class Pegawai_m extends CI_Model
 		$query = $this->db->get($tabel);
 		return $query->result();
 	}
+	public function detail_data($tabel,$field,$id){
+		$this->db->where($field, $id);
+		$query = $this->db->get($tabel);
+		return $query->row();
+	}
 	function insert_data($tabel,$data){
 		$this->db->insert($tabel, $data);
 	}

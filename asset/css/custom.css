@@ -111,3 +111,12 @@ body{
 .bg-app{
 	background-color: #1da9f4
 }
+.submenu{
+	padding: 7px;
+	border-bottom: 1px solid #eeeeee;
+}
+.submenu:hover{
+	cursor: pointer;
+	color: white;
+	background-color: #1da9f4;
+}

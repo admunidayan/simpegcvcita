@@ -20,7 +20,7 @@
 				<?php foreach ($hasil as $data): ?>
 					<tr>
 						<td class="jrktbl text-center"><?php echo $no; ?></td>
-						<td class="jrktbl"><?php echo $data->nama_pegawai; ?></td>
+						<td class="jrktbl"><a class="text-dark" href="<?php echo base_url('index.php/admin/pegawai/detail/'.$data->id_pegawai) ?>"><?php echo $data->nama_pegawai; ?></a></td>
 						<td class="jrktbl text-secondary"><?php echo $data->nip; ?></td>
 						<td class="jrktbl text-secondary"><?php echo $data->golongan; ?></td>
 						<td class="jrktbl text-secondary"><?php echo $data->lokasi_kerja; ?></td>
