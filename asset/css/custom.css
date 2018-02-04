@@ -95,3 +95,16 @@ body{
 .pembatas{
 	border-top: 1px solid #cccccc;
 }
+.ktk-jdl{
+	border-bottom :1px solid #eeeeee;
+	padding-bottom: 14px;
+}
+.jrktbl{
+    padding: .7px 0px;
+	font-size: 12px;
+}
+.table td, .table th {
+	padding: 14px 7px;
+    vertical-align: middle;
+    border-top: 1px solid #e9ecef;
+}
