@@ -76,6 +76,8 @@ class Pegawai extends CI_Controller {
                 $data['brand'] = 'asset/img/lembaga/'.$this->Admin_m->info_pt(1)->logo_pt;
                 $data['users'] = $this->ion_auth->user()->row();
                 $data['aside'] = 'nav/nav';
+                $data['hasil'] = $result;
+                $data['bagian'] = 'admin/data-pegawai-v';
                 $data['page'] = 'admin/detail-pegawai-v';
                 // pagging setting
                 $this->load->view('admin/dashboard-v',$data);

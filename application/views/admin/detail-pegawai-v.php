@@ -75,6 +75,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-md-9">asd</div>
+		<div class="col-md-9">
+			<?php $this->view($bagian); ?>
+		</div>
 	</div>
 </div >
