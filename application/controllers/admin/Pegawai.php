@@ -69,7 +69,7 @@ class Pegawai extends CI_Controller {
                 $this->session->set_flashdata('message', $pesan );
                 redirect(base_url('index.php/admin/dashboard'));
             }else{
-                $result = $this->Pegawai_m->detail_data('data_pegawai','id_pegawai',$id);
+                $result = $this->Pegawai_m->detail_pegawai($id);
                 // echo "<pre>";print_r($result);echo "<pre/>";exit();
                 $data['title'] = $result->nama_pegawai;
                 $data['infopt'] = $this->Admin_m->info_pt(1);
@@ -77,6 +77,7 @@ class Pegawai extends CI_Controller {
                 $data['users'] = $this->ion_auth->user()->row();
                 $data['aside'] = 'nav/nav';
                 $data['hasil'] = $result;
+                $data['status'] = $this->Pegawai_m->select_data('master_status_pegawai');
                 $data['bagian'] = 'admin/data-pegawai-v';
                 $data['page'] = 'admin/detail-pegawai-v';
                 // pagging setting

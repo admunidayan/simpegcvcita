@@ -20,6 +20,15 @@ class Pegawai_m extends CI_Model
 		$query = $this->db->get('data_pegawai',$sampai,$dari);
 		return $query->result();
 	}
+	public function detail_pegawai($id){
+		// $this->db->select('data_pegawai.*,master_golongan');
+		$this->db->join('master_golongan', 'master_golongan.id_golongan = data_pegawai.id_golongan');
+		// $this->db->join('master_lokasi_kerja', 'master_lokasi_kerja.id_lokasi_kerja = data_pegawai.lokasi_kerja');
+		$this->db->join('master_status_pegawai', 'master_status_pegawai.id_status_pegawai = data_pegawai.status_pegawai');
+		$this->db->where('id_pegawai',$id);
+		$query = $this->db->get('data_pegawai');
+		return $query->row();
+	}
 	public function select_data($tabel){
 		$query = $this->db->get($tabel);
 		return $query->result();
