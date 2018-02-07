@@ -25,6 +25,7 @@ class Pegawai_m extends CI_Model
 		$this->db->join('master_golongan', 'master_golongan.id_golongan = data_pegawai.id_golongan');
 		// $this->db->join('master_lokasi_kerja', 'master_lokasi_kerja.id_lokasi_kerja = data_pegawai.lokasi_kerja');
 		$this->db->join('master_status_pegawai', 'master_status_pegawai.id_status_pegawai = data_pegawai.status_pegawai');
+		$this->db->join('master_agama', 'master_agama.id_agama = data_pegawai.agama');
 		$this->db->where('id_pegawai',$id);
 		$query = $this->db->get('data_pegawai');
 		return $query->row();
@@ -94,7 +95,7 @@ class Pegawai_m extends CI_Model
 		return $query->result();
 	}
 	function insert_data($tabel,$data){
-		$this->db->insert($tabel, $data);
+		$this->db->insert($tabel,$data);
 	}
 	public function delete_data($tabel,$field,$id){
 		$this->db->where($field, $id);

@@ -25,7 +25,7 @@ class Pegawai extends CI_Controller {
                 $jumlah = $this->Pegawai_m->jumlah_data();
                 $config['base_url'] = base_url().'/index.php/admin/pegawai/index/';
                 $config['total_rows'] = $jumlah;
-                $config['per_page'] = '20';
+                $config['per_page'] = '10';
                 $config['first_page'] = 'Awal';
                 $config['last_page'] = 'Akhir';
                 $config['next_page'] = '&laquo;';
@@ -47,6 +47,9 @@ class Pegawai extends CI_Controller {
                 $config['last_tagl_close'] = "</li>";
                 //inisialisasi config
                 $this->pagination->initialize($config);
+                $data['status'] = $this->Pegawai_m->select_data('master_status_pegawai');
+                $data['agama'] = $this->Pegawai_m->select_data('master_agama');
+                $data['golongan'] = $this->Pegawai_m->select_data('master_golongan');
                 // pengaturan searching
                 $data['jmldata'] = $jumlah;
                 $data['nmr'] = $offset;
@@ -78,6 +81,8 @@ class Pegawai extends CI_Controller {
                 $data['aside'] = 'nav/nav';
                 $data['hasil'] = $result;
                 $data['status'] = $this->Pegawai_m->select_data('master_status_pegawai');
+                $data['agama'] = $this->Pegawai_m->select_data('master_agama');
+                $data['golongan'] = $this->Pegawai_m->select_data('master_golongan');
                 $data['bagian'] = 'admin/data-pegawai-v';
                 $data['page'] = 'admin/detail-pegawai-v';
                 // pagging setting
@@ -401,6 +406,72 @@ class Pegawai extends CI_Controller {
                 $data['page'] = 'admin/detail-pegawai-v';
                 // pagging setting
                 $this->load->view('admin/dashboard-v',$data);
+            }
+        }else{
+            $pesan = 'Login terlebih dahulu';
+            $this->session->set_flashdata('message', $pesan );
+            redirect(base_url('index.php/admin//login'));
+        }
+    }
+    public function create(){
+        if ($this->ion_auth->logged_in()) {
+            $level = array('admin','members');
+            if (!$this->ion_auth->in_group($level)) {
+                $pesan = 'Anda tidak memiliki Hak untuk Mengakses halaman ini';
+                $this->session->set_flashdata('message', $pesan );
+                redirect(base_url('index.php/admin/dashboard'));
+            }else{
+                $post = $this->input->post();
+                $datainput = array(
+                    'nama_pegawai' => $post['nama_pegawai'],
+                    'nip'=>$post['nip'],
+                    'nip_lama'=>$post['nip_lama'],
+                    'no_kartu_pegawai'=>$post['no_kartu_pegawai'],
+                    'no_npwp'=>$post['no_npwp'],
+                    'kartu_askes_pegawai'=>$post['kartu_askes_pegawai'],
+                    'tempat_lahir'=>$post['tempat_lahir'],
+                    'tanggal_lahir'=>$post['tanggal_lahir'],
+                    'jenis_kelamin'=>$post['jenis_kelamin'],
+                    'agama'=>$post['agama'],
+                    'id_golongan'=>$post['id_golongan'],
+                    'status_pegawai'=>$post['status_pegawai'],
+                    'tanggal_pengangkatan_cpns'=>$post['tanggal_pengangkatan_cpns'],
+                    'alamat'=>$post['alamat']
+                );
+                $this->Pegawai_m->insert_data('data_pegawai',$datainput);
+                $pesan = 'Data pegawai baru berhasil di tambahkan';
+                $this->session->set_flashdata('message', $pesan );
+                redirect(base_url('index.php/admin/pegawai'));
+            }
+        }else{
+            $pesan = 'Login terlebih dahulu';
+            $this->session->set_flashdata('message', $pesan );
+            redirect(base_url('index.php/admin//login'));
+        }
+    }
+     public function create_keluarga($idpegawai){
+        if ($this->ion_auth->logged_in()) {
+            $level = array('admin','members');
+            if (!$this->ion_auth->in_group($level)) {
+                $pesan = 'Anda tidak memiliki Hak untuk Mengakses halaman ini';
+                $this->session->set_flashdata('message', $pesan );
+                redirect(base_url('index.php/admin/dashboard'));
+            }else{
+                $post = $this->input->post();
+                $datainput = array(
+                    'nama_anggota_keluarga' => $post['nama_anggota_keluarga'],
+                    'id_pegawai' => $idpegawai,
+                    'tanggal_lahir'=>$post['tanggal_lahir'],
+                    'status_kawin'=>$post['status_kawin'],
+                    'tanggal_nikah'=>$post['tanggal_nikah'],
+                    'uraian'=>$post['uraian'],
+                    'tanggal_cerai_meninggal'=>$post['tanggal_cerai_meninggal'],
+                    'pekerjaan'=>$post['pekerjaan']
+                );
+                $this->Pegawai_m->insert_data('data_keluarga',$datainput);
+                $pesan = 'Data pegawai baru berhasil di tambahkan';
+                $this->session->set_flashdata('message', $pesan );
+                redirect(base_url('index.php/admin/pegawai/detail_keluarga/'.$idpegawai));
             }
         }else{
             $pesan = 'Login terlebih dahulu';

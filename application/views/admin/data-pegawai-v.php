@@ -1,15 +1,5 @@
 <div style="margin-top: 14px; background-color: white;padding: 30px">
 	<h4 class="text-secondary">Data Diri</h4><hr/>
-	<div class="media">
-		<?php if (!empty($hasil->foto)): ?>
-			<img class="align-self-start mr-3 rounded-circle" src="<?php echo base_url('asset/img/users/'.$hasil->foto) ?>" alt="<?php echo $hasil->foto ?>">
-		<?php else: ?>
-			<img class="align-self-start mr-3 rounded-circle" src="<?php echo base_url('asset/img/users/avatar.png') ?>" alt="foto kosong">
-		<?php endif ?>
-		<div class="media-body">
-			<h5 class="mt-0"><?php echo $hasil->nama_pegawai; ?></h5><span class="border border-success rounded" style="font-size: 12px;padding: 7px 5px;"><?php echo $hasil->nama_status; ?></span>
-		</div>
-	</div>
 	<div class="row">
 		<div class="col">
 			<div class="form-group">
@@ -52,7 +42,21 @@
 			</div>
 			<div class="form-group">
 				<label class="text-info" for="agama">AGAMA</label>
-				<input type="text" class="form-control" id="agama" name="agama" placeholder="AGAMA" value="<?php echo $hasil->agama ?>">
+				<select class="form-control" name="agama">
+					<option value="<?php echo $hasil->agama ?>">-- <?php echo $hasil->nm_agama; ?> --</option>
+					<?php foreach ($agama as $data): ?>
+						<option value="<?php echo $data->id_agama ?>"><?php echo $data->nm_agama; ?></option>
+					<?php endforeach ?>
+				</select>
+			</div>
+			<div class="form-group">
+				<label class="text-info" for="agama">GOLONGAN</label>
+				<select class="form-control" name="id_golongan">
+					<option value="<?php echo $hasil->id_golongan ?>">-- <?php echo $this->Pegawai_m->detail_data('master_golongan','id_golongan',$hasil->id_golongan)->golongan; ?> --</option>
+					<?php foreach ($golongan as $data): ?>
+						<option value="<?php echo $data->id_golongan ?>"><?php echo $data->golongan; ?></option>
+					<?php endforeach ?>
+				</select>
 			</div>
 			<div class="form-group">
 				<label class="text-info" for="status_pegawai">STATUS PEGAWAI</label>
