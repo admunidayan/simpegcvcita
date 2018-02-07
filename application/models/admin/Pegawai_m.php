@@ -38,6 +38,61 @@ class Pegawai_m extends CI_Model
 		$query = $this->db->get($tabel);
 		return $query->row();
 	}
+	public function data_keluarga($id){
+		$this->db->where('id_pegawai', $id);
+		$query = $this->db->get('data_keluarga');
+		return $query->result();
+	}
+	public function data_rpangkat($id){
+		$this->db->where('id_pegawai', $id);
+		$query = $this->db->get('data_riwayat_pangkat');
+		return $query->result();
+	}
+	public function data_rjabatan($id){
+		$this->db->where('id_pegawai', $id);
+		$query = $this->db->get('data_riwayat_jabatan');
+		return $query->result();
+	}
+	public function data_pendidikan($id){
+		$this->db->where('id_pegawai', $id);
+		$query = $this->db->get('data_pendidikan');
+		return $query->result();
+	}
+	public function data_pelatihan($id){
+		$this->db->where('id_pegawai', $id);
+		$query = $this->db->get('data_pelatihan');
+		return $query->result();
+	}
+	public function data_penghargaan($id){
+		$this->db->where('id_pegawai', $id);
+		$query = $this->db->get('data_penghargaan');
+		return $query->result();
+	}
+	public function data_seminar($id){
+		$this->db->where('id_pegawai', $id);
+		$query = $this->db->get('data_seminar');
+		return $query->result();
+	}
+	public function data_organisasi($id){
+		$this->db->where('id_pegawai', $id);
+		$query = $this->db->get('data_organisasi');
+		return $query->result();
+	}
+	public function data_gaji_pokok($id){
+		$this->db->where('id_pegawai', $id);
+		$query = $this->db->get('data_gaji_pokok');
+		return $query->result();
+	}
+	public function data_hukuman($id){
+		$this->db->where('id_pegawai', $id);
+		$query = $this->db->get('data_hukuman');
+		return $query->result();
+	}
+	public function data_dp3($id){
+		$this->db->where('id_pegawai', $id);
+		$query = $this->db->get('data_dp3');
+		return $query->result();
+	}
 	function insert_data($tabel,$data){
 		$this->db->insert($tabel, $data);
 	}

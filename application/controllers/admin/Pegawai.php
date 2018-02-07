@@ -89,5 +89,324 @@ class Pegawai extends CI_Controller {
             redirect(base_url('index.php/admin//login'));
         }
     }
+    public function detail_keluarga($id){
+        if ($this->ion_auth->logged_in()) {
+            $level = array('admin','members');
+            if (!$this->ion_auth->in_group($level)) {
+                $pesan = 'Anda tidak memiliki Hak untuk Mengakses halaman ini';
+                $this->session->set_flashdata('message', $pesan );
+                redirect(base_url('index.php/admin/dashboard'));
+            }else{
+                $result = $this->Pegawai_m->detail_pegawai($id);
+                // echo "<pre>";print_r($result);echo "<pre/>";exit();
+                $data['title'] = $result->nama_pegawai;
+                $data['infopt'] = $this->Admin_m->info_pt(1);
+                $data['brand'] = 'asset/img/lembaga/'.$this->Admin_m->info_pt(1)->logo_pt;
+                $data['users'] = $this->ion_auth->user()->row();
+                $data['aside'] = 'nav/nav';
+                $data['hasil'] = $result;
+                $data['keluarga'] = $this->Pegawai_m->data_keluarga($id);
+                $data['status'] = $this->Pegawai_m->select_data('master_status_pegawai');
+                $data['bagian'] = 'admin/data-keluarga-v';
+                $data['page'] = 'admin/detail-pegawai-v';
+                // pagging setting
+                $this->load->view('admin/dashboard-v',$data);
+            }
+        }else{
+            $pesan = 'Login terlebih dahulu';
+            $this->session->set_flashdata('message', $pesan );
+            redirect(base_url('index.php/admin//login'));
+        }
+    }
+    public function detail_rpangkat($id){
+        if ($this->ion_auth->logged_in()) {
+            $level = array('admin','members');
+            if (!$this->ion_auth->in_group($level)) {
+                $pesan = 'Anda tidak memiliki Hak untuk Mengakses halaman ini';
+                $this->session->set_flashdata('message', $pesan );
+                redirect(base_url('index.php/admin/dashboard'));
+            }else{
+                $result = $this->Pegawai_m->detail_pegawai($id);
+                // echo "<pre>";print_r($result);echo "<pre/>";exit();
+                $data['title'] = $result->nama_pegawai;
+                $data['infopt'] = $this->Admin_m->info_pt(1);
+                $data['brand'] = 'asset/img/lembaga/'.$this->Admin_m->info_pt(1)->logo_pt;
+                $data['users'] = $this->ion_auth->user()->row();
+                $data['aside'] = 'nav/nav';
+                $data['hasil'] = $result;
+                $data['rpangkat'] = $this->Pegawai_m->data_rpangkat($id);
+                $data['status'] = $this->Pegawai_m->select_data('master_status_pegawai');
+                $data['bagian'] = 'admin/data-rpangkat-v';
+                $data['page'] = 'admin/detail-pegawai-v';
+                // pagging setting
+                $this->load->view('admin/dashboard-v',$data);
+            }
+        }else{
+            $pesan = 'Login terlebih dahulu';
+            $this->session->set_flashdata('message', $pesan );
+            redirect(base_url('index.php/admin//login'));
+        }
+    }
+     public function detail_rjabatan($id){
+        if ($this->ion_auth->logged_in()) {
+            $level = array('admin','members');
+            if (!$this->ion_auth->in_group($level)) {
+                $pesan = 'Anda tidak memiliki Hak untuk Mengakses halaman ini';
+                $this->session->set_flashdata('message', $pesan );
+                redirect(base_url('index.php/admin/dashboard'));
+            }else{
+                $result = $this->Pegawai_m->detail_pegawai($id);
+                // echo "<pre>";print_r($result);echo "<pre/>";exit();
+                $data['title'] = $result->nama_pegawai;
+                $data['infopt'] = $this->Admin_m->info_pt(1);
+                $data['brand'] = 'asset/img/lembaga/'.$this->Admin_m->info_pt(1)->logo_pt;
+                $data['users'] = $this->ion_auth->user()->row();
+                $data['aside'] = 'nav/nav';
+                $data['hasil'] = $result;
+                $data['rjabatan'] = $this->Pegawai_m->data_rjabatan($id);
+                $data['status'] = $this->Pegawai_m->select_data('master_status_pegawai');
+                $data['bagian'] = 'admin/data-rjabatan-v';
+                $data['page'] = 'admin/detail-pegawai-v';
+                // pagging setting
+                $this->load->view('admin/dashboard-v',$data);
+            }
+        }else{
+            $pesan = 'Login terlebih dahulu';
+            $this->session->set_flashdata('message', $pesan );
+            redirect(base_url('index.php/admin//login'));
+        }
+    }
+    public function detail_pendidikan($id){
+        if ($this->ion_auth->logged_in()) {
+            $level = array('admin','members');
+            if (!$this->ion_auth->in_group($level)) {
+                $pesan = 'Anda tidak memiliki Hak untuk Mengakses halaman ini';
+                $this->session->set_flashdata('message', $pesan );
+                redirect(base_url('index.php/admin/dashboard'));
+            }else{
+                $result = $this->Pegawai_m->detail_pegawai($id);
+                // echo "<pre>";print_r($result);echo "<pre/>";exit();
+                $data['title'] = $result->nama_pegawai;
+                $data['infopt'] = $this->Admin_m->info_pt(1);
+                $data['brand'] = 'asset/img/lembaga/'.$this->Admin_m->info_pt(1)->logo_pt;
+                $data['users'] = $this->ion_auth->user()->row();
+                $data['aside'] = 'nav/nav';
+                $data['hasil'] = $result;
+                $data['pendidikan'] = $this->Pegawai_m->data_pendidikan($id);
+                $data['status'] = $this->Pegawai_m->select_data('master_status_pegawai');
+                $data['bagian'] = 'admin/data-pendidikan-v';
+                $data['page'] = 'admin/detail-pegawai-v';
+                // pagging setting
+                $this->load->view('admin/dashboard-v',$data);
+            }
+        }else{
+            $pesan = 'Login terlebih dahulu';
+            $this->session->set_flashdata('message', $pesan );
+            redirect(base_url('index.php/admin//login'));
+        }
+    }
+    public function detail_pelatihan($id){
+        if ($this->ion_auth->logged_in()) {
+            $level = array('admin','members');
+            if (!$this->ion_auth->in_group($level)) {
+                $pesan = 'Anda tidak memiliki Hak untuk Mengakses halaman ini';
+                $this->session->set_flashdata('message', $pesan );
+                redirect(base_url('index.php/admin/dashboard'));
+            }else{
+                $result = $this->Pegawai_m->detail_pegawai($id);
+                // echo "<pre>";print_r($result);echo "<pre/>";exit();
+                $data['title'] = $result->nama_pegawai;
+                $data['infopt'] = $this->Admin_m->info_pt(1);
+                $data['brand'] = 'asset/img/lembaga/'.$this->Admin_m->info_pt(1)->logo_pt;
+                $data['users'] = $this->ion_auth->user()->row();
+                $data['aside'] = 'nav/nav';
+                $data['hasil'] = $result;
+                $data['pelatihan'] = $this->Pegawai_m->data_pelatihan($id);
+                $data['status'] = $this->Pegawai_m->select_data('master_status_pegawai');
+                $data['bagian'] = 'admin/data-pelatihan-v';
+                $data['page'] = 'admin/detail-pegawai-v';
+                // pagging setting
+                $this->load->view('admin/dashboard-v',$data);
+            }
+        }else{
+            $pesan = 'Login terlebih dahulu';
+            $this->session->set_flashdata('message', $pesan );
+            redirect(base_url('index.php/admin//login'));
+        }
+    }
+    public function detail_penghargaan($id){
+        if ($this->ion_auth->logged_in()) {
+            $level = array('admin','members');
+            if (!$this->ion_auth->in_group($level)) {
+                $pesan = 'Anda tidak memiliki Hak untuk Mengakses halaman ini';
+                $this->session->set_flashdata('message', $pesan );
+                redirect(base_url('index.php/admin/dashboard'));
+            }else{
+                $result = $this->Pegawai_m->detail_pegawai($id);
+                // echo "<pre>";print_r($result);echo "<pre/>";exit();
+                $data['title'] = $result->nama_pegawai;
+                $data['infopt'] = $this->Admin_m->info_pt(1);
+                $data['brand'] = 'asset/img/lembaga/'.$this->Admin_m->info_pt(1)->logo_pt;
+                $data['users'] = $this->ion_auth->user()->row();
+                $data['aside'] = 'nav/nav';
+                $data['hasil'] = $result;
+                $data['penghargaan'] = $this->Pegawai_m->data_penghargaan($id);
+                $data['status'] = $this->Pegawai_m->select_data('master_status_pegawai');
+                $data['bagian'] = 'admin/data-penghargaan-v';
+                $data['page'] = 'admin/detail-pegawai-v';
+                // pagging setting
+                $this->load->view('admin/dashboard-v',$data);
+            }
+        }else{
+            $pesan = 'Login terlebih dahulu';
+            $this->session->set_flashdata('message', $pesan );
+            redirect(base_url('index.php/admin//login'));
+        }
+    }
+    public function detail_seminar($id){
+        if ($this->ion_auth->logged_in()) {
+            $level = array('admin','members');
+            if (!$this->ion_auth->in_group($level)) {
+                $pesan = 'Anda tidak memiliki Hak untuk Mengakses halaman ini';
+                $this->session->set_flashdata('message', $pesan );
+                redirect(base_url('index.php/admin/dashboard'));
+            }else{
+                $result = $this->Pegawai_m->detail_pegawai($id);
+                // echo "<pre>";print_r($result);echo "<pre/>";exit();
+                $data['title'] = $result->nama_pegawai;
+                $data['infopt'] = $this->Admin_m->info_pt(1);
+                $data['brand'] = 'asset/img/lembaga/'.$this->Admin_m->info_pt(1)->logo_pt;
+                $data['users'] = $this->ion_auth->user()->row();
+                $data['aside'] = 'nav/nav';
+                $data['hasil'] = $result;
+                $data['seminar'] = $this->Pegawai_m->data_seminar($id);
+                $data['status'] = $this->Pegawai_m->select_data('master_status_pegawai');
+                $data['bagian'] = 'admin/data-seminar-v';
+                $data['page'] = 'admin/detail-pegawai-v';
+                // pagging setting
+                $this->load->view('admin/dashboard-v',$data);
+            }
+        }else{
+            $pesan = 'Login terlebih dahulu';
+            $this->session->set_flashdata('message', $pesan );
+            redirect(base_url('index.php/admin//login'));
+        }
+    }
+    public function detail_organisasi($id){
+        if ($this->ion_auth->logged_in()) {
+            $level = array('admin','members');
+            if (!$this->ion_auth->in_group($level)) {
+                $pesan = 'Anda tidak memiliki Hak untuk Mengakses halaman ini';
+                $this->session->set_flashdata('message', $pesan );
+                redirect(base_url('index.php/admin/dashboard'));
+            }else{
+                $result = $this->Pegawai_m->detail_pegawai($id);
+                // echo "<pre>";print_r($result);echo "<pre/>";exit();
+                $data['title'] = $result->nama_pegawai;
+                $data['infopt'] = $this->Admin_m->info_pt(1);
+                $data['brand'] = 'asset/img/lembaga/'.$this->Admin_m->info_pt(1)->logo_pt;
+                $data['users'] = $this->ion_auth->user()->row();
+                $data['aside'] = 'nav/nav';
+                $data['hasil'] = $result;
+                $data['organisasi'] = $this->Pegawai_m->data_organisasi($id);
+                $data['status'] = $this->Pegawai_m->select_data('master_status_pegawai');
+                $data['bagian'] = 'admin/data-organisasi-v';
+                $data['page'] = 'admin/detail-pegawai-v';
+                // pagging setting
+                $this->load->view('admin/dashboard-v',$data);
+            }
+        }else{
+            $pesan = 'Login terlebih dahulu';
+            $this->session->set_flashdata('message', $pesan );
+            redirect(base_url('index.php/admin//login'));
+        }
+    }
+    public function detail_gaji_pokok($id){
+        if ($this->ion_auth->logged_in()) {
+            $level = array('admin','members');
+            if (!$this->ion_auth->in_group($level)) {
+                $pesan = 'Anda tidak memiliki Hak untuk Mengakses halaman ini';
+                $this->session->set_flashdata('message', $pesan );
+                redirect(base_url('index.php/admin/dashboard'));
+            }else{
+                $result = $this->Pegawai_m->detail_pegawai($id);
+                // echo "<pre>";print_r($result);echo "<pre/>";exit();
+                $data['title'] = $result->nama_pegawai;
+                $data['infopt'] = $this->Admin_m->info_pt(1);
+                $data['brand'] = 'asset/img/lembaga/'.$this->Admin_m->info_pt(1)->logo_pt;
+                $data['users'] = $this->ion_auth->user()->row();
+                $data['aside'] = 'nav/nav';
+                $data['hasil'] = $result;
+                $data['gaji_pokok'] = $this->Pegawai_m->data_gaji_pokok($id);
+                $data['status'] = $this->Pegawai_m->select_data('master_status_pegawai');
+                $data['bagian'] = 'admin/data-gaji_pokok-v';
+                $data['page'] = 'admin/detail-pegawai-v';
+                // pagging setting
+                $this->load->view('admin/dashboard-v',$data);
+            }
+        }else{
+            $pesan = 'Login terlebih dahulu';
+            $this->session->set_flashdata('message', $pesan );
+            redirect(base_url('index.php/admin//login'));
+        }
+    }
+    public function detail_hukuman($id){
+        if ($this->ion_auth->logged_in()) {
+            $level = array('admin','members');
+            if (!$this->ion_auth->in_group($level)) {
+                $pesan = 'Anda tidak memiliki Hak untuk Mengakses halaman ini';
+                $this->session->set_flashdata('message', $pesan );
+                redirect(base_url('index.php/admin/dashboard'));
+            }else{
+                $result = $this->Pegawai_m->detail_pegawai($id);
+                // echo "<pre>";print_r($result);echo "<pre/>";exit();
+                $data['title'] = $result->nama_pegawai;
+                $data['infopt'] = $this->Admin_m->info_pt(1);
+                $data['brand'] = 'asset/img/lembaga/'.$this->Admin_m->info_pt(1)->logo_pt;
+                $data['users'] = $this->ion_auth->user()->row();
+                $data['aside'] = 'nav/nav';
+                $data['hasil'] = $result;
+                $data['hukuman'] = $this->Pegawai_m->data_hukuman($id);
+                $data['status'] = $this->Pegawai_m->select_data('master_status_pegawai');
+                $data['bagian'] = 'admin/data-hukuman-v';
+                $data['page'] = 'admin/detail-pegawai-v';
+                // pagging setting
+                $this->load->view('admin/dashboard-v',$data);
+            }
+        }else{
+            $pesan = 'Login terlebih dahulu';
+            $this->session->set_flashdata('message', $pesan );
+            redirect(base_url('index.php/admin//login'));
+        }
+    }
+    public function detail_dp3($id){
+        if ($this->ion_auth->logged_in()) {
+            $level = array('admin','members');
+            if (!$this->ion_auth->in_group($level)) {
+                $pesan = 'Anda tidak memiliki Hak untuk Mengakses halaman ini';
+                $this->session->set_flashdata('message', $pesan );
+                redirect(base_url('index.php/admin/dashboard'));
+            }else{
+                $result = $this->Pegawai_m->detail_pegawai($id);
+                // echo "<pre>";print_r($result);echo "<pre/>";exit();
+                $data['title'] = $result->nama_pegawai;
+                $data['infopt'] = $this->Admin_m->info_pt(1);
+                $data['brand'] = 'asset/img/lembaga/'.$this->Admin_m->info_pt(1)->logo_pt;
+                $data['users'] = $this->ion_auth->user()->row();
+                $data['aside'] = 'nav/nav';
+                $data['hasil'] = $result;
+                $data['dp3'] = $this->Pegawai_m->data_dp3($id);
+                $data['status'] = $this->Pegawai_m->select_data('master_status_pegawai');
+                $data['bagian'] = 'admin/data-dp3-v';
+                $data['page'] = 'admin/detail-pegawai-v';
+                // pagging setting
+                $this->load->view('admin/dashboard-v',$data);
+            }
+        }else{
+            $pesan = 'Login terlebih dahulu';
+            $this->session->set_flashdata('message', $pesan );
+            redirect(base_url('index.php/admin//login'));
+        }
+    }
 }
 ?>
