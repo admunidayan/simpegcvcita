@@ -1,5 +1,13 @@
 <div style="margin-top: 14px; background-color: white;padding: 30px">
-	<h4 class="text-secondary">Data Pelatihan</h4><hr/>
+	<div class="media">
+	<div class="media-body">
+			<h4>Data Pelatihan</h4>
+		</div>
+		<div class="media-right">
+			<button type="button" class="btn btn-outline-success btn-sm" data-toggle="modal" data-target="#addpelatihan"><i class="material-icons">note_add</i> Tambah Data Pelatihan</button>
+		</div>
+	</div>
+	<hr/>
 	<table class="table table-hover table-sm">
 		<thead>
 			<tr class="bg-app text-light">
@@ -38,3 +46,47 @@
 		</tbody>
 	</table>
 </div >
+<!-- Modal -->
+	<div class="modal fade" id="addpelatihan" tabindex="-1" role="dialog" aria-labelledby="addpelatihan" aria-hidden="true">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="addpelatihan">Tambah Data Pendidikan</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<form action="<?php echo base_url('index.php/admin/pegawai/create_pelatihan/'.$hasil->id_pegawai) ?>" method="post">
+					<div class="modal-body">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+									<label class="text-info" for="uraian">URAIAN</label>
+									<input type="text" class="form-control" id="uraian" name="uraian" placeholder="URAIAN" >
+								</div>
+								<div class="form-group">
+									<label class="text-info" for="lokasi">LOKASI</label>
+									<input type="text" class="form-control" id="lokasi" name="lokasi" placeholder="LOKASI" >
+								</div>
+								<div class="form-group">
+									<label class="text-info" for="tanggal_sertifikat">TANGGAL SERTIFIKAT</label>
+									<input type="text" class="form-control" id="tanggal_sertifikat" name="tanggal_sertifikat" placeholder="TANGGAL SERTIFIKAT">
+								</div>
+								<div class="form-group">
+									<label class="text-info" for="jam_pelatihan">JAM PELATIHAN</label>
+									<input type="text" class="form-control" id="jam_pelatihan" name="jam_pelatihan" placeholder="JAM PELATIHAN">
+								</div>
+								<div class="form-group">
+									<label class="text-info" for="negara">NEGARA</label>
+									<input type="text" class="form-control" id="negara" name="negara" placeholder="NEGARA">
+								</div>
+							</div>
+						</div>
+					</div>
+				<div class="modal-footer">
+					<button type="submit" name="submit" value="submit" class="btn btn-success">Simpan</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	</div>
