@@ -778,5 +778,62 @@ class Pegawai extends CI_Controller {
             redirect(base_url('index.php/admin//login'));
         }
     }
+    public function edit_rpangkat($id,$idr){
+        if ($this->ion_auth->logged_in()) {
+            $level = array('admin','members');
+            if (!$this->ion_auth->in_group($level)) {
+                $pesan = 'Anda tidak memiliki Hak untuk Mengakses halaman ini';
+                $this->session->set_flashdata('message', $pesan );
+                redirect(base_url('index.php/admin/dashboard'));
+            }else{
+                $result = $this->Pegawai_m->detail_pegawai($id);
+                // echo "<pre>";print_r($result);echo "<pre/>";exit();
+                $data['title'] = $result->nama_pegawai;
+                $data['infopt'] = $this->Admin_m->info_pt(1);
+                $data['brand'] = 'asset/img/lembaga/'.$this->Admin_m->info_pt(1)->logo_pt;
+                $data['users'] = $this->ion_auth->user()->row();
+                $data['aside'] = 'nav/nav';
+                $data['hasil'] = $result;
+                $data['detail'] = $this->Pegawai_m->detail_data('data_riwayat_pangkat','id_riwayat_pangkat',$idr);
+                $data['status'] = $this->Pegawai_m->select_data('master_status_pegawai');
+                $data['bagian'] = 'admin/edit-rpangkat-v';
+                $data['page'] = 'admin/detail-pegawai-v';
+                // pagging setting
+                $this->load->view('admin/dashboard-v',$data);
+            }
+        }else{
+            $pesan = 'Login terlebih dahulu';
+            $this->session->set_flashdata('message', $pesan );
+            redirect(base_url('index.php/admin//login'));
+        }
+    }
+     public function update_rpangkat($idpegawai,$idr){
+        if ($this->ion_auth->logged_in()) {
+            $level = array('admin','members');
+            if (!$this->ion_auth->in_group($level)) {
+                $pesan = 'Anda tidak memiliki Hak untuk Mengakses halaman ini';
+                $this->session->set_flashdata('message', $pesan );
+                redirect(base_url('index.php/admin/dashboard'));
+            }else{
+                $post = $this->input->post();
+                $datainput = array(
+                    'status' => $post['status'],
+                    'nomor_sk'=>$post['nomor_sk'],
+                    'tanggal_sk'=>$post['tanggal_sk'],
+                    'tanggal_mulai'=>$post['tanggal_mulai'],
+                    'tanggal_selesai'=>$post['tanggal_selesai'],
+                    'masa_kerja'=>$post['masa_kerja']
+                );
+                $this->Pegawai_m->update_data('data_riwayat_pangkat','id_riwayat_pangkat',$idr,$datainput);
+                $pesan = 'Data riwayat pangkat baru berhasil di diubah';
+                $this->session->set_flashdata('message', $pesan );
+                redirect(base_url('index.php/admin/pegawai/detail_rpangkat/'.$idpegawai));
+            }
+        }else{
+            $pesan = 'Login terlebih dahulu';
+            $this->session->set_flashdata('message', $pesan );
+            redirect(base_url('index.php/admin//login'));
+        }
+    }
 }
 ?>

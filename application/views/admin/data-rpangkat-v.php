@@ -18,7 +18,7 @@
 				<td class="jrktbl">Tgl Mulai</td>
 				<td class="jrktbl">Tgl Selesai</td>
 				<td class="jrktbl">Masa Kerja</td>
-				<td></td>
+				<td colspan="2"></td>
 			</tr>
 		</thead>
 		<tbody>
@@ -33,6 +33,9 @@
 						<td class="jrktbl"><?php echo $data->tanggal_mulai; ?></td>
 						<td class="jrktbl"><?php echo $data->tanggal_selesai; ?></td>
 						<td class="jrktbl"><?php echo $data->masa_kerja; ?></td>
+						<td class="jrktbl">
+							<a href="<?php echo base_url('index.php/admin/pegawai/edit_rpangkat/'.$hasil->id_pegawai.'/'.$data->id_riwayat_pangkat) ?>" class="text-success">edit</a>
+						</td>
 						<td class="jrktbl">
 							<a href="#" class="text-danger">hapus</a>
 						</td>
