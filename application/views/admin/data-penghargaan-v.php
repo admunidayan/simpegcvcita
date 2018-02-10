@@ -15,7 +15,7 @@
 				<td class="jrktbl">Uraian</td>
 				<td class="jrktbl">Nomor SK</td>
 				<td class="jrktbl">Tanggal SK</td>
-				<td></td>
+				<td colspan="2"></td>
 			</tr>
 		</thead>
 		<tbody>
@@ -27,6 +27,9 @@
 						<td class="jrktbl"><?php echo $data->uraian; ?></td>
 						<td class="jrktbl"><?php echo $data->nomor_sk; ?></td>
 						<td class="jrktbl"><?php echo $data->tanggal_sk; ?></td>
+						<td class="jrktbl">
+							<a href="<?php echo base_url('index.php/admin/pegawai/edit_penghargaan/'.$hasil->id_pegawai.'/'.$data->id_penghargaan) ?>" class="text-success">edit</a>
+						</td>
 						<td class="jrktbl">
 							<a href="#" class="text-danger">hapus</a>
 						</td>

@@ -1,7 +1,7 @@
 <div style="margin-top: 14px; background-color: white;padding: 30px">
 	<div class="media">
 		<div class="media-body">
-				<h4>Data Data Riwayat Jabatan</h4>
+				<h4>Data Riwayat Jabatan</h4>
 			</div>
 			<div class="media-right">
 				<button type="button" class="btn btn-outline-success btn-sm" data-toggle="modal" data-target="#addrjabatan"><i class="material-icons">note_add</i> Tambah Data Riwayat Jabatan</button>
@@ -17,6 +17,7 @@
 			<td class="jrktbl">Tgl Mulai</td>
 			<td class="jrktbl">Tgl Selesai</td>
 			<td class="jrktbl">Lokasi</td>
+			<td colspan="2"></td>
 			<td></td>
 		</tr>
 	</thead>
@@ -31,6 +32,9 @@
 					<td class="jrktbl"><?php echo $data->tanggal_mulai; ?></td>
 					<td class="jrktbl"><?php echo $data->tanggal_selesai; ?></td>
 					<td class="jrktbl"><?php echo $data->lokasi; ?></td>
+					<td class="jrktbl">
+							<a href="<?php echo base_url('index.php/admin/pegawai/edit_rjabatan/'.$hasil->id_pegawai.'/'.$data->id_riwayat_jabatan) ?>" class="text-success">edit</a>
+						</td>
 					<td class="jrktbl">
 						<a href="#" class="text-danger">hapus</a>
 					</td>

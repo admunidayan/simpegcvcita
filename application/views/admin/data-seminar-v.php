@@ -15,7 +15,7 @@
 				<td class="jrktbl">Uraian</td>
 				<td class="jrktbl">Lokasi</td>
 				<td class="jrktbl">Tanggal</td>
-				<td></td>
+				<td colspan="2"></td>
 			</tr>
 		</thead>
 		<tbody>
@@ -27,6 +27,9 @@
 						<td class="jrktbl"><?php echo $data->uraian; ?></td>
 						<td class="jrktbl"><?php echo $data->lokasi; ?></td>
 						<td class="jrktbl"><?php echo $data->tanggal; ?></td>
+						<td class="jrktbl">
+							<a href="<?php echo base_url('index.php/admin/pegawai/edit_seminar/'.$hasil->id_pegawai.'/'.$data->id_seminar) ?>" class="text-success">edit</a>
+						</td>
 						<td class="jrktbl">
 							<a href="#" class="text-danger">hapus</a>
 						</td>
@@ -57,15 +60,15 @@
 							<div class="col-md-12">
 								<div class="form-group">
 									<label class="text-info" for="uraian">URAIAN</label>
-									<input type="text" class="form-control" id="uraian" name="uraian" placeholder="URAIAN" >
+									<input type="text" class="form-control" id="uraian" name="uraian" placeholder="URAIAN" value="<?php echo $detail->uraian?>">
 								</div>
 								<div class="form-group">
 									<label class="text-info" for="lokasi">LOKASI</label>
-									<input type="text" class="form-control" id="lokasi" name="lokasi" placeholder="LOKASI" >
+									<input type="text" class="form-control" id="lokasi" name="lokasi" placeholder="LOKASI" value="<?php echo $detail->lokasi?>">
 								</div>
 								<div class="form-group">
 									<label class="text-info" for="tanggal">TANGGAL SK</label>
-									<input type="text" class="form-control" id="tanggal" name="tanggal" placeholder="TANGGAL">
+									<input type="text" class="form-control" id="tanggal" name="tanggal" placeholder="TANGGAL" value="<?php echo $detail->tanggal?>">
 							</div>
 						</div>
 					</div>

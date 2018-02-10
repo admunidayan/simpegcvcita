@@ -19,7 +19,7 @@
 				<td class="jrktbl">Kejujuran</td>
 				<td class="jrktbl">Kerjasama</td>
 				<td class="jrktbl">mengeahui</td>
-				<td></td>
+				<td colspan="2"></td>
 			</tr>
 		</thead>
 		<tbody>
@@ -35,7 +35,9 @@
 						<td class="jrktbl"><?php echo $data->kejujuran; ?></td>
 						<td class="jrktbl"><?php echo $data->kerjasama; ?></td>
 						<td class="jrktbl"><?php echo $data->mengetahui; ?></td>
-
+						<td class="jrktbl">
+							<a href="<?php echo base_url('index.php/admin/pegawai/edit_dp3/'.$hasil->id_pegawai.'/'.$data->id_dp3) ?>" class="text-success">edit</a>
+						</td>
 						<td class="jrktbl">
 							<a href="#" class="text-danger">hapus</a>
 						</td>

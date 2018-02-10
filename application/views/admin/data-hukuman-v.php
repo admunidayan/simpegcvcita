@@ -19,7 +19,7 @@
 				<td class="jrktbl">Tgl Selesai</td>
 				<td class="jrktbl">Masa Berlaku</td>
 				<td class="jrktbl">Pejabat</td>
-				<td></td>
+				<td colspan="2"></td>
 			</tr>
 		</thead>
 		<tbody>
@@ -35,7 +35,9 @@
 						<td class="jrktbl"><?php echo $data->tanggal_selesai; ?></td>
 						<td class="jrktbl"><?php echo $data->masa_berlaku; ?></td>
 						<td class="jrktbl"><?php echo $data->pejabat_menetapkan; ?></td>
-
+						<td class="jrktbl">
+							<a href="<?php echo base_url('index.php/admin/pegawai/edit_hukuman/'.$hasil->id_pegawai.'/'.$data->id_hukuman) ?>" class="text-success">edit</a>
+						</td>
 						<td class="jrktbl">
 							<a href="#" class="text-danger">hapus</a>
 						</td>

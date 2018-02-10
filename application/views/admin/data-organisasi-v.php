@@ -15,7 +15,7 @@
 				<td class="jrktbl">Uraian</td>
 				<td class="jrktbl">Lokasi</td>
 				<td class="jrktbl">Tanggal</td>
-				<td></td>
+				<td colspan="2"></td>
 			</tr>
 		</thead>
 		<tbody>
@@ -27,6 +27,9 @@
 						<td class="jrktbl"><?php echo $data->uraian; ?></td>
 						<td class="jrktbl"><?php echo $data->lokasi; ?></td>
 						<td class="jrktbl"><?php echo $data->tanggal; ?></td>
+						<td class="jrktbl">
+							<a href="<?php echo base_url('index.php/admin/pegawai/edit_organisasi/'.$hasil->id_pegawai.'/'.$data->id_organisasi) ?>" class="text-success">edit</a>
+						</td>
 						<td class="jrktbl">
 							<a href="#" class="text-danger">hapus</a>
 						</td>
