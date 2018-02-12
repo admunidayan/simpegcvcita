@@ -28,7 +28,7 @@ class Login extends CI_Controller {
         //redirect('login','refresh'); //use redirect instead of loading views compatibility with MY_Controller libraries
         $pesan = $this->ion_auth->errors();
         $this->session->set_flashdata('message', $pesan ); 
-        redirect(base_url('index.php/admin/login'));
+        redirect(base_url('index.php/login'));
         }
     }
     function logout(){

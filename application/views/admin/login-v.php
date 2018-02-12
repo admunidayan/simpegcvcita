@@ -12,6 +12,14 @@
 </head>
 <body>
 	<div class="container">
+		<?php if ($this->session->flashdata('message')): ?>
+			<div class="row">
+				<div class="alert alert-danger alert-dismissible tengah" role="alert" style="margin-bottom: 7px;">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<i class="fa fa-warning"></i> <strong><?php echo $this->session->flashdata('message');?></strong>
+				</div>
+			</div>
+		<?php endif ;?>
 		<div class="login-box border border-info">
 			<h1 class="text-center border border-top-0 border-left-0 border-right-0 border-secondary bts-bwh">LOGIN</h1>
 			<form action="<?php echo base_url('index.php/login/proses_login/') ?>" method="post">

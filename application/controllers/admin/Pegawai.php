@@ -63,7 +63,7 @@ class Pegawai extends CI_Controller {
         }else{
             $pesan = 'Login terlebih dahulu';
             $this->session->set_flashdata('message', $pesan );
-            redirect(base_url('index.php/admin//login'));
+            redirect(base_url('index.php/login'));
         }
     }
     public function detail($id){
@@ -94,7 +94,7 @@ class Pegawai extends CI_Controller {
         }else{
             $pesan = 'Login terlebih dahulu';
             $this->session->set_flashdata('message', $pesan );
-            redirect(base_url('index.php/admin//login'));
+            redirect(base_url('index.php/login'));
         }
     }
     public function detail_keluarga($id){
@@ -123,7 +123,7 @@ class Pegawai extends CI_Controller {
         }else{
             $pesan = 'Login terlebih dahulu';
             $this->session->set_flashdata('message', $pesan );
-            redirect(base_url('index.php/admin//login'));
+            redirect(base_url('index.php/login'));
         }
     }
     public function detail_rpangkat($id){
@@ -152,7 +152,7 @@ class Pegawai extends CI_Controller {
         }else{
             $pesan = 'Login terlebih dahulu';
             $this->session->set_flashdata('message', $pesan );
-            redirect(base_url('index.php/admin//login'));
+            redirect(base_url('index.php/login'));
         }
     }
      public function detail_rjabatan($id){
@@ -181,7 +181,7 @@ class Pegawai extends CI_Controller {
         }else{
             $pesan = 'Login terlebih dahulu';
             $this->session->set_flashdata('message', $pesan );
-            redirect(base_url('index.php/admin//login'));
+            redirect(base_url('index.php/login'));
         }
     }
     public function detail_pendidikan($id){
@@ -210,7 +210,7 @@ class Pegawai extends CI_Controller {
         }else{
             $pesan = 'Login terlebih dahulu';
             $this->session->set_flashdata('message', $pesan );
-            redirect(base_url('index.php/admin//login'));
+            redirect(base_url('index.php/login'));
         }
     }
     public function detail_pelatihan($id){
@@ -239,7 +239,7 @@ class Pegawai extends CI_Controller {
         }else{
             $pesan = 'Login terlebih dahulu';
             $this->session->set_flashdata('message', $pesan );
-            redirect(base_url('index.php/admin//login'));
+            redirect(base_url('index.php/login'));
         }
     }
     public function detail_penghargaan($id){
@@ -268,7 +268,7 @@ class Pegawai extends CI_Controller {
         }else{
             $pesan = 'Login terlebih dahulu';
             $this->session->set_flashdata('message', $pesan );
-            redirect(base_url('index.php/admin//login'));
+            redirect(base_url('index.php/login'));
         }
     }
     public function detail_seminar($id){
@@ -297,7 +297,7 @@ class Pegawai extends CI_Controller {
         }else{
             $pesan = 'Login terlebih dahulu';
             $this->session->set_flashdata('message', $pesan );
-            redirect(base_url('index.php/admin//login'));
+            redirect(base_url('index.php/login'));
         }
     }
     public function detail_organisasi($id){
@@ -326,7 +326,7 @@ class Pegawai extends CI_Controller {
         }else{
             $pesan = 'Login terlebih dahulu';
             $this->session->set_flashdata('message', $pesan );
-            redirect(base_url('index.php/admin//login'));
+            redirect(base_url('index.php/login'));
         }
     }
     public function detail_gaji_pokok($id){
@@ -355,7 +355,7 @@ class Pegawai extends CI_Controller {
         }else{
             $pesan = 'Login terlebih dahulu';
             $this->session->set_flashdata('message', $pesan );
-            redirect(base_url('index.php/admin//login'));
+            redirect(base_url('index.php/login'));
         }
     }
     public function detail_hukuman($id){
@@ -384,7 +384,7 @@ class Pegawai extends CI_Controller {
         }else{
             $pesan = 'Login terlebih dahulu';
             $this->session->set_flashdata('message', $pesan );
-            redirect(base_url('index.php/admin//login'));
+            redirect(base_url('index.php/login'));
         }
     }
     public function detail_dp3($id){
@@ -413,7 +413,7 @@ class Pegawai extends CI_Controller {
         }else{
             $pesan = 'Login terlebih dahulu';
             $this->session->set_flashdata('message', $pesan );
-            redirect(base_url('index.php/admin//login'));
+            redirect(base_url('index.php/login'));
         }
     }
     public function create(){
@@ -449,7 +449,7 @@ class Pegawai extends CI_Controller {
         }else{
             $pesan = 'Login terlebih dahulu';
             $this->session->set_flashdata('message', $pesan );
-            redirect(base_url('index.php/admin//login'));
+            redirect(base_url('index.php/login'));
         }
     }
      public function create_keluarga($idpegawai){
@@ -479,7 +479,7 @@ class Pegawai extends CI_Controller {
         }else{
             $pesan = 'Login terlebih dahulu';
             $this->session->set_flashdata('message', $pesan );
-            redirect(base_url('index.php/admin//login'));
+            redirect(base_url('index.php/login'));
         }
     }
     public function create_rpangkat($idpegawai){
@@ -508,7 +508,7 @@ class Pegawai extends CI_Controller {
         }else{
             $pesan = 'Login terlebih dahulu';
             $this->session->set_flashdata('message', $pesan );
-            redirect(base_url('index.php/admin//login'));
+            redirect(base_url('index.php/login'));
         }
     }
     public function create_rjabatan($idpegawai){
@@ -540,7 +540,7 @@ class Pegawai extends CI_Controller {
         }else{
             $pesan = 'Login terlebih dahulu';
             $this->session->set_flashdata('message', $pesan );
-            redirect(base_url('index.php/admin//login'));
+            redirect(base_url('index.php/login'));
         }
     }
     public function create_pendidikan($idpegawai){
@@ -572,7 +572,7 @@ class Pegawai extends CI_Controller {
         }else{
             $pesan = 'Login terlebih dahulu';
             $this->session->set_flashdata('message', $pesan );
-            redirect(base_url('index.php/admin//login'));
+            redirect(base_url('index.php/login'));
         }
     }
     public function create_pelatihan($idpegawai){
@@ -600,7 +600,7 @@ class Pegawai extends CI_Controller {
         }else{
             $pesan = 'Login terlebih dahulu';
             $this->session->set_flashdata('message', $pesan );
-            redirect(base_url('index.php/admin//login'));
+            redirect(base_url('index.php/login'));
         }
     }
     public function create_penghargaan($idpegawai){
@@ -626,7 +626,7 @@ class Pegawai extends CI_Controller {
         }else{
             $pesan = 'Login terlebih dahulu';
             $this->session->set_flashdata('message', $pesan );
-            redirect(base_url('index.php/admin//login'));
+            redirect(base_url('index.php/login'));
         }
     }
     public function create_seminar($idpegawai){
@@ -652,7 +652,7 @@ class Pegawai extends CI_Controller {
         }else{
             $pesan = 'Login terlebih dahulu';
             $this->session->set_flashdata('message', $pesan );
-            redirect(base_url('index.php/admin//login'));
+            redirect(base_url('index.php/login'));
         }
     }
     public function create_organisasi($idpegawai){
@@ -678,7 +678,7 @@ class Pegawai extends CI_Controller {
         }else{
             $pesan = 'Login terlebih dahulu';
             $this->session->set_flashdata('message', $pesan );
-            redirect(base_url('index.php/admin//login'));
+            redirect(base_url('index.php/login'));
         }
     }
     public function create_gaji_pokok($idpegawai){
@@ -709,7 +709,7 @@ class Pegawai extends CI_Controller {
         }else{
             $pesan = 'Login terlebih dahulu';
             $this->session->set_flashdata('message', $pesan );
-            redirect(base_url('index.php/admin//login'));
+            redirect(base_url('index.php/login'));
         }
     }
     public function create_hukuman($idpegawai){
@@ -739,7 +739,7 @@ class Pegawai extends CI_Controller {
         }else{
             $pesan = 'Login terlebih dahulu';
             $this->session->set_flashdata('message', $pesan );
-            redirect(base_url('index.php/admin//login'));
+            redirect(base_url('index.php/login'));
         }
     }
     public function create_dp3($idpegawai){
@@ -775,7 +775,7 @@ class Pegawai extends CI_Controller {
         }else{
             $pesan = 'Login terlebih dahulu';
             $this->session->set_flashdata('message', $pesan );
-            redirect(base_url('index.php/admin//login'));
+            redirect(base_url('index.php/login'));
         }
     }
     public function edit_rpangkat($id,$idr){
@@ -804,7 +804,7 @@ class Pegawai extends CI_Controller {
         }else{
             $pesan = 'Login terlebih dahulu';
             $this->session->set_flashdata('message', $pesan );
-            redirect(base_url('index.php/admin//login'));
+            redirect(base_url('index.php/login'));
         }
     }
      public function update_rpangkat($idpegawai,$idr){
@@ -832,7 +832,7 @@ class Pegawai extends CI_Controller {
         }else{
             $pesan = 'Login terlebih dahulu';
             $this->session->set_flashdata('message', $pesan );
-            redirect(base_url('index.php/admin//login'));
+            redirect(base_url('index.php/login'));
         }
     }
     public function edit_rjabatan($id,$idr){
@@ -861,7 +861,7 @@ class Pegawai extends CI_Controller {
         }else{
             $pesan = 'Login terlebih dahulu';
             $this->session->set_flashdata('message', $pesan );
-            redirect(base_url('index.php/admin//login'));
+            redirect(base_url('index.php/login'));
         }
     }
      public function update_rjabatan($idpegawai,$idr){
@@ -892,7 +892,7 @@ class Pegawai extends CI_Controller {
         }else{
             $pesan = 'Login terlebih dahulu';
             $this->session->set_flashdata('message', $pesan );
-            redirect(base_url('index.php/admin//login'));
+            redirect(base_url('index.php/login'));
         }
     }
     public function edit_pendidikan($id,$idr){
@@ -921,7 +921,7 @@ class Pegawai extends CI_Controller {
         }else{
             $pesan = 'Login terlebih dahulu';
             $this->session->set_flashdata('message', $pesan );
-            redirect(base_url('index.php/admin//login'));
+            redirect(base_url('index.php/login'));
         }
     }
      public function update_pendidikan($idpegawai,$idr){
@@ -952,7 +952,7 @@ class Pegawai extends CI_Controller {
         }else{
             $pesan = 'Login terlebih dahulu';
             $this->session->set_flashdata('message', $pesan );
-            redirect(base_url('index.php/admin//login'));
+            redirect(base_url('index.php/login'));
         }
     }
     public function edit_pelatihan($id,$idr){
@@ -981,7 +981,7 @@ class Pegawai extends CI_Controller {
         }else{
             $pesan = 'Login terlebih dahulu';
             $this->session->set_flashdata('message', $pesan );
-            redirect(base_url('index.php/admin//login'));
+            redirect(base_url('index.php/login'));
         }
     }
      public function update_pelatihan($idpegawai,$idr){
@@ -1008,7 +1008,7 @@ class Pegawai extends CI_Controller {
         }else{
             $pesan = 'Login terlebih dahulu';
             $this->session->set_flashdata('message', $pesan );
-            redirect(base_url('index.php/admin//login'));
+            redirect(base_url('index.php/login'));
         }
     }
     public function edit_penghargaan($id,$idr){
@@ -1037,7 +1037,7 @@ class Pegawai extends CI_Controller {
         }else{
             $pesan = 'Login terlebih dahulu';
             $this->session->set_flashdata('message', $pesan );
-            redirect(base_url('index.php/admin//login'));
+            redirect(base_url('index.php/login'));
         }
     }
      public function update_penghargaan($idpegawai,$idr){
@@ -1062,7 +1062,7 @@ class Pegawai extends CI_Controller {
         }else{
             $pesan = 'Login terlebih dahulu';
             $this->session->set_flashdata('message', $pesan );
-            redirect(base_url('index.php/admin//login'));
+            redirect(base_url('index.php/login'));
         }
     }
     public function edit_seminar($id,$idr){
@@ -1091,7 +1091,7 @@ class Pegawai extends CI_Controller {
         }else{
             $pesan = 'Login terlebih dahulu';
             $this->session->set_flashdata('message', $pesan );
-            redirect(base_url('index.php/admin//login'));
+            redirect(base_url('index.php/login'));
         }
     }
      public function update_seminar($idpegawai,$idr){
@@ -1116,7 +1116,7 @@ class Pegawai extends CI_Controller {
         }else{
             $pesan = 'Login terlebih dahulu';
             $this->session->set_flashdata('message', $pesan );
-            redirect(base_url('index.php/admin//login'));
+            redirect(base_url('index.php/login'));
         }
     }
     public function edit_organisasi($id,$idr){
@@ -1145,7 +1145,7 @@ class Pegawai extends CI_Controller {
         }else{
             $pesan = 'Login terlebih dahulu';
             $this->session->set_flashdata('message', $pesan );
-            redirect(base_url('index.php/admin//login'));
+            redirect(base_url('index.php/login'));
         }
     }
      public function update_organisasi($idpegawai,$idr){
@@ -1170,7 +1170,7 @@ class Pegawai extends CI_Controller {
         }else{
             $pesan = 'Login terlebih dahulu';
             $this->session->set_flashdata('message', $pesan );
-            redirect(base_url('index.php/admin//login'));
+            redirect(base_url('index.php/login'));
         }
     }
     public function edit_gaji_pokok($id,$idr){
@@ -1199,7 +1199,7 @@ class Pegawai extends CI_Controller {
         }else{
             $pesan = 'Login terlebih dahulu';
             $this->session->set_flashdata('message', $pesan );
-            redirect(base_url('index.php/admin//login'));
+            redirect(base_url('index.php/login'));
         }
     }
      public function update_gaji_pokok($idpegawai,$idr){
@@ -1229,7 +1229,7 @@ class Pegawai extends CI_Controller {
         }else{
             $pesan = 'Login terlebih dahulu';
             $this->session->set_flashdata('message', $pesan );
-            redirect(base_url('index.php/admin//login'));
+            redirect(base_url('index.php/login'));
         }
     }
     public function edit_hukuman($id,$idr){
@@ -1258,7 +1258,7 @@ class Pegawai extends CI_Controller {
         }else{
             $pesan = 'Login terlebih dahulu';
             $this->session->set_flashdata('message', $pesan );
-            redirect(base_url('index.php/admin//login'));
+            redirect(base_url('index.php/login'));
         }
     }
      public function update_hukuman($idpegawai,$idr){
@@ -1287,7 +1287,7 @@ class Pegawai extends CI_Controller {
         }else{
             $pesan = 'Login terlebih dahulu';
             $this->session->set_flashdata('message', $pesan );
-            redirect(base_url('index.php/admin//login'));
+            redirect(base_url('index.php/login'));
         }
     }
     public function edit_dp3($id,$idr){
@@ -1316,7 +1316,7 @@ class Pegawai extends CI_Controller {
         }else{
             $pesan = 'Login terlebih dahulu';
             $this->session->set_flashdata('message', $pesan );
-            redirect(base_url('index.php/admin//login'));
+            redirect(base_url('index.php/login'));
         }
     }
      public function update_dp3($idpegawai,$idr){
@@ -1351,7 +1351,7 @@ class Pegawai extends CI_Controller {
         }else{
             $pesan = 'Login terlebih dahulu';
             $this->session->set_flashdata('message', $pesan );
-            redirect(base_url('index.php/admin//login'));
+            redirect(base_url('index.php/login'));
         }
     }
     public function edit_keluarga($id,$idr){
