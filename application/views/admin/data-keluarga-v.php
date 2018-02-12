@@ -1,13 +1,13 @@
 <div style="margin-top: 14px; background-color: white;padding: 30px">
 	<div class="media">
-			<div class="media-body">
-				<h4>Data Keluarga</h4>
-			</div>
-			<div class="media-right">
-				<button type="button" class="btn btn-outline-success btn-sm" data-toggle="modal" data-target="#addkeluarga"><i class="material-icons">note_add</i> Tambah data Keluarga</button>
-			</div>
+		<div class="media-body">
+			<h4>Data Keluarga</h4>
 		</div>
-		<hr/>
+		<div class="media-right">
+			<button type="button" class="btn btn-outline-success btn-sm" data-toggle="modal" data-target="#addkeluarga"><i class="material-icons">note_add</i> Tambah data Keluarga</button>
+		</div>
+	</div>
+	<hr/>
 	<table class="table table-hover table-sm">
 		<thead>
 			<tr class="bg-app text-light">
@@ -19,7 +19,7 @@
 				<td class="jrktbl">Uraian</td>
 				<td class="jrktbl">Tgl Cerai Meniggal</td>
 				<td class="jrktbl">Pekerjaan</td>
-				<td></td>
+				<td colspan="2"></td>
 			</tr>
 		</thead>
 		<tbody>
@@ -35,17 +35,19 @@
 						<td class="jrktbl"><?php echo $data->uraian; ?></td>
 						<td class="jrktbl"><?php echo $data->tanggal_cerai_meninggal; ?></td>
 						<td class="jrktbl"><?php echo $data->pekerjaan; ?></td>
-
 						<td class="jrktbl">
-							<a href="#" class="text-danger">hapus</a>
+							<a href="<?php echo base_url('index.php/admin/pegawai/edit_keluarga/'.$hasil->id_pegawai.'/'.$data->id_data_keluarga) ?>" class="text-success">edit</a>
+						</td>
+						<td class="jrktbl">
+						<a href="<?php echo base_url('index.php/admin/pegawai/delete_keluarga/'.$hasil->id_pegawai.'/'.$data->id_data_keluarga) ?>" class="text-danger">hapus</a>
 						</td>
 					</tr>
 					<?php $no++ ?>
 				<?php endforeach ?>
-				<?php else: ?>
-					<tr>
-						<td class="jrktbl text-center" colspan="9">Belum ada data keluarga</td>
-					</tr>
+			<?php else: ?>
+				<tr>
+					<td class="jrktbl text-center" colspan="9">Belum ada data keluarga</td>
+				</tr>
 			<?php endif ?>
 		</tbody>
 	</table>
@@ -88,19 +90,18 @@
 								<label class="text-info" for="tanggal_cerai_meninggal">TANGGAL CERAI MENINGGAL</label>
 								<input type="text" class="form-control" id="tanggal_cerai_meninggal" name="tanggal_cerai_meninggal" placeholder="TANGGAL CERAI MENINGGAL">
 							</div>
-						</div>
-						<div class="col-md-12">
-							<div class="form-group">
-								<label class="text-info" for="pekerjaan">PEKERJAAN</label>
-								<input type="text" class="form-control" id="pekerjaan" name="pekerjaan" placeholder="PEKERJAAN">
+							<div class="col-md-12">
+								<div class="form-group">
+									<label class="text-info" for="pekerjaan">PEKERJAAN</label>
+									<input type="text" class="form-control" id="pekerjaan" name="pekerjaan" placeholder="PEKERJAAN">
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="modal-footer">
-					<button type="submit" name="submit" value="submit" class="btn btn-success">Simpan</button>
-				</div>
-			</form>
+					<div class="modal-footer">
+						<button type="submit" name="submit" value="submit" class="btn btn-success">Simpan</button>
+					</div>
+				</form>
+			</div>
 		</div>
 	</div>
-</div>

@@ -41,7 +41,7 @@
 							<a href="<?php echo base_url('index.php/admin/pegawai/edit_gaji_pokok/'.$hasil->id_pegawai.'/'.$data->id_gaji_pokok) ?>" class="text-success">edit</a>
 						</td>
 						<td class="jrktbl">
-							<a href="#" class="text-danger">hapus</a>
+						<a href="<?php echo base_url('index.php/admin/pegawai/delete_gaji_pokok/'.$hasil->id_pegawai.'/'.$data->id_gaji_pokok) ?>" class="text-danger">hapus</a>
 						</td>
 					</tr>
 					<?php $no++ ?>

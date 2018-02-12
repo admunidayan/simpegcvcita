@@ -36,8 +36,8 @@
 							<a href="<?php echo base_url('index.php/admin/pegawai/edit_rjabatan/'.$hasil->id_pegawai.'/'.$data->id_riwayat_jabatan) ?>" class="text-success">edit</a>
 						</td>
 					<td class="jrktbl">
-						<a href="#" class="text-danger">hapus</a>
-					</td>
+						<a href="<?php echo base_url('index.php/admin/pegawai/delete_rjabatan/'.$hasil->id_pegawai.'/'.$data->id_riwayat_jabatan) ?>" class="text-danger">hapus</a>
+						</td>
 				</tr>
 				<?php $no++ ?>
 			<?php endforeach ?>
