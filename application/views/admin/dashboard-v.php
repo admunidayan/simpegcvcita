@@ -42,20 +42,40 @@
             <ul class="navbar-nav mr-auto">
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="material-icons">library_books</i> Master
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#"><i class="material-icons">label_outline</i>Status Pegawai</a>
+                  <a class="dropdown-item" href="#"><i class="material-icons">assignment_ind</i>Unit Kerja</a>
+                  <a class="dropdown-item" href="#"><i class="material-icons">bookmark_border</i>Satuan Kerja</a>
+                  <a class="dropdown-item" href="#"><i class="material-icons">remove_red_eye</i>PPK</a>
+                  <a class="dropdown-item" href="#"><i class="material-icons">compare_arrows</i>Golongan</a>
+                  <a class="dropdown-item" href="#"><i class="material-icons">autorenew</i>Eselon</a>
+                  <a class="dropdown-item" href="#"><i class="material-icons">folder_shared</i>Pelatihan</a>
+                  <a class="dropdown-item" href="#"><i class="material-icons">work</i>Jabatan</a>
+                  <a class="dropdown-item" href="#"><i class="material-icons">playlist_add_check</i>Status Jabatan</a>
+                  <a class="dropdown-item" href="#"><i class="material-icons">stars</i>Penghargaan</a>
+                  <a class="dropdown-item" href="#"><i class="material-icons">select_all</i>Hukuman</a>
+                  <a class="dropdown-item" href="#"><i class="material-icons">location_on</i>Lokasi Pelatihan</a>
+                  <a class="dropdown-item" href="#"><i class="material-icons">location_searching</i>Lokasi Kerja</a>
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="material-icons">library_books</i> Laporan
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">Unit Kerja Dan Satuan Kerja</a>
-                  <a class="dropdown-item" href="#">Penempatan Kerja</a>
-                  <a class="dropdown-item" href="#">Mengikuti Pelatihan</a>
-                  <a class="dropdown-item" href="#">Status Pegawai dan Golongan</a>
-                  <a class="dropdown-item" href="#">Struktural dan Fungsional</a>
+                  <a class="dropdown-item" href="#"><i class="material-icons">bookmark_border</i>Unit Kerja Dan Satuan Kerja</a>
+                  <a class="dropdown-item" href="#"><i class="material-icons">location_on</i>Penempatan Kerja</a>
+                  <a class="dropdown-item" href="#"><i class="material-icons">location_searching</i>Mengikuti Pelatihan</a>
+                  <a class="dropdown-item" href="#"><i class="material-icons">label_outline</i>Status Pegawai dan Golongan</a>
+                  <a class="dropdown-item" href="#"><i class="material-icons">compare_arrows</i>Struktural dan Fungsional</a>
                 </div>
               </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              <input class="form-control mr-sm-2" type="Search" placeholder="Pencarian Data" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Cari</button>
             </form>
           </div>
         </div>
