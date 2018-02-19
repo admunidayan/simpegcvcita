@@ -10,6 +10,14 @@
 				<input type="text" class="form-control" id="tanggal_lahir" name="tanggal_lahir" placeholder="TANGGAL LAHIR" value="<?php echo $detail->tanggal_lahir?>">
 			</div>
 			<div class="form-group">
+				<label class="text-info" for="status_kawin">STATUS DALAM KELUARGA</label>
+				<select class="form-control" name="status_keluarga">
+					<option value="suami">Suami</option>
+					<option value="istri">Istri</option>
+					<option value="anak">Anak</option>
+				</select>
+			</div>
+			<div class="form-group">
 				<label class="text-info" for="status_kawin">STATUS KAWIN</label>
 				<input type="text" class="form-control" id="status_kawin" name="status_kawin" placeholder="STATUS KAWIN" value="<?php echo $detail->status_kawin?>">
 			</div>

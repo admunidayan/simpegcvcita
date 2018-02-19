@@ -14,12 +14,12 @@
 			<thead>
 				<tr class="bg-app text-light">
 					<td class="jrktbl text-center">No</td>
-					<td class="jrktbl"><i class="material-icons">assignment_ind</i> Nama Pegawai</td>
-					<td class="jrktbl"><i class="material-icons">card_giftcard</i> NIP</td>
-					<td class="jrktbl"><i class="material-icons">compare_arrows</i> Golongan</td>
-					<td class="jrktbl"><i class="material-icons">location_on</i> Lokasi Kerja</td>
-					<td class="jrktbl text-center"><i class="material-icons">lightbulb_outline</i> Status</td>
-					<td class="jrktbl"><i class="material-icons">power_settings_new</i> Aksi</td>
+					<td class="jrktbl"><i class="material-icons">assignment_ind</i>Nama Pegawai</td>
+					<td class="jrktbl"><i class="material-icons">card_giftcard</i>NIP</td>
+					<td class="jrktbl"><i class="material-icons">compare_arrows</i>Golongan</td>
+					<td class="jrktbl"><i class="material-icons">location_on</i>Unit Organisasi</td>
+					<td class="jrktbl"><i class="material-icons">lightbulb_outline</i>Status</td>
+					<td class="jrktbl"><i class="material-icons">power_settings_new</i>Aksi</td>
 				</tr>
 			</thead>
 			<tbody>
@@ -29,7 +29,7 @@
 						<td class="jrktbl text-center"><?php echo $no; ?></td>
 						<td class="jrktbl"><a class="text-dark" href="<?php echo base_url('index.php/admin/pegawai/detail/'.$data->id_pegawai) ?>"><?php echo strtoupper($data->nama_pegawai); ?></a></td>
 						<td class="jrktbl text-secondary"><?php echo $data->nip; ?></td>
-						<td class="jrktbl text-secondary"><?php echo $data->golongan; ?></td>
+						<td class="jrktbl text-secondary"><?php echo strtolower($data->golongan); ?></td>
 						<td class="jrktbl text-secondary"><?php echo $data->lokasi_kerja; ?></td>
 						<td class="jrktbl text-center text-secondary"><?php echo $data->nama_status; ?></td>
 						<td class="jrktbl">
@@ -115,7 +115,7 @@
 								</select>
 							</div>
 							<div class="form-group">
-								<label class="text-info" for="id_golongan">Golongan</label>
+								<label class="text-info" for="id_golongan">GOLONGAN</label>
 								<select class="form-control" name="id_golongan">
 									<?php foreach ($golongan as $data): ?>
 										<option value="<?php echo $data->id_golongan ?>"><?php echo $data->golongan; ?></option>
@@ -123,8 +123,12 @@
 								</select>
 							</div>
 							<div class="form-group">
-								<label class="text-info" for="tanggal_pengangkatan_cpns">TANGGAL PEMANGKATAN CPNS</label>
-								<input type="text" class="form-control" id="tanggal_pengangkatan_cpns" name="tanggal_pengangkatan_cpns" placeholder="TANGGAL PEMANGKATAN CPNS">
+								<label class="text-info" for="tmt_cpns">TMT CPNS</label>
+								<input type="text" class="form-control" id="tmt_cpns" name="tmt_cpns" placeholder="TMT CPNS">
+							</div>
+							<div class="form-group">
+								<label class="text-info" for="tmt_pns">TMT PNS</label>
+								<input type="text" class="form-control" id="tmt_pns" name="tmt_pns" placeholder="TMT PNS">
 							</div>
 						</div>
 					</div>

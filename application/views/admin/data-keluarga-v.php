@@ -14,9 +14,9 @@
 				<td class="jrktbl text-center">No</td>
 				<td class="jrktbl">Nama</td>
 				<td class="jrktbl">Tgl Lahir</td>
+				<td class="jrktbl">Status</td>
 				<td class="jrktbl">Status Kawin</td>
 				<td class="jrktbl">Tgl Nikah</td>
-				<td class="jrktbl">Uraian</td>
 				<td class="jrktbl">Tgl Cerai Meniggal</td>
 				<td class="jrktbl">Pekerjaan</td>
 				<td colspan="2"></td>
@@ -30,9 +30,9 @@
 						<td class="jrktbl text-center"><?php echo $no; ?></td>
 						<td class="jrktbl"><?php echo $data->nama_anggota_keluarga; ?></td>
 						<td class="jrktbl"><?php echo $data->tanggal_lahir; ?></td>
+						<td class="jrktbl"><?php echo $data->status_keluarga; ?></td>
 						<td class="jrktbl"><?php echo $data->status_kawin; ?></td>
 						<td class="jrktbl"><?php echo $data->tanggal_nikah; ?></td>
-						<td class="jrktbl"><?php echo $data->uraian; ?></td>
 						<td class="jrktbl"><?php echo $data->tanggal_cerai_meninggal; ?></td>
 						<td class="jrktbl"><?php echo $data->pekerjaan; ?></td>
 						<td class="jrktbl">
@@ -73,6 +73,10 @@
 							<div class="form-group">
 								<label class="text-info" for="tanggal_lahir">TANGGAL LAHIR</label>
 								<input type="text" class="form-control" id="tanggal_lahir" name="tanggal_lahir" placeholder="TANGGAL LAHIR" >
+							</div>
+							<div class="form-group">
+								<label class="text-info" for="status_keluarga">STATUS DALAM KELUARGA</label>
+								<input type="text" class="form-control" id="status_keluarga" name="status_keluarga" placeholder="STATUS DALAM KELUARGA">
 							</div>
 							<div class="form-group">
 								<label class="text-info" for="status_kawin">STATUS KAWIN</label>

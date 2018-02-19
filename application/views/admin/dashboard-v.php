@@ -45,24 +45,23 @@
                   <i class="material-icons">library_books</i> Master
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#"><i class="material-icons">label_outline</i>Status Pegawai</a>
-                  <a class="dropdown-item" href="#"><i class="material-icons">assignment_ind</i>Unit Kerja</a>
-                  <a class="dropdown-item" href="#"><i class="material-icons">bookmark_border</i>Satuan Kerja</a>
-                  <a class="dropdown-item" href="#"><i class="material-icons">remove_red_eye</i>PPK</a>
-                  <a class="dropdown-item" href="#"><i class="material-icons">compare_arrows</i>Golongan</a>
-                  <a class="dropdown-item" href="#"><i class="material-icons">autorenew</i>Eselon</a>
-                  <a class="dropdown-item" href="#"><i class="material-icons">folder_shared</i>Pelatihan</a>
-                  <a class="dropdown-item" href="#"><i class="material-icons">work</i>Jabatan</a>
-                  <a class="dropdown-item" href="#"><i class="material-icons">playlist_add_check</i>Status Jabatan</a>
-                  <a class="dropdown-item" href="#"><i class="material-icons">stars</i>Penghargaan</a>
-                  <a class="dropdown-item" href="#"><i class="material-icons">select_all</i>Hukuman</a>
-                  <a class="dropdown-item" href="#"><i class="material-icons">location_on</i>Lokasi Pelatihan</a>
-                  <a class="dropdown-item" href="#"><i class="material-icons">location_searching</i>Lokasi Kerja</a>
+                  <a class="dropdown-item" href="<?php echo base_url('index.php/admin/master/') ?>"><i class="material-icons">label_outline</i>Status Pegawai</a>
+                  <a class="dropdown-item" href="<?php echo base_url('index.php/admin/master/satuan_kerja') ?>"><i class="material-icons">bookmark_border</i>Satuan Kerja</a>
+                  <a class="dropdown-item" href="<?php echo base_url('index.php/admin/master/ppk') ?>"><i class="material-icons">remove_red_eye</i>PPK</a>
+                  <a class="dropdown-item" href="<?php echo base_url('index.php/admin/master/golongan') ?>"><i class="material-icons">compare_arrows</i>Golongan</a>
+                  <a class="dropdown-item" href="<?php echo base_url('index.php/admin/master/eselon') ?>"><i class="material-icons">autorenew</i>Eselon</a>
+                  <a class="dropdown-item" href="<?php echo base_url('index.php/admin/master/pelatihan') ?>"><i class="material-icons">assignment</i>Pelatihan</a>
+                  <a class="dropdown-item" href="<?php echo base_url('index.php/admin/master/jabatan') ?>"><i class="material-icons">work</i>Jabatan</a>
+                  <a class="dropdown-item" href="<?php echo base_url('index.php/admin/master/status_jabatan') ?>"><i class="material-icons">playlist_add_check</i>Status Jabatan</a>
+                  <a class="dropdown-item" href="<?php echo base_url('index.php/admin/master/penghargaan') ?>"><i class="material-icons">stars</i>Penghargaan</a>
+                  <a class="dropdown-item" href="<?php echo base_url('index.php/admin/master/hukuman') ?>"><i class="material-icons">select_all</i>Hukuman</a>
+                  <a class="dropdown-item" href="<?php echo base_url('index.php/admin/master/lokasi_pelatihan') ?>"><i class="material-icons">location_on</i>Lokasi Pelatihan</a>
+                  <a class="dropdown-item" href="<?php echo base_url('index.php/admin/master/lokasi_kerja') ?>"><i class="material-icons">location_searching</i>Lokasi Kerja</a>
                 </div>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="material-icons">library_books</i> Laporan
+                  <i class="material-icons">report</i> Laporan
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="#"><i class="material-icons">bookmark_border</i>Unit Kerja Dan Satuan Kerja</a>

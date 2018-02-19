@@ -26,6 +26,10 @@
 				<label class="text-info" for="kartu_askes_pegawai">NOMOR KARTU ASKES PEGAWAI</label>
 				<input type="text" class="form-control" id="kartu_askes_pegawai" name="kartu_askes_pegawai" placeholder="NOMOR KARTU ASKES PEGAWAI" value="<?php echo $hasil->kartu_askes_pegawai ?>">
 			</div>
+			<div class="form-group">
+				<label class="text-info" for="tmt_cpns">TMT CPNS</label>
+				<input type="text" class="form-control" id="tmt_cpns" name="tmt_cpns" placeholder="TMT CPNS" value="<?php echo $hasil->tmt_cpns ?>">
+			</div>
 		</div>
 		<div class="col">
 			<div class="form-group">
@@ -67,9 +71,10 @@
 					<?php endforeach ?>
 				</select>
 			</div>
+			
 			<div class="form-group">
-				<label class="text-info" for="tanggal_pengangkatan_cpns">TANGGAL PEMANGKATAN CPNS</label>
-				<input type="text" class="form-control" id="tanggal_pengangkatan_cpns" name="tanggal_pengangkatan_cpns" placeholder="TANGGAL PEMANGKATAN CPNS" value="<?php echo $hasil->tanggal_pengangkatan_cpns ?>">
+				<label class="text-info" for="tmt_pns">TMT PNS</label>
+				<input type="text" class="form-control" id="tmt_pns" name="tmt_pns" placeholder="TMT PNS" value="<?php echo $hasil->tmt_pns ?>">
 			</div>
 		</div>
 	</div>

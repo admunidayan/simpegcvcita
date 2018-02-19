@@ -92,7 +92,7 @@
 				<div class="submenu">
 					<div class="row">
 						<div class="col-md-2 text-center text-secondary"><i class="material-icons">assignment_turned_in</i> </div>
-						<div class="col-md-10">DP3</div>
+						<div class="col-md-10">SKP</div>
 					</div>
 				</div>
 			</a>
