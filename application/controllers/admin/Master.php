@@ -32,6 +32,32 @@ class Master extends CI_Controller {
             redirect(base_url('index.php/login'));
         }
     }
+    public function edit($table,$id){
+        if ($this->ion_auth->logged_in()) {
+            $level = array('admin','members');
+            if (!$this->ion_auth->in_group($level)) {
+                $pesan = 'Anda tidak memiliki Hak untuk Mengakses halaman ini';
+                $this->session->set_flashdata('message', $pesan );
+                redirect(base_url('index.php/admin/dashboard'));
+            }else{
+                // $result = $this->Pegawai_m->detail_pegawai($id);
+                // echo "<pre>";print_r($result);echo "<pre/>";exit();
+                $data['title'] = 'Edit Master '.$table;
+                $data['infopt'] = $this->Admin_m->info_pt(1);
+                $data['brand'] = 'asset/img/lembaga/'.$this->Admin_m->info_pt(1)->logo_pt;
+                $data['users'] = $this->ion_auth->user()->row();
+                $data['aside'] = 'nav/nav';
+                $data['hasil'] = $this->Master_m->detail_data('master_'.$table,'id_'.$table,$id);
+                $data['page'] = 'admin/e_'.$table.'_v';
+                // pagging setting
+                $this->load->view('admin/dashboard-v',$data);
+            }
+        }else{
+            $pesan = 'Login terlebih dahulu';
+            $this->session->set_flashdata('message', $pesan );
+            redirect(base_url('index.php/login'));
+        }
+    }
     public function lokasi_kerja(){
         if ($this->ion_auth->logged_in()) {
             $level = array('admin','members');
@@ -587,6 +613,52 @@ class Master extends CI_Controller {
             $pesan = 'Login terlebih dahulu';
             $this->session->set_flashdata('message', $pesan );
             redirect(base_url('index.php/login'));
+        }
+    }
+    public function update_status_pegawai($id){
+        if ($this->ion_auth->logged_in()) {
+            $level = array('admin','members');
+            if (!$this->ion_auth->in_group($level)) {
+                $pesan = 'Anda tidak memiliki Hak untuk Mengakses halaman ini';
+                $this->session->set_flashdata('message', $pesan );
+                redirect(base_url('index.php/admin/dashboard'));
+            }else{
+                $post = $this->input->post();
+                $datainput = array(
+                   'nama_status' => $post['nama_status_pegawai'],
+                );
+                $this->Master_m->update_data('master_status_pegawai','id_status_pegawai',$id,$datainput);
+                $pesan = 'Data riwayat dp3 baru berhasil di diubah';
+                $this->session->set_flashdata('message', $pesan );
+                redirect(base_url('index.php/admin/master/'));
+            }
+        }else{
+            $pesan = 'Login terlebih dahulu';
+            $this->session->set_flashdata('message', $pesan );
+            redirect(base_url('index.php/login'));
+        }
+    }
+     public function delete($table,$id){
+        if ($this->ion_auth->logged_in()) {
+            $level = array('admin','members');
+            if (!$this->ion_auth->in_group($level)) {
+                $pesan = 'Anda tidak memiliki Hak untuk Mengakses halaman ini';
+                $this->session->set_flashdata('message', $pesan );
+                redirect(base_url('index.php/admin/dashboard'));
+            }else{
+                $this->Master_m->delete_data('master_'.$table,'id_'.$table,$id);
+                $pesan = 'Data '.$table.' berhasil di dihapus';
+                $this->session->set_flashdata('message', $pesan );
+                if ($table !== 'status_pegawai' ) {
+                    redirect(base_url('index.php/admin/master/'.$table));
+                }else{
+                    redirect(base_url('index.php/admin/master/'));
+                }
+            }
+        }else{
+            $pesan = 'Login terlebih dahulu';
+            $this->session->set_flashdata('message', $pesan );
+            redirect(base_url('index.php/admin//login'));
         }
     }
 }
