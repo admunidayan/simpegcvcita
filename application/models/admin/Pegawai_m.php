@@ -1,8 +1,13 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 class Pegawai_m extends CI_Model
 {
-	public function jumlah_data(){
+	public function jumlah_data($string){
 		$this->db->from('data_pegawai');
+		if (!empty($string)) {
+			$this->db->like('nama_pegawai',$string);
+			$this->db->or_like('nip',$string);
+			$this->db->or_like('nip_lama',$string);
+		}
 		$rs = $this->db->count_all_results();
 		return $rs;
 	}

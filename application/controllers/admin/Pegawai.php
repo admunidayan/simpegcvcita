@@ -22,7 +22,7 @@ class Pegawai extends CI_Controller {
                 $data['users'] = $this->ion_auth->user()->row();
                 $data['aside'] = 'nav/nav';
                 $data['page'] = 'admin/pegawai-v';
-                $jumlah = $this->Pegawai_m->jumlah_data();
+                $jumlah = $this->Pegawai_m->jumlah_data(@$post['string']);
                 $config['base_url'] = base_url().'/index.php/admin/pegawai/index/';
                 $config['total_rows'] = $jumlah;
                 $config['per_page'] = '10';

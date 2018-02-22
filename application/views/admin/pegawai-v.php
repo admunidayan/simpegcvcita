@@ -10,6 +10,17 @@
 		</div>
 	</div>
 	<div class="ktk-badan bts-ats">
+		<form action="<?php echo base_url('index.php/admin/pegawai/index/') ?>" method="get">
+			<div class="form-group row">
+				<label for="inputPassword" class="col-sm-2 col-form-label">Cari Pegawai</label>
+				<div class="col-sm-9">
+					<input type="text" class="form-control" name="string" id="inputPassword" placeholder="Masukan Nama, NIP Baru atau NIP Lama">
+				</div>
+				<div class="col-sm-1">
+					<div class="btn btn-outline-success">Cari</div>
+				</div>
+			</div>
+		</form>
 		<table class="table table-hover">
 			<thead>
 				<tr class="bg-app text-light">
