@@ -628,9 +628,33 @@ class Master extends CI_Controller {
                    'nama_status' => $post['nama_status_pegawai'],
                 );
                 $this->Master_m->update_data('master_status_pegawai','id_status_pegawai',$id,$datainput);
-                $pesan = 'Data riwayat dp3 baru berhasil di diubah';
+                $pesan = 'Data Status Pegawai baru berhasil di diubah';
                 $this->session->set_flashdata('message', $pesan );
                 redirect(base_url('index.php/admin/master/'));
+            }
+        }else{
+            $pesan = 'Login terlebih dahulu';
+            $this->session->set_flashdata('message', $pesan );
+            redirect(base_url('index.php/login'));
+        }
+    }
+    public function update_satuan_kerja($id){
+        if ($this->ion_auth->logged_in()) {
+            $level = array('admin','members');
+            if (!$this->ion_auth->in_group($level)) {
+                $pesan = 'Anda tidak memiliki Hak untuk Mengakses halaman ini';
+                $this->session->set_flashdata('message', $pesan );
+                redirect(base_url('index.php/admin/dashboard'));
+            }else{
+                $post = $this->input->post();
+                $datainput = array(
+                   'nama_satuan_kerja' => strtoupper($post['nama_satuan_kerja']),
+                   'parent_unit' => strtoupper($post['parent_unit'])
+                );
+                $this->Master_m->update_data('master_satuan_kerja','id_satuan_kerja',$id,$datainput);
+                $pesan = 'Data Satuan Kerja baru berhasil di diubah';
+                $this->session->set_flashdata('message', $pesan );
+                redirect(base_url('index.php/admin/master/satuan_kerja'));
             }
         }else{
             $pesan = 'Login terlebih dahulu';

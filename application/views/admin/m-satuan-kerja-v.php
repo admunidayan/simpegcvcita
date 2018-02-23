@@ -22,7 +22,7 @@
 						<td><?php echo $data->nama_satuan_kerja; ?></td>
 						<td><?php echo $data->parent_unit; ?></td>
 						<td><a href="<?php echo base_url('index.php/admin/master/edit/satuan_kerja/'.$data->id_satuan_kerja) ?>">Edit</a></td>
-						<td>Hapus</td>
+						<td><a href="<?php echo base_url('index.php/admin/master/delete/satuan_kerja/'.$data->id_satuan_kerja) ?>">Hapus</td>
 					</tr>
 					<?php $no++ ?>
 				<?php endforeach ?>

@@ -7,7 +7,17 @@
 			</div>
 			<div class="form-group">
 				<label class="text-info" for="tanggal_lahir">TANGGAL LAHIR</label>
-				<input type="text" class="form-control" id="tanggal_lahir" name="tanggal_lahir" placeholder="TANGGAL LAHIR" value="<?php echo $detail->tanggal_lahir?>">
+				<div class="row">
+					<div class="col">
+						<input type="text" class="form-control" id="tanggal_lahir" name="tanggal_lahir_hr" placeholder="HH" value="<?php echo substr($detail->tanggal_lahir,8,2)?>">
+					</div>
+					<div class="col">
+						<input type="text" class="form-control" id="tanggal_lahir" name="tanggal_lahir_bln" placeholder="BB" value="<?php echo substr($detail->tanggal_lahir,5,2)?>">
+					</div>
+					<div class="col">
+						<input type="text" class="form-control" id="tanggal_lahir" name="tanggal_lahir_thn" placeholder="TTTT" value="<?php echo substr($detail->tanggal_lahir,0,4)?>">
+					</div>
+				</div>
 			</div>
 			<div class="form-group">
 				<label class="text-info" for="status_kawin">STATUS DALAM KELUARGA</label>

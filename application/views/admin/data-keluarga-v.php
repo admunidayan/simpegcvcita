@@ -29,7 +29,7 @@
 					<tr>
 						<td class="jrktbl text-center"><?php echo $no; ?></td>
 						<td class="jrktbl"><?php echo $data->nama_anggota_keluarga; ?></td>
-						<td class="jrktbl"><?php echo $data->tanggal_lahir; ?></td>
+						<td class="jrktbl"><?php echo date('d F Y', strtotime($data->tanggal_lahir)) ; ?></td>
 						<td class="jrktbl"><?php echo $data->status_keluarga; ?></td>
 						<td class="jrktbl"><?php echo $data->status_kawin; ?></td>
 						<td class="jrktbl"><?php echo $data->tanggal_nikah; ?></td>
@@ -72,7 +72,17 @@
 							</div>
 							<div class="form-group">
 								<label class="text-info" for="tanggal_lahir">TANGGAL LAHIR</label>
-								<input type="text" class="form-control" id="tanggal_lahir" name="tanggal_lahir" placeholder="TANGGAL LAHIR" >
+								<div class="row">
+									<div class="col">
+										<input type="text" class="form-control" id="tanggal_lahir" name="tanggal_lahir_hr" placeholder="HH" >
+									</div>
+									<div class="col">
+										<input type="text" class="form-control" id="tanggal_lahir" name="tanggal_lahir_bln" placeholder="BB" >
+									</div>
+									<div class="col">
+										<input type="text" class="form-control" id="tanggal_lahir" name="tanggal_lahir_thn" placeholder="TTTT">
+									</div>
+								</div>
 							</div>
 							<div class="form-group">
 								<label class="text-info" for="status_keluarga">STATUS DALAM KELUARGA</label>

@@ -464,7 +464,7 @@ class Pegawai extends CI_Controller {
                 $datainput = array(
                     'nama_anggota_keluarga' => $post['nama_anggota_keluarga'],
                     'id_pegawai' => $idpegawai,
-                    'tanggal_lahir'=>$post['tanggal_lahir'],
+                    'tanggal_lahir'=>$post['tanggal_lahir_thn'].'-'.$post['tanggal_lahir_bln'].'-'.$post['tanggal_lahir_hr'],
                     'status_kawin'=>$post['status_kawin'],
                     'tanggal_nikah'=>$post['tanggal_nikah'],
                     'uraian'=>$post['uraian'],
@@ -1394,7 +1394,7 @@ class Pegawai extends CI_Controller {
                 $post = $this->input->post();
                 $datainput = array(
                     'nama_anggota_keluarga' => $post['nama_anggota_keluarga'],
-                    'tanggal_lahir'=>$post['tanggal_lahir'],
+                    'tanggal_lahir'=>$post['tanggal_lahir_thn'].'-'.$post['tanggal_lahir_bln'].'-'.$post['tanggal_lahir_hr'],
                     'status_kawin'=>$post['status_kawin'],
                     'tanggal_nikah'=>$post['tanggal_nikah'],
                     'uraian'=>$post['uraian'],

@@ -1,3 +1,4 @@
+<!-- <link rel="stylesheet" type="text/css" href="<?php echo base_url('asset/datepicker/css/bootstrap.css') ?>"> -->
 <div style="margin-top: 14px; background-color: white;padding: 30px">
 	<h4 class="text-secondary">Data Diri</h4><hr/>
 	<div class="row">
@@ -28,7 +29,17 @@
 			</div>
 			<div class="form-group">
 				<label class="text-info" for="tmt_cpns">TMT CPNS</label>
-				<input type="text" class="form-control" id="tmt_cpns" name="tmt_cpns" placeholder="TMT CPNS" value="<?php echo $hasil->tmt_cpns ?>">
+				<div class="row">
+					<div class="col">
+						<input type="text" class="form-control" name="tmt_cpns_hr" placeholder="DD" >
+					</div>
+					<div class="col">
+						<input type="text" class="form-control" name="tmt_cpns_bln" placeholder="BB" >
+					</div>
+					<div class="col">
+						<input type="text" class="form-control" name="tmt_cpns_thn" placeholder="TTTT" >
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="col">
@@ -73,8 +84,18 @@
 			</div>
 			
 			<div class="form-group">
-				<label class="text-info" for="tmt_pns">TMT PNS</label>
-				<input type="text" class="form-control" id="tmt_pns" name="tmt_pns" placeholder="TMT PNS" value="<?php echo $hasil->tmt_pns ?>">
+				<label class="text-info" for="tmt_cpns">TMT PNS</label>
+				<div class="row">
+					<div class="col">
+						<input type="text" class="form-control" name="tmt_pns_hr" placeholder="DD" >
+					</div>
+					<div class="col">
+						<input type="text" class="form-control" name="tmt_pns_bln" placeholder="BB" >
+					</div>
+					<div class="col">
+						<input type="text" class="form-control" name="tmt_pns_thn" placeholder="TTTT" >
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
