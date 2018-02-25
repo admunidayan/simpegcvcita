@@ -19,8 +19,8 @@
 					<tr>
 						<td><?php echo $no; ?></td>
 						<td><?php echo $data->nama_hukuman; ?></td>
-						<td>Edit</td>
-						<td>Hapus</td>
+						<td><a href="<?php echo base_url('index.php/admin/master/edit/hukuman/'.$data->id_hukuman) ?>">Edit</a></td>
+						<td><a href="<?php echo base_url('index.php/admin/master/delete/hukuman/'.$data->id_hukuman) ?>">Hapus</td>
 					</tr>
 					<?php $no++ ?>
 				<?php endforeach ?>

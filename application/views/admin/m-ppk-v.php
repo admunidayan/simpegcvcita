@@ -21,8 +21,8 @@
 						<td><?php echo $no; ?></td>
 						<td><?php echo $data->nama_ppk; ?></td>
 						<td><?php echo $data->parent_satuan_kerja; ?></td>
-						<td>Edit</td>
-						<td>Hapus</td>
+						<td><a href="<?php echo base_url('index.php/admin/master/edit/ppk/'.$data->id_ppk) ?>">Edit</a></td>
+						<td><a href="<?php echo base_url('index.php/admin/master/delete/ppk/'.$data->id_ppk) ?>">Hapus</td>
 					</tr>
 					<?php $no++ ?>
 				<?php endforeach ?>

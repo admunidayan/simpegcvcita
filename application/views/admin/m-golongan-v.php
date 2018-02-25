@@ -23,8 +23,8 @@
 						<td><?php echo $data->golongan; ?></td>
 						<td><?php echo $data->uraian; ?></td>
 						<td><?php echo $data->level; ?></td>
-						<td>Edit</td>
-						<td>Hapus</td>
+						<td><a href="<?php echo base_url('index.php/admin/master/edit/golongan/'.$data->id_golongan) ?>">Edit</a></td>
+						<td><a href="<?php echo base_url('index.php/admin/master/delete/golongan/'.$data->id_golongan) ?>">Hapus</td>
 					</tr>
 					<?php $no++ ?>
 				<?php endforeach ?>

@@ -21,8 +21,8 @@
 						<td><?php echo $no; ?></td>
 						<td><?php echo $data->nama_jabatan; ?></td>
 						<td><?php echo $data->level; ?></td>
-						<td>Edit</td>
-						<td>Hapus</td>
+						<td><a href="<?php echo base_url('index.php/admin/master/edit/jabatan/'.$data->id_jabatan) ?>">Edit</a></td>
+						<td><a href="<?php echo base_url('index.php/admin/master/delete/jabatan/'.$data->id_jabatan) ?>">Hapus</td>
 					</tr>
 					<?php $no++ ?>
 				<?php endforeach ?>
