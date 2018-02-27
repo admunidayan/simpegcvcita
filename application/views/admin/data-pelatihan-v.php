@@ -28,14 +28,14 @@
 						<td class="jrktbl text-center"><?php echo $no; ?></td>
 						<td class="jrktbl"><?php echo $data->uraian; ?></td>
 						<td class="jrktbl"><?php echo $data->lokasi; ?></td>
-						<td class="jrktbl"><?php echo $data->tanggal_sertifikat; ?></td>
+						<td class="jrktbl"><?php echo date('d F Y', strtotime($data->tanggal_sertifikat)); ?></td>
 						<td class="jrktbl"><?php echo $data->jam_pelatihan; ?></td>
 						<td class="jrktbl"><?php echo $data->negara; ?></td>
 						<td class="jrktbl">
-							<a href="<?php echo base_url('index.php/admin/pegawai/edit_pelatihan/'.$hasil->id_pegawai.'/'.$data->id_pelatihan) ?>" class="text-success">edit</a>
+							<a href="<?php echo base_url('index.php/admin/pegawai/edit_pelatihan/'.$hasil->id_pegawai.'/'.$data->id_pelatihan) ?>" class="text-success">Edit</a>
 						</td>
 						<td class="jrktbl">
-						<a href="<?php echo base_url('index.php/admin/pegawai/delete_pelatihan/'.$hasil->id_pegawai.'/'.$data->id_pelatihan) ?>" class="text-danger">hapus</a>
+							<a href="<?php echo base_url('index.php/admin/pegawai/delete_pelatihan/'.$hasil->id_pegawai.'/'.$data->id_pelatihan) ?>" class="text-danger">Hapus</a>
 						</td>
 					</tr>
 					<?php $no++ ?>
@@ -72,7 +72,17 @@
 							</div>
 							<div class="form-group">
 								<label class="text-info" for="tanggal_sertifikat">TANGGAL SERTIFIKAT</label>
-								<input type="text" class="form-control" id="tanggal_sertifikat" name="tanggal_sertifikat" placeholder="TANGGAL SERTIFIKAT">
+								<div class="row">
+									<div class="col">
+										<input type="text" class="form-control" id="tanggal_sertifikat" name="tanggal_sertifikat_hr" placeholder="HH">
+									</div>
+									<div class="col">
+										<input type="text" class="form-control" id="tanggal_sertifikat" name="tanggal_sertifikat_bln" placeholder="BB">
+									</div>
+									<div class="col">
+										<input type="text" class="form-control" id="tanggal_sertifikat" name="tanggal_sertifikat_thn" placeholder="TTTT">
+									</div>
+								</div>
 							</div>
 							<div class="form-group">
 								<label class="text-info" for="jam_pelatihan">JAM PELATIHAN</label>

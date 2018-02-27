@@ -16,7 +16,17 @@
 				</div>
 				<div class="form-group">
 					<label class="text-info" for="tmt_eselon">TMT ESELON</label>
-					<input type="text" class="form-control" id="tmt_eselon" name="tmt_eselon" placeholder="TMT ESELON" value="<?php echo $detail->tmt_eselon?>">
+					<div class="row">
+					<div class="col">
+						<input type="text" class="form-control" id="tmt_eselon" name="tmt_eselon_hr" placeholder="HH" value="<?php echo substr($detail->tmt_eselon,8,2)?>">
+					</div>
+					<div class="col">
+						<input type="text" class="form-control" id="tmt_eselon" name="tmt_eselon_bln" placeholder="BB" value="<?php echo substr($detail->tmt_eselon,5,2)?>">
+					</div>
+					<div class="col">
+						<input type="text" class="form-control" id="tmt_eselon" name="tmt_eselon_thn" placeholder="TTTT" value="<?php echo substr($detail->tmt_eselon,0,4)?>">
+					</div>
+				</div>
 				</div>
 				<div class="form-group">
 					<label class="text-info" for="nomor_sk">NOMOR SK</label>
@@ -24,15 +34,45 @@
 				</div>
 				<div class="form-group">
 					<label class="text-info" for="tanggal_sk">TANGGAL SK</label>
-					<input type="text" class="form-control" id="tanggal_sk" name="tanggal_sk" placeholder="TANGGAL SK" value="<?php echo $detail->tanggal_sk?>">
+					<div class="row">
+						<div class="col">
+							<input type="text" class="form-control" id="tanggal_sk" name="tanggal_sk_hr" placeholder="HH" value="<?php echo substr($detail->tanggal_sk,8,2)?>">
+						</div>
+						<div class="col">
+							<input type="text" class="form-control" id="tanggal_sk" name="tanggal_sk_bln" placeholder="BB" value="<?php echo substr($detail->tanggal_sk,5,2)?>">
+						</div>
+						<div class="col">
+							<input type="text" class="form-control" id="tanggal_sk" name="tanggal_sk_thn" placeholder="TTTT" value="<?php echo substr($detail->tanggal_sk,0,4)?>">
+						</div>
+					</div>
 				</div>
 				<div class="form-group">
 					<label class="text-info" for="tanggal_mulai">TANGGAL MULAI</label>
-					<input type="text" class="form-control" id="tanggal_mulai" name="tanggal_mulai" placeholder="TANGGAL MULAI" value="<?php echo $detail->tanggal_mulai?>">
+					<div class="row">
+						<div class="col">
+							<input type="text" class="form-control" id="tanggal_mulai" name="tanggal_mulai_hr" placeholder="HH" value="<?php echo substr($detail->tanggal_mulai,8,2)?>">
+						</div>
+						<div class="col">
+							<input type="text" class="form-control" id="tanggal_mulai" name="tanggal_mulai_bln" placeholder="BB" value="<?php echo substr($detail->tanggal_mulai,5,2)?>">
+						</div>
+						<div class="col">
+							<input type="text" class="form-control" id="tanggal_mulai" name="tanggal_mulai_thn" placeholder="TTTT" value="<?php echo substr($detail->tanggal_mulai,0,4)?>">
+						</div>
+					</div>
 				</div>
 				<div class="form-group">
 					<label class="text-info" for="tanggal_selesai">TANGGAL SELESAI</label>
-					<input type="text" class="form-control" id="tanggal_selesai" name="tanggal_selesai" placeholder="TANGGAL SELESAI" value="<?php echo $detail->tanggal_selesai?>">
+					<div class="row">
+						<div class="col">
+							<input type="text" class="form-control" id="tanggal_selesai" name="tanggal_selesai_hr" placeholder="HH" value="<?php echo substr($detail->tanggal_selesai,8,2)?>">
+						</div>
+						<div class="col">
+							<input type="text" class="form-control" id="tanggal_selesai" name="tanggal_selesai_bln" placeholder="BB" value="<?php echo substr($detail->tanggal_selesai,5,2)?>">
+						</div>
+						<div class="col">
+							<input type="text" class="form-control" id="tanggal_selesai" name="tanggal_selesai_thn" placeholder="TTTT" value="<?php echo substr($detail->tanggal_selesai,0,4)?>">
+						</div>
+					</div>
 				</div>
 				<div class="form-group">
 					<label class="text-info" for="lokasi">LOKASI</label>

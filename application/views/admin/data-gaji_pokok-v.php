@@ -30,18 +30,18 @@
 					<tr>
 						<td class="jrktbl text-center"><?php echo $no; ?></td>
 						<td class="jrktbl"><?php echo $data->nomor_sk; ?></td>
-						<td class="jrktbl"><?php echo $data->tanggal_sk; ?></td>
+						<td class="jrktbl"><?php echo date('d F Y', strtotime($data->tanggal_sk)); ?></td>
 						<td class="jrktbl"><?php echo $data->dasar_perubahan; ?></td>
 						<td class="jrktbl"><?php echo $data->gaji_pokok; ?></td>
-						<td class="jrktbl"><?php echo $data->tanggal_mulai; ?></td>
-						<td class="jrktbl"><?php echo $data->tanggal_selesai; ?></td>
+						<td class="jrktbl"><?php echo date('d F Y', strtotime($data->tanggal_mulai)); ?></td>
+						<td class="jrktbl"><?php echo date('d F Y', strtotime($data->tanggal_selesai)); ?></td>
 						<td class="jrktbl"><?php echo $data->masa_kerja; ?></td>
 						<td class="jrktbl"><?php echo $data->pejabat_menetapkan; ?></td>
 						<td class="jrktbl">
-							<a href="<?php echo base_url('index.php/admin/pegawai/edit_gaji_pokok/'.$hasil->id_pegawai.'/'.$data->id_gaji_pokok) ?>" class="text-success">edit</a>
+							<a href="<?php echo base_url('index.php/admin/pegawai/edit_gaji_pokok/'.$hasil->id_pegawai.'/'.$data->id_gaji_pokok) ?>" class="text-success">Edit</a>
 						</td>
 						<td class="jrktbl">
-						<a href="<?php echo base_url('index.php/admin/pegawai/delete_gaji_pokok/'.$hasil->id_pegawai.'/'.$data->id_gaji_pokok) ?>" class="text-danger">hapus</a>
+							<a href="<?php echo base_url('index.php/admin/pegawai/delete_gaji_pokok/'.$hasil->id_pegawai.'/'.$data->id_gaji_pokok) ?>" class="text-danger">Hapus</a>
 						</td>
 					</tr>
 					<?php $no++ ?>
@@ -74,7 +74,17 @@
 							</div>
 							<div class="form-group">
 								<label class="text-info" for="tanggal_sk">TANGGAL SK</label>
-								<input type="text" class="form-control" id="tanggal_sk" name="tanggal_sk" placeholder="TANGGAL SK" >
+								<div class="row">
+									<div class="col">
+										<input type="text" class="form-control" id="tanggal_sk" name="tanggal_sk_hr" placeholder="HH">
+									</div>
+									<div class="col">
+										<input type="text" class="form-control" id="tanggal_sk" name="tanggal_sk_bln" placeholder="BB">
+									</div>
+									<div class="col">
+										<input type="text" class="form-control" id="tanggal_sk" name="tanggal_sk_thn" placeholder="TTTT">
+									</div>
+								</div>
 							</div>
 							<div class="form-group">
 								<label class="text-info" for="dasar_perubahan">DASAR PERUBAHAN</label>
@@ -86,11 +96,31 @@
 							</div>
 							<div class="form-group">
 								<label class="text-info" for="tanggal_mulai">TANGGAL MULAI</label>
-								<input type="text" class="form-control" id="tanggal_mulai" name="tanggal_mulai" placeholder="TANGGAL">
+								<div class="row">
+									<div class="col">
+										<input type="text" class="form-control" id="tanggal_mulai" name="tanggal_mulai_hr" placeholder="HH" >
+									</div>
+									<div class="col">
+										<input type="text" class="form-control" id="tanggal_mulai" name="tanggal_mulai_bln" placeholder="BB" >
+									</div>
+									<div class="col">
+										<input type="text" class="form-control" id="tanggal_mulai" name="tanggal_mulai_thn" placeholder="TTTT">
+									</div>
+								</div>
 							</div>
 							<div class="form-group">
 								<label class="text-info" for="tanggal_selesai">TANGGAL SELESAI</label>
-								<input type="text" class="form-control" id="tanggal_selesai" name="tanggal_selesai" placeholder="TANGGAL SELESAI">
+								<div class="row">
+									<div class="col">
+										<input type="text" class="form-control" id="tanggal_selesai" name="tanggal_selesai_hr" placeholder="HH" >
+									</div>
+									<div class="col">
+										<input type="text" class="form-control" id="tanggal_selesai" name="tanggal_selesai_bln" placeholder="BB" >
+									</div>
+									<div class="col">
+										<input type="text" class="form-control" id="tanggal_selesai" name="tanggal_selesai_thn" placeholder="TTTT">
+									</div>
+								</div>
 							</div>
 							<div class="form-group">
 								<label class="text-info" for="masa_kerja">MASA KERJA</label>

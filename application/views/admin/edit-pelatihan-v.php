@@ -13,7 +13,17 @@
 					</div>
 					<div class="form-group">
 						<label class="text-info" for="tanggal_sertifikat">TANGGAL SERTIFIKAT</label>
-						<input type="text" class="form-control" id="tanggal_sertifikat" name="tanggal_sertifikat" placeholder="TANGGAL SERTIFIKAT" value="<?php echo $detail->tanggal_sertifikat?>">
+						<div class="row">
+						<div class="col">
+							<input type="text" class="form-control" id="tanggal_sertifikat" name="tanggal_sertifikat_hr" placeholder="HH" value="<?php echo substr($detail->tanggal_sertifikat,8,2)?>">
+						</div>
+						<div class="col">
+							<input type="text" class="form-control" id="tanggal_sertifikat" name="tanggal_sertifikat_bln" placeholder="BB" value="<?php echo substr($detail->tanggal_sertifikat,5,2)?>">
+						</div>
+						<div class="col">
+							<input type="text" class="form-control" id="tanggal_sertifikat" name="tanggal_sertifikat_thn" placeholder="TTTT" value="<?php echo substr($detail->tanggal_sertifikat,0,4)?>">
+						</div>
+					</div>
 					</div>
 					<div class="form-group">
 						<label class="text-info" for="jam_pelatihan">JAM PELATIHAN</label>

@@ -1,10 +1,10 @@
 <div style="margin-top: 14px; background-color: white;padding: 30px">
 	<div class="media">
 		<div class="media-body">
-			<h4>Data DP3</h4>
+			<h4>Data SKP</h4>
 		</div>
 		<div class="media-right">
-			<button type="button" class="btn btn-outline-success btn-sm" data-toggle="modal" data-target="#adddp3"><i class="material-icons">note_add</i> Tambah Data DP3</button>
+			<button type="button" class="btn btn-outline-success btn-sm" data-toggle="modal" data-target="#adddp3"><i class="material-icons">note_add</i> Tambah Data SKP</button>
 		</div>
 	</div>
 	<hr/>
@@ -18,7 +18,7 @@
 				<td class="jrktbl">Tanggung Jawab</td>
 				<td class="jrktbl">Kejujuran</td>
 				<td class="jrktbl">Kerjasama</td>
-				<td class="jrktbl">mengeahui</td>
+				<td class="jrktbl">Mengetahui</td>
 				<td colspan="2"></td>
 			</tr>
 		</thead>
@@ -36,18 +36,18 @@
 						<td class="jrktbl"><?php echo $data->kerjasama; ?></td>
 						<td class="jrktbl"><?php echo $data->mengetahui; ?></td>
 						<td class="jrktbl">
-							<a href="<?php echo base_url('index.php/admin/pegawai/edit_dp3/'.$hasil->id_pegawai.'/'.$data->id_dp3) ?>" class="text-success">edit</a>
+							<a href="<?php echo base_url('index.php/admin/pegawai/edit_dp3/'.$hasil->id_pegawai.'/'.$data->id_dp3) ?>" class="text-success">Edit</a>
 						</td>
 						<td class="jrktbl">
-						<a href="<?php echo base_url('index.php/admin/pegawai/delete_dp3/'.$hasil->id_pegawai.'/'.$data->id_dp3) ?>" class="text-danger">hapus</a>
+							<a href="<?php echo base_url('index.php/admin/pegawai/delete_dp3/'.$hasil->id_pegawai.'/'.$data->id_dp3) ?>" class="text-danger">Hapus</a>
 						</td>
 					</tr>
 					<?php $no++ ?>
 				<?php endforeach ?>
-				<?php else: ?>
-					<tr>
-						<td class="jrktbl text-center" colspan="8">Belum ada data hukuman</td>
-					</tr>
+			<?php else: ?>
+				<tr>
+					<td class="jrktbl text-center" colspan="8">Belum ada data SKP</td>
+				</tr>
 			<?php endif ?>
 		</tbody>
 	</table>
@@ -57,7 +57,7 @@
 	<div class="modal-dialog modal-lg" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="adddp3">Tambah Data Hukuman</h5>
+				<h5 class="modal-title" id="adddp3">Tambah Data SKP</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>

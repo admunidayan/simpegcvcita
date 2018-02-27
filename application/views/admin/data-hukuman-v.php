@@ -30,24 +30,24 @@
 						<td class="jrktbl text-center"><?php echo $no; ?></td>
 						<td class="jrktbl"><?php echo $data->uraian; ?></td>
 						<td class="jrktbl"><?php echo $data->nomor_sk; ?></td>
-						<td class="jrktbl"><?php echo $data->tanggal_sk; ?></td>
-						<td class="jrktbl"><?php echo $data->tanggal_mulai; ?></td>
-						<td class="jrktbl"><?php echo $data->tanggal_selesai; ?></td>
-						<td class="jrktbl"><?php echo $data->masa_berlaku; ?></td>
+						<td class="jrktbl"><?php echo date('d F Y', strtotime($data->tanggal_sk)); ?></td>
+						<td class="jrktbl"><?php echo date('d F Y', strtotime($data->tanggal_mulai)); ?></td>
+						<td class="jrktbl"><?php echo date('d F Y', strtotime($data->tanggal_selesai)); ?></td>
+						<td class="jrktbl"><?php echo date('d F Y', strtotime($data->masa_berlaku)); ?></td>
 						<td class="jrktbl"><?php echo $data->pejabat_menetapkan; ?></td>
 						<td class="jrktbl">
-							<a href="<?php echo base_url('index.php/admin/pegawai/edit_hukuman/'.$hasil->id_pegawai.'/'.$data->id_hukuman) ?>" class="text-success">edit</a>
+							<a href="<?php echo base_url('index.php/admin/pegawai/edit_hukuman/'.$hasil->id_pegawai.'/'.$data->id_hukuman) ?>" class="text-success">Edit</a>
 						</td>
 						<td class="jrktbl">
-						<a href="<?php echo base_url('index.php/admin/pegawai/delete_hukuman/'.$hasil->id_pegawai.'/'.$data->id_hukuman) ?>" class="text-danger">hapus</a>
+							<a href="<?php echo base_url('index.php/admin/pegawai/delete_hukuman/'.$hasil->id_pegawai.'/'.$data->id_hukuman) ?>" class="text-danger">Hapus</a>
 						</td>
 					</tr>
 					<?php $no++ ?>
 				<?php endforeach ?>
-				<?php else: ?>
-					<tr>
-						<td class="jrktbl text-center" colspan="8">Belum ada data hukuman</td>
-					</tr>
+			<?php else: ?>
+				<tr>
+					<td class="jrktbl text-center" colspan="8">Belum ada data hukuman</td>
+				</tr>
 			<?php endif ?>
 		</tbody>
 	</table>
@@ -76,19 +76,59 @@
 							</div>
 							<div class="form-group">
 								<label class="text-info" for="tanggal_sk">TANGGAL SK</label>
-								<input type="text" class="form-control" id="tanggal_sk" name="tanggal_sk" placeholder="TANGGAL SK" >
+								<div class="row">
+									<div class="col">
+										<input type="text" class="form-control" id="tanggal_sk" name="tanggal_sk_hr" placeholder="HH">
+									</div>
+									<div class="col">
+										<input type="text" class="form-control" id="tanggal_sk" name="tanggal_sk_bln" placeholder="BB">
+									</div>
+									<div class="col">
+										<input type="text" class="form-control" id="tanggal_sk" name="tanggal_sk_thn" placeholder="TTTT">
+									</div>
+								</div>
 							</div>
 							<div class="form-group">
 								<label class="text-info" for="tanggal_mulai">TANGGAL MULAI</label>
-								<input type="text" class="form-control" id="tanggal_mulai" name="tanggal_mulai" placeholder="TANGGAL MULAI">
+								<div class="row">
+									<div class="col">
+										<input type="text" class="form-control" id="tanggal_mulai" name="tanggal_mulai_hr" placeholder="HH" >
+									</div>
+									<div class="col">
+										<input type="text" class="form-control" id="tanggal_mulai" name="tanggal_mulai_bln" placeholder="BB" >
+									</div>
+									<div class="col">
+										<input type="text" class="form-control" id="tanggal_mulai" name="tanggal_mulai_thn" placeholder="TTTT">
+									</div>
+								</div>
 							</div>
 							<div class="form-group">
 								<label class="text-info" for="tanggal_selesai">TANGGAL SELESAI</label>
-								<input type="text" class="form-control" id="tanggal_selesai" name="tanggal_selesai" placeholder="TANGGAL SELESAI">
+								<div class="row">
+									<div class="col">
+										<input type="text" class="form-control" id="tanggal_selesai" name="tanggal_selesai_hr" placeholder="HH" >
+									</div>
+									<div class="col">
+										<input type="text" class="form-control" id="tanggal_selesai" name="tanggal_selesai_bln" placeholder="BB" >
+									</div>
+									<div class="col">
+										<input type="text" class="form-control" id="tanggal_selesai" name="tanggal_selesai_thn" placeholder="TTTT">
+									</div>
+								</div>
 							</div>
 							<div class="form-group">
 								<label class="text-info" for="masa_berlaku">MASA BERLAKU</label>
-								<input type="text" class="form-control" id="masa_berlaku" name="masa_berlaku" placeholder="MASA BERLAKU">
+								<div class="row">
+									<div class="col">
+										<input type="text" class="form-control" id="masa_berlaku" name="masa_berlaku_hr" placeholder="HH" >
+									</div>
+									<div class="col">
+										<input type="text" class="form-control" id="masa_berlaku" name="masa_berlaku_bln" placeholder="BB" >
+									</div>
+									<div class="col">
+										<input type="text" class="form-control" id="masa_berlaku" name="masa_berlaku_thn" placeholder="TTTT">
+									</div>
+								</div>
 							</div>
 							<div class="form-group">
 								<label class="text-info" for="pejabat_menetapkan">PEJABAT MENETAPKAN</label>

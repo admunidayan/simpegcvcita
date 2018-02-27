@@ -13,7 +13,17 @@
 					</div>
 					<div class="form-group">
 						<label class="text-info" for="tanggal_sk">TANGGAL SK</label>
-						<input type="text" class="form-control" id="tanggal_sk" name="tanggal_sk" placeholder="TANGGAL SK" value="<?php echo $detail->tanggal_sk?>">
+						<div class="row">
+							<div class="col">
+								<input type="text" class="form-control" id="tanggal_sk" name="tanggal_sk_hr" placeholder="HH" value="<?php echo substr($detail->tanggal_sk,8,2)?>">
+							</div>
+							<div class="col">
+								<input type="text" class="form-control" id="tanggal_sk" name="tanggal_sk_bln" placeholder="BB" value="<?php echo substr($detail->tanggal_sk,5,2)?>">
+							</div>
+							<div class="col">
+								<input type="text" class="form-control" id="tanggal_sk" name="tanggal_sk_thn" placeholder="TTTT" value="<?php echo substr($detail->tanggal_sk,0,4)?>">
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

@@ -33,7 +33,17 @@
 			</div>
 			<div class="form-group">
 				<label class="text-info" for="tanggal_nikah">TANGGAL NIKAH</label>
-				<input type="text" class="form-control" id="tanggal_nikah" name="tanggal_nikah" placeholder="TANGGAL MENIKAH" value="<?php echo $detail->tanggal_nikah?>">
+				<div class="row">
+					<div class="col">
+						<input type="text" class="form-control" id="tanggal_nikah" name="tanggal_nikah_hr" placeholder="HH" value="<?php echo substr($detail->tanggal_nikah,8,2)?>">
+					</div>
+					<div class="col">
+						<input type="text" class="form-control" id="tanggal_nikah" name="tanggal_nikah_bln" placeholder="BB" value="<?php echo substr($detail->tanggal_nikah,5,2)?>">
+					</div>
+					<div class="col">
+						<input type="text" class="form-control" id="tanggal_nikah" name="tanggal_nikah_thn" placeholder="TTTT" value="<?php echo substr($detail->tanggal_nikah,0,4)?>">
+					</div>
+				</div>
 			</div>
 			<div class="form-group">
 				<label class="text-info" for="uraian">URAIAN</label>
@@ -41,7 +51,21 @@
 			</div>
 			<div class="form-group">
 				<label class="text-info" for="tanggal_cerai_meninggal">TANGGAL CERAI MENINGGAL</label>
-				<input type="text" class="form-control" id="tanggal_cerai_meninggal" name="tanggal_cerai_meninggal" placeholder="TANGGAL CERAI MENINGGAL" value="<?php echo $detail->tanggal_cerai_meninggal?>">
+				<div class="row">
+					<div class="col">
+						<input type="text" class="form-control" id="tanggal_cerai_meninggal" name="tanggal_cerai_meninggal_hr" placeholder="HH" value="<?php echo substr($detail->tanggal_cerai_meninggal,8,2)?>">
+					</div>
+					<div class="col">
+						<input type="text" class="form-control" id="tanggal_cerai_meninggal" name="tanggal_cerai_meninggal_bln" placeholder="BB" value="<?php echo substr($detail->tanggal_cerai_meninggal,5,2)?>">
+					</div>
+					<div class="col">
+						<input type="text" class="form-control" id="tanggal_cerai_meninggal" name="tanggal_cerai_meninggal_thn" placeholder="TTTT" value="<?php echo substr($detail->tanggal_cerai_meninggal,0,4)?>">
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="text-info" for="pekerjaan">PEKERJAAN</label>
+				<input type="text" class="form-control" id="pekerjaan" name="pekerjaan" placeholder="PEKERJAAN" value="<?php echo $detail->pekerjaan?>">
 			</div>
 		</div>
 	</div>

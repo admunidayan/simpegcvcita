@@ -32,11 +32,31 @@
 				</div>
 				<div class="form-group">
 					<label class="text-info" for="tanggal_sttb">TANGGAL STTB</label>
-					<input type="text" class="form-control" id="tanggal_sttb" name="tanggal_sttb" placeholder="TANGGAL STTB" value="<?php echo $detail->tanggal_sttb?>">
+					<div class="row">
+						<div class="col">
+							<input type="text" class="form-control" id="tanggal_sttb" name="tanggal_sttb_hr" placeholder="HH" value="<?php echo substr($detail->tanggal_sttb,8,2)?>">
+						</div>
+						<div class="col">
+							<input type="text" class="form-control" id="tanggal_sttb" name="tanggal_sttb_bln" placeholder="BB" value="<?php echo substr($detail->tanggal_sttb,5,2)?>">
+						</div>
+						<div class="col">
+							<input type="text" class="form-control" id="tanggal_sttb" name="tanggal_sttb_thn" placeholder="TTTT" value="<?php echo substr($detail->tanggal_sttb,0,4)?>">
+						</div>
+					</div>
 				</div>
 				<div class="form-group">
 					<label class="text-info" for="tanggal_lulus">TANGGAL LULUS</label>
-					<input type="text" class="form-control" id="tanggal_lulus" name="tanggal_lulus" placeholder="TANGGAL LULUS" value="<?php echo $detail->tanggal_lulus?>">
+					<div class="row">
+						<div class="col">
+							<input type="text" class="form-control" id="tanggal_lulus" name="tanggal_lulus_hr" placeholder="HH" value="<?php echo substr($detail->tanggal_lulus,8,2)?>">
+						</div>
+						<div class="col">
+							<input type="text" class="form-control" id="tanggal_lulus" name="tanggal_lulus_bln" placeholder="BB" value="<?php echo substr($detail->tanggal_lulus,5,2)?>">
+						</div>
+						<div class="col">
+							<input type="text" class="form-control" id="tanggal_lulus" name="tanggal_lulus_thn" placeholder="TTTT" value="<?php echo substr($detail->tanggal_lulus,0,4)?>">
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

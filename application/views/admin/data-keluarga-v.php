@@ -32,14 +32,14 @@
 						<td class="jrktbl"><?php echo date('d F Y', strtotime($data->tanggal_lahir)) ; ?></td>
 						<td class="jrktbl"><?php echo $data->status_keluarga; ?></td>
 						<td class="jrktbl"><?php echo $data->status_kawin; ?></td>
-						<td class="jrktbl"><?php echo $data->tanggal_nikah; ?></td>
-						<td class="jrktbl"><?php echo $data->tanggal_cerai_meninggal; ?></td>
+						<td class="jrktbl"><?php echo date('d F Y', strtotime($data->tanggal_nikah)); ?></td>
+						<td class="jrktbl"><?php echo date('d F Y', strtotime($data->tanggal_cerai_meninggal)); ?></td>
 						<td class="jrktbl"><?php echo $data->pekerjaan; ?></td>
 						<td class="jrktbl">
-							<a href="<?php echo base_url('index.php/admin/pegawai/edit_keluarga/'.$hasil->id_pegawai.'/'.$data->id_data_keluarga) ?>" class="text-success">edit</a>
+							<a href="<?php echo base_url('index.php/admin/pegawai/edit_keluarga/'.$hasil->id_pegawai.'/'.$data->id_data_keluarga) ?>" class="text-success">Edit</a>
 						</td>
 						<td class="jrktbl">
-						<a href="<?php echo base_url('index.php/admin/pegawai/delete_keluarga/'.$hasil->id_pegawai.'/'.$data->id_data_keluarga) ?>" class="text-danger">hapus</a>
+							<a href="<?php echo base_url('index.php/admin/pegawai/delete_keluarga/'.$hasil->id_pegawai.'/'.$data->id_data_keluarga) ?>" class="text-danger">Hapus</a>
 						</td>
 					</tr>
 					<?php $no++ ?>
@@ -94,7 +94,17 @@
 							</div>
 							<div class="form-group">
 								<label class="text-info" for="tanggal_nikah">TANGGAL NIKAH</label>
-								<input type="text" class="form-control" id="tanggal_nikah" name="tanggal_nikah" placeholder="TANGGAL MENIKAH">
+								<div class="row">
+									<div class="col">
+										<input type="text" class="form-control" id="tanggal_nikah" name="tanggal_nikah_hr" placeholder="HH" >
+									</div>
+									<div class="col">
+										<input type="text" class="form-control" id="tanggal_nikah" name="tanggal_nikah_bln" placeholder="BB" >
+									</div>
+									<div class="col">
+										<input type="text" class="form-control" id="tanggal_nikah" name="tanggal_nikah_thn" placeholder="TTTT">
+									</div>
+								</div>
 							</div>
 							<div class="form-group">
 								<label class="text-info" for="uraian">URAIAN</label>
@@ -102,20 +112,29 @@
 							</div>
 							<div class="form-group">
 								<label class="text-info" for="tanggal_cerai_meninggal">TANGGAL CERAI MENINGGAL</label>
-								<input type="text" class="form-control" id="tanggal_cerai_meninggal" name="tanggal_cerai_meninggal" placeholder="TANGGAL CERAI MENINGGAL">
-							</div>
-							<div class="col-md-12">
-								<div class="form-group">
-									<label class="text-info" for="pekerjaan">PEKERJAAN</label>
-									<input type="text" class="form-control" id="pekerjaan" name="pekerjaan" placeholder="PEKERJAAN">
+								<div class="row">
+									<div class="col">
+										<input type="text" class="form-control" id="tanggal_cerai_meninggal" name="tanggal_cerai_meninggal_hr" placeholder="HH" >
+									</div>
+									<div class="col">
+										<input type="text" class="form-control" id="tanggal_cerai_meninggal" name="tanggal_cerai_meninggal_bln" placeholder="BB" >
+									</div>
+									<div class="col">
+										<input type="text" class="form-control" id="tanggal_cerai_meninggal" name="tanggal_cerai_meninggal_thn" placeholder="TTTT">
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div class="form-group">
+										<label class="text-info" for="pekerjaan">PEKERJAAN</label>
+										<input type="text" class="form-control" id="pekerjaan" name="pekerjaan" placeholder="PEKERJAAN">
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-					<div class="modal-footer">
-						<button type="submit" name="submit" value="submit" class="btn btn-success">Simpan</button>
-					</div>
-				</form>
+						<div class="modal-footer">
+							<button type="submit" name="submit" value="submit" class="btn btn-success">Simpan</button>
+						</div>
+					</form>
+				</div>
 			</div>
 		</div>
-	</div>

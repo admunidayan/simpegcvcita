@@ -33,13 +33,13 @@
 						<td class="jrktbl"><?php echo $data->uraian; ?></td>
 						<td class="jrktbl"><?php echo $data->sekolah; ?></td>
 						<td class="jrktbl"><?php echo $data->nomor_sttb; ?></td>
-						<td class="jrktbl"><?php echo $data->tanggal_sttb; ?></td>
-						<td class="jrktbl"><?php echo $data->tanggal_lulus; ?></td>
+						<td class="jrktbl"><?php echo date('d F Y', strtotime($data->tanggal_sttb)); ?></td>
+						<td class="jrktbl"><?php echo date('d F Y', strtotime($data->tanggal_lulus)); ?></td>
 						<td class="jrktbl">
-							<a href="<?php echo base_url('index.php/admin/pegawai/edit_pendidikan/'.$hasil->id_pegawai.'/'.$data->id_pendidikan) ?>" class="text-success">edit</a>
+							<a href="<?php echo base_url('index.php/admin/pegawai/edit_pendidikan/'.$hasil->id_pegawai.'/'.$data->id_pendidikan) ?>" class="text-success">Edit</a>
 						</td>
 						<td class="jrktbl">
-						<a href="<?php echo base_url('index.php/admin/pegawai/delete_pendidikan/'.$hasil->id_pegawai.'/'.$data->id_pendidikan) ?>" class="text-danger">hapus</a>
+						<a href="<?php echo base_url('index.php/admin/pegawai/delete_pendidikan/'.$hasil->id_pegawai.'/'.$data->id_pendidikan) ?>" class="text-danger">Hapus</a>
 						</td>
 					</tr>
 					<?php $no++ ?>
@@ -96,11 +96,31 @@
 								</div>
 								<div class="form-group">
 									<label class="text-info" for="tanggal_sttb">TANGGAL STTB</label>
-									<input type="text" class="form-control" id="tanggal_sttb" name="tanggal_sttb" placeholder="TANGGAL STTB">
+									<div class="row">
+										<div class="col">
+											<input type="text" class="form-control" id="tanggal_sttb" name="tanggal_sttb_hr" placeholder="HH">
+										</div>
+										<div class="col">
+											<input type="text" class="form-control" id="tanggal_sttb" name="tanggal_sttb_bln" placeholder="BB">
+										</div>
+										<div class="col">
+											<input type="text" class="form-control" id="tanggal_sttb" name="tanggal_sttb_thn" placeholder="TTTT">
+										</div>
+									</div>
 								</div>
 								<div class="form-group">
 									<label class="text-info" for="tanggal_lulus">TANGGAL LULUS</label>
-									<input type="text" class="form-control" id="tanggal_lulus" name="tanggal_lulus" placeholder="TANGGAL LULUS">
+									<div class="row">
+										<div class="col">
+											<input type="text" class="form-control" id="tanggal_lulus" name="tanggal_lulus_hr" placeholder="HH">
+										</div>
+										<div class="col">
+											<input type="text" class="form-control" id="tanggal_lulus" name="tanggal_lulus_bln" placeholder="BB">
+										</div>
+										<div class="col">
+											<input type="text" class="form-control" id="tanggal_lulus" name="tanggal_lulus_thn" placeholder="TTTT">
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
