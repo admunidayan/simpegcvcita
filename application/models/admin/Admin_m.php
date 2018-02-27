@@ -77,4 +77,8 @@ class Admin_m extends CI_Model
 		$this->db->where($field, $id);
 		$this->db->update($tabel,$data);
 	}
+	public function update($tabel,$field,$id,$data){
+		$this->db->where($field, $id);
+		$this->db->update($tabel,$data);
+	}
 }

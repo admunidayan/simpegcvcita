@@ -27,7 +27,7 @@
 		<div class="collapse" id="collapseExample">
 			<div class="">
 				<ul>
-					<a href="<?php echo base_url('index.php/admin/dashboard/') ?>">
+					<a href="<?php echo base_url('index.php/admin/users/') ?>">
 						<li class="linkmenu">
 							<div class="row">
 								<div class="col-md-2 text-center"><i class="material-icons">account_circle</i> </div>
@@ -35,7 +35,7 @@
 							</div>
 						</li>
 					</a>
-					<a href="<?php echo base_url('index.php/admin/dashboard/') ?>">
+					<a href="<?php echo base_url('index.php/admin/setting/') ?>">
 						<li class="linkmenu">
 							<div class="row">
 								<div class="col-md-2 text-center"><i class="material-icons">account_balance</i> </div>
