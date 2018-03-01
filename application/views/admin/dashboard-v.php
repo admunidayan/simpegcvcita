@@ -64,6 +64,7 @@
                   <i class="material-icons">report</i> Laporan
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#"><i class="material-icons">assignment_ind</i>Daftar Listing Nominatif PNS</a>
                   <a class="dropdown-item" href="#"><i class="material-icons">bookmark_border</i>Unit Kerja Dan Satuan Kerja</a>
                   <a class="dropdown-item" href="#"><i class="material-icons">location_on</i>Penempatan Kerja</a>
                   <a class="dropdown-item" href="#"><i class="material-icons">location_searching</i>Mengikuti Pelatihan</a>
