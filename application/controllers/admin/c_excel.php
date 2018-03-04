@@ -8,7 +8,7 @@
            parent::__construct();
            //load helper url
            $this->load->helper('url');
-           //load model 'model_buku'
+           //load model 'model'
            $this->load->model('report_m');
       }
  
@@ -31,5 +31,3 @@
  
  }
  
- /* End of file C_excel.php */
- /* Location: ./application/controllers/C_excel.php */
