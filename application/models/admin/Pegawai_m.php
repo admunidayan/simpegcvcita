@@ -1,17 +1,20 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 class Pegawai_m extends CI_Model
 {
-	public function jumlah_data($string){
+	public function jumlah_data($string,$skpd){
 		$this->db->from('data_pegawai');
 		if (!empty($string)) {
 			$this->db->like('nama_pegawai',$string);
 			$this->db->or_like('nip',$string);
 			$this->db->or_like('nip_lama',$string);
 		}
+		if (!empty($skpd)) {
+			$this->db->where('lokasi_kerja',$string);
+		}
 		$rs = $this->db->count_all_results();
 		return $rs;
 	}
-	public function searcing_data($sampai,$dari,$string){
+	public function searcing_data($sampai,$dari,$string,$skpd){
 		// $this->db->select('data_pegawai.*,master_golongan');
 		$this->db->join('master_golongan', 'master_golongan.id_golongan = data_pegawai.id_golongan');
 		// $this->db->join('master_lokasi_kerja', 'master_lokasi_kerja.id_lokasi_kerja = data_pegawai.lokasi_kerja');
@@ -20,6 +23,9 @@ class Pegawai_m extends CI_Model
 			$this->db->like('nama_pegawai',$string);
 			$this->db->or_like('nip',$string);
 			$this->db->or_like('nip_lama',$string);
+		}
+		if (!empty($skpd)) {
+			$this->db->where('lokasi_kerja',$string);
 		}
 		$this->db->order_by('nama_pegawai','asc');
 		$query = $this->db->get('data_pegawai',$sampai,$dari);

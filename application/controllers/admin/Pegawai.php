@@ -22,7 +22,7 @@ class Pegawai extends CI_Controller {
                 $data['users'] = $this->ion_auth->user()->row();
                 $data['aside'] = 'nav/nav';
                 $data['page'] = 'admin/pegawai-v';
-                $jumlah = $this->Pegawai_m->jumlah_data(@$post['string']);
+                $jumlah = $this->Pegawai_m->jumlah_data(@$post['string'],@$post['skpd']);
                 $config['base_url'] = base_url().'/index.php/admin/pegawai/index/';
                 $config['total_rows'] = $jumlah;
                 $config['per_page'] = '10';
@@ -31,22 +31,27 @@ class Pegawai extends CI_Controller {
                 $config['next_page'] = '&laquo;';
                 $config['prev_page'] = '&raquo;';
                 // bootstap style
-                $config['full_tag_open'] = "<ul class='pagination pagination-sm' style='position:relative;'>";
-                $config['full_tag_close'] ="</ul>";
-                $config['num_tag_open'] = '<li>';
-                $config['num_tag_close'] = '</li>';
-                $config['cur_tag_open'] = "<li class='disabled'><li class='active'><a href='#'>";
-                $config['cur_tag_close'] = "<span class='sr-only'></span></a></li>";
-                $config['next_tag_open'] = "<li>";
-                $config['next_tagl_close'] = "</li>";
-                $config['prev_tag_open'] = "<li>";
-                $config['prev_tagl_close'] = "</li>";
-                $config['first_tag_open'] = "<li>";
-                $config['first_tagl_close'] = "</li>";
-                $config['last_tag_open'] = "<li>";
-                $config['last_tagl_close'] = "</li>";
+                $config['first_link']       = 'Pertama';
+                $config['last_link']        = 'Terakhir';
+                $config['next_link']        = 'Selanjutnya';
+                $config['prev_link']        = 'Sebelumnya';
+                $config['full_tag_open']    = '<div class="pagging text-center"><nav><ul class="pagination justify-content-center">';
+                $config['full_tag_close']   = '</ul></nav></div>';
+                $config['num_tag_open']     = '<li class="page-item"><span class="page-link">';
+                $config['num_tag_close']    = '</span></li>';
+                $config['cur_tag_open']     = '<li class="page-item active"><span class="page-link">';
+                $config['cur_tag_close']    = '<span class="sr-only">(current)</span></span></li>';
+                $config['next_tag_open']    = '<li class="page-item"><span class="page-link">';
+                $config['next_tagl_close']  = '<span aria-hidden="true">&raquo;</span></span></li>';
+                $config['prev_tag_open']    = '<li class="page-item"><span class="page-link">';
+                $config['prev_tagl_close']  = '</span>Next</li>';
+                $config['first_tag_open']   = '<li class="page-item"><span class="page-link">';
+                $config['first_tagl_close'] = '</span></li>';
+                $config['last_tag_open']    = '<li class="page-item"><span class="page-link">';
+                $config['last_tagl_close']  = '</span></li>';
                 //inisialisasi config
                 $this->pagination->initialize($config);
+                $data['skpd'] = $this->Pegawai_m->select_data('master_lokasi_kerja');
                 $data['status'] = $this->Pegawai_m->select_data('master_status_pegawai');
                 $data['agama'] = $this->Pegawai_m->select_data('master_agama');
                 $data['golongan'] = $this->Pegawai_m->select_data('master_golongan');
@@ -55,7 +60,7 @@ class Pegawai extends CI_Controller {
                 // pengaturan searching
                 $data['jmldata'] = $jumlah;
                 $data['nmr'] = $offset;
-                $data['hasil'] = $this->Pegawai_m->searcing_data($config['per_page'],$offset,@$post['string']);
+                $data['hasil'] = $this->Pegawai_m->searcing_data($config['per_page'],$offset,@$post['string'],@$post['skpd']);
                 $data['pagging'] = $this->pagination->create_links();
                 // pagging setting
                 $this->load->view('admin/dashboard-v',$data);
@@ -155,7 +160,7 @@ class Pegawai extends CI_Controller {
             redirect(base_url('index.php/login'));
         }
     }
-     public function detail_rjabatan($id){
+    public function detail_rjabatan($id){
         if ($this->ion_auth->logged_in()) {
             $level = array('admin','members');
             if (!$this->ion_auth->in_group($level)) {
@@ -452,7 +457,7 @@ class Pegawai extends CI_Controller {
             redirect(base_url('index.php/login'));
         }
     }
-     public function create_keluarga($idpegawai){
+    public function create_keluarga($idpegawai){
         if ($this->ion_auth->logged_in()) {
             $level = array('admin','members');
             if (!$this->ion_auth->in_group($level)) {
@@ -808,7 +813,7 @@ class Pegawai extends CI_Controller {
             redirect(base_url('index.php/login'));
         }
     }
-     public function update_rpangkat($idpegawai,$idr){
+    public function update_rpangkat($idpegawai,$idr){
         if ($this->ion_auth->logged_in()) {
             $level = array('admin','members');
             if (!$this->ion_auth->in_group($level)) {
@@ -865,7 +870,7 @@ class Pegawai extends CI_Controller {
             redirect(base_url('index.php/login'));
         }
     }
-     public function update_rjabatan($idpegawai,$idr){
+    public function update_rjabatan($idpegawai,$idr){
         if ($this->ion_auth->logged_in()) {
             $level = array('admin','members');
             if (!$this->ion_auth->in_group($level)) {
@@ -925,7 +930,7 @@ class Pegawai extends CI_Controller {
             redirect(base_url('index.php/login'));
         }
     }
-     public function update_pendidikan($idpegawai,$idr){
+    public function update_pendidikan($idpegawai,$idr){
         if ($this->ion_auth->logged_in()) {
             $level = array('admin','members');
             if (!$this->ion_auth->in_group($level)) {
@@ -985,7 +990,7 @@ class Pegawai extends CI_Controller {
             redirect(base_url('index.php/login'));
         }
     }
-     public function update_pelatihan($idpegawai,$idr){
+    public function update_pelatihan($idpegawai,$idr){
         if ($this->ion_auth->logged_in()) {
             $level = array('admin','members');
             if (!$this->ion_auth->in_group($level)) {
@@ -995,12 +1000,12 @@ class Pegawai extends CI_Controller {
             }else{
                 $post = $this->input->post();
                 $datainput = array(
-                   'uraian' => $post['uraian'],
-                    'lokasi'=>$post['lokasi'],
-                    'tanggal_sertifikat'=>$post['tanggal_sertifikat_thn'].'-'.$post['tanggal_sertifikat_bln'].'-'.$post['tanggal_sertifikat_hr'],
-                    'jam_pelatihan'=>$post['jam_pelatihan'],
-                    'negara'=>$post['negara']
-                );
+                 'uraian' => $post['uraian'],
+                 'lokasi'=>$post['lokasi'],
+                 'tanggal_sertifikat'=>$post['tanggal_sertifikat_thn'].'-'.$post['tanggal_sertifikat_bln'].'-'.$post['tanggal_sertifikat_hr'],
+                 'jam_pelatihan'=>$post['jam_pelatihan'],
+                 'negara'=>$post['negara']
+             );
                 $this->Pegawai_m->update_data('data_pelatihan','id_pelatihan',$idr,$datainput);
                 $pesan = 'Data riwayat pelatihan baru berhasil di diubah';
                 $this->session->set_flashdata('message', $pesan );
@@ -1041,7 +1046,7 @@ class Pegawai extends CI_Controller {
             redirect(base_url('index.php/login'));
         }
     }
-     public function update_penghargaan($idpegawai,$idr){
+    public function update_penghargaan($idpegawai,$idr){
         if ($this->ion_auth->logged_in()) {
             $level = array('admin','members');
             if (!$this->ion_auth->in_group($level)) {
@@ -1051,10 +1056,10 @@ class Pegawai extends CI_Controller {
             }else{
                 $post = $this->input->post();
                 $datainput = array(
-                   'uraian' => $post['uraian'],
-                    'nomor_sk'=>$post['nomor_sk'],
-                    'tanggal_sk'=>$post['tanggal_sk_thn'].'-'.$post['tanggal_sk_bln'].'-'.$post['tanggal_sk_hr']
-                );
+                 'uraian' => $post['uraian'],
+                 'nomor_sk'=>$post['nomor_sk'],
+                 'tanggal_sk'=>$post['tanggal_sk_thn'].'-'.$post['tanggal_sk_bln'].'-'.$post['tanggal_sk_hr']
+             );
                 $this->Pegawai_m->update_data('data_penghargaan','id_penghargaan',$idr,$datainput);
                 $pesan = 'Data riwayat penghargaan baru berhasil di diubah';
                 $this->session->set_flashdata('message', $pesan );
@@ -1095,7 +1100,7 @@ class Pegawai extends CI_Controller {
             redirect(base_url('index.php/login'));
         }
     }
-     public function update_seminar($idpegawai,$idr){
+    public function update_seminar($idpegawai,$idr){
         if ($this->ion_auth->logged_in()) {
             $level = array('admin','members');
             if (!$this->ion_auth->in_group($level)) {
@@ -1105,10 +1110,10 @@ class Pegawai extends CI_Controller {
             }else{
                 $post = $this->input->post();
                 $datainput = array(
-                   'uraian' => $post['uraian'],
-                    'lokasi'=>$post['lokasi'],
-                    'tanggal'=>$post['tanggal_thn'].'-'.$post['tanggal_bln'].'-'.$post['tanggal_hr']
-                );
+                 'uraian' => $post['uraian'],
+                 'lokasi'=>$post['lokasi'],
+                 'tanggal'=>$post['tanggal_thn'].'-'.$post['tanggal_bln'].'-'.$post['tanggal_hr']
+             );
                 $this->Pegawai_m->update_data('data_seminar','id_seminar',$idr,$datainput);
                 $pesan = 'Data riwayat seminar baru berhasil di diubah';
                 $this->session->set_flashdata('message', $pesan );
@@ -1149,7 +1154,7 @@ class Pegawai extends CI_Controller {
             redirect(base_url('index.php/login'));
         }
     }
-     public function update_organisasi($idpegawai,$idr){
+    public function update_organisasi($idpegawai,$idr){
         if ($this->ion_auth->logged_in()) {
             $level = array('admin','members');
             if (!$this->ion_auth->in_group($level)) {
@@ -1159,10 +1164,10 @@ class Pegawai extends CI_Controller {
             }else{
                 $post = $this->input->post();
                 $datainput = array(
-                   'uraian' => $post['uraian'],
-                    'lokasi'=>$post['lokasi'],
-                    'tanggal'=>$post['tanggal_thn'].'-'.$post['tanggal_bln'].'-'.$post['tanggal_hr']
-                );
+                 'uraian' => $post['uraian'],
+                 'lokasi'=>$post['lokasi'],
+                 'tanggal'=>$post['tanggal_thn'].'-'.$post['tanggal_bln'].'-'.$post['tanggal_hr']
+             );
                 $this->Pegawai_m->update_data('data_organisasi','id_organisasi',$idr,$datainput);
                 $pesan = 'Data riwayat organisasi baru berhasil di diubah';
                 $this->session->set_flashdata('message', $pesan );
@@ -1203,7 +1208,7 @@ class Pegawai extends CI_Controller {
             redirect(base_url('index.php/login'));
         }
     }
-     public function update_gaji_pokok($idpegawai,$idr){
+    public function update_gaji_pokok($idpegawai,$idr){
         if ($this->ion_auth->logged_in()) {
             $level = array('admin','members');
             if (!$this->ion_auth->in_group($level)) {
@@ -1213,15 +1218,15 @@ class Pegawai extends CI_Controller {
             }else{
                 $post = $this->input->post();
                 $datainput = array(
-                   'nomor_sk' => $post['nomor_sk'],
-                    'tanggal_sk'=>$post['tanggal_sk_thn'].'-'.$post['tanggal_sk_bln'].'-'.$post['tanggal_sk_hr'],
-                    'dasar_perubahan'=>$post['dasar_perubahan'],
-                    'gaji_pokok'=>$post['gaji_pokok'],
-                    'tanggal_mulai'=>$post['tanggal_mulai_thn'].'-'.$post['tanggal_mulai_bln'].'-'.$post['tanggal_mulai_hr'],
-                    'tanggal_selesai'=>$post['tanggal_selesai_thn'].'-'.$post['tanggal_selesai_bln'].'-'.$post['tanggal_selesai_hr'],
-                    'masa_kerja'=>$post['masa_kerja'],
-                    'pejabat_menetapkan'=>$post['pejabat_menetapkan']
-                );
+                 'nomor_sk' => $post['nomor_sk'],
+                 'tanggal_sk'=>$post['tanggal_sk_thn'].'-'.$post['tanggal_sk_bln'].'-'.$post['tanggal_sk_hr'],
+                 'dasar_perubahan'=>$post['dasar_perubahan'],
+                 'gaji_pokok'=>$post['gaji_pokok'],
+                 'tanggal_mulai'=>$post['tanggal_mulai_thn'].'-'.$post['tanggal_mulai_bln'].'-'.$post['tanggal_mulai_hr'],
+                 'tanggal_selesai'=>$post['tanggal_selesai_thn'].'-'.$post['tanggal_selesai_bln'].'-'.$post['tanggal_selesai_hr'],
+                 'masa_kerja'=>$post['masa_kerja'],
+                 'pejabat_menetapkan'=>$post['pejabat_menetapkan']
+             );
                 $this->Pegawai_m->update_data('data_gaji_pokok','id_gaji_pokok',$idr,$datainput);
                 $pesan = 'Data riwayat gaji pokok baru berhasil di diubah';
                 $this->session->set_flashdata('message', $pesan );
@@ -1262,7 +1267,7 @@ class Pegawai extends CI_Controller {
             redirect(base_url('index.php/login'));
         }
     }
-     public function update_hukuman($idpegawai,$idr){
+    public function update_hukuman($idpegawai,$idr){
         if ($this->ion_auth->logged_in()) {
             $level = array('admin','members');
             if (!$this->ion_auth->in_group($level)) {
@@ -1272,14 +1277,14 @@ class Pegawai extends CI_Controller {
             }else{
                 $post = $this->input->post();
                 $datainput = array(
-                   'uraian' => $post['uraian'],
-                    'nomor_sk'=>$post['nomor_sk'],
-                    'tanggal_sk'=>$post['tanggal_sk_thn'].'-'.$post['tanggal_sk_bln'].'-'.$post['tanggal_sk_hr'],
-                    'tanggal_mulai'=>$post['tanggal_mulai_thn'].'-'.$post['tanggal_mulai_bln'].'-'.$post['tanggal_mulai_hr'],
-                    'tanggal_selesai'=>$post['tanggal_selesai_thn'].'-'.$post['tanggal_selesai_bln'].'-'.$post['tanggal_selesai_hr'],
-                    'masa_berlaku'=>$post['masa_berlaku_thn'].'-'.$post['masa_berlaku_bln'].'-'.$post['masa_beralaku_hr'],
-                    'pejabat_menetapkan'=>$post['pejabat_menetapkan']
-                );
+                 'uraian' => $post['uraian'],
+                 'nomor_sk'=>$post['nomor_sk'],
+                 'tanggal_sk'=>$post['tanggal_sk_thn'].'-'.$post['tanggal_sk_bln'].'-'.$post['tanggal_sk_hr'],
+                 'tanggal_mulai'=>$post['tanggal_mulai_thn'].'-'.$post['tanggal_mulai_bln'].'-'.$post['tanggal_mulai_hr'],
+                 'tanggal_selesai'=>$post['tanggal_selesai_thn'].'-'.$post['tanggal_selesai_bln'].'-'.$post['tanggal_selesai_hr'],
+                 'masa_berlaku'=>$post['masa_berlaku_thn'].'-'.$post['masa_berlaku_bln'].'-'.$post['masa_beralaku_hr'],
+                 'pejabat_menetapkan'=>$post['pejabat_menetapkan']
+             );
                 $this->Pegawai_m->update_data('data_hukuman','id_hukuman',$idr,$datainput);
                 $pesan = 'Data riwayat hukuman baru berhasil di diubah';
                 $this->session->set_flashdata('message', $pesan );
@@ -1320,7 +1325,7 @@ class Pegawai extends CI_Controller {
             redirect(base_url('index.php/login'));
         }
     }
-     public function update_dp3($idpegawai,$idr){
+    public function update_dp3($idpegawai,$idr){
         if ($this->ion_auth->logged_in()) {
             $level = array('admin','members');
             if (!$this->ion_auth->in_group($level)) {
@@ -1330,20 +1335,20 @@ class Pegawai extends CI_Controller {
             }else{
                 $post = $this->input->post();
                 $datainput = array(
-                   'tahun' => $post['tahun'],
-                    'kesetiaan'=>$post['kesetiaan'],
-                    'prestasi'=>$post['prestasi'],
-                    'tanggung_jawab'=>$post['tanggung_jawab'],
-                    'ketaatan'=>$post['ketaatan'],
-                    'kejujuran'=>$post['kejujuran'],
-                    'kerjasama'=>$post['kerjasama'],
-                    'prakarsa'=>$post['prakarsa'],
-                    'kepemimpinan'=>$post['kepemimpinan'],
-                    'rata_rata'=>$post['rata_rata'],
-                    'atasan'=>$post['atasan'],
-                    'penilai'=>$post['penilai'],
-                    'mengetahui'=>$post['mengetahui']
-                );
+                 'tahun' => $post['tahun'],
+                 'kesetiaan'=>$post['kesetiaan'],
+                 'prestasi'=>$post['prestasi'],
+                 'tanggung_jawab'=>$post['tanggung_jawab'],
+                 'ketaatan'=>$post['ketaatan'],
+                 'kejujuran'=>$post['kejujuran'],
+                 'kerjasama'=>$post['kerjasama'],
+                 'prakarsa'=>$post['prakarsa'],
+                 'kepemimpinan'=>$post['kepemimpinan'],
+                 'rata_rata'=>$post['rata_rata'],
+                 'atasan'=>$post['atasan'],
+                 'penilai'=>$post['penilai'],
+                 'mengetahui'=>$post['mengetahui']
+             );
                 $this->Pegawai_m->update_data('data_dp3','id_dp3',$idr,$datainput);
                 $pesan = 'Data riwayat dp3 baru berhasil di diubah';
                 $this->session->set_flashdata('message', $pesan );
@@ -1384,7 +1389,7 @@ class Pegawai extends CI_Controller {
             redirect(base_url('index.php/admin//login'));
         }
     }
-     public function update_keluarga($idpegawai,$idr){
+    public function update_keluarga($idpegawai,$idr){
         if ($this->ion_auth->logged_in()) {
             $level = array('admin','members');
             if (!$this->ion_auth->in_group($level)) {
