@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 25 Feb 2018 pada 13.55
+-- Generation Time: 16 Mar 2018 pada 15.03
 -- Versi Server: 10.1.19-MariaDB
 -- PHP Version: 5.6.28
 
@@ -49,7 +49,8 @@ CREATE TABLE `tbl_data_dp3` (
 --
 
 INSERT INTO `tbl_data_dp3` (`id_dp3`, `id_pegawai`, `tahun`, `kesetiaan`, `prestasi`, `tanggung_jawab`, `ketaatan`, `kejujuran`, `kerjasama`, `prakarsa`, `kepemimpinan`, `rata_rata`, `atasan`, `penilai`, `mengetahui`) VALUES
-(1, 9, '2011', '91', '82', '82', '82', '82', '81', '81', '0', '72.625', 'SOLO RIYADI LUMBONG', 'SYAHMANSYAH', '-');
+(1, 9, '2011', '91', '82', '82', '82', '82', '81', '81', '0', '72.625', 'SOLO RIYADI LUMBONG', 'SYAHMANSYAH', '-'),
+(3, 2, '2011', '30', '89', '88', '76', '67', '54', '78', '76', '80', '90', 'tes', 'tes');
 
 -- --------------------------------------------------------
 
@@ -77,7 +78,7 @@ CREATE TABLE `tbl_data_gaji_pokok` (
 
 INSERT INTO `tbl_data_gaji_pokok` (`id_gaji_pokok`, `id_pegawai`, `id_golongan`, `nomor_sk`, `tanggal_sk`, `dasar_perubahan`, `gaji_pokok`, `tanggal_mulai`, `tanggal_selesai`, `masa_kerja`, `pejabat_menetapkan`) VALUES
 (1, 9, 12, 'KEP.DB/117/B/2006-K', '27 February 2006', 'KENAIKAN PANGKAT', '1243800', '01 April 2006', '30 June 2023', '17 Tahun 12 Bulan', 'MENTERI PU'),
-(6, 6, 0, '-', '12/12/2012', 'TES MANTAP', '1234', '12/12/2012', '21/12/2012', 'MANTAP', 'TES');
+(6, 6, 0, '-', '2012-12-12', 'TES MANTAP', '1234', '2012-12-12', '2012-12-12', 'MANTAP', 'TES');
 
 -- --------------------------------------------------------
 
@@ -103,7 +104,7 @@ CREATE TABLE `tbl_data_hukuman` (
 --
 
 INSERT INTO `tbl_data_hukuman` (`id_hukuman`, `id_pegawai`, `id_master_hukuman`, `uraian`, `nomor_sk`, `tanggal_sk`, `tanggal_mulai`, `tanggal_selesai`, `masa_berlaku`, `pejabat_menetapkan`) VALUES
-(1, 6, 0, 'TES MANTAP', '1234', '12/12/2012', '12/12/2012', '21/12/2012', '12/12/2012', 'TES');
+(1, 6, 0, 'TES MANTAP', '1234', '2012-12-12', '2012-12-12', '2012-12-12', '2019-12-', 'TES');
 
 -- --------------------------------------------------------
 
@@ -132,7 +133,7 @@ INSERT INTO `tbl_data_keluarga` (`id_data_keluarga`, `id_pegawai`, `nama_anggota
 (1, 1, 'HELENA P. NGOEO', '1967-04-19', '', 'KAWIN', '1967-04-19', '-', '14 November 2012', '-'),
 (2, 9, 'SITI RAHAYU', '1967-04-19', '', 'KAWIN', '1967-04-19', '-', '-', '-'),
 (3, 19, '-', '1967-04-19', '', '-', '1967-04-19', '-', '-', '-'),
-(4, 6, 'Isa Rabiati', '2000-04-19', '', 'Belum Menikah', '1967-04-19', '-', '-', '');
+(4, 6, 'Isa Rabiati', '2012-04-19', 'suami', 'Belum Menikah', '2012-12-12', '-', '2012-12-12', 'NON JOB');
 
 -- --------------------------------------------------------
 
@@ -153,7 +154,7 @@ CREATE TABLE `tbl_data_organisasi` (
 --
 
 INSERT INTO `tbl_data_organisasi` (`id_organisasi`, `id_pegawai`, `uraian`, `lokasi`, `tanggal`) VALUES
-(1, 6, 'TES MANTAP', 'mantap', '29/05/2017');
+(1, 6, 'TES MANTAP', 'mantap', '2012-12-17');
 
 -- --------------------------------------------------------
 
@@ -204,28 +205,28 @@ CREATE TABLE `tbl_data_pegawai` (
 --
 
 INSERT INTO `tbl_data_pegawai` (`id_pegawai`, `nip`, `nip_lama`, `no_kartu_pegawai`, `nama_pegawai`, `agama`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `usia`, `status_pegawai`, `tanggal_pengangkatan_cpns`, `alamat`, `no_npwp`, `kartu_askes_pegawai`, `status_pegawai_pangkat`, `id_golongan`, `nomor_sk_pangkat`, `tanggal_sk_pangkat`, `tanggal_mulai_pangkat`, `tanggal_selesai_pangkat`, `id_status_jabatan`, `id_jabatan`, `id_unit_kerja`, `id_satuan_kerja`, `lokasi_kerja`, `nomor_sk_jabatan`, `tanggal_sk_jabatan`, `tanggal_mulai_jabatan`, `tanggal_selesai_jabatan`, `id_eselon`, `tmt_eselon`, `tmt_cpns`, `tmt_pns`, `foto`) VALUES
-(2, '196109031992051004', '196109031992051004', 'F329422', 'Ir. ASRI ABU, MM', 1, 'MAKASAR, PROPINSI SULAWESI SELATAN', '03 September 1961', 'Laki-Laki', '51 tahun,', '5', '12 May 1992', 'JL. TONDANO, KEL. BULOTADA\\''A TIMUR, GORONTALO, PROPINSI GORONTALO', '780609', '8669vd23232', '5', 17, '823.4/BKPAD/SK/190/2008', '31 March 2008', '01 April 2008', '22 November 2012', 3, 2347, 31, 8, '29', '664/KPTS/M/2010', '10 December 2010', '10 December 2010', '22 November 2012', 29, '30 November 2012', '0000-00-00', '0000-00-00', 'avatar.png'),
-(3, '196607201997031004', '-', '-', 'JOHANES ROBBY WAANI ST', 1, '-', '20 July 1966', 'Laki-Laki', '46 Tahun 3', '5', '01 March 1997', '-', '-', '-', '5', 16, '-', '01 April 2009', '01 April 2009', '-', 2, 592, 31, 8, '22', '02/KPTS/Db/2011', '21 January 2011', '21 January 2011', '-', 29, '24 January 2011', '0000-00-00', '0000-00-00', ''),
-(4, '196411191997031002', '110053948', '-', 'IR. WILLIAM TAVIPONOVA GLORICUS KEREH MT', 1, '-', '19 November 1964', 'Laki-Laki', '47 Tahun 1', '5', '01 March1997', 'BUKIT DURI NO.33 JAKARTA SELATAN,', '-', '-', '5', 16, 'DB/090/B/2009-W', '27 February 2009', '01 April 2009', '-', 2, 2349, 31, 7, '22', '164/KPTS/M/2004', '12 February 2004', '12 February 2004', '-', 32, '-', '0000-00-00', '0000-00-00', ''),
-(5, '19721024200003005', '560015858', 'D.155084', 'HARI PURWANTO SAMIRAN ST., MM.', 1, 'MANADO', '24 October 1972', 'Laki-Laki', '40 Tahun 0', '5', '01 March 2000', 'JL.JEND. SUDIRMAN NO. 71 KOTA SELATAN, GORONTALO, PROPINSI GORONTALO', '-', '-', '5', 16, 'Db/008/B/2011-H', '21 March 2003', '01 April 2011', '-', 2, 2345, 31, 177, '29', '11/KPTS/BS/2011', '16 March 2011', '16 March 2011', '-', 32, '-', '0000-00-00', '0000-00-00', ''),
-(6, '195907101983031030', '110043776', 'D.152665', 'DARMADJI SUHEDI ST.MT', 1, 'GORONTALO', '10 July 1959', 'Laki-Laki', '53 Tahun 4', '5', '1 March 2003', 'JL. TAMAN PENDIDIKAN NO.34 KOTA TIMUR, GORONTALO, PROPINSI GORONTALO', '-', '-', '5', 16, '823.3/BKPAD/SK/472/10', '31 March 2010', '01 April 2010', '-', 2, 2345, 31, 8, '22', '-', '27 May 2010', '01 June 2010', '-', 32, '-', '0000-00-00', '0000-00-00', ''),
-(7, '195812311997031004', '110054393', 'G.387882', 'DRS. ARSYID USMAN', 1, 'GORONTALO', '31 December 1958', 'Laki-Laki', '53 Tahun 1', '5', '01 March 1997', 'JLN. RAYA PONDOK KACANG TIMUR, KAMPUNG BULAK', '-', '-', '5', 16, 'DB/207/B/2009-A', '27 February 2009', '01 April 2009', '-', 2, 2345, 31, 177, '29', '11/KPTS/BS/2011', '16 March 2011', '16 March 2011', '-', 32, '-', '0000-00-00', '0000-00-00', ''),
-(8, '196904101998031005', '110054827', '-', 'MARTINUS PAKONGLEAN BANDASO ST', 1, 'SULAWESI UTARA', '10 April 1969', 'Laki-Laki', '43 tahun,', '5', '01 March 1998', '-', '-', '-', '5', 15, '-', '-', '01 April 2010', '-', 2, 2345, 31, 12, '22', '433/KPTS/M/2011', '27 December 2011', '01 December 2012', '-', 32, '-', '0000-00-00', '0000-00-00', ''),
-(9, '196402161991011001', '110045316', 'F.232606', 'KUSNAEDI ST', 1, 'PROPINSI JAWA BARAT', '16 February 1964', 'Laki-Laki', '48 Tahun 8', '5', '01 March 1991', 'KOMPLEK AL. JL. BARU 24 PONDOK LABU', '-', '-', '5', 17, '-', '-', '01 April 2010', '-', 2, 2344, 1, 7, '4', 'KP.03/01/116/XII/1992', '24 September 2012', '12 October 2012', '-', 29, '12 October 2012', '0000-00-00', '0000-00-00', ''),
-(10, '197907072005021001', '110057522', '-', 'IBNU KURNIAWAN ST', 1, 'SURABAYA', '07 July 1979', 'Laki-Laki', '33 tahun, ', '5', '01 February 2005', '-', '-', '-', '5', 17, 'KEP.103/A/DP/2005-I', '04 April 2005', '01/02/2005', '01/06/2006', 2, 511, 16479, 175, '-', '-', '-', '-', '-', 32, '-', '0000-00-00', '0000-00-00', ''),
+(2, '196109031992051004', '196109031992051004', 'F329422', 'Ir. ASRI ABU, MM', 1, 'MAKASAR, PROPINSI SULAWESI SELATAN', '03 September 1961', 'Laki-Laki', '51 tahun,', '5', '12 May 1992', 'JL. TONDANO, KEL. BULOTADA\\''A TIMUR, GORONTALO, PROPINSI GORONTALO', '780609', '8669vd23232', '5', 17, '823.4/BKPAD/SK/190/2008', '31 March 2008', '01 April 2008', '22 November 2012', 3, 2347, 31, 8, 'DINAS TRANSMIGRASI KAB. BUTON', '664/KPTS/M/2010', '10 December 2010', '10 December 2010', '22 November 2012', 29, '30 November 2012', '0000-00-00', '0000-00-00', 'avatar.png'),
+(3, '196607201997031004', '-', '-', 'JOHANES ROBBY WAANI ST', 1, '-', '20 July 1966', 'Laki-Laki', '46 Tahun 3', '5', '01 March 1997', '-', '-', '-', '5', 16, '-', '01 April 2009', '01 April 2009', '-', 2, 592, 31, 8, 'DINAS KOPERASI DAN UKM KABUPATEN BUTON', '02/KPTS/Db/2011', '21 January 2011', '21 January 2011', '-', 29, '24 January 2011', '0000-00-00', '0000-00-00', ''),
+(4, '196411191997031002', '110053948', '-', 'IR. WILLIAM TAVIPONOVA GLORICUS KEREH MT', 1, '-', '19 November 1964', 'Laki-Laki', '47 Tahun 1', '5', '01 March1997', 'BUKIT DURI NO.33 JAKARTA SELATAN,', '-', '-', '5', 16, 'DB/090/B/2009-W', '27 February 2009', '01 April 2009', '-', 2, 2349, 31, 7, 'DINAS PEKERJAAN UMUM DAN PENATAAN RUANG KAB. BUTON', '164/KPTS/M/2004', '12 February 2004', '12 February 2004', '-', 32, '-', '0000-00-00', '0000-00-00', ''),
+(5, '19721024200003005', '560015858', 'D.155084', 'HARI PURWANTO SAMIRAN ST., MM.', 1, 'MANADO', '24 October 1972', 'Laki-Laki', '40 Tahun 0', '5', '01 March 2000', 'JL.JEND. SUDIRMAN NO. 71 KOTA SELATAN, GORONTALO, PROPINSI GORONTALO', '-', '-', '5', 16, 'Db/008/B/2011-H', '21 March 2003', '01 April 2011', '-', 2, 2345, 31, 177, 'DINAS PERHUBUNGAN KAB. BUTON', '11/KPTS/BS/2011', '16 March 2011', '16 March 2011', '-', 32, '-', '0000-00-00', '0000-00-00', ''),
+(6, '195907101983031030', '110043776', 'D.152665', 'DARMADJI SUHEDI ST.MT', 1, 'GORONTALO', '10 July 1959', 'Laki-Laki', '53 Tahun 4', '5', '1 March 2003', 'JL. TAMAN PENDIDIKAN NO.34 KOTA TIMUR, GORONTALO, PROPINSI GORONTALO', '-', '-', '5', 16, '823.3/BKPAD/SK/472/10', '31 March 2010', '01 April 2010', '-', 2, 2345, 31, 8, 'DINAS KESEHATAN KAB. BUTON', '-', '27 May 2010', '01 June 2010', '-', 32, '-', '0000-00-00', '0000-00-00', ''),
+(7, '195812311997031004', '110054393', 'G.387882', 'DRS. ARSYID USMAN', 1, 'GORONTALO', '31 December 1958', 'Laki-Laki', '53 Tahun 1', '5', '01 March 1997', 'JLN. RAYA PONDOK KACANG TIMUR, KAMPUNG BULAK', '-', '-', '5', 16, 'DB/207/B/2009-A', '27 February 2009', '01 April 2009', '-', 2, 2345, 31, 177, 'DINAS PENDIDIKAN KAB. BUTON', '11/KPTS/BS/2011', '16 March 2011', '16 March 2011', '-', 32, '-', '0000-00-00', '0000-00-00', ''),
+(8, '196904101998031005', '110054827', '-', 'MARTINUS PAKONGLEAN BANDASO ST', 1, 'SULAWESI UTARA', '10 April 1969', 'Laki-Laki', '43 tahun,', '5', '01 March 1998', '-', '-', '-', '5', 15, '-', '-', '01 April 2010', '-', 2, 2345, 31, 12, 'DINAS PEMBERDAYAAN PEREMPUAN DAN PERLINDUNGAN ANAK KAB. BUTON\n', '433/KPTS/M/2011', '27 December 2011', '01 December 2012', '-', 32, '-', '0000-00-00', '0000-00-00', ''),
+(9, '196402161991011001', '110045316', 'F.232606', 'KUSNAEDI ST', 1, 'PROPINSI JAWA BARAT', '16 February 1964', 'Laki-Laki', '48 Tahun 8', '5', '01 March 1991', 'KOMPLEK AL. JL. BARU 24 PONDOK LABU', '-', '-', '5', 17, '-', '-', '01 April 2010', '-', 2, 2344, 1, 7, 'DINAS KELAUTAN DAN PERIKANAN KAB. BUTON\n', 'KP.03/01/116/XII/1992', '24 September 2012', '12 October 2012', '-', 29, '12 October 2012', '0000-00-00', '0000-00-00', ''),
+(10, '197907072005021001', '110057522', '-', 'IBNU KURNIAWAN ST', 1, 'SURABAYA', '07 July 1979', 'Laki-Laki', '33 tahun, ', '5', '01 February 2005', '-', '-', '-', '5', 17, 'KEP.103/A/DP/2005-I', '04 April 2005', '01/02/2005', '01/06/2006', 2, 511, 16479, 175, 'DINAS PARIWISATA KAB. BUTON', '-', '-', '-', '-', 32, '-', '0000-00-00', '0000-00-00', ''),
 (11, '-', '110056174', '-', 'EVANDA LIENTJE CAROLIEN SALANGKA', 1, 'MANADO', '04 December 1967', 'Perempuan', '44 tahun, ', '5', '01 December 2002', '-', '-', '-', '1', 4, '-', '-', '01 October 2010', '-', 2, 1, 1, 1, 'SULAWESI UTARA', '11/KPTS/BS/2011', '06 March 2011', '16 March 2011', '-', 32, '-', '0000-00-00', '0000-00-00', ''),
 (12, '196308272002122', '110056237', '-', 'HELEN A.RANTUNG SE', 1, 'TUMPAAN', '27 August 1963', 'Perempuan', '49 tahun, ', '5', '01 December 2002', '-', '-', '-', '5', 14, '-', '-', '01 April 2010', '-', 2, 116, 16479, 175, 'SULAWESI UTARA', '11/KPTS/BS/2011', '16 March 2011', '16 March 2011', '-', 32, '-', '0000-00-00', '0000-00-00', ''),
-(13, '196307162002122002', '110056404', '-', 'RUSDA PODUNGE S.SOS', 1, 'GORONTALO, PROPINSI SULAWESI UTARA', '16 July 1963', 'Perempuan', '49 tahun, ', '5', '01 December 2012', 'JL.IRIAN KEL.DULALAWO GORONTALO', '-', '-', '5', 14, 'Db/435/B/2012-R', '23 July 2012', '01 October 2012', '-', 2, 116, 16479, 175, 'GORONTALO', '11/KPTS/BS/2011', '16 March 2011', '16 March 2011', '-', 32, '-', '0000-00-00', '0000-00-00', ''),
-(14, '196405312006041001', '110058297', '-', 'DENNY MEIKY PAENDONG SE', 1, 'MANADO, PROPINSI SULAWESI UTARA', '31 May 1964', 'Laki-Laki', '48 tahun, ', '5', '01 April 2006', '-', '-', '-', '5', 14, 'Db/434/B/2012-D', '23 July 2012', '01 October 2012', '-', 2, 116, 16479, 175, 'SULAWESI UTARA', '-', '-', '-', '-', 32, '-', '0000-00-00', '0000-00-00', ''),
-(15, '196705092002121', '110056730', '-', 'FERYANTO SUPII S.ST', 1, 'MANADO, PROPINSI SULAWESI UTARA', '-', 'Laki-Laki', '45 tahun,', '5', '01 December 2002', '-', '-', '-', '5', 14, '-', '-', '-', '-', 2, 116, 1, 1, 'SULAWESI UTARA', '11/KPTS/BS/2011', '-', '16 March 2011', '-', 32, '-', '0000-00-00', '0000-00-00', ''),
-(16, '196410142008122001', '-', '-', 'OLVI KALENGKIAN SE', 1, 'TONDANO, PROPINSI SULAWESI TENGAH', '14 October 1964', 'Perempuan', '48 tahun, ', '4', '01 December 2008', '-', '-', '-', '5', 14, 'Db/018/C/2010 - O', '23 February 2010', '01 March 2010', '-', 2, 116, 16479, 175, 'SULAWESI UTARA', '11/KPTS/BS/2011', '16 March 2011', '16 March 2011', '-', 32, '-', '0000-00-00', '0000-00-00', ''),
-(17, '196712092006042002', '110058305', '-', 'JANSJE MONTOLALU SH', 1, 'TUMANI', '19 December 1967', 'Laki-Laki', '44 tahun,', '5', '01 April 2006', '-', '-', '-', '5', 14, '-', '-', '-', '-', 2, 116, 16479, 175, 'SULAWESI UTARA', '11/KPTS/BS/2011', '16 March 2011', '16 March 2011', '-', 32, '-', '0000-00-00', '0000-00-00', ''),
-(18, '196503182008122001', '-', '-', 'NILA POOE SE', 1, 'GORONTALO', '18 March 1969', 'Perempuan', '47 tahun, ', '5', '01 December 2008', 'JL. DURIAN, GORONTALO, PROPINSI GORONTALO', '-', '-', '5', 14, 'Db/054/B/2011-N', '-', '01 April 2011', '-', 2, 116, 16479, 175, 'GORONTALO', '11/KPTS/BS/2011', '16 March 2011', '16 March 2011', '-', 32, '-', '0000-00-00', '0000-00-00', ''),
-(19, '197108052008121001', '-', '-', 'V. ANSOUW SE', 1, 'PROPINSI SULAWESI UTARA', '05 August 1971', 'Laki-Laki', '41 tahun,', '5', '01 December 2008', '-', '-', '-', '1', 14, '-', '-', '01/12/2008', '-', 2, 2345, 31, 178, '22', '11/KPTS/BS/2011', '-', '-', '-', 32, '-', '0000-00-00', '0000-00-00', ''),
-(20, '196412082007012001', '110062253', '-', 'DRA. DELLY JETSIE TAMARA', 1, 'AMURANG', '08 December 1964', 'Perempuan', '47 tahun, ', '5', '01 January 2007', '-', '-', '-', '5', 14, 'Db/274/B/2011-D', '21 March 2011', '01 April 2011', '-', 2, 116, 16479, 175, '-', '11/KPTS/BS/2011', '16 March 2011', '-', '-', 32, '-', '0000-00-00', '0000-00-00', ''),
-(21, '196006012006041003', '110058300', '-', 'JAN MOVIE SEROY ST', 1, 'MINAHASA, PROPINSI SULAWESI UTARA', '01 Juni 1960', 'Laki-Laki', '52 tahun,', '5', '01 April 2006', '-', '-', '-', '5', 18, 'DB/709/B/2010-J', '26 Juli 2010', '26 Juli 2010', '-', 2, 2345, 31, 178, '22', '11/KPTS/BS/2011', '16 Maret 2011', '16 Maret 2011', '-', 32, '-', '0000-00-00', '0000-00-00', ''),
-(22, '1234567654', '12345678654', '123456787654', 'qwertyuyt', 1, 'BAUBAU', '24-12-1993', 'Laki-Laki', '25 Tahun', '7', '06-04-2015', 'Jalan Sultan Hasanuddin Baubau', '123456765', '1234567654', '0', 18, '', '', '', '', 2, 0, 0, 0, '', '', '', '', '', 0, '', '0000-00-00', '0000-00-00', 'avatar.png'),
-(23, '12345676432', '234567876543', '3456789876543', 'Hapzih, SST, SKM, MM', 1, 'Kendari', '21-05-1989', 'Laki-Laki', '', '6', '06-04-2015', 'jalan Gadjha Madha', '2345678987654', '23456787654', '', 13, '', '', '', '', 0, 0, 0, 0, '', '', '', '', '', 0, '', '0000-00-00', '0000-00-00', 'avatar.png');
+(13, '196307162002122002', '110056404', '-', 'RUSDA PODUNGE S.SOS', 1, 'GORONTALO, PROPINSI SULAWESI UTARA', '16 July 1963', 'Perempuan', '49 tahun, ', '5', '01 December 2012', 'JL.IRIAN KEL.DULALAWO GORONTALO', '-', '-', '5', 14, 'Db/435/B/2012-R', '23 July 2012', '01 October 2012', '-', 2, 116, 16479, 175, 'BADAN PENANGGULANGAN BENCANA KABUPATEN BUTON', '11/KPTS/BS/2011', '16 March 2011', '16 March 2011', '-', 32, '-', '0000-00-00', '0000-00-00', ''),
+(14, '196405312006041001', '110058297', '-', 'DENNY MEIKY PAENDONG SE', 1, 'MANADO, PROPINSI SULAWESI UTARA', '31 May 1964', 'Laki-Laki', '48 tahun, ', '5', '01 April 2006', '-', '-', '-', '5', 14, 'Db/434/B/2012-D', '23 July 2012', '01 October 2012', '-', 2, 116, 16479, 175, 'BADAN KESATUAN BANGSA DAN POLITIK KAB. BUTON', '-', '-', '-', '-', 32, '-', '0000-00-00', '0000-00-00', ''),
+(15, '196705092002121', '110056730', '-', 'FERYANTO SUPII S.ST', 1, 'MANADO, PROPINSI SULAWESI UTARA', '-', 'Laki-Laki', '45 tahun,', '5', '01 December 2002', '-', '-', '-', '5', 14, '-', '-', '-', '-', 2, 116, 1, 1, 'BADAN PENELITIAN DAN PENGEMBANGAN KAB. BUTON', '11/KPTS/BS/2011', '-', '16 March 2011', '-', 32, '-', '0000-00-00', '0000-00-00', ''),
+(16, '196410142008122001', '-', '-', 'OLVI KALENGKIAN SE', 1, 'TONDANO, PROPINSI SULAWESI TENGAH', '14 October 1964', 'Perempuan', '48 tahun, ', '4', '01 December 2008', '-', '-', '-', '5', 14, 'Db/018/C/2010 - O', '23 February 2010', '01 March 2010', '-', 2, 116, 16479, 175, 'BADAN PENGELOLA PAJAK DAN RETRIBUSI DAERAH KAB. BUTON\n', '11/KPTS/BS/2011', '16 March 2011', '16 March 2011', '-', 32, '-', '0000-00-00', '0000-00-00', ''),
+(17, '196712092006042002', '110058305', '-', 'JANSJE MONTOLALU SH', 1, 'TUMANI', '19 December 1967', 'Laki-Laki', '44 tahun,', '5', '01 April 2006', '-', '-', '-', '5', 14, '-', '-', '-', '-', 2, 116, 16479, 175, 'BADAN KEPEGAWAIAN, PENDIDIKAN DAN PELATIHAN DAERAH\n', '11/KPTS/BS/2011', '16 March 2011', '16 March 2011', '-', 32, '-', '0000-00-00', '0000-00-00', ''),
+(18, '196503182008122001', '-', '-', 'NILA POOE SE', 1, 'GORONTALO', '18 March 1969', 'Perempuan', '47 tahun, ', '5', '01 December 2008', 'JL. DURIAN, GORONTALO, PROPINSI GORONTALO', '-', '-', '5', 14, 'Db/054/B/2011-N', '-', '01 April 2011', '-', 2, 116, 16479, 175, 'BADAN PENGELOLA KEUANGAN DAN ASET DAERAH KAB. BUTON\n', '11/KPTS/BS/2011', '16 March 2011', '16 March 2011', '-', 32, '-', '0000-00-00', '0000-00-00', ''),
+(19, '197108052008121001', '-', '-', 'V. ANSOUW SE', 1, 'PROPINSI SULAWESI UTARA', '05 August 1971', 'Laki-Laki', '41 tahun,', '5', '01 December 2008', '-', '-', '-', '1', 14, '-', '-', '01/12/2008', '-', 2, 2345, 31, 178, 'BAPPEDA KAB. BUTON', '11/KPTS/BS/2011', '-', '-', '-', 32, '-', '0000-00-00', '0000-00-00', ''),
+(20, '196412082007012001', '110062253', '-', 'DRA. DELLY JETSIE TAMARA', 1, 'AMURANG', '08 December 1964', 'Perempuan', '47 tahun, ', '5', '01 January 2007', '-', '-', '-', '5', 14, 'Db/274/B/2011-D', '21 March 2011', '01 April 2011', '-', 2, 116, 16479, 175, 'SATUAN POL PP KAB. BUTON', '11/KPTS/BS/2011', '16 March 2011', '-', '-', 32, '-', '0000-00-00', '0000-00-00', ''),
+(21, '196006012006041003', '110058300', '-', 'JAN MOVIE SEROY ST', 1, 'MINAHASA, PROPINSI SULAWESI UTARA', '01 Juni 1960', 'Laki-Laki', '52 tahun,', '5', '01 April 2006', '-', '-', '-', '5', 18, 'DB/709/B/2010-J', '26 Juli 2010', '26 Juli 2010', '-', 2, 2345, 31, 178, 'INSPEKTORAT KABUPATEN BUTON\n', '11/KPTS/BS/2011', '16 Maret 2011', '16 Maret 2011', '-', 32, '-', '0000-00-00', '0000-00-00', ''),
+(22, '1234567654', '12345678654', '123456787654', 'qwertyuyt', 1, 'BAUBAU', '24-12-1993', 'Laki-Laki', '25 Tahun', '7', '06-04-2015', 'Jalan Sultan Hasanuddin Baubau', '123456765', '1234567654', '0', 18, '', '', '', '', 2, 0, 0, 0, 'SEKRETARIAT DPRD KAB. BUTON', '', '', '', '', 0, '', '0000-00-00', '0000-00-00', 'avatar.png'),
+(23, '12345676432', '234567876543', '3456789876543', 'Hapzih, SST, SKM, MM', 1, 'Kendari', '21-05-1989', 'Laki-Laki', '', '6', '06-04-2015', 'jalan Gadjha Madha', '2345678987654', '23456787654', '', 13, '', '', '', '', 0, 0, 0, 0, 'SEKRETARIAT DAERAH KAB. BUTON', '', '', '', '', 0, '', '0000-00-00', '0000-00-00', 'avatar.png');
 
 -- --------------------------------------------------------
 
@@ -262,7 +263,7 @@ INSERT INTO `tbl_data_pelatihan` (`id_pelatihan`, `id_pegawai`, `id_master_pelat
 (11, 2, 394, 'PENYELENGGARAAN PIMPRO/PIMBAGPRO BIDANG JALAN DAN JEMBATAN', 'MAKASSAR', '07 August 2003', '-', 'INDONESIA'),
 (12, 2, 84, 'PEJABAT INTI PROYEK', 'BANDUNG', '24 September 1996', '-', 'INDONESIA'),
 (13, 18, 394, 'PELATIHAN PRAJABATAN TINGKAT II', 'MANADO', '26 October 2009', '174', 'INDONESIA'),
-(14, 6, 0, 'TES MANTAP', 'mantap', '12/12/2012', '10.11', 'tes');
+(14, 6, 0, 'TES MANTAP', 'mantap', '2017-12-12', '10.11', 'UNKNOWN');
 
 -- --------------------------------------------------------
 
@@ -298,7 +299,7 @@ INSERT INTO `tbl_data_pendidikan` (`id_pendidikan`, `id_pegawai`, `tingkat_pendi
 (7, 18, 'SI/D4', 'MANAJEMEN', 'SARJANA EKONOMI JUR MANAJEMEN', 'non teknik', '-', '-', '20/08/2008', '-', '-'),
 (8, 18, 'SLTA', 'IPS', 'IPS', 'non teknik', '-', '-', '-', '19/04/1984', '19/04/1984'),
 (9, 19, 'SI/D4', 'EKONOMI JUR UMUM', 'BUDAYA', 'non teknik', '-', '-', '-', '31/07/1992', '-'),
-(10, 6, 'S1 MANTAP', 'TES', 'TES', 'TES', 'TES', 'TE', '2424234', '12/12/2012', '12/12/2012');
+(10, 6, 'S1 MANTAP', 'TES', 'TES', 'TES', 'TES', 'TE', '2424234', '2017-12-12', '1987-12-12');
 
 -- --------------------------------------------------------
 
@@ -321,7 +322,7 @@ CREATE TABLE `tbl_data_penghargaan` (
 
 INSERT INTO `tbl_data_penghargaan` (`id_penghargaan`, `id_pegawai`, `id_master_penghargaan`, `uraian`, `nomor_sk`, `tanggal_sk`) VALUES
 (1, 9, 69, 'SATYALANCANA KARYA SATYA XX TAHUN', '062/TK/TAHUN 2012', '06 August 2012'),
-(2, 6, 0, 'TES MANTAP', '-', '12/12/2012');
+(2, 6, 0, 'TES MANTAP', '123456789', '2017-12-12');
 
 -- --------------------------------------------------------
 
@@ -356,7 +357,7 @@ INSERT INTO `tbl_data_riwayat_jabatan` (`id_riwayat_jabatan`, `id_pegawai`, `sta
 (4, 18, 'PNS PUSAT', 'PUSAT', 116, 16479, 'BALAI PELAKSANAAN JALAN NASIONAL XI, DITJEN BINA MARGA', 32, '11/KPTS/BS/2011', '11/KPTS/BS/2011', '16 March 2011', '16 March 2011', '-', '-'),
 (5, 18, 'PNS PUSAT', 'PUSAT', 116, 16479, 'STAF BALAI BESAR PELAKSANAAN JALAN NASIONAL VI,  DIREKTORAT JENDERAL BINA MARGA,  DEP PU', 32, '-', '-', '-', '01 December 2008', '-', '-'),
 (6, 19, 'PNS PUSAT', 'PUSAT', 116, 16479, 'STAF BALAI BESAR P ALAN NASIONAL VI,  DIREKTORAT JENDERAL BINA MARGA,  DEP PU', 32, '-', '-', '-', '01 December 2008', '15 March 2011', '-'),
-(7, 6, 'MANTAPA', 'mantap', 0, 0, 'mantap', 0, '-', '-', '12/12/2012', '12/12/2012', '21/12/2012', 'mantap');
+(7, 6, 'UNKNOWN', 'UNKNOWN', 0, 0, 'mantap', 0, '2012-12-12', '-', '2012-12-12', '2012-12-12', '2012-12-12', 'UNKNOWN');
 
 -- --------------------------------------------------------
 
@@ -392,7 +393,7 @@ INSERT INTO `tbl_data_riwayat_pangkat` (`id_riwayat_pangkat`, `id_pegawai`, `id_
 (9, 18, 14, 'PNS PUSAT', 'Db/054/B/2011-N', '21 March 2011', '01 April 2011', '-', '1 Tahun 7 Bulan'),
 (10, 19, 14, 'PNS PUSAT', '01/12/2008', '-', '-', '-', '3 Tahun 11 Bulan'),
 (11, 20, 14, 'PNS PUSAT', 'Db/274/B/2011-D', '21 March 2011', '01 April 2011', '-', '-'),
-(12, 6, 0, 'MANTAPA', '242452354', '12/12/2012', '12/12/2012', '21/12/2012', 'MANTAP');
+(12, 6, 0, 'LAGI M', '242452354', '2012-02-14', '2012-12-12', '2019-12-12', 'MANTAP');
 
 -- --------------------------------------------------------
 
@@ -413,7 +414,7 @@ CREATE TABLE `tbl_data_seminar` (
 --
 
 INSERT INTO `tbl_data_seminar` (`id_seminar`, `id_pegawai`, `uraian`, `lokasi`, `tanggal`) VALUES
-(1, 6, 'TES MANTAP', 'mantap', '29/05/2017');
+(1, 6, '', '', '2018-12-17');
 
 -- --------------------------------------------------------
 
@@ -493,7 +494,27 @@ CREATE TABLE `tbl_info_pt` (
 --
 
 INSERT INTO `tbl_info_pt` (`id_info_pt`, `nama_info_pt`, `alias_pt`, `kode_pt`, `kontak_1`, `kontak_2`, `kontak_3`, `kontak_4`, `header_pt`, `alamat_pt`, `slogan`, `logo_pt`, `logo_kecil_pt`) VALUES
-(1, 'Sistem Informasi Kepegawaian', 'SIMPEG', '00001', '1111-11111-1111', '1111-11111-1111', '1111-11111-1111', '1111-11111-1111', NULL, 'alamatnya disini', 'Akhlak dan Budaya', 'logo.png', 'logo.png');
+(1, 'Sistem Informasi Kepegawaian', 'SIMPEG', '000012', '1111-11111-1111', '1111-11111-1111', '1111-11111-1111', '1111-11111-1111', NULL, 'alamatnya disini', 'Akhlak dan Budaya', 'logo-sistem-informasi-kepegawaian-20180227-1519737102.png', 'logo.png');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tbl_jk`
+--
+
+CREATE TABLE `tbl_jk` (
+  `id_jk` int(11) NOT NULL,
+  `kode_jk` varchar(12) NOT NULL,
+  `nm_jk` varchar(12) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tbl_jk`
+--
+
+INSERT INTO `tbl_jk` (`id_jk`, `kode_jk`, `nm_jk`) VALUES
+(1, 'l', 'Laki-laki'),
+(2, 'p', 'Perempuan');
 
 -- --------------------------------------------------------
 
@@ -1470,11 +1491,8 @@ CREATE TABLE `tbl_users` (
 --
 
 INSERT INTO `tbl_users` (`id`, `id_mhs_pt`, `ip_address`, `username`, `password`, `repassword`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`, `hostname`, `port`, `userfeeder`, `passfeeder`, `jabatan`, `profile`) VALUES
-(1, NULL, '127.0.0.1', 'administrator', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', NULL, '', 'admin@admin.com', '', NULL, NULL, NULL, 1268889823, 1519562214, 1, 'Admin', 'istrator', 'ADMIN', '08239566666', 'localhost', '8082', '091006', 'palagimatA', 3, 'avatar.jpg'),
-(11, NULL, '::1', 'ejhayoe', '$2y$08$3MEZ57khaMGLalzJbgj2sO4AfPz.BE4rPiKsZzjTiFXz2mhaiJxey', NULL, NULL, 'rezarafiqmz@gmail.com', NULL, 'HgHGT8nTbx-vwX.KhYj.aO7310ba3a7e1f005e75', 1476697891, NULL, 1476177802, 1482244469, 1, 'Reza', 'Rafiq MZ', '', '082395606666', 'localhost', '8082', '091006', 'palagimatA', 0, 'unidayan-reza-rafiq-mz-20161220-1482244516.jpg'),
-(12, NULL, '::1', 'tes', '$2y$08$V5c8KPik1dfx3dEUBw.O6.QEw5/ZMoeT5SethGiLx5v/Mkj4bTI9S', NULL, NULL, 'testing@gmail.com', NULL, NULL, NULL, NULL, 1476372787, NULL, NULL, 'tesa', 'tesa', 'Unidayan', '82240761006', NULL, NULL, NULL, NULL, 0, 'users-tesa-20161213-1481668077.png'),
-(13, NULL, '::1', 'proadm', '$2y$08$3ewVrGpkSakAtRZ1XSJBWeIU8kAORP7JChaWbvKUPmqbHDPbzZOj.', NULL, NULL, 'admin.prodi@und.ac.id', NULL, NULL, NULL, NULL, 1478446694, 1478446711, 1, 'Prodi', 'Administrator', NULL, '082312345678', 'localhost', '8083', '', '', 0, 'avatar.jpg'),
-(14, 2170, '::1', '12221058', '$2y$08$EE6eXKnDt0Q24x.iXSykpOOnOVIeyq5DOAbEy5Mb2is1b7dVABwMW', NULL, NULL, 'krisnilda@unidayan.ac.id', NULL, NULL, NULL, NULL, 1516544965, 1516864598, 1, 'Krisnilda', 'Jois', NULL, '082395606666', NULL, NULL, NULL, NULL, 0, 'avatar.jpg');
+(1, NULL, '127.0.0.1', 'administrator', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', 'password', '', 'admin@admin.com', '', NULL, NULL, NULL, 1268889823, 1521206489, 1, 'Admin', 'istrator', 'ADMIN', '08239566666', 'localhost', '8082', '091006', 'palagimatA', 3, 'avatar.jpg'),
+(15, NULL, '::1', 'ejhayoe', '$2y$08$sMK/KvMzOXPZBanMhhAggu4A6FQ2EWRNvY4hpJNoGpjgzgqhZF9xW', 'ejhayoe', NULL, 'admin@admin.com', NULL, NULL, NULL, NULL, 1519736735, NULL, 1, 'Reza', 'Rafiq', 'Sistem Informasi Kepegawaian', '123456789', NULL, NULL, NULL, NULL, 0, 'avatar.jpg');
 
 -- --------------------------------------------------------
 
@@ -1495,13 +1513,7 @@ CREATE TABLE `tbl_users_groups` (
 INSERT INTO `tbl_users_groups` (`id`, `user_id`, `group_id`) VALUES
 (1, 1, 1),
 (2, 1, 2),
-(18, 13, 6),
-(42, 12, 4),
-(43, 12, 27),
-(44, 12, 28),
-(45, 12, 29),
-(46, 11, 3),
-(47, 14, 2);
+(48, 15, 1);
 
 -- --------------------------------------------------------
 
@@ -1611,6 +1623,12 @@ ALTER TABLE `tbl_groups`
 --
 ALTER TABLE `tbl_info_pt`
   ADD PRIMARY KEY (`id_info_pt`);
+
+--
+-- Indexes for table `tbl_jk`
+--
+ALTER TABLE `tbl_jk`
+  ADD PRIMARY KEY (`id_jk`);
 
 --
 -- Indexes for table `tbl_login_attempts`
@@ -1728,7 +1746,7 @@ ALTER TABLE `tbl_user_login`
 -- AUTO_INCREMENT for table `tbl_data_dp3`
 --
 ALTER TABLE `tbl_data_dp3`
-  MODIFY `id_dp3` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_dp3` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `tbl_data_gaji_pokok`
 --
@@ -1794,6 +1812,11 @@ ALTER TABLE `tbl_groups`
 --
 ALTER TABLE `tbl_info_pt`
   MODIFY `id_info_pt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `tbl_jk`
+--
+ALTER TABLE `tbl_jk`
+  MODIFY `id_jk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `tbl_login_attempts`
 --
@@ -1873,12 +1896,12 @@ ALTER TABLE `tbl_master_unit_kerja`
 -- AUTO_INCREMENT for table `tbl_users`
 --
 ALTER TABLE `tbl_users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `tbl_users_groups`
 --
 ALTER TABLE `tbl_users_groups`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 --
 -- AUTO_INCREMENT for table `tbl_user_login`
 --

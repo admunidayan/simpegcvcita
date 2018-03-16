@@ -7,8 +7,8 @@ class Export_excel extends CI_Controller {
     
     function index()
     {
-        $this->load->model('model_data');
-        $d['data'] = $this->model_data->getData()->result();
-        $this->load->view('layout', $d);
+        $this->load->model('admin/Model_data');
+        $d['data'] = $this->Model_data->getData()->result();
+        $this->load->view('admin/layout', $d);
     }
 }

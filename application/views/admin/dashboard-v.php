@@ -64,7 +64,7 @@
                   <i class="material-icons">report</i> Laporan
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="<?php echo base_url('index.php/admin/master/lap_excel_pegawai_v') ?>"><i class="material-icons">assignment_ind</i>Daftar Listing Nominatif PNS</a>
+                  <a class="dropdown-item" href="<?php echo base_url('index.php/admin/Export_excel') ?>"><i class="material-icons">assignment_ind</i>Daftar Listing Nominatif PNS</a>
                   <a class="dropdown-item" href="<?php echo base_url('index.php/admin/laporan/laporan_pegawai_unit_satuan') ?>"><i class="material-icons">bookmark_border</i>Unit Kerja Dan Satuan Kerja</a>
                   <a class="dropdown-item" href="#"><i class="material-icons">location_on</i>Penempatan Kerja</a>
                   <a class="dropdown-item" href="#"><i class="material-icons">location_searching</i>Mengikuti Pelatihan</a>

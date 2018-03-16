@@ -19,8 +19,8 @@
 		$table .= '
 		<tr>
 		<td>'.$no++.'</td>
-		<td>'.$nama_satuan_kerja.'</td>
-		<td>'.$paret_unit.'</td>
+		<td>'.$d->nama_satuan_kerja.'</td>
+		<td>'.$d->parent_unit.'</td>
 		</tr>';
 	}
 	$table .='

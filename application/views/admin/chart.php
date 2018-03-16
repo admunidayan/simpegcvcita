@@ -1,16 +1,13 @@
-<div style="margin-top: 14px; padding: 30px">
-	<!-- load library jquery dan highcharts -->
-<script src="<?php echo base_url();?>asset/js/jquery.js"></script>
-<script src="<?php echo base_url();?>asset/js/highcharts.js"></script>
+<!-- load library jquery dan highcharts -->
+<script src="<?php echo base_url();?>assets/js/jquery.js"></script>
+<script src="<?php echo base_url();?>assets/js/highcharts.js"></script>
 <!-- end load library -->
 
 <?php
 /* Mengambil query report*/
-foreach($chart as $result){
-        // echo "<pre>";print_r($result->tahun);echo "<pre/>";exit();
-        $tahun[] = $result->nm_jk; //ambil bulan
-        $value[] = (float) $this->Admin_m->jumlah_data($result->nm_jk);
-         //ambil nilai
+foreach($report as $result){
+        $bulan[] = $result->bulan; //ambil bulan
+        $value[] = (float) $result->nilai; //ambil nilai
     }
     /* end mengambil query*/
     
@@ -35,14 +32,14 @@ foreach($chart as $result){
                     }
                 },
                 title: {
-                    text: 'Grafik',
+                    text: 'Report Jan - Agustus',
                     style: {
                         fontSize: '18px',
                         fontFamily: 'Verdana, sans-serif'
                     }
                 },
                 subtitle: {
-                 text: 'Pegawai Berdasarkan Jenis Kelamin',
+                 text: 'Penjualan',
                  style: {
                     fontSize: '15px',
                     fontFamily: 'Verdana, sans-serif'
@@ -57,7 +54,7 @@ foreach($chart as $result){
                 enabled: false
             },
             xAxis: {
-                categories:  <?php echo json_encode($tahun);?>
+                categories:  <?php echo json_encode($bulan);?>
             },
             exporting: { 
                 enabled: false 
@@ -69,11 +66,11 @@ foreach($chart as $result){
             },
             tooltip: {
                formatter: function() {
-                   return 'Jumlah untuk <b>' + this.x + '</b> adalah <b>' + Highcharts.numberFormat(this.y,0) + '</b>, pada '+ this.series.name;
+                   return 'The value for <b>' + this.x + '</b> is <b>' + Highcharts.numberFormat(this.y,0) + '</b>, in '+ this.series.name;
                }
            },
            series: [{
-            name: 'Data Pegawai',
+            name: 'Report Data',
             data: <?php echo json_encode($value);?>,
             shadow : true,
             dataLabels: {
@@ -93,4 +90,3 @@ foreach($chart as $result){
     });
         });
     </script>
-</div>

@@ -6,6 +6,12 @@ class Admin_m extends CI_Model
 		$query = $this->db->get('info_pt');
 		return $query->row();
 	}
+	public function jumlah_data($jk){
+		$this->db->from('data_pegawai');
+		$this->db->where('jenis_kelamin',$jk);
+		$rs = $this->db->count_all_results();
+		return $rs;
+	}
 	public function cek_pt($id){
 		$this->db->where('id_info_pt', $id);
 		$query = $this->db->get('info_pt');
