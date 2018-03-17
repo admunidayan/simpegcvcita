@@ -2,6 +2,7 @@
  
  class Model_data extends CI_Model {
   function getData() {
-    return $this->db->get('master_satuan_kerja');
+    $query = $this->db->get('master_satuan_kerja');
+	return $query->result();
   }
 }

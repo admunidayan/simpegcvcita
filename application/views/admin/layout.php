@@ -28,6 +28,6 @@
 
 	echo $table;
 	?>
-
+<a href="<?php echo base_url('index.php/admin/Export/dataexcel') ?>" class="btn btn-success">Export menjadi file excel</a>
 </body>
 </html>
