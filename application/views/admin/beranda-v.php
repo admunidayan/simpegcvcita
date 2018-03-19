@@ -69,7 +69,7 @@ foreach($chart as $result){
             },
             tooltip: {
                formatter: function() {
-                   return 'Jumlah untuk <b>' + this.x + '</b> adalah <b>' + Highcharts.numberFormat(this.y,0) + '</b>, pada '+ this.series.name;
+                   return 'Jumlah untuk <b>' + this.x + '</b> adalah <b>' + Highcharts.numberFormat(this.y,0) + '</b>  orang pada '+ this.series.name;
                }
            },
            series: [{

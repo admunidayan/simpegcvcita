@@ -1,6 +1,6 @@
 <!-- load library jquery dan highcharts -->
-<script src="<?php echo base_url();?>assets/js/jquery.js"></script>
-<script src="<?php echo base_url();?>assets/js/highcharts.js"></script>
+<script src="<?php echo base_url();?>asset/js/jquery.js"></script>
+<script src="<?php echo base_url();?>asset/js/highcharts.js"></script>
 <!-- end load library -->
 
 <?php
