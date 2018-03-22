@@ -76,7 +76,7 @@ class Export extends CI_Controller {
     redirect(base_url('index.php/login'));
   }
 }
-function exceldaftar(){
+function data_pegawai(){
     if ($this->ion_auth->logged_in()){
       $level = 'admin';  
       if (!$this->ion_auth->in_group($level)) {
@@ -85,19 +85,15 @@ function exceldaftar(){
        redirect(base_url('index.php/admin/dashboard_c'));
      }else{
       $post = $this->input->post('');
-      $data['title'] = 'Daftar Calon Peserta Mahasiswa Baru';
-      // $data['page'] = 'admin/export-v';
-      // $data['nav'] = 'nav/nav-admin';
-      // $data['dtadm'] = $this->ion_auth->user()->row();
                 // setting web server
       $file = new PHPExcel ();
-      $file->getProperties ()->setCreator ( "Goblooge" );
-      $file->getProperties ()->setLastModifiedBy ( "www.pmb.unidayan.ac.id" );
-      $file->getProperties ()->setTitle ( "List Calon Peserta sudah membayar" );
-      $file->getProperties ()->setSubject ( "Daftar Calon Peserta" );
-      $file->getProperties ()->setDescription ( "Daftar Calon Peserta" );
-      $file->getProperties ()->setKeywords ( "Daftar Calon Peserta" );
-      $file->getProperties ()->setCategory ( "Calon Peserta" );
+      $file->getProperties ()->setCreator ( "simpeg" );
+      $file->getProperties ()->setLastModifiedBy ( "www.simpeg.com" );
+      $file->getProperties ()->setTitle ( "Daftar Pegawai" );
+      $file->getProperties ()->setSubject ( "Daftar Pegawai" );
+      $file->getProperties ()->setDescription ( "Daftar Pegawai" );
+      $file->getProperties ()->setKeywords ( "Daftar Pegawai" );
+      $file->getProperties ()->setCategory ( "Daftar Pegawai" );
       /*end - BLOCK PROPERTIES FILE EXCEL*/
 
       /*start - BLOCK SETUP SHEET*/
@@ -110,68 +106,68 @@ function exceldaftar(){
 
       /*start - BLOCK HEADER*/
       $sheet->setCellValue ( "A1", "No" );
-      $sheet->setCellValue ( "B1", "Noreg" );
-      $sheet->setCellValue ( "C1", "Nama" );
-      $sheet->setCellValue ( "D1", "Pilihan 1" );
-      $sheet->setCellValue ( "E1", "Pilihan 2" );
-      $sheet->setCellValue ( "F1", "Pilihan 3" );
-      $sheet->setCellValue ( "G1", "Kelompok" );
-      $sheet->setCellValue ( "H1", "Jurusan" );
-      $sheet->setCellValue ( "I1", "Email" );
-      $sheet->setCellValue ( "J1", "No Hp" );
-      $sheet->setCellValue ( "K1", "L/P" );
-      $sheet->setCellValue ( "L1", "Agama" );
-      $sheet->setCellValue ( "M1", "Tgl Lhr" );
-      $sheet->setCellValue ( "N1", "Tmp Lhr" );
-      $sheet->setCellValue ( "O1", "Asal Sekolah" );
-      $sheet->setCellValue ( "P1", "NEM" );
+      $sheet->setCellValue ( "B1", "NIP Lama" );
+      $sheet->setCellValue ( "C1", "NIP Baru" );
+      $sheet->setCellValue ( "D1", "Nama" );
+      $sheet->setCellValue ( "E1", "Gelar Depan" );
+      $sheet->setCellValue ( "F1", "Gelar Belakang" );
+      $sheet->setCellValue ( "G1", "Tempat Lahir" );
+      $sheet->setCellValue ( "H1", "Tanggal Lahir" );
+      $sheet->setCellValue ( "I1", "Gol Awal" );
+      $sheet->setCellValue ( "J1", "TMT CPNS" );
+      $sheet->setCellValue ( "K1", "TMT PNS" );
+      $sheet->setCellValue ( "L1", "L/p" );
+      $sheet->setCellValue ( "M1", "Gol Akhir" );
+      $sheet->setCellValue ( "N1", "Gol.Ruang TMT" );
+      $sheet->setCellValue ( "O1", "MK Thn" );
+      $sheet->setCellValue ( "P1", "MK Bln" );
+      $sheet->setCellValue ( "Q1", "Eselon" );
+      $sheet->setCellValue ( "R1", "TMT Struktural" );
+      $sheet->setCellValue ( "S1", "NM Jab Struktural" );
+      $sheet->setCellValue ( "T1", "FT Tertentu" );
+      $sheet->setCellValue ( "U1", "FT Nm Jabatan" );
+      $sheet->setCellValue ( "V1", "FU Nm Jabatan" );
+      $sheet->setCellValue ( "W1", "Unit Kerja" );
+      $sheet->setCellValue ( "X1", "Unit Kerja Induk" );
+      $sheet->setCellValue ( "Y1", "Nama Pendidikan Terakhir" );
+      $sheet->setCellValue ( "Z1", "Lulus" );
+      $sheet->setCellValue ( "AA1", "Ked.Huk" );
+
       /*end - BLOCK HEADER*/
 
       /* start - BLOCK MEMASUKAN DATABASE*/
       $nomor = 1;
       $nocel = 2;
-      $hasil = $data['hasil'] = $this->Peserta_m->databayar();
+      $hasil = $this->Admin_m->data_pegawai();
                 // echo "<pre>";print_r($hasil);echo "</pre>";exit();
       foreach ($hasil as $data) {
-        if ($this->Peserta_m->detagama($data->id_agama) == TRUE) {
-           $agama = $this->Peserta_m->detagama($data->id_agama)->nm_agama;
-        }else{
-          $agama = 'Tidak Diisi';
-        }
         $sheet->setCellValue ( "A".$nocel, $nomor );
-        $sheet->setCellValue ( "B".$nocel, $data->noreg );
-        $sheet->setCellValue ( "C".$nocel, strtoupper($data->nama_mhs) );
-        $totalh = 0;
-        $abjad = 1;
-        foreach ($this->Peserta_m->priopil($data->id_mhs) as $datas) {
-          $totalh = $datas->grup + (int)@$totalh;
-          if ($abjad == 1) {
-          	$abj = 'D';
-          }elseif ($abjad == 2) {
-          	$abj = 'E';
-          }else{
-          	$abj = 'F';
-          }
-          $sheet->setCellValue ( $abj.$nocel, strtoupper($datas->nama_prodi) );
-          $abjad++;
-        }
-        // echo "<pre>";print_r($this->Peserta_m->priopil($data->id_mhs));echo "<pre/>";exit();
-        if ($totalh == 3 ) {
-          $sheet->setCellValue ( "G".$nocel, 'IPA ');
-        }elseif ($totalh == 6) {
-          $sheet->setCellValue ( "G".$nocel, 'IPS ');
-        }else{
-          $sheet->setCellValue ( "G".$nocel, 'IPC ');
-        }
-        $sheet->setCellValue ( "H".$nocel, $data->jurse);
-        $sheet->setCellValue ( "I".$nocel, $data->email_mhs);
-        $sheet->setCellValue ( "J".$nocel, $data->no_hp_mhs);
-        $sheet->setCellValue ( "K".$nocel, strtoupper($data->gender_mhs));
-        $sheet->setCellValue ( "L".$nocel, strtoupper($agama));
-        $sheet->setCellValue ( "M".$nocel, $data->tgl_lhr_mhs);
-        $sheet->setCellValue ( "N".$nocel, strtoupper($data->tmpt_lahir));
-        $sheet->setCellValue ( "O".$nocel, strtoupper($data->asal_sekolah));
-        $sheet->setCellValue ( "P".$nocel, $data->nem);
+        $sheet->setCellValue ( "B".$nocel, $data->nip );
+        $sheet->setCellValue ( "C".$nocel, $data->nip_lama );
+        $sheet->setCellValue ( "D".$nocel, $data->nama_pegawai );
+        $sheet->setCellValue ( "E".$nocel, $data->gelar_dpn );
+        $sheet->setCellValue ( "F".$nocel, $data->gelar_belakang );
+        $sheet->setCellValue ( "G".$nocel, $data->tempat_lahir );
+        $sheet->setCellValue ( "H".$nocel, $data->tanggal_lahir );
+        $sheet->setCellValue ( "I".$nocel, @$this->Admin_m->detail_data_order('master_golongan','id_golongan',$data->id_golongan)->golongan);
+        $sheet->setCellValue ( "J".$nocel, $data->tmt_cpns );
+        $sheet->setCellValue ( "K".$nocel, $data->tmt_pns );
+        $sheet->setCellValue ( "L".$nocel, $data->jenis_kelamin );
+        $sheet->setCellValue ( "M".$nocel, @$this->Admin_m->riwayat_max($data->id_pegawai)->golongan);
+        $sheet->setCellValue ( "N".$nocel, @$this->Admin_m->riwayat_max($data->id_pegawai)->tanggal_mulai);
+        $sheet->setCellValue ( "O".$nocel, @$this->Admin_m->riwayat_max($data->id_pegawai)->masa_kerja_bulan );
+        $sheet->setCellValue ( "P".$nocel, @$this->Admin_m->riwayat_max($data->id_pegawai)->masa_kerja_tahun );
+        $sheet->setCellValue ( "Q".$nocel, @$this->Admin_m->detail_data_order('master_eselon','id_eselon',$data->id_eselon)->nama_eselon );
+        $sheet->setCellValue ( "R".$nocel, @$this->Admin_m->jabatan_min($data->id_pegawai)->tanggal_mulai);
+        $sheet->setCellValue ( "S".$nocel, @$this->Admin_m->jabatan_min($data->id_pegawai)->nama_jabatan );
+        $sheet->setCellValue ( "T".$nocel, $data->nip_lama );
+        $sheet->setCellValue ( "U".$nocel, $data->nip_lama );
+        $sheet->setCellValue ( "V".$nocel, $data->nip_lama );
+        $sheet->setCellValue ( "W".$nocel, @$this->Admin_m->detail_data_order('master_unit_kerja','id_unit_kerja',$data->id_unit_kerja)->nama_unit_kerja);
+        $sheet->setCellValue ( "X".$nocel, @$this->Admin_m->detail_data_order('master_unit_kerja','id_unit_kerja',$data->id_unit_kerja)->parent_unit);
+        $sheet->setCellValue ( "Y".$nocel, @$this->Admin_m->detail_data_order('data_pendidikan','id_pegawai',$data->id_pegawai)->tingkat_pendidikan );
+        $sheet->setCellValue ( "Z".$nocel, @$this->Admin_m->detail_data_order('data_pendidikan','id_pegawai',$data->id_pegawai)->tanggal_lulus );
+        $sheet->setCellValue ( "AA".$nocel, $data->nip_lama );
         $nomor++;
         $nocel++;
       }
@@ -180,7 +176,7 @@ function exceldaftar(){
       /* start - BLOCK MEMBUAT LINK DOWNLOAD*/
       header ( 'Content-Type: application/vnd.ms-excel' );
   //namanya adalah keluarga.xls
-      header ( 'Content-Disposition: attachment;filename="daftar lengkap calon peserta.xls"' ); 
+      header ( 'Content-Disposition: attachment;filename="daftar_pegawai.xls"' ); 
       header ( 'Cache-Control: max-age=0' );
       $writer = PHPExcel_IOFactory::createWriter ( $file, 'Excel5' );
       $writer->save ( 'php://output' );

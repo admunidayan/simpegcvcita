@@ -72,6 +72,38 @@ class Admin_m extends CI_Model
 		$query = $this->db->get($tabel);
 		return $query->result();
 	}
+	public function detail_data_order($tabel,$field,$id){
+		$this->db->where($field, $id);
+		$query = $this->db->get($tabel);
+		return $query->row();
+	}
+	public function detail_data_min($tabel,$field,$fieldorder,$valorder,$id){
+		$this->db->where($field, $id);
+		$this->db->order_by($fieldorder,$valorder);
+		$query = $this->db->get($tabel);
+		return $query->row();
+	}
+	public function riwayat_max($id){
+		$this->db->where('id_pegawai', $id);
+		$this->db->join('master_golongan', 'master_golongan.id_golongan = data_riwayat_pangkat.id_golongan');
+		$this->db->order_by('id_riwayat_pangkat','desc');
+		$query = $this->db->get('data_riwayat_pangkat');
+		return $query->row();
+	}
+	public function jabatan_min($id){
+		$this->db->where('id_pegawai', $id);
+		$this->db->join('master_jabatan', 'master_jabatan.id_jabatan = data_riwayat_jabatan.id_jabatan');
+		$this->db->order_by('id_riwayat_jabatan','asc');
+		$query = $this->db->get('data_riwayat_jabatan');
+		return $query->row();
+	}
+	public function jabatan_max($id){
+		$this->db->where('id_pegawai', $id);
+		$this->db->join('master_jabatan', 'master_jabatan.id_jabatan = data_riwayat_jabatan.id_jabatan');
+		$this->db->order_by('id_riwayat_jabatan','desc');
+		$query = $this->db->get('data_riwayat_jabatan');
+		return $query->row();
+	}
 	function insert_data($tabel,$data){
 		$this->db->insert($tabel, $data);
 	}
@@ -86,5 +118,10 @@ class Admin_m extends CI_Model
 	public function update($tabel,$field,$id,$data){
 		$this->db->where($field, $id);
 		$this->db->update($tabel,$data);
+	}
+	// 
+	public function data_pegawai(){
+		$query = $this->db->get('data_pegawai');
+		return $query->result();
 	}
 }
