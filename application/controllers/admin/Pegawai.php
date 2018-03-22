@@ -1628,5 +1628,30 @@ class Pegawai extends CI_Controller {
             redirect(base_url('index.php/admin//login'));
         }
     }
+    public function cetak_data_pegawai($id){
+        if ($this->ion_auth->logged_in()) {
+            $level = array('admin','members');
+            if (!$this->ion_auth->in_group($level)) {
+                $pesan = 'Anda tidak memiliki Hak untuk Mengakses halaman ini';
+                $this->session->set_flashdata('message', $pesan );
+                redirect(base_url('index.php/admin/dashboard'));
+            }else{
+                $result = $this->Pegawai_m->detail_pegawai($id);
+                $data['infopt'] = $this->Admin_m->info_pt(1);
+                $data['title'] = $result->nama_pegawai;
+                $data['hasil'] = $result;
+                $data['pelatihan'] = $this->Pegawai_m->data_pelatihan($id);
+                $data['unit_org'] = $this->Admin_m->detail_data_order('master_lokasi_kerja','id_lokasi_kerja',$result->lokasi_kerja);
+                $data['keluarga'] = $this->Admin_m->select_data_order('data_keluarga','id_pegawai',$id);
+                // pagging setting
+                $this->load->view('admin/cetak-detail-pegawai-v',$data);
+            }
+        }else{
+            $pesan = 'Login terlebih dahulu';
+            $this->session->set_flashdata('message', $pesan );
+            redirect(base_url('index.php/login'));
+        }
+    }
+
 }
 ?>
