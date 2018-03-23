@@ -8,14 +8,14 @@
 		</div>
 	</div>
 	<hr/>
-	<table class="table table-hover table-sm">
+	<table class="table table-bordered table-hover table-sm">
 		<thead>
 			<tr class="bg-app text-light">
 				<td class="jrktbl text-center">No</td>
 				<td class="jrktbl">Uraian</td>
 				<td class="jrktbl">Lokasi</td>
 				<td class="jrktbl">Tanggal</td>
-				<td colspan="2"></td>
+				<td class="jrktbl" colspan="2">Aksi</td>
 			</tr>
 		</thead>
 		<tbody>

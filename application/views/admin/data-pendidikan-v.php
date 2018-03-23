@@ -8,7 +8,7 @@
 		</div>
 	</div>
 	<hr/>
-	<table class="table table-hover table-sm">
+	<table class="table table-bordered table-hover table-sm">
 		<thead>
 			<tr class="bg-app text-light">
 				<td class="jrktbl text-center">No</td>
@@ -19,7 +19,7 @@
 				<td class="jrktbl">No STTB</td>
 				<td class="jrktbl">Tgl STTB</td>
 				<td class="jrktbl">Tgl Lulus</td>
-				<td colspan="2"></td>
+				<td class="jrktbl" colspan="2">Aksi</td>
 			</tr>
 		</thead>
 		<tbody>

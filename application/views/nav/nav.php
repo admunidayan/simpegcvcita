@@ -15,37 +15,26 @@
 					<div class="col-md-10">Pegawai</div>
 				</div>
 			</li>
-		</a>
-		<a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-			<li class="linkmenu">
-				<div class="row">
-					<div class="col-md-2 text-center"><i class="material-icons">settings_applications</i></div>
-					<div class="col-md-10">Setting</div>
+			<a href="<?php echo base_url('index.php/admin/users/') ?>">
+				<li class="linkmenu">
+					<div class="row">
+						<div class="col-md-2 text-center"><i class="material-icons">account_circle</i> </div>
+						<div class="col-md-10">Users</div>
+					</div>
+				</li>
+			</a>
+			<a href="<?php echo base_url('index.php/admin/setting/') ?>">
+				<li class="linkmenu">
+					<div class="row">
+						<div class="col-md-2 text-center"><i class="material-icons">account_balance</i> </div>
+						<div class="col-md-10">Instansi</div>
+					</div>
+				</li>
+			</a>
+			<div class="collapse" id="collapseExample">
+				<div class="">
 				</div>
-			</li>
-		</a>
-		<div class="collapse" id="collapseExample">
-			<div class="">
-				<ul>
-					<a href="<?php echo base_url('index.php/admin/users/') ?>">
-						<li class="linkmenu">
-							<div class="row">
-								<div class="col-md-2 text-center"><i class="material-icons">account_circle</i> </div>
-								<div class="col-md-10">Users</div>
-							</div>
-						</li>
-					</a>
-					<a href="<?php echo base_url('index.php/admin/setting/') ?>">
-						<li class="linkmenu">
-							<div class="row">
-								<div class="col-md-2 text-center"><i class="material-icons">account_balance</i> </div>
-								<div class="col-md-10">Instansi</div>
-							</div>
-						</li>
-					</a>
-				</ul>
 			</div>
-		</div>
-		<div style="margin-bottom: 40px"></div>
-	</ul>
-</div>
+			<div style="margin-bottom: 40px"></div>
+		</ul>
+	</div>

@@ -1,6 +1,6 @@
-<div style="margin-top: 14px; background-color: white;padding: 30px">
+<div style="margin-top: 14px; padding: 30px">
 	<div class="row">
-		<div class="col-md-3">
+		<div class="col-md-3" style="background-color: white;padding-top: 14px">
 			<h5 class="text-secondary">Navigator</h5>
 			<div class="submenu">
 				<a class="text-dark" href="<?php echo base_url('index.php/admin/pegawai/detail/'.$hasil->id_pegawai); ?>"><div class="row">

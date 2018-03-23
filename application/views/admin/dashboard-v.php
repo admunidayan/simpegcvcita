@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="<?php echo base_url('asset/css/bootstrap.min.css'); ?>">
   <!-- google material icon -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+  rel="stylesheet">
   <!-- css font css pribadi -->
   <link rel="stylesheet" href="<?php echo base_url('asset/css/custom.css'); ?>">
   <!-- jquery terlebih dahulu -->
@@ -73,10 +73,6 @@
                 </div>
               </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-              <input class="form-control mr-sm-2" type="Search" placeholder="Pencarian Data" aria-label="Search">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Cari</button>
-            </form>
           </div>
         </div>
       </nav>
