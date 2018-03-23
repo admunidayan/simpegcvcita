@@ -123,12 +123,12 @@
 	</tr>
 	<?php foreach ($keluarga as $data): ?>
 		<tr>
-			<td class="bdbawah bdkanan bdkiri"><?php echo $data->nama_anggota_keluarga ?></td>
-			<td class="bdbawah bdkanan bdkiri"><?php echo $data->tanggal_lahir ?></td>
-			<td class="bdbawah bdkanan bdkiri"><?php echo $data->status_keluarga ?></td>
-			<td class="bdbawah bdkanan bdkiri"><?php echo $data->status_kawin ?></td>
-			<td class="bdbawah bdkanan bdkiri"><?php echo $data->tanggal_nikah ?></td>
-			<td class="bdbawah bdkanan bdkiri"><?php echo $data->pekerjaan ?></td>
+			<td class="bdbawah bdkanan"><?php echo $data->nama_anggota_keluarga ?></td>
+			<td class="bdbawah bdkanan"><?php echo $data->tanggal_lahir ?></td>
+			<td class="bdbawah bdkanan"><?php echo $data->status_keluarga ?></td>
+			<td class="bdbawah bdkanan"><?php echo $data->status_kawin ?></td>
+			<td class="bdbawah bdkanan"><?php echo $data->tanggal_nikah ?></td>
+			<td class="bdbawah bdkanan"><?php echo $data->pekerjaan ?></td>
 		</tr>
 	<?php endforeach ?>
 </table>
