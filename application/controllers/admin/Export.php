@@ -101,43 +101,86 @@ function data_pegawai(){
       $file->setActiveSheetIndex ( 0 );
       $sheet = $file->getActiveSheet ( 0 );
   //memberikan title pada sheet
-      $sheet->setTitle ( "Daftar Dosen" );
+      $sheet->setTitle ( "Daftar Listing Nominatif PNS" );
+      $sheet->mergeCells('A1:AA1');
+      $sheet->setCellValue ( "A1", "DAFTAR LISTING NOMINATIF PNS" );
+      $sheet->mergeCells('A2:AA2');
+      $sheet->setCellValue ( "A2", "DI LINGKUNGAN BADAN KEPEGAWAIAN, PENDIDIKAN DAN PELATIHAN DAERAH KABUPATEN BUTON" );
       /*end - BLOCK SETUP SHEET*/
 
       /*start - BLOCK HEADER*/
-      $sheet->setCellValue ( "A1", "No" );
-      $sheet->setCellValue ( "B1", "NIP Lama" );
-      $sheet->setCellValue ( "C1", "NIP Baru" );
-      $sheet->setCellValue ( "D1", "Nama" );
-      $sheet->setCellValue ( "E1", "Gelar Depan" );
-      $sheet->setCellValue ( "F1", "Gelar Belakang" );
-      $sheet->setCellValue ( "G1", "Tempat Lahir" );
-      $sheet->setCellValue ( "H1", "Tanggal Lahir" );
-      $sheet->setCellValue ( "I1", "Gol Awal" );
-      $sheet->setCellValue ( "J1", "TMT CPNS" );
-      $sheet->setCellValue ( "K1", "TMT PNS" );
-      $sheet->setCellValue ( "L1", "L/p" );
-      $sheet->setCellValue ( "M1", "Gol Akhir" );
-      $sheet->setCellValue ( "N1", "Gol.Ruang TMT" );
-      $sheet->setCellValue ( "O1", "MK Thn" );
-      $sheet->setCellValue ( "P1", "MK Bln" );
-      $sheet->setCellValue ( "Q1", "Eselon" );
-      $sheet->setCellValue ( "R1", "TMT Struktural" );
-      $sheet->setCellValue ( "S1", "NM Jab Struktural" );
-      $sheet->setCellValue ( "T1", "FT Tertentu" );
-      $sheet->setCellValue ( "U1", "FT Nm Jabatan" );
-      $sheet->setCellValue ( "V1", "FU Nm Jabatan" );
-      $sheet->setCellValue ( "W1", "Unit Kerja" );
-      $sheet->setCellValue ( "X1", "Unit Kerja Induk" );
-      $sheet->setCellValue ( "Y1", "Nama Pendidikan Terakhir" );
-      $sheet->setCellValue ( "Z1", "Lulus" );
-      $sheet->setCellValue ( "AA1", "Ked.Huk" );
+      
+      $sheet->mergeCells('A4:A6');
+      $sheet->setCellValue ( "A4", "No" );
+      $sheet->mergeCells('B4:C4');
+      $sheet->setCellValue ( "B4", "NIP" );
+      $sheet->mergeCells('B5:B6');
+      $sheet->setCellValue ( "B5", "NIP Lama" );
+      $sheet->mergeCells('C5:C6');
+      $sheet->setCellValue ( "C5", "NIP Baru" );
+      $sheet->mergeCells('D4:D6');
+      $sheet->setCellValue ( "D4", "Nama" );
+      $sheet->mergeCells('E4:E6');
+      $sheet->setCellValue ( "E4", "Gelar Depan" );
+      $sheet->mergeCells('F4:F6');
+      $sheet->setCellValue ( "F4", "Gelar Belakang" );
+      $sheet->mergeCells('G4:H4');
+      $sheet->setCellValue ( "G4", "Tempat Tanggal Lahir" );
+      $sheet->mergeCells('G5:G6');
+      $sheet->setCellValue ( "G5", "Tempat Lahir" );
+      $sheet->mergeCells('H5:H6');
+      $sheet->setCellValue ( "H5", "Tanggal Lahir" );
+      $sheet->mergeCells('I4:K4');
+      $sheet->setCellValue ( "I4", "CPNS/PNS" );
+      $sheet->mergeCells('I5:I6');
+      $sheet->setCellValue ( "I5", "Gol Awal" );
+      $sheet->mergeCells('J5:J6');
+      $sheet->setCellValue ( "J5", "TMT CPNS" );
+      $sheet->mergeCells('K5:K6');
+      $sheet->setCellValue ( "K5", "TMT PNS" );
+      $sheet->mergeCells('L4:L6');
+      $sheet->setCellValue ( "L4", "L/p" );
+      $sheet->mergeCells('M4:P4');
+      $sheet->setCellValue ( "M4", "Golongan Ruang" );
+      $sheet->mergeCells('M5:M6');
+      $sheet->setCellValue ( "M5", "Gol Akhir" );
+      $sheet->mergeCells('N5:N6');
+      $sheet->setCellValue ( "N5", "TMT" );
+      $sheet->mergeCells('O5:P5');
+      $sheet->setCellValue ( "O5", "Masa Kerja" );
+      $sheet->setCellValue ( "O6", "MK Thn" );
+      $sheet->setCellValue ( "P6", "MK Bln" );
+      $sheet->mergeCells('Q4:V4');
+      $sheet->setCellValue ( "Q4", "Jabatan" );
+      $sheet->mergeCells('Q5:S5');
+      $sheet->setCellValue ( "Q5", "Struktural" );
+      $sheet->setCellValue ( "Q6", "Eselon" );
+      $sheet->setCellValue ( "R6", "TMT Struktural" );
+      $sheet->setCellValue ( "S6", "NM Jab Struktural" );
+      $sheet->mergeCells('T5:U5');
+      $sheet->setCellValue ( "T5", "Fungsional Tertentu" );
+      $sheet->setCellValue ( "T6", "FT Tertentu" );
+      $sheet->setCellValue ( "U6", "FT Nm Jabatan" );
+      $sheet->setCellValue ( "V5", "Fungsional Umum" );
+      $sheet->setCellValue ( "V6", "Nama Jabatan" );
+      $sheet->mergeCells('W4:W6');
+      $sheet->setCellValue ( "W4", "Unit Kerja" );
+      $sheet->mergeCells('X4:X6');
+      $sheet->setCellValue ( "X4", "Unit Kerja Induk" );
+      $sheet->mergeCells('Y4:Z4');
+      $sheet->setCellValue ( "Y4", "Pendidikan" );
+      $sheet->mergeCells('Y5:Y6');
+      $sheet->setCellValue ( "Y5", "Nama Pendidikan Terakhir" );
+      $sheet->mergeCells('Z5:Z6');
+      $sheet->setCellValue ( "Z5", "Lulus" );
+      $sheet->mergeCells('AA4:AA6');
+      $sheet->setCellValue ( "AA4", "Ked.Huk" );
 
       /*end - BLOCK HEADER*/
 
       /* start - BLOCK MEMASUKAN DATABASE*/
       $nomor = 1;
-      $nocel = 2;
+      $nocel = 8;
       $hasil = $this->Admin_m->data_pegawai();
                 // echo "<pre>";print_r($hasil);echo "</pre>";exit();
       foreach ($hasil as $data) {

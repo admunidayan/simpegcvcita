@@ -4,23 +4,23 @@
 	<title><?php echo $title; ?></title>
   <style type="text/css">
   .colpading{padding: 0px 4px}
-  </style>
-  <!-- lgo -->
-  <link rel="shortcut icon" href="<?php echo base_url($brand); ?>">
-  <!-- css bootsrap 4.0 beta -->
-  <link rel="stylesheet" href="<?php echo base_url('asset/css/bootstrap.min.css'); ?>">
-  <!-- google material icon -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-  rel="stylesheet">
+</style>
+<!-- lgo -->
+<link rel="shortcut icon" href="<?php echo base_url($brand); ?>">
+<!-- css bootsrap 4.0 beta -->
+<link rel="stylesheet" href="<?php echo base_url('asset/css/bootstrap.min.css'); ?>">
+<!-- google material icon -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+rel="stylesheet">
 
-  <!-- css font css pribadi -->
-  <link rel="stylesheet" href="<?php echo base_url('asset/css/custom.css'); ?>">
-  <!-- jquery terlebih dahulu -->
-  <script src="<?php echo base_url('asset/js/jquery-3.2.1.min.js'); ?>" type="text/javascript"></script>
-  <!-- js bootstrap v.4 butuh pooper.js -->
-  <script src="<?php echo base_url('asset/js/popper.min.js'); ?>" type="text/javascript"></script>
-  <!-- js bootstrap v.4 -->
-  <script src="<?php echo base_url('asset/js/bootstrap.min.js'); ?>" type="text/javascript"></script>
+<!-- css font css pribadi -->
+<link rel="stylesheet" href="<?php echo base_url('asset/css/custom.css'); ?>">
+<!-- jquery terlebih dahulu -->
+<script src="<?php echo base_url('asset/js/jquery-3.2.1.min.js'); ?>" type="text/javascript"></script>
+<!-- js bootstrap v.4 butuh pooper.js -->
+<script src="<?php echo base_url('asset/js/popper.min.js'); ?>" type="text/javascript"></script>
+<!-- js bootstrap v.4 -->
+<script src="<?php echo base_url('asset/js/bootstrap.min.js'); ?>" type="text/javascript"></script>
 </head>
 <body>
   <div class="container-fluid">
@@ -45,7 +45,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item dropdown">
-                <a class="btn btn-success dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">   
+                <a class="btn btn-info dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">   
                   <i class="material-icons">library_books</i> Master
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -63,17 +63,13 @@
                   <a class="dropdown-item" href="<?php echo base_url('index.php/admin/master/lokasi_kerja') ?>"><i class="material-icons">location_searching</i>Lokasi Kerja</a>
                 </div>
               </li>
-              <li class="nav-item dropdown">
-                <a class="btn btn-success dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <li class="nav-item dropdown" style="margin-left: 7px">
+                <a class="btn btn-info dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="material-icons">report</i> Laporan
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="<?php echo base_url('index.php/admin/Export_excel') ?>"><i class="material-icons">assignment_ind</i>Daftar Listing Nominatif PNS</a>
-                  <a class="dropdown-item" href="<?php echo base_url('index.php/admin/laporan/laporan_pegawai_unit_satuan') ?>"><i class="material-icons">bookmark_border</i>Unit Kerja Dan Satuan Kerja</a>
-                  <a class="dropdown-item" href="#"><i class="material-icons">location_on</i>Penempatan Kerja</a>
-                  <a class="dropdown-item" href="#"><i class="material-icons">location_searching</i>Mengikuti Pelatihan</a>
-                  <a class="dropdown-item" href="#"><i class="material-icons">label_outline</i>Status Pegawai dan Golongan</a>
-                  <a class="dropdown-item" href="#"><i class="material-icons">compare_arrows</i>Struktural dan Fungsional</a>
+                  <a class="dropdown-item" href="<?php echo base_url('index.php/admin/export/data_pegawai') ?>"><i class="material-icons">bookmark_border</i>Daftar Listing Nominatif PNS</a>
                 </div>
               </li>
             </ul>

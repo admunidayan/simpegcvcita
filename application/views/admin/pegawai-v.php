@@ -31,7 +31,7 @@
 				</div>
 			</div>
 		</form>
-		<table class="table table-hover">
+		<table class="table table-bordered table-hover">
 			<thead>
 				<tr class="bg-app text-light">
 					<td class="jrktbl text-center">No</td>
