@@ -121,7 +121,7 @@ class Pegawai extends CI_Controller {
                 $data['keluarga'] = $this->Pegawai_m->data_keluarga($id);
                 $data['status'] = $this->Pegawai_m->select_data('master_status_pegawai');
                 $data['stat_kawin'] = $this->Pegawai_m->select_data('master_status_kawin');
-                $data['stat_keluarga'] = $this->Pegawai_m->select_data('master_status_dalkeluarga');
+                $data['stat_keluarga'] = $this->Pegawai_m->select_data('master_status_dalam_keluarga');
                 $data['bagian'] = 'admin/data-keluarga-v';
                 $data['page'] = 'admin/detail-pegawai-v';
                 // pagging setting
@@ -446,7 +446,7 @@ class Pegawai extends CI_Controller {
                     'agama'=>$post['agama'],
                     'id_golongan'=>$post['id_golongan'],
                     'status_pegawai'=>$post['status_pegawai'],
-                    'tanggal_pengangkatan_cpns'=>$post['tanggal_pengangkatan_cpns'],
+                    'tanggal_pengangkatan_cpns'=>$post['tanggal_pengangkatan_cpns_thn'].'-'.$post['tanggal_pengangkatan_cpns_bln'].'-'.$post['tanggal_pengangkatan_cpns_hr'],
                     'alamat'=>$post['alamat']
                 );
                 $this->Pegawai_m->insert_data('data_pegawai',$datainput);

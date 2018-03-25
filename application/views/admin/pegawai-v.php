@@ -136,6 +136,21 @@
 								</select>
 							</div>
 							<div class="form-group">
+								<label class="text-info" for="tmt_cpns">TANGGAL PENGANGKATAN CPNS</label>
+								<div class="row">
+								<div class="col">
+								<input type="text" class="form-control" name="tanggal_pengangkatan_cpns_hr" placeholder="DD" >
+								</div>
+								<div class="col">
+								<input type="text" class="form-control" name="tanggal_pengangkatan_cpns_bln" placeholder="BB" >
+								</div>
+								<div class="col">
+								<input type="text" class="form-control" name="tanggal_pengangkatan_cpns_thn" placeholder="TTTT" >
+								</div>
+								</div>
+							</div>
+
+							<div class="form-group">
 								<label class="text-info" for="id_golongan">GOLONGAN</label>
 								<select class="form-control" name="id_golongan">
 									<?php foreach ($golongan as $data): ?>
