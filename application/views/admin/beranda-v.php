@@ -42,7 +42,7 @@ foreach($chart as $result){
                     }
                 },
                 subtitle: {
-                 text: 'Pegawai Berdasarkan Jenis Kelamin',
+                 text: 'Pegawai Berdasarkan Jenis apapun',
                  style: {
                     fontSize: '15px',
                     fontFamily: 'Verdana, sans-serif'
