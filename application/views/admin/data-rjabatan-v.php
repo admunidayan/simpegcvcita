@@ -12,7 +12,6 @@
 		<thead>
 			<tr class="bg-app text-light">
 				<td class="jrktbl text-center">No</td>
-				<td class="jrktbl">Status</td>
 				<td class="jrktbl">Penempatan</td>
 				<td class="jrktbl">Tgl Mulai</td>
 				<td class="jrktbl">Tgl Selesai</td>
@@ -61,10 +60,6 @@
 					<div class="modal-body">
 						<div class="row">
 							<div class="col-md-12">
-								<div class="form-group">
-									<label class="text-info" for="status">STATUS</label>
-									<input type="text" class="form-control" id="status" name="status" placeholder="STATUS" >
-								</div>
 								<div class="form-group">
 									<label class="text-info" for="penempatan">PENEMPATAN</label>
 									<input type="text" class="form-control" id="penempatan" name="penempatan" placeholder="PENEMPATAN" >

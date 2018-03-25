@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 16 Mar 2018 pada 15.03
--- Versi Server: 10.1.19-MariaDB
--- PHP Version: 5.6.28
+-- Generation Time: Mar 25, 2018 at 04:56 PM
+-- Server version: 10.1.16-MariaDB
+-- PHP Version: 5.6.24
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -23,7 +23,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_data_dp3`
+-- Table structure for table `tbl_data_dp3`
 --
 
 CREATE TABLE `tbl_data_dp3` (
@@ -45,7 +45,7 @@ CREATE TABLE `tbl_data_dp3` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_data_dp3`
+-- Dumping data for table `tbl_data_dp3`
 --
 
 INSERT INTO `tbl_data_dp3` (`id_dp3`, `id_pegawai`, `tahun`, `kesetiaan`, `prestasi`, `tanggung_jawab`, `ketaatan`, `kejujuran`, `kerjasama`, `prakarsa`, `kepemimpinan`, `rata_rata`, `atasan`, `penilai`, `mengetahui`) VALUES
@@ -55,7 +55,7 @@ INSERT INTO `tbl_data_dp3` (`id_dp3`, `id_pegawai`, `tahun`, `kesetiaan`, `prest
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_data_gaji_pokok`
+-- Table structure for table `tbl_data_gaji_pokok`
 --
 
 CREATE TABLE `tbl_data_gaji_pokok` (
@@ -73,7 +73,7 @@ CREATE TABLE `tbl_data_gaji_pokok` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_data_gaji_pokok`
+-- Dumping data for table `tbl_data_gaji_pokok`
 --
 
 INSERT INTO `tbl_data_gaji_pokok` (`id_gaji_pokok`, `id_pegawai`, `id_golongan`, `nomor_sk`, `tanggal_sk`, `dasar_perubahan`, `gaji_pokok`, `tanggal_mulai`, `tanggal_selesai`, `masa_kerja`, `pejabat_menetapkan`) VALUES
@@ -83,7 +83,7 @@ INSERT INTO `tbl_data_gaji_pokok` (`id_gaji_pokok`, `id_pegawai`, `id_golongan`,
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_data_hukuman`
+-- Table structure for table `tbl_data_hukuman`
 --
 
 CREATE TABLE `tbl_data_hukuman` (
@@ -100,7 +100,7 @@ CREATE TABLE `tbl_data_hukuman` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_data_hukuman`
+-- Dumping data for table `tbl_data_hukuman`
 --
 
 INSERT INTO `tbl_data_hukuman` (`id_hukuman`, `id_pegawai`, `id_master_hukuman`, `uraian`, `nomor_sk`, `tanggal_sk`, `tanggal_mulai`, `tanggal_selesai`, `masa_berlaku`, `pejabat_menetapkan`) VALUES
@@ -109,7 +109,7 @@ INSERT INTO `tbl_data_hukuman` (`id_hukuman`, `id_pegawai`, `id_master_hukuman`,
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_data_keluarga`
+-- Table structure for table `tbl_data_keluarga`
 --
 
 CREATE TABLE `tbl_data_keluarga` (
@@ -126,19 +126,20 @@ CREATE TABLE `tbl_data_keluarga` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_data_keluarga`
+-- Dumping data for table `tbl_data_keluarga`
 --
 
 INSERT INTO `tbl_data_keluarga` (`id_data_keluarga`, `id_pegawai`, `nama_anggota_keluarga`, `tanggal_lahir`, `status_keluarga`, `status_kawin`, `tanggal_nikah`, `uraian`, `tanggal_cerai_meninggal`, `pekerjaan`) VALUES
 (1, 1, 'HELENA P. NGOEO', '1967-04-19', '', 'KAWIN', '1967-04-19', '-', '14 November 2012', '-'),
 (2, 9, 'SITI RAHAYU', '1967-04-19', '', 'KAWIN', '1967-04-19', '-', '-', '-'),
 (3, 19, '-', '1967-04-19', '', '-', '1967-04-19', '-', '-', '-'),
-(4, 6, 'Isa Rabiati', '2012-04-19', 'suami', 'Belum Menikah', '2012-12-12', '-', '2012-12-12', 'NON JOB');
+(4, 6, 'Isa Rabiati', '2012-04-19', 'istri', 'Sudah Menikah', '2012-12-12', '-', '2012-12-12', 'NON JOB'),
+(5, 6, 'anak', '2012-12-12', 'anak', '', '0000-00-0', 'tes', '0000-00-00', 'tes');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_data_organisasi`
+-- Table structure for table `tbl_data_organisasi`
 --
 
 CREATE TABLE `tbl_data_organisasi` (
@@ -150,7 +151,7 @@ CREATE TABLE `tbl_data_organisasi` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_data_organisasi`
+-- Dumping data for table `tbl_data_organisasi`
 --
 
 INSERT INTO `tbl_data_organisasi` (`id_organisasi`, `id_pegawai`, `uraian`, `lokasi`, `tanggal`) VALUES
@@ -159,7 +160,7 @@ INSERT INTO `tbl_data_organisasi` (`id_organisasi`, `id_pegawai`, `uraian`, `lok
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_data_pegawai`
+-- Table structure for table `tbl_data_pegawai`
 --
 
 CREATE TABLE `tbl_data_pegawai` (
@@ -197,41 +198,43 @@ CREATE TABLE `tbl_data_pegawai` (
   `tmt_eselon` varchar(50) NOT NULL,
   `tmt_cpns` date NOT NULL,
   `tmt_pns` date NOT NULL,
-  `foto` varchar(100) NOT NULL DEFAULT 'avatar.png'
+  `foto` varchar(100) NOT NULL DEFAULT 'avatar.png',
+  `gelar_dpn` varchar(114) DEFAULT NULL,
+  `gelar_belakang` varchar(114) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_data_pegawai`
+-- Dumping data for table `tbl_data_pegawai`
 --
 
-INSERT INTO `tbl_data_pegawai` (`id_pegawai`, `nip`, `nip_lama`, `no_kartu_pegawai`, `nama_pegawai`, `agama`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `usia`, `status_pegawai`, `tanggal_pengangkatan_cpns`, `alamat`, `no_npwp`, `kartu_askes_pegawai`, `status_pegawai_pangkat`, `id_golongan`, `nomor_sk_pangkat`, `tanggal_sk_pangkat`, `tanggal_mulai_pangkat`, `tanggal_selesai_pangkat`, `id_status_jabatan`, `id_jabatan`, `id_unit_kerja`, `id_satuan_kerja`, `lokasi_kerja`, `nomor_sk_jabatan`, `tanggal_sk_jabatan`, `tanggal_mulai_jabatan`, `tanggal_selesai_jabatan`, `id_eselon`, `tmt_eselon`, `tmt_cpns`, `tmt_pns`, `foto`) VALUES
-(2, '196109031992051004', '196109031992051004', 'F329422', 'Ir. ASRI ABU, MM', 1, 'MAKASAR, PROPINSI SULAWESI SELATAN', '03 September 1961', 'Laki-Laki', '51 tahun,', '5', '12 May 1992', 'JL. TONDANO, KEL. BULOTADA\\''A TIMUR, GORONTALO, PROPINSI GORONTALO', '780609', '8669vd23232', '5', 17, '823.4/BKPAD/SK/190/2008', '31 March 2008', '01 April 2008', '22 November 2012', 3, 2347, 31, 8, 'DINAS TRANSMIGRASI KAB. BUTON', '664/KPTS/M/2010', '10 December 2010', '10 December 2010', '22 November 2012', 29, '30 November 2012', '0000-00-00', '0000-00-00', 'avatar.png'),
-(3, '196607201997031004', '-', '-', 'JOHANES ROBBY WAANI ST', 1, '-', '20 July 1966', 'Laki-Laki', '46 Tahun 3', '5', '01 March 1997', '-', '-', '-', '5', 16, '-', '01 April 2009', '01 April 2009', '-', 2, 592, 31, 8, 'DINAS KOPERASI DAN UKM KABUPATEN BUTON', '02/KPTS/Db/2011', '21 January 2011', '21 January 2011', '-', 29, '24 January 2011', '0000-00-00', '0000-00-00', ''),
-(4, '196411191997031002', '110053948', '-', 'IR. WILLIAM TAVIPONOVA GLORICUS KEREH MT', 1, '-', '19 November 1964', 'Laki-Laki', '47 Tahun 1', '5', '01 March1997', 'BUKIT DURI NO.33 JAKARTA SELATAN,', '-', '-', '5', 16, 'DB/090/B/2009-W', '27 February 2009', '01 April 2009', '-', 2, 2349, 31, 7, 'DINAS PEKERJAAN UMUM DAN PENATAAN RUANG KAB. BUTON', '164/KPTS/M/2004', '12 February 2004', '12 February 2004', '-', 32, '-', '0000-00-00', '0000-00-00', ''),
-(5, '19721024200003005', '560015858', 'D.155084', 'HARI PURWANTO SAMIRAN ST., MM.', 1, 'MANADO', '24 October 1972', 'Laki-Laki', '40 Tahun 0', '5', '01 March 2000', 'JL.JEND. SUDIRMAN NO. 71 KOTA SELATAN, GORONTALO, PROPINSI GORONTALO', '-', '-', '5', 16, 'Db/008/B/2011-H', '21 March 2003', '01 April 2011', '-', 2, 2345, 31, 177, 'DINAS PERHUBUNGAN KAB. BUTON', '11/KPTS/BS/2011', '16 March 2011', '16 March 2011', '-', 32, '-', '0000-00-00', '0000-00-00', ''),
-(6, '195907101983031030', '110043776', 'D.152665', 'DARMADJI SUHEDI ST.MT', 1, 'GORONTALO', '10 July 1959', 'Laki-Laki', '53 Tahun 4', '5', '1 March 2003', 'JL. TAMAN PENDIDIKAN NO.34 KOTA TIMUR, GORONTALO, PROPINSI GORONTALO', '-', '-', '5', 16, '823.3/BKPAD/SK/472/10', '31 March 2010', '01 April 2010', '-', 2, 2345, 31, 8, 'DINAS KESEHATAN KAB. BUTON', '-', '27 May 2010', '01 June 2010', '-', 32, '-', '0000-00-00', '0000-00-00', ''),
-(7, '195812311997031004', '110054393', 'G.387882', 'DRS. ARSYID USMAN', 1, 'GORONTALO', '31 December 1958', 'Laki-Laki', '53 Tahun 1', '5', '01 March 1997', 'JLN. RAYA PONDOK KACANG TIMUR, KAMPUNG BULAK', '-', '-', '5', 16, 'DB/207/B/2009-A', '27 February 2009', '01 April 2009', '-', 2, 2345, 31, 177, 'DINAS PENDIDIKAN KAB. BUTON', '11/KPTS/BS/2011', '16 March 2011', '16 March 2011', '-', 32, '-', '0000-00-00', '0000-00-00', ''),
-(8, '196904101998031005', '110054827', '-', 'MARTINUS PAKONGLEAN BANDASO ST', 1, 'SULAWESI UTARA', '10 April 1969', 'Laki-Laki', '43 tahun,', '5', '01 March 1998', '-', '-', '-', '5', 15, '-', '-', '01 April 2010', '-', 2, 2345, 31, 12, 'DINAS PEMBERDAYAAN PEREMPUAN DAN PERLINDUNGAN ANAK KAB. BUTON\n', '433/KPTS/M/2011', '27 December 2011', '01 December 2012', '-', 32, '-', '0000-00-00', '0000-00-00', ''),
-(9, '196402161991011001', '110045316', 'F.232606', 'KUSNAEDI ST', 1, 'PROPINSI JAWA BARAT', '16 February 1964', 'Laki-Laki', '48 Tahun 8', '5', '01 March 1991', 'KOMPLEK AL. JL. BARU 24 PONDOK LABU', '-', '-', '5', 17, '-', '-', '01 April 2010', '-', 2, 2344, 1, 7, 'DINAS KELAUTAN DAN PERIKANAN KAB. BUTON\n', 'KP.03/01/116/XII/1992', '24 September 2012', '12 October 2012', '-', 29, '12 October 2012', '0000-00-00', '0000-00-00', ''),
-(10, '197907072005021001', '110057522', '-', 'IBNU KURNIAWAN ST', 1, 'SURABAYA', '07 July 1979', 'Laki-Laki', '33 tahun, ', '5', '01 February 2005', '-', '-', '-', '5', 17, 'KEP.103/A/DP/2005-I', '04 April 2005', '01/02/2005', '01/06/2006', 2, 511, 16479, 175, 'DINAS PARIWISATA KAB. BUTON', '-', '-', '-', '-', 32, '-', '0000-00-00', '0000-00-00', ''),
-(11, '-', '110056174', '-', 'EVANDA LIENTJE CAROLIEN SALANGKA', 1, 'MANADO', '04 December 1967', 'Perempuan', '44 tahun, ', '5', '01 December 2002', '-', '-', '-', '1', 4, '-', '-', '01 October 2010', '-', 2, 1, 1, 1, 'SULAWESI UTARA', '11/KPTS/BS/2011', '06 March 2011', '16 March 2011', '-', 32, '-', '0000-00-00', '0000-00-00', ''),
-(12, '196308272002122', '110056237', '-', 'HELEN A.RANTUNG SE', 1, 'TUMPAAN', '27 August 1963', 'Perempuan', '49 tahun, ', '5', '01 December 2002', '-', '-', '-', '5', 14, '-', '-', '01 April 2010', '-', 2, 116, 16479, 175, 'SULAWESI UTARA', '11/KPTS/BS/2011', '16 March 2011', '16 March 2011', '-', 32, '-', '0000-00-00', '0000-00-00', ''),
-(13, '196307162002122002', '110056404', '-', 'RUSDA PODUNGE S.SOS', 1, 'GORONTALO, PROPINSI SULAWESI UTARA', '16 July 1963', 'Perempuan', '49 tahun, ', '5', '01 December 2012', 'JL.IRIAN KEL.DULALAWO GORONTALO', '-', '-', '5', 14, 'Db/435/B/2012-R', '23 July 2012', '01 October 2012', '-', 2, 116, 16479, 175, 'BADAN PENANGGULANGAN BENCANA KABUPATEN BUTON', '11/KPTS/BS/2011', '16 March 2011', '16 March 2011', '-', 32, '-', '0000-00-00', '0000-00-00', ''),
-(14, '196405312006041001', '110058297', '-', 'DENNY MEIKY PAENDONG SE', 1, 'MANADO, PROPINSI SULAWESI UTARA', '31 May 1964', 'Laki-Laki', '48 tahun, ', '5', '01 April 2006', '-', '-', '-', '5', 14, 'Db/434/B/2012-D', '23 July 2012', '01 October 2012', '-', 2, 116, 16479, 175, 'BADAN KESATUAN BANGSA DAN POLITIK KAB. BUTON', '-', '-', '-', '-', 32, '-', '0000-00-00', '0000-00-00', ''),
-(15, '196705092002121', '110056730', '-', 'FERYANTO SUPII S.ST', 1, 'MANADO, PROPINSI SULAWESI UTARA', '-', 'Laki-Laki', '45 tahun,', '5', '01 December 2002', '-', '-', '-', '5', 14, '-', '-', '-', '-', 2, 116, 1, 1, 'BADAN PENELITIAN DAN PENGEMBANGAN KAB. BUTON', '11/KPTS/BS/2011', '-', '16 March 2011', '-', 32, '-', '0000-00-00', '0000-00-00', ''),
-(16, '196410142008122001', '-', '-', 'OLVI KALENGKIAN SE', 1, 'TONDANO, PROPINSI SULAWESI TENGAH', '14 October 1964', 'Perempuan', '48 tahun, ', '4', '01 December 2008', '-', '-', '-', '5', 14, 'Db/018/C/2010 - O', '23 February 2010', '01 March 2010', '-', 2, 116, 16479, 175, 'BADAN PENGELOLA PAJAK DAN RETRIBUSI DAERAH KAB. BUTON\n', '11/KPTS/BS/2011', '16 March 2011', '16 March 2011', '-', 32, '-', '0000-00-00', '0000-00-00', ''),
-(17, '196712092006042002', '110058305', '-', 'JANSJE MONTOLALU SH', 1, 'TUMANI', '19 December 1967', 'Laki-Laki', '44 tahun,', '5', '01 April 2006', '-', '-', '-', '5', 14, '-', '-', '-', '-', 2, 116, 16479, 175, 'BADAN KEPEGAWAIAN, PENDIDIKAN DAN PELATIHAN DAERAH\n', '11/KPTS/BS/2011', '16 March 2011', '16 March 2011', '-', 32, '-', '0000-00-00', '0000-00-00', ''),
-(18, '196503182008122001', '-', '-', 'NILA POOE SE', 1, 'GORONTALO', '18 March 1969', 'Perempuan', '47 tahun, ', '5', '01 December 2008', 'JL. DURIAN, GORONTALO, PROPINSI GORONTALO', '-', '-', '5', 14, 'Db/054/B/2011-N', '-', '01 April 2011', '-', 2, 116, 16479, 175, 'BADAN PENGELOLA KEUANGAN DAN ASET DAERAH KAB. BUTON\n', '11/KPTS/BS/2011', '16 March 2011', '16 March 2011', '-', 32, '-', '0000-00-00', '0000-00-00', ''),
-(19, '197108052008121001', '-', '-', 'V. ANSOUW SE', 1, 'PROPINSI SULAWESI UTARA', '05 August 1971', 'Laki-Laki', '41 tahun,', '5', '01 December 2008', '-', '-', '-', '1', 14, '-', '-', '01/12/2008', '-', 2, 2345, 31, 178, 'BAPPEDA KAB. BUTON', '11/KPTS/BS/2011', '-', '-', '-', 32, '-', '0000-00-00', '0000-00-00', ''),
-(20, '196412082007012001', '110062253', '-', 'DRA. DELLY JETSIE TAMARA', 1, 'AMURANG', '08 December 1964', 'Perempuan', '47 tahun, ', '5', '01 January 2007', '-', '-', '-', '5', 14, 'Db/274/B/2011-D', '21 March 2011', '01 April 2011', '-', 2, 116, 16479, 175, 'SATUAN POL PP KAB. BUTON', '11/KPTS/BS/2011', '16 March 2011', '-', '-', 32, '-', '0000-00-00', '0000-00-00', ''),
-(21, '196006012006041003', '110058300', '-', 'JAN MOVIE SEROY ST', 1, 'MINAHASA, PROPINSI SULAWESI UTARA', '01 Juni 1960', 'Laki-Laki', '52 tahun,', '5', '01 April 2006', '-', '-', '-', '5', 18, 'DB/709/B/2010-J', '26 Juli 2010', '26 Juli 2010', '-', 2, 2345, 31, 178, 'INSPEKTORAT KABUPATEN BUTON\n', '11/KPTS/BS/2011', '16 Maret 2011', '16 Maret 2011', '-', 32, '-', '0000-00-00', '0000-00-00', ''),
-(22, '1234567654', '12345678654', '123456787654', 'qwertyuyt', 1, 'BAUBAU', '24-12-1993', 'Laki-Laki', '25 Tahun', '7', '06-04-2015', 'Jalan Sultan Hasanuddin Baubau', '123456765', '1234567654', '0', 18, '', '', '', '', 2, 0, 0, 0, 'SEKRETARIAT DPRD KAB. BUTON', '', '', '', '', 0, '', '0000-00-00', '0000-00-00', 'avatar.png'),
-(23, '12345676432', '234567876543', '3456789876543', 'Hapzih, SST, SKM, MM', 1, 'Kendari', '21-05-1989', 'Laki-Laki', '', '6', '06-04-2015', 'jalan Gadjha Madha', '2345678987654', '23456787654', '', 13, '', '', '', '', 0, 0, 0, 0, 'SEKRETARIAT DAERAH KAB. BUTON', '', '', '', '', 0, '', '0000-00-00', '0000-00-00', 'avatar.png');
+INSERT INTO `tbl_data_pegawai` (`id_pegawai`, `nip`, `nip_lama`, `no_kartu_pegawai`, `nama_pegawai`, `agama`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `usia`, `status_pegawai`, `tanggal_pengangkatan_cpns`, `alamat`, `no_npwp`, `kartu_askes_pegawai`, `status_pegawai_pangkat`, `id_golongan`, `nomor_sk_pangkat`, `tanggal_sk_pangkat`, `tanggal_mulai_pangkat`, `tanggal_selesai_pangkat`, `id_status_jabatan`, `id_jabatan`, `id_unit_kerja`, `id_satuan_kerja`, `lokasi_kerja`, `nomor_sk_jabatan`, `tanggal_sk_jabatan`, `tanggal_mulai_jabatan`, `tanggal_selesai_jabatan`, `id_eselon`, `tmt_eselon`, `tmt_cpns`, `tmt_pns`, `foto`, `gelar_dpn`, `gelar_belakang`) VALUES
+(2, '196109031992051004', '196109031992051004', 'F329422', 'Ir. ASRI ABU, MM', 1, 'MAKASAR, PROPINSI SULAWESI SELATAN', '03 September 1961', 'Laki-Laki', '51 tahun,', '5', '12 May 1992', 'JL. TONDANO, KEL. BULOTADA\\''A TIMUR, GORONTALO, PROPINSI GORONTALO', '780609', '8669vd23232', '5', 17, '823.4/BKPAD/SK/190/2008', '31 March 2008', '01 April 2008', '22 November 2012', 3, 2347, 31, 8, '2', '664/KPTS/M/2010', '10 December 2010', '10 December 2010', '22 November 2012', 29, '30 November 2012', '0000-00-00', '0000-00-00', 'avatar.png', NULL, NULL),
+(3, '196607201997031004', '-', '-', 'JOHANES ROBBY WAANI ST', 1, '-', '20 July 1966', 'Laki-Laki', '46 Tahun 3', '5', '01 March 1997', '-', '-', '-', '5', 16, '-', '01 April 2009', '01 April 2009', '-', 2, 592, 31, 8, '32', '02/KPTS/Db/2011', '21 January 2011', '21 January 2011', '-', 29, '24 January 2011', '0000-00-00', '0000-00-00', '', NULL, NULL),
+(4, '196411191997031002', '110053948', '-', 'IR. WILLIAM TAVIPONOVA GLORICUS KEREH MT', 1, '-', '19 November 1964', 'Laki-Laki', '47 Tahun 1', '5', '01 March1997', 'BUKIT DURI NO.33 JAKARTA SELATAN,', '-', '-', '5', 16, 'DB/090/B/2009-W', '27 February 2009', '01 April 2009', '-', 2, 2349, 31, 7, '3', '164/KPTS/M/2004', '12 February 2004', '12 February 2004', '-', 32, '-', '0000-00-00', '0000-00-00', '', NULL, NULL),
+(5, '19721024200003005', '560015858', 'D.155084', 'HARI PURWANTO SAMIRAN ST., MM.', 1, 'MANADO', '24 October 1972', 'Laki-Laki', '40 Tahun 0', '5', '01 March 2000', 'JL.JEND. SUDIRMAN NO. 71 KOTA SELATAN, GORONTALO, PROPINSI GORONTALO', '-', '-', '5', 16, 'Db/008/B/2011-H', '21 March 2003', '01 April 2011', '-', 2, 2345, 31, 177, 'DINAS PERHUBUNGAN KAB. BUTON', '11/KPTS/BS/2011', '16 March 2011', '16 March 2011', '-', 32, '-', '0000-00-00', '0000-00-00', '', NULL, NULL),
+(6, '195907101983031030', '110043776', 'D.152665', 'DARMADJI SUHEDI ST.MT', 1, 'GORONTALO', '10 July 1959', 'Laki-Laki', '53 Tahun 4', '5', '1 March 2003', 'JL. TAMAN PENDIDIKAN NO.34 KOTA TIMUR, GORONTALO, PROPINSI GORONTALO', '-', '-', '5', 16, '823.3/BKPAD/SK/472/10', '31 March 2010', '01 April 2010', '-', 2, 2345, 31, 8, '1', '-', '27 May 2010', '01 June 2010', '-', 32, '-', '0000-00-00', '0000-00-00', 'avatar.png', NULL, NULL),
+(7, '195812311997031004', '110054393', 'G.387882', 'DRS. ARSYID USMAN', 1, 'GORONTALO', '31 December 1958', 'Laki-Laki', '53 Tahun 1', '5', '01 March 1997', 'JLN. RAYA PONDOK KACANG TIMUR, KAMPUNG BULAK', '-', '-', '5', 16, 'DB/207/B/2009-A', '27 February 2009', '01 April 2009', '-', 2, 2345, 31, 177, 'DINAS PENDIDIKAN KAB. BUTON', '11/KPTS/BS/2011', '16 March 2011', '16 March 2011', '-', 32, '-', '0000-00-00', '0000-00-00', '', NULL, NULL),
+(8, '196904101998031005', '110054827', '-', 'MARTINUS PAKONGLEAN BANDASO ST', 1, 'SULAWESI UTARA', '10 April 1969', 'Laki-Laki', '43 tahun,', '5', '01 March 1998', '-', '-', '-', '5', 15, '-', '-', '01 April 2010', '-', 2, 2345, 31, 12, 'DINAS PEMBERDAYAAN PEREMPUAN DAN PERLINDUNGAN ANAK KAB. BUTON\n', '433/KPTS/M/2011', '27 December 2011', '01 December 2012', '-', 32, '-', '0000-00-00', '0000-00-00', '', NULL, NULL),
+(9, '196402161991011001', '110045316', 'F.232606', 'KUSNAEDI ST', 1, 'PROPINSI JAWA BARAT', '16 February 1964', 'Laki-Laki', '48 Tahun 8', '5', '01 March 1991', 'KOMPLEK AL. JL. BARU 24 PONDOK LABU', '-', '-', '5', 17, '-', '-', '01 April 2010', '-', 2, 2344, 1, 7, 'DINAS KELAUTAN DAN PERIKANAN KAB. BUTON\n', 'KP.03/01/116/XII/1992', '24 September 2012', '12 October 2012', '-', 29, '12 October 2012', '0000-00-00', '0000-00-00', '', NULL, NULL),
+(10, '197907072005021001', '110057522', '-', 'IBNU KURNIAWAN ST', 1, 'SURABAYA', '07 July 1979', 'Laki-Laki', '33 tahun, ', '5', '01 February 2005', '-', '-', '-', '5', 17, 'KEP.103/A/DP/2005-I', '04 April 2005', '01/02/2005', '01/06/2006', 2, 511, 16479, 175, 'DINAS PARIWISATA KAB. BUTON', '-', '-', '-', '-', 32, '-', '0000-00-00', '0000-00-00', '', NULL, NULL),
+(11, '-', '110056174', '-', 'EVANDA LIENTJE CAROLIEN SALANGKA', 1, 'MANADO', '04 December 1967', 'Perempuan', '44 tahun, ', '5', '01 December 2002', '-', '-', '-', '1', 4, '-', '-', '01 October 2010', '-', 2, 1, 1, 1, 'SULAWESI UTARA', '11/KPTS/BS/2011', '06 March 2011', '16 March 2011', '-', 32, '-', '0000-00-00', '0000-00-00', '', NULL, NULL),
+(12, '196308272002122', '110056237', '-', 'HELEN A.RANTUNG SE', 1, 'TUMPAAN', '27 August 1963', 'Perempuan', '49 tahun, ', '5', '01 December 2002', '-', '-', '-', '5', 14, '-', '-', '01 April 2010', '-', 2, 116, 16479, 175, 'SULAWESI UTARA', '11/KPTS/BS/2011', '16 March 2011', '16 March 2011', '-', 32, '-', '0000-00-00', '0000-00-00', '', NULL, NULL),
+(13, '196307162002122002', '110056404', '-', 'RUSDA PODUNGE S.SOS', 1, 'GORONTALO, PROPINSI SULAWESI UTARA', '16 July 1963', 'Perempuan', '49 tahun, ', '5', '01 December 2012', 'JL.IRIAN KEL.DULALAWO GORONTALO', '-', '-', '5', 14, 'Db/435/B/2012-R', '23 July 2012', '01 October 2012', '-', 2, 116, 16479, 175, 'BADAN PENANGGULANGAN BENCANA KABUPATEN BUTON', '11/KPTS/BS/2011', '16 March 2011', '16 March 2011', '-', 32, '-', '0000-00-00', '0000-00-00', '', NULL, NULL),
+(14, '196405312006041001', '110058297', '-', 'DENNY MEIKY PAENDONG SE', 1, 'MANADO, PROPINSI SULAWESI UTARA', '31 May 1964', 'Laki-Laki', '48 tahun, ', '5', '01 April 2006', '-', '-', '-', '5', 14, 'Db/434/B/2012-D', '23 July 2012', '01 October 2012', '-', 2, 116, 16479, 175, 'BADAN KESATUAN BANGSA DAN POLITIK KAB. BUTON', '-', '-', '-', '-', 32, '-', '0000-00-00', '0000-00-00', '', NULL, NULL),
+(15, '196705092002121', '110056730', '-', 'FERYANTO SUPII S.ST', 1, 'MANADO, PROPINSI SULAWESI UTARA', '-', 'Laki-Laki', '45 tahun,', '5', '01 December 2002', '-', '-', '-', '5', 14, '-', '-', '-', '-', 2, 116, 1, 1, 'BADAN PENELITIAN DAN PENGEMBANGAN KAB. BUTON', '11/KPTS/BS/2011', '-', '16 March 2011', '-', 32, '-', '0000-00-00', '0000-00-00', '', NULL, NULL),
+(16, '196410142008122001', '-', '-', 'OLVI KALENGKIAN SE', 1, 'TONDANO, PROPINSI SULAWESI TENGAH', '14 October 1964', 'Perempuan', '48 tahun, ', '4', '01 December 2008', '-', '-', '-', '5', 14, 'Db/018/C/2010 - O', '23 February 2010', '01 March 2010', '-', 2, 116, 16479, 175, 'BADAN PENGELOLA PAJAK DAN RETRIBUSI DAERAH KAB. BUTON\n', '11/KPTS/BS/2011', '16 March 2011', '16 March 2011', '-', 32, '-', '0000-00-00', '0000-00-00', '', NULL, NULL),
+(17, '196712092006042002', '110058305', '-', 'JANSJE MONTOLALU SH', 1, 'TUMANI', '19 December 1967', 'Laki-Laki', '44 tahun,', '5', '01 April 2006', '-', '-', '-', '5', 14, '-', '-', '-', '-', 2, 116, 16479, 175, 'BADAN KEPEGAWAIAN, PENDIDIKAN DAN PELATIHAN DAERAH\n', '11/KPTS/BS/2011', '16 March 2011', '16 March 2011', '-', 32, '-', '0000-00-00', '0000-00-00', '', NULL, NULL),
+(18, '196503182008122001', '-', '-', 'NILA POOE SE', 1, 'GORONTALO', '18 March 1969', 'Perempuan', '47 tahun, ', '5', '01 December 2008', 'JL. DURIAN, GORONTALO, PROPINSI GORONTALO', '-', '-', '5', 14, 'Db/054/B/2011-N', '-', '01 April 2011', '-', 2, 116, 16479, 175, 'BADAN PENGELOLA KEUANGAN DAN ASET DAERAH KAB. BUTON\n', '11/KPTS/BS/2011', '16 March 2011', '16 March 2011', '-', 32, '-', '0000-00-00', '0000-00-00', '', NULL, NULL),
+(19, '197108052008121001', '-', '-', 'V. ANSOUW SE', 1, 'PROPINSI SULAWESI UTARA', '05 August 1971', 'Laki-Laki', '41 tahun,', '5', '01 December 2008', '-', '-', '-', '1', 14, '-', '-', '01/12/2008', '-', 2, 2345, 31, 178, 'BAPPEDA KAB. BUTON', '11/KPTS/BS/2011', '-', '-', '-', 32, '-', '0000-00-00', '0000-00-00', '', NULL, NULL),
+(20, '196412082007012001', '110062253', '-', 'DRA. DELLY JETSIE TAMARA', 1, 'AMURANG', '08 December 1964', 'Perempuan', '47 tahun, ', '5', '01 January 2007', '-', '-', '-', '5', 14, 'Db/274/B/2011-D', '21 March 2011', '01 April 2011', '-', 2, 116, 16479, 175, 'SATUAN POL PP KAB. BUTON', '11/KPTS/BS/2011', '16 March 2011', '-', '-', 32, '-', '0000-00-00', '0000-00-00', '', NULL, NULL),
+(21, '196006012006041003', '110058300', '-', 'JAN MOVIE SEROY ST', 1, 'MINAHASA, PROPINSI SULAWESI UTARA', '01 Juni 1960', 'Laki-Laki', '52 tahun,', '5', '01 April 2006', '-', '-', '-', '5', 18, 'DB/709/B/2010-J', '26 Juli 2010', '26 Juli 2010', '-', 2, 2345, 31, 178, 'INSPEKTORAT KABUPATEN BUTON\n', '11/KPTS/BS/2011', '16 Maret 2011', '16 Maret 2011', '-', 32, '-', '0000-00-00', '0000-00-00', '', NULL, NULL),
+(22, '1234567654', '12345678654', '123456787654', 'qwertyuyt', 1, 'BAUBAU', '24-12-1993', 'Laki-Laki', '25 Tahun', '7', '06-04-2015', 'Jalan Sultan Hasanuddin Baubau', '123456765', '1234567654', '0', 18, '', '', '', '', 2, 0, 0, 0, 'SEKRETARIAT DPRD KAB. BUTON', '', '', '', '', 0, '', '0000-00-00', '0000-00-00', 'avatar.png', NULL, NULL),
+(23, '12345676432', '234567876543', '3456789876543', 'Hapzih, SST, SKM, MM', 1, 'Kendari', '21-05-1989', 'Laki-Laki', '', '6', '06-04-2015', 'jalan Gadjha Madha', '2345678987654', '23456787654', '', 13, '', '', '', '', 0, 0, 0, 0, 'SEKRETARIAT DAERAH KAB. BUTON', '', '', '', '', 0, '', '0000-00-00', '0000-00-00', 'avatar.png', NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_data_pelatihan`
+-- Table structure for table `tbl_data_pelatihan`
 --
 
 CREATE TABLE `tbl_data_pelatihan` (
@@ -246,7 +249,7 @@ CREATE TABLE `tbl_data_pelatihan` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_data_pelatihan`
+-- Dumping data for table `tbl_data_pelatihan`
 --
 
 INSERT INTO `tbl_data_pelatihan` (`id_pelatihan`, `id_pegawai`, `id_master_pelatihan`, `uraian`, `lokasi`, `tanggal_sertifikat`, `jam_pelatihan`, `negara`) VALUES
@@ -268,7 +271,7 @@ INSERT INTO `tbl_data_pelatihan` (`id_pelatihan`, `id_pegawai`, `id_master_pelat
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_data_pendidikan`
+-- Table structure for table `tbl_data_pendidikan`
 --
 
 CREATE TABLE `tbl_data_pendidikan` (
@@ -286,7 +289,7 @@ CREATE TABLE `tbl_data_pendidikan` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_data_pendidikan`
+-- Dumping data for table `tbl_data_pendidikan`
 --
 
 INSERT INTO `tbl_data_pendidikan` (`id_pendidikan`, `id_pegawai`, `tingkat_pendidikan`, `jurusan`, `uraian`, `teknik_non_teknik`, `sekolah`, `tempat_sekolah`, `nomor_sttb`, `tanggal_sttb`, `tanggal_lulus`) VALUES
@@ -304,7 +307,7 @@ INSERT INTO `tbl_data_pendidikan` (`id_pendidikan`, `id_pegawai`, `tingkat_pendi
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_data_penghargaan`
+-- Table structure for table `tbl_data_penghargaan`
 --
 
 CREATE TABLE `tbl_data_penghargaan` (
@@ -317,7 +320,7 @@ CREATE TABLE `tbl_data_penghargaan` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_data_penghargaan`
+-- Dumping data for table `tbl_data_penghargaan`
 --
 
 INSERT INTO `tbl_data_penghargaan` (`id_penghargaan`, `id_pegawai`, `id_master_penghargaan`, `uraian`, `nomor_sk`, `tanggal_sk`) VALUES
@@ -327,7 +330,7 @@ INSERT INTO `tbl_data_penghargaan` (`id_penghargaan`, `id_pegawai`, `id_master_p
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_data_riwayat_jabatan`
+-- Table structure for table `tbl_data_riwayat_jabatan`
 --
 
 CREATE TABLE `tbl_data_riwayat_jabatan` (
@@ -348,7 +351,7 @@ CREATE TABLE `tbl_data_riwayat_jabatan` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_data_riwayat_jabatan`
+-- Dumping data for table `tbl_data_riwayat_jabatan`
 --
 
 INSERT INTO `tbl_data_riwayat_jabatan` (`id_riwayat_jabatan`, `id_pegawai`, `status`, `penempatan`, `id_jabatan`, `id_unit_kerja`, `uraian`, `id_eselon`, `tmt_eselon`, `nomor_sk`, `tanggal_sk`, `tanggal_mulai`, `tanggal_selesai`, `lokasi`) VALUES
@@ -362,7 +365,7 @@ INSERT INTO `tbl_data_riwayat_jabatan` (`id_riwayat_jabatan`, `id_pegawai`, `sta
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_data_riwayat_pangkat`
+-- Table structure for table `tbl_data_riwayat_pangkat`
 --
 
 CREATE TABLE `tbl_data_riwayat_pangkat` (
@@ -374,31 +377,33 @@ CREATE TABLE `tbl_data_riwayat_pangkat` (
   `tanggal_sk` varchar(50) NOT NULL,
   `tanggal_mulai` varchar(50) NOT NULL,
   `tanggal_selesai` varchar(50) NOT NULL,
-  `masa_kerja` varchar(30) NOT NULL
+  `masa_kerja` varchar(30) NOT NULL,
+  `masa_kerja_bulan` int(11) NOT NULL,
+  `masa_kerja_tahun` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_data_riwayat_pangkat`
+-- Dumping data for table `tbl_data_riwayat_pangkat`
 --
 
-INSERT INTO `tbl_data_riwayat_pangkat` (`id_riwayat_pangkat`, `id_pegawai`, `id_golongan`, `status`, `nomor_sk`, `tanggal_sk`, `tanggal_mulai`, `tanggal_selesai`, `masa_kerja`) VALUES
-(1, 1, 16, 'PNS DAERAH', '23.3/BKD/SK/43/2009', '01 April 2009', '01 April 2009', '06 November 2012', '3 Tahun 7 Bulan'),
-(2, 1, 13, 'PNS DAERAH', '23.3/BKD/SK/04/2005', '01 Maret 2005', '01 Maret 2005', '31 March 2009', '3 Tahun 11 Bulan'),
-(3, 1, 14, 'PNS DAERAH', '823.3/7/SK/99/2001', '01 March 2001', '01 March 2001', '31 March 2005', '3 Tahun 11 Bulan'),
-(4, 1, 13, 'PNS DAERAH', '821.13/9/SK/155/1998', '01 December 1998', '01 December 1998', '31 March 2001', '2 Tahun 3 bulan'),
-(5, 1, 13, 'CPNS DaAERAH', '813.3/9/SK/96/1997', '01 March 1997', '01 March 1997', '30 November 1998', '1 Tahun 8 Bulan'),
-(6, 2, 17, 'PNS PUSAT', '823.4/BKPAD/SK/190/2008', '31 March 2008', '01 April 2008', '21 November 2012', '4 Tahun 7 Bulan'),
-(7, 15, 14, 'PNS PUSAT', '-', '-', '01 October 2010', '-', '-'),
-(8, 16, 14, 'PNS PUSAT', 'Db/018/C/2010 - O', '23 February 2010', '01 March 2010', '-', '-'),
-(9, 18, 14, 'PNS PUSAT', 'Db/054/B/2011-N', '21 March 2011', '01 April 2011', '-', '1 Tahun 7 Bulan'),
-(10, 19, 14, 'PNS PUSAT', '01/12/2008', '-', '-', '-', '3 Tahun 11 Bulan'),
-(11, 20, 14, 'PNS PUSAT', 'Db/274/B/2011-D', '21 March 2011', '01 April 2011', '-', '-'),
-(12, 6, 0, 'LAGI M', '242452354', '2012-02-14', '2012-12-12', '2019-12-12', 'MANTAP');
+INSERT INTO `tbl_data_riwayat_pangkat` (`id_riwayat_pangkat`, `id_pegawai`, `id_golongan`, `status`, `nomor_sk`, `tanggal_sk`, `tanggal_mulai`, `tanggal_selesai`, `masa_kerja`, `masa_kerja_bulan`, `masa_kerja_tahun`) VALUES
+(1, 1, 16, 'PNS DAERAH', '23.3/BKD/SK/43/2009', '01 April 2009', '01 April 2009', '06 November 2012', '3 Tahun 7 Bulan', 0, 0),
+(2, 1, 13, 'PNS DAERAH', '23.3/BKD/SK/04/2005', '01 Maret 2005', '01 Maret 2005', '31 March 2009', '3 Tahun 11 Bulan', 0, 0),
+(3, 1, 14, 'PNS DAERAH', '823.3/7/SK/99/2001', '01 March 2001', '01 March 2001', '31 March 2005', '3 Tahun 11 Bulan', 0, 0),
+(4, 1, 13, 'PNS DAERAH', '821.13/9/SK/155/1998', '01 December 1998', '01 December 1998', '31 March 2001', '2 Tahun 3 bulan', 0, 0),
+(5, 1, 13, 'CPNS DaAERAH', '813.3/9/SK/96/1997', '01 March 1997', '01 March 1997', '30 November 1998', '1 Tahun 8 Bulan', 0, 0),
+(6, 2, 17, 'PNS PUSAT', '823.4/BKPAD/SK/190/2008', '31 March 2008', '01 April 2008', '21 November 2012', '4 Tahun 7 Bulan', 0, 0),
+(7, 15, 14, 'PNS PUSAT', '-', '-', '01 October 2010', '-', '-', 0, 0),
+(8, 16, 14, 'PNS PUSAT', 'Db/018/C/2010 - O', '23 February 2010', '01 March 2010', '-', '-', 0, 0),
+(9, 18, 14, 'PNS PUSAT', 'Db/054/B/2011-N', '21 March 2011', '01 April 2011', '-', '1 Tahun 7 Bulan', 0, 0),
+(10, 19, 14, 'PNS PUSAT', '01/12/2008', '-', '-', '-', '3 Tahun 11 Bulan', 0, 0),
+(11, 20, 14, 'PNS PUSAT', 'Db/274/B/2011-D', '21 March 2011', '01 April 2011', '-', '-', 0, 0),
+(12, 6, 0, 'LAGI M', '242452354', '2012-02-14', '2012-12-12', '2019-12-12', 'MANTAP', 0, 0);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_data_seminar`
+-- Table structure for table `tbl_data_seminar`
 --
 
 CREATE TABLE `tbl_data_seminar` (
@@ -410,7 +415,7 @@ CREATE TABLE `tbl_data_seminar` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_data_seminar`
+-- Dumping data for table `tbl_data_seminar`
 --
 
 INSERT INTO `tbl_data_seminar` (`id_seminar`, `id_pegawai`, `uraian`, `lokasi`, `tanggal`) VALUES
@@ -419,7 +424,7 @@ INSERT INTO `tbl_data_seminar` (`id_seminar`, `id_pegawai`, `uraian`, `lokasi`, 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_groups`
+-- Table structure for table `tbl_groups`
 --
 
 CREATE TABLE `tbl_groups` (
@@ -429,7 +434,7 @@ CREATE TABLE `tbl_groups` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data untuk tabel `tbl_groups`
+-- Dumping data for table `tbl_groups`
 --
 
 INSERT INTO `tbl_groups` (`id`, `name`, `description`) VALUES
@@ -470,7 +475,7 @@ INSERT INTO `tbl_groups` (`id`, `name`, `description`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_info_pt`
+-- Table structure for table `tbl_info_pt`
 --
 
 CREATE TABLE `tbl_info_pt` (
@@ -490,7 +495,7 @@ CREATE TABLE `tbl_info_pt` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_info_pt`
+-- Dumping data for table `tbl_info_pt`
 --
 
 INSERT INTO `tbl_info_pt` (`id_info_pt`, `nama_info_pt`, `alias_pt`, `kode_pt`, `kontak_1`, `kontak_2`, `kontak_3`, `kontak_4`, `header_pt`, `alamat_pt`, `slogan`, `logo_pt`, `logo_kecil_pt`) VALUES
@@ -499,7 +504,7 @@ INSERT INTO `tbl_info_pt` (`id_info_pt`, `nama_info_pt`, `alias_pt`, `kode_pt`, 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_jk`
+-- Table structure for table `tbl_jk`
 --
 
 CREATE TABLE `tbl_jk` (
@@ -509,7 +514,7 @@ CREATE TABLE `tbl_jk` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_jk`
+-- Dumping data for table `tbl_jk`
 --
 
 INSERT INTO `tbl_jk` (`id_jk`, `kode_jk`, `nm_jk`) VALUES
@@ -519,7 +524,7 @@ INSERT INTO `tbl_jk` (`id_jk`, `kode_jk`, `nm_jk`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_login_attempts`
+-- Table structure for table `tbl_login_attempts`
 --
 
 CREATE TABLE `tbl_login_attempts` (
@@ -532,7 +537,7 @@ CREATE TABLE `tbl_login_attempts` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_master_agama`
+-- Table structure for table `tbl_master_agama`
 --
 
 CREATE TABLE `tbl_master_agama` (
@@ -541,7 +546,7 @@ CREATE TABLE `tbl_master_agama` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_master_agama`
+-- Dumping data for table `tbl_master_agama`
 --
 
 INSERT INTO `tbl_master_agama` (`id_agama`, `nm_agama`) VALUES
@@ -555,7 +560,7 @@ INSERT INTO `tbl_master_agama` (`id_agama`, `nm_agama`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_master_eselon`
+-- Table structure for table `tbl_master_eselon`
 --
 
 CREATE TABLE `tbl_master_eselon` (
@@ -565,7 +570,7 @@ CREATE TABLE `tbl_master_eselon` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_master_eselon`
+-- Dumping data for table `tbl_master_eselon`
 --
 
 INSERT INTO `tbl_master_eselon` (`id_eselon`, `nama_eselon`, `level`) VALUES
@@ -585,7 +590,7 @@ INSERT INTO `tbl_master_eselon` (`id_eselon`, `nama_eselon`, `level`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_master_golongan`
+-- Table structure for table `tbl_master_golongan`
 --
 
 CREATE TABLE `tbl_master_golongan` (
@@ -596,7 +601,7 @@ CREATE TABLE `tbl_master_golongan` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_master_golongan`
+-- Dumping data for table `tbl_master_golongan`
 --
 
 INSERT INTO `tbl_master_golongan` (`id_golongan`, `golongan`, `uraian`, `level`) VALUES
@@ -622,7 +627,7 @@ INSERT INTO `tbl_master_golongan` (`id_golongan`, `golongan`, `uraian`, `level`)
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_master_hukuman`
+-- Table structure for table `tbl_master_hukuman`
 --
 
 CREATE TABLE `tbl_master_hukuman` (
@@ -631,7 +636,7 @@ CREATE TABLE `tbl_master_hukuman` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_master_hukuman`
+-- Dumping data for table `tbl_master_hukuman`
 --
 
 INSERT INTO `tbl_master_hukuman` (`id_hukuman`, `nama_hukuman`) VALUES
@@ -649,7 +654,7 @@ INSERT INTO `tbl_master_hukuman` (`id_hukuman`, `nama_hukuman`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_master_jabatan`
+-- Table structure for table `tbl_master_jabatan`
 --
 
 CREATE TABLE `tbl_master_jabatan` (
@@ -659,7 +664,7 @@ CREATE TABLE `tbl_master_jabatan` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_master_jabatan`
+-- Dumping data for table `tbl_master_jabatan`
 --
 
 INSERT INTO `tbl_master_jabatan` (`id_jabatan`, `nama_jabatan`, `level`) VALUES
@@ -673,69 +678,70 @@ INSERT INTO `tbl_master_jabatan` (`id_jabatan`, `nama_jabatan`, `level`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_master_lokasi_kerja`
+-- Table structure for table `tbl_master_lokasi_kerja`
 --
 
 CREATE TABLE `tbl_master_lokasi_kerja` (
   `id_lokasi_kerja` int(10) NOT NULL,
-  `lokasi_kerja` varchar(100) NOT NULL
+  `lokasi_kerja` varchar(100) NOT NULL,
+  `alamat_loker` varchar(114) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_master_lokasi_kerja`
+-- Dumping data for table `tbl_master_lokasi_kerja`
 --
 
-INSERT INTO `tbl_master_lokasi_kerja` (`id_lokasi_kerja`, `lokasi_kerja`) VALUES
-(1, 'SEKRETARIAT DAERAH KAB. BUTON'),
-(2, 'SEKRETARIAT DPRD KAB. BUTON'),
-(3, 'INSPEKTORAT KABUPATEN BUTON'),
-(4, 'SATUAN POL PP KAB. BUTON'),
-(5, 'BAPPEDA KAB. BUTON'),
-(6, 'BADAN PENGELOLA KEUANGAN DAN ASET DAERAH KAB. BUTON'),
-(7, 'BADAN KEPEGAWAIAN, PENDIDIKAN DAN PELATIHAN DAERAH'),
-(8, 'BADAN PENGELOLA PAJAK DAN RETRIBUSI DAERAH KAB. BUTON'),
-(9, 'BADAN PENELITIAN DAN PENGEMBANGAN KAB. BUTON'),
-(10, 'BADAN KESATUAN BANGSA DAN POLITIK KAB. BUTON'),
-(11, 'BADAN PENANGGULANGAN BENCANA KABUPATEN BUTON'),
-(12, 'DINAS PARIWISATA KAB. BUTON'),
-(13, 'DINAS KELAUTAN DAN PERIKANAN KAB. BUTON'),
-(14, 'DINAS PEMBERDAYAAN PEREMPUAN DAN PERLINDUNGAN ANAK KAB. BUTON'),
-(15, 'DINAS PENDIDIKAN KAB. BUTON'),
-(16, 'DINAS KESEHATAN KAB. BUTON'),
-(17, 'DINAS PERHUBUNGAN KAB. BUTON'),
-(18, 'DINAS PEKERJAAN UMUM DAN PENATAAN RUANG KAB. BUTON'),
-(19, 'DINAS KOPERASI DAN UKM KABUPATEN BUTON'),
-(20, 'DINAS TRANSMIGRASI KAB. BUTON'),
-(21, 'DINAS PERTANIAN KAB. BUTON'),
-(22, 'DINAS PERINDUSTRIAN KAB. BUTON'),
-(23, 'DINAS KEPENDUDUKAN DAN PENCATATAN SIPIL KAB. BUTON'),
-(24, 'DINAS KEPEMUDAAN DAN OLAHRAGA KAB. BUTON'),
-(25, 'DINAS SOSIAL KAB. BUTON'),
-(26, 'DINAS PENGENDALIAN PENDUDUKAN DAN KB KAB. BUTON'),
-(27, 'DINAS LINGKUNGAN HIDUP KABUPATEN BUTON'),
-(28, 'DINAS KOMINFO DAN PERSANDIAN KAB. BUTON'),
-(29, 'DINAS KETAHANAN PANGAN KABUPATEN BUTON'),
-(30, 'DINAS PEMBERDAYAAN DAN DESA KAB. BUTON'),
-(31, 'DINAS PENANAMAN MODAL DAN PELAYANAN PTSP KAB. BUTON'),
-(32, 'DINAS KEARSIPAN DAN PERPUSTAKAAN DAERAH KAB. BUTON'),
-(33, 'DINAS PEMADAM KEBAKARAN KABUPATEN BUTON'),
-(34, 'DINAS TENAGA KERJA KAB. BUTON'),
-(35, 'DINAS PERDAGANGAN KAB. BUTON'),
-(36, 'DINAS PERUMAHAN DAN KAWASAN PERMUKIMAN KAB. BUTON'),
-(37, 'DINAS KEBUDAYAAN KAB. BUTON'),
-(38, 'RUMAH SAKIT UMUM DAERAH KABUPATEN BUTON'),
-(39, 'KECAMATAN PASARWAJO'),
-(40, 'KECAMATAN WABULA'),
-(41, 'KECAMATAN WOLOWA'),
-(42, 'KECAMATAN SIOTAPINA'),
-(43, 'KECAMATAN LASALIMU'),
-(44, 'KECAMATAN LASALIMU SELATAN'),
-(45, 'KECAMATAN KAPONTORI');
+INSERT INTO `tbl_master_lokasi_kerja` (`id_lokasi_kerja`, `lokasi_kerja`, `alamat_loker`) VALUES
+(1, 'SEKRETARIAT DAERAH KAB. BUTON', 'Jalan Sultan Hasanuddin No.26, Baubau Sulawesi Tenggara. Telp: (0402) 2821424'),
+(2, 'SEKRETARIAT DPRD KAB. BUTON', NULL),
+(3, 'INSPEKTORAT KABUPATEN BUTON', NULL),
+(4, 'SATUAN POL PP KAB. BUTON', NULL),
+(5, 'BAPPEDA KAB. BUTON', NULL),
+(6, 'BADAN PENGELOLA KEUANGAN DAN ASET DAERAH KAB. BUTON', NULL),
+(7, 'BADAN KEPEGAWAIAN, PENDIDIKAN DAN PELATIHAN DAERAH', NULL),
+(8, 'BADAN PENGELOLA PAJAK DAN RETRIBUSI DAERAH KAB. BUTON', NULL),
+(9, 'BADAN PENELITIAN DAN PENGEMBANGAN KAB. BUTON', NULL),
+(10, 'BADAN KESATUAN BANGSA DAN POLITIK KAB. BUTON', NULL),
+(11, 'BADAN PENANGGULANGAN BENCANA KABUPATEN BUTON', NULL),
+(12, 'DINAS PARIWISATA KAB. BUTON', NULL),
+(13, 'DINAS KELAUTAN DAN PERIKANAN KAB. BUTON', NULL),
+(14, 'DINAS PEMBERDAYAAN PEREMPUAN DAN PERLINDUNGAN ANAK KAB. BUTON', NULL),
+(15, 'DINAS PENDIDIKAN KAB. BUTON', NULL),
+(16, 'DINAS KESEHATAN KAB. BUTON', NULL),
+(17, 'DINAS PERHUBUNGAN KAB. BUTON', NULL),
+(18, 'DINAS PEKERJAAN UMUM DAN PENATAAN RUANG KAB. BUTON', NULL),
+(19, 'DINAS KOPERASI DAN UKM KABUPATEN BUTON', NULL),
+(20, 'DINAS TRANSMIGRASI KAB. BUTON', NULL),
+(21, 'DINAS PERTANIAN KAB. BUTON', NULL),
+(22, 'DINAS PERINDUSTRIAN KAB. BUTON', NULL),
+(23, 'DINAS KEPENDUDUKAN DAN PENCATATAN SIPIL KAB. BUTON', NULL),
+(24, 'DINAS KEPEMUDAAN DAN OLAHRAGA KAB. BUTON', NULL),
+(25, 'DINAS SOSIAL KAB. BUTON', NULL),
+(26, 'DINAS PENGENDALIAN PENDUDUKAN DAN KB KAB. BUTON', NULL),
+(27, 'DINAS LINGKUNGAN HIDUP KABUPATEN BUTON', NULL),
+(28, 'DINAS KOMINFO DAN PERSANDIAN KAB. BUTON', NULL),
+(29, 'DINAS KETAHANAN PANGAN KABUPATEN BUTON', NULL),
+(30, 'DINAS PEMBERDAYAAN DAN DESA KAB. BUTON', NULL),
+(31, 'DINAS PENANAMAN MODAL DAN PELAYANAN PTSP KAB. BUTON', NULL),
+(32, 'DINAS KEARSIPAN DAN PERPUSTAKAAN DAERAH KAB. BUTON', NULL),
+(33, 'DINAS PEMADAM KEBAKARAN KABUPATEN BUTON', NULL),
+(34, 'DINAS TENAGA KERJA KAB. BUTON', NULL),
+(35, 'DINAS PERDAGANGAN KAB. BUTON', NULL),
+(36, 'DINAS PERUMAHAN DAN KAWASAN PERMUKIMAN KAB. BUTON', NULL),
+(37, 'DINAS KEBUDAYAAN KAB. BUTON', NULL),
+(38, 'RUMAH SAKIT UMUM DAERAH KABUPATEN BUTON', NULL),
+(39, 'KECAMATAN PASARWAJO', NULL),
+(40, 'KECAMATAN WABULA', NULL),
+(41, 'KECAMATAN WOLOWA', NULL),
+(42, 'KECAMATAN SIOTAPINA', NULL),
+(43, 'KECAMATAN LASALIMU', NULL),
+(44, 'KECAMATAN LASALIMU SELATAN', NULL),
+(45, 'KECAMATAN KAPONTORI', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_master_lokasi_pelatihan`
+-- Table structure for table `tbl_master_lokasi_pelatihan`
 --
 
 CREATE TABLE `tbl_master_lokasi_pelatihan` (
@@ -744,7 +750,7 @@ CREATE TABLE `tbl_master_lokasi_pelatihan` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_master_lokasi_pelatihan`
+-- Dumping data for table `tbl_master_lokasi_pelatihan`
 --
 
 INSERT INTO `tbl_master_lokasi_pelatihan` (`id_lokasi_pelatihan`, `nama_lokasi`) VALUES
@@ -767,7 +773,7 @@ INSERT INTO `tbl_master_lokasi_pelatihan` (`id_lokasi_pelatihan`, `nama_lokasi`)
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_master_pelatihan`
+-- Table structure for table `tbl_master_pelatihan`
 --
 
 CREATE TABLE `tbl_master_pelatihan` (
@@ -777,7 +783,7 @@ CREATE TABLE `tbl_master_pelatihan` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_master_pelatihan`
+-- Dumping data for table `tbl_master_pelatihan`
 --
 
 INSERT INTO `tbl_master_pelatihan` (`id_pelatihan`, `nama_pelatihan`, `level`) VALUES
@@ -1180,7 +1186,34 @@ INSERT INTO `tbl_master_pelatihan` (`id_pelatihan`, `nama_pelatihan`, `level`) V
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_master_penghargaan`
+-- Table structure for table `tbl_master_pendidikan`
+--
+
+CREATE TABLE `tbl_master_pendidikan` (
+  `id` int(11) NOT NULL,
+  `pendidikan` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_master_pendidikan`
+--
+
+INSERT INTO `tbl_master_pendidikan` (`id`, `pendidikan`) VALUES
+(1, 'SD/MI'),
+(2, 'SMP/Mts'),
+(3, 'SMA/MA/SMK'),
+(4, 'D1'),
+(5, 'D2'),
+(6, 'D3'),
+(7, 'D4'),
+(8, 'S1'),
+(9, 'S2'),
+(10, 'S3');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_master_penghargaan`
 --
 
 CREATE TABLE `tbl_master_penghargaan` (
@@ -1189,7 +1222,7 @@ CREATE TABLE `tbl_master_penghargaan` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_master_penghargaan`
+-- Dumping data for table `tbl_master_penghargaan`
 --
 
 INSERT INTO `tbl_master_penghargaan` (`id_penghargaan`, `nama_penghargaan`) VALUES
@@ -1311,7 +1344,7 @@ INSERT INTO `tbl_master_penghargaan` (`id_penghargaan`, `nama_penghargaan`) VALU
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_master_ppk`
+-- Table structure for table `tbl_master_ppk`
 --
 
 CREATE TABLE `tbl_master_ppk` (
@@ -1321,7 +1354,7 @@ CREATE TABLE `tbl_master_ppk` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_master_ppk`
+-- Dumping data for table `tbl_master_ppk`
 --
 
 INSERT INTO `tbl_master_ppk` (`id_ppk`, `nama_ppk`, `parent_satuan_kerja`) VALUES
@@ -1360,7 +1393,7 @@ INSERT INTO `tbl_master_ppk` (`id_ppk`, `nama_ppk`, `parent_satuan_kerja`) VALUE
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_master_satuan_kerja`
+-- Table structure for table `tbl_master_satuan_kerja`
 --
 
 CREATE TABLE `tbl_master_satuan_kerja` (
@@ -1370,7 +1403,7 @@ CREATE TABLE `tbl_master_satuan_kerja` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_master_satuan_kerja`
+-- Dumping data for table `tbl_master_satuan_kerja`
 --
 
 INSERT INTO `tbl_master_satuan_kerja` (`id_satuan_kerja`, `nama_satuan_kerja`, `parent_unit`) VALUES
@@ -1384,7 +1417,27 @@ INSERT INTO `tbl_master_satuan_kerja` (`id_satuan_kerja`, `nama_satuan_kerja`, `
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_master_status_jabatan`
+-- Table structure for table `tbl_master_status_dalam_keluarga`
+--
+
+CREATE TABLE `tbl_master_status_dalam_keluarga` (
+  `id` int(11) NOT NULL,
+  `status_keluarga` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_master_status_dalam_keluarga`
+--
+
+INSERT INTO `tbl_master_status_dalam_keluarga` (`id`, `status_keluarga`) VALUES
+(1, 'Ayah'),
+(2, 'Ibu'),
+(3, 'Anak');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_master_status_jabatan`
 --
 
 CREATE TABLE `tbl_master_status_jabatan` (
@@ -1393,7 +1446,7 @@ CREATE TABLE `tbl_master_status_jabatan` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_master_status_jabatan`
+-- Dumping data for table `tbl_master_status_jabatan`
 --
 
 INSERT INTO `tbl_master_status_jabatan` (`id_status_jabatan`, `nama_jabatan`) VALUES
@@ -1407,7 +1460,28 @@ INSERT INTO `tbl_master_status_jabatan` (`id_status_jabatan`, `nama_jabatan`) VA
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_master_status_pegawai`
+-- Table structure for table `tbl_master_status_kawin`
+--
+
+CREATE TABLE `tbl_master_status_kawin` (
+  `id` int(11) NOT NULL,
+  `status_kawin` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_master_status_kawin`
+--
+
+INSERT INTO `tbl_master_status_kawin` (`id`, `status_kawin`) VALUES
+(1, 'Belum Kawin'),
+(2, 'Kawin'),
+(3, 'Janda'),
+(4, 'Duda');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_master_status_pegawai`
 --
 
 CREATE TABLE `tbl_master_status_pegawai` (
@@ -1416,7 +1490,7 @@ CREATE TABLE `tbl_master_status_pegawai` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_master_status_pegawai`
+-- Dumping data for table `tbl_master_status_pegawai`
 --
 
 INSERT INTO `tbl_master_status_pegawai` (`id_status_pegawai`, `nama_status`) VALUES
@@ -1430,7 +1504,7 @@ INSERT INTO `tbl_master_status_pegawai` (`id_status_pegawai`, `nama_status`) VAL
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_master_unit_kerja`
+-- Table structure for table `tbl_master_unit_kerja`
 --
 
 CREATE TABLE `tbl_master_unit_kerja` (
@@ -1441,7 +1515,7 @@ CREATE TABLE `tbl_master_unit_kerja` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_master_unit_kerja`
+-- Dumping data for table `tbl_master_unit_kerja`
 --
 
 INSERT INTO `tbl_master_unit_kerja` (`id_unit_kerja`, `nama_unit_kerja`, `eselon`, `parent_unit`) VALUES
@@ -1455,7 +1529,7 @@ INSERT INTO `tbl_master_unit_kerja` (`id_unit_kerja`, `nama_unit_kerja`, `eselon
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_users`
+-- Table structure for table `tbl_users`
 --
 
 CREATE TABLE `tbl_users` (
@@ -1487,17 +1561,17 @@ CREATE TABLE `tbl_users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data untuk tabel `tbl_users`
+-- Dumping data for table `tbl_users`
 --
 
 INSERT INTO `tbl_users` (`id`, `id_mhs_pt`, `ip_address`, `username`, `password`, `repassword`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`, `hostname`, `port`, `userfeeder`, `passfeeder`, `jabatan`, `profile`) VALUES
-(1, NULL, '127.0.0.1', 'administrator', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', 'password', '', 'admin@admin.com', '', NULL, NULL, NULL, 1268889823, 1521206489, 1, 'Admin', 'istrator', 'ADMIN', '08239566666', 'localhost', '8082', '091006', 'palagimatA', 3, 'avatar.jpg'),
+(1, NULL, '127.0.0.1', 'administrator', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', 'password', '', 'admin@admin.com', '', NULL, NULL, NULL, 1268889823, 1521979922, 1, 'Admin', 'istrator', 'ADMIN', '08239566666', 'localhost', '8082', '091006', 'palagimatA', 3, 'avatar.jpg'),
 (15, NULL, '::1', 'ejhayoe', '$2y$08$sMK/KvMzOXPZBanMhhAggu4A6FQ2EWRNvY4hpJNoGpjgzgqhZF9xW', 'ejhayoe', NULL, 'admin@admin.com', NULL, NULL, NULL, NULL, 1519736735, NULL, 1, 'Reza', 'Rafiq', 'Sistem Informasi Kepegawaian', '123456789', NULL, NULL, NULL, NULL, 0, 'avatar.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_users_groups`
+-- Table structure for table `tbl_users_groups`
 --
 
 CREATE TABLE `tbl_users_groups` (
@@ -1507,7 +1581,7 @@ CREATE TABLE `tbl_users_groups` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data untuk tabel `tbl_users_groups`
+-- Dumping data for table `tbl_users_groups`
 --
 
 INSERT INTO `tbl_users_groups` (`id`, `user_id`, `group_id`) VALUES
@@ -1518,7 +1592,7 @@ INSERT INTO `tbl_users_groups` (`id`, `user_id`, `group_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_user_login`
+-- Table structure for table `tbl_user_login`
 --
 
 CREATE TABLE `tbl_user_login` (
@@ -1530,7 +1604,7 @@ CREATE TABLE `tbl_user_login` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_user_login`
+-- Dumping data for table `tbl_user_login`
 --
 
 INSERT INTO `tbl_user_login` (`id_user_login`, `username`, `password`, `nama_lengkap`, `stts`) VALUES
@@ -1685,6 +1759,12 @@ ALTER TABLE `tbl_master_pelatihan`
   ADD PRIMARY KEY (`id_pelatihan`);
 
 --
+-- Indexes for table `tbl_master_pendidikan`
+--
+ALTER TABLE `tbl_master_pendidikan`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tbl_master_penghargaan`
 --
 ALTER TABLE `tbl_master_penghargaan`
@@ -1703,10 +1783,22 @@ ALTER TABLE `tbl_master_satuan_kerja`
   ADD PRIMARY KEY (`id_satuan_kerja`);
 
 --
+-- Indexes for table `tbl_master_status_dalam_keluarga`
+--
+ALTER TABLE `tbl_master_status_dalam_keluarga`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tbl_master_status_jabatan`
 --
 ALTER TABLE `tbl_master_status_jabatan`
   ADD PRIMARY KEY (`id_status_jabatan`);
+
+--
+-- Indexes for table `tbl_master_status_kawin`
+--
+ALTER TABLE `tbl_master_status_kawin`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `tbl_master_status_pegawai`
@@ -1761,7 +1853,7 @@ ALTER TABLE `tbl_data_hukuman`
 -- AUTO_INCREMENT for table `tbl_data_keluarga`
 --
 ALTER TABLE `tbl_data_keluarga`
-  MODIFY `id_data_keluarga` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_data_keluarga` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `tbl_data_organisasi`
 --
@@ -1863,6 +1955,11 @@ ALTER TABLE `tbl_master_lokasi_pelatihan`
 ALTER TABLE `tbl_master_pelatihan`
   MODIFY `id_pelatihan` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=396;
 --
+-- AUTO_INCREMENT for table `tbl_master_pendidikan`
+--
+ALTER TABLE `tbl_master_pendidikan`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+--
 -- AUTO_INCREMENT for table `tbl_master_penghargaan`
 --
 ALTER TABLE `tbl_master_penghargaan`
@@ -1878,10 +1975,20 @@ ALTER TABLE `tbl_master_ppk`
 ALTER TABLE `tbl_master_satuan_kerja`
   MODIFY `id_satuan_kerja` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=186;
 --
+-- AUTO_INCREMENT for table `tbl_master_status_dalam_keluarga`
+--
+ALTER TABLE `tbl_master_status_dalam_keluarga`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
 -- AUTO_INCREMENT for table `tbl_master_status_jabatan`
 --
 ALTER TABLE `tbl_master_status_jabatan`
   MODIFY `id_status_jabatan` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+--
+-- AUTO_INCREMENT for table `tbl_master_status_kawin`
+--
+ALTER TABLE `tbl_master_status_kawin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `tbl_master_status_pegawai`
 --
