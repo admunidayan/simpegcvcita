@@ -86,11 +86,19 @@
 							</div>
 							<div class="form-group">
 								<label class="text-info" for="status_keluarga">STATUS DALAM KELUARGA</label>
-								<input type="text" class="form-control" id="status_keluarga" name="status_keluarga" placeholder="STATUS DALAM KELUARGA">
+								<select class="form-control" name="status_keluarga">
+									<?php foreach ($stat_keluarga as $data): ?>
+										<option value <?php echo $data->id; ?>><?php echo $data->status_keluarga ?></option>
+									<?php endforeach ?>
+								</select>
 							</div>
 							<div class="form-group">
 								<label class="text-info" for="status_kawin">STATUS KAWIN</label>
-								<input type="text" class="form-control" id="status_kawin" name="status_kawin" placeholder="STATUS KAWIN">
+								<select class="form-control" name="status_kawin">
+									<?php foreach ($stat_kawin as $data): ?>
+										<option value <?php echo $data->id; ?>><?php echo $data->status_kawin ?></option>
+									<?php endforeach ?>
+								</select>
 							</div>
 							<div class="form-group">
 								<label class="text-info" for="tanggal_nikah">TANGGAL NIKAH</label>

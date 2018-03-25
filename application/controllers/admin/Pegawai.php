@@ -120,6 +120,8 @@ class Pegawai extends CI_Controller {
                 $data['hasil'] = $result;
                 $data['keluarga'] = $this->Pegawai_m->data_keluarga($id);
                 $data['status'] = $this->Pegawai_m->select_data('master_status_pegawai');
+                $data['stat_kawin'] = $this->Pegawai_m->select_data('master_status_kawin');
+                $data['stat_keluarga'] = $this->Pegawai_m->select_data('master_status_dalkeluarga');
                 $data['bagian'] = 'admin/data-keluarga-v';
                 $data['page'] = 'admin/detail-pegawai-v';
                 // pagging setting
@@ -207,6 +209,7 @@ class Pegawai extends CI_Controller {
                 $data['hasil'] = $result;
                 $data['pendidikan'] = $this->Pegawai_m->data_pendidikan($id);
                 $data['status'] = $this->Pegawai_m->select_data('master_status_pegawai');
+                $data['ipendidikan'] = $this->Pegawai_m->select_data('master_pendidikan');
                 $data['bagian'] = 'admin/data-pendidikan-v';
                 $data['page'] = 'admin/detail-pegawai-v';
                 // pagging setting

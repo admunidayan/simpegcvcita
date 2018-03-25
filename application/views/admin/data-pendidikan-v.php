@@ -68,7 +68,11 @@
 							<div class="col-md-12">
 								<div class="form-group">
 									<label class="text-info" for="tingkat_pendidikan">TINGKAT PENDIDIKAN</label>
-									<input type="text" class="form-control" id="tingkat_pendidikan" name="tingkat_pendidikan" placeholder="TINGKAT PENDIDIKAN" >
+									<select class="form-control" name="tingkat_pendidikan">
+									<?php foreach ($ipendidikan as $data): ?>
+										<option value <?php echo $data->id; ?>><?php echo $data->pendidikan ?></option>
+									<?php endforeach ?>
+									</select>
 								</div>
 								<div class="form-group">
 									<label class="text-info" for="jurusan">JURUSAN</label>

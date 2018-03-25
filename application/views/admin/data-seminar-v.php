@@ -60,11 +60,11 @@
 						<div class="col-md-12">
 							<div class="form-group">
 								<label class="text-info" for="uraian">URAIAN</label>
-								<input type="text" class="form-control" id="uraian" name="uraian" placeholder="URAIAN" value="<?php echo $detail->uraian?>">
+								<input type="text" class="form-control" id="uraian" name="uraian" placeholder="URAIAN">
 							</div>
 							<div class="form-group">
 								<label class="text-info" for="lokasi">LOKASI</label>
-								<input type="text" class="form-control" id="lokasi" name="lokasi" placeholder="LOKASI" value="<?php echo $detail->lokasi?>">
+								<input type="text" class="form-control" id="lokasi" name="lokasi" placeholder="LOKASI">
 							</div>
 							<div class="form-group">
 								<label class="text-info" for="tanggal">TANGGAL</label>
