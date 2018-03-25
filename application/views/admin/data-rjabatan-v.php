@@ -18,7 +18,6 @@
 				<td class="jrktbl">Tgl Selesai</td>
 				<td class="jrktbl">Lokasi</td>
 				<td class="jrktbl" colspan="2">Aksi</td>
-				<td></td>
 			</tr>
 		</thead>
 		<tbody>
