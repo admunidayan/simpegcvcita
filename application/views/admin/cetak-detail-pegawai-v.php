@@ -76,30 +76,9 @@
 			<td class="colpading bdkanan" colspan="2"><?php echo $hasil->status_pegawai_pangkat; ?></td>
 		</tr>
 		<tr>
-			<td class="colpading bdkiri bdkanan">No dan Tgl SK Pangkat</td>
-			<td class="colpading bdkanan" colspan="2"><?php echo $hasil->nomor_sk_pangkat; ?> - <?php echo $hasil->tanggal_sk_pangkat; ?></td>
-		</tr>
-		<tr>
 			<td class="colpading bdkiri bdkanan">Lokasi Kerja</td>
 			<td class="colpading bdkanan" colspan="2"><?php echo $hasil->lokasi_kerja; ?></td>
 		</tr>
-		<tr>
-			<td class="colpading bdkiri bdkanan">No dan Tgl SK Jabatan</td>
-			<td class="colpading bdkanan" colspan="2"><?php echo $hasil->nomor_sk_jabatan; ?> - <?php echo $hasil->tanggal_sk_jabatan; ?></td>
-		</tr>
-		<tr>
-			<td class="colpading bdkiri bdkanan">TMT Eselon</td>
-			<td class="colpading bdkanan" colspan="2"><?php echo $hasil->tmt_eselon; ?></td>
-		</tr>
-		<tr>
-			<td class="colpading bdkiri bdkanan">TMT PNS</td>
-			<td class="colpading bdkanan" colspan="2"><?php echo $hasil->tmt_pns; ?></td>
-		</tr>
-		<tr>
-			<td class="colpading bdkiri bdkanan">TMT CPNS</td>
-			<td class="colpading bdkanan" colspan="2"><?php echo $hasil->tmt_cpns; ?></td>
-		</tr>
-		
 	</table>
 </td>
 </tr>
@@ -262,67 +241,6 @@
 			<td class="colpading bdkanan bdkiri"><?php echo $data->uraian ?></td>
 			<td class="colpading bdkanan"><?php echo $data->lokasi ?></td>
 			<td class="colpading bdkanan"><?php echo $data->tanggal ?></td>
-		</tr>
-	<?php endforeach ?>
-</table>
-<table class="penuh" border="1" style="margin-top: 14px">
-	<tr>
-		<td colspan="4" class="colpading bdatas bdkiri bdkanan"><b>Data Gaji</b></td>
-	</tr>
-	<tr>
-		<td class="colpading bdkiri bdkanan">Dasar Perubahan</td>
-		<td class="colpading bdkiri bdkanan">Gaji Pokok</td>
-		<td class="colpading bdkiri bdkanan">Masa Kerja</td>
-		<td class="colpading bdkiri bdkanan">Pejabat Menetapkan</td>
-	</tr>
-	<?php foreach ($gaji_pokok as $data): ?>
-		<tr>
-			<td class="colpading bdkanan bdkiri"><?php echo $data->dasar_perubahan ?></td>
-			<td class="colpading bdkanan"><?php echo $data->gaji_pokok ?></td>
-			<td class="colpading bdkanan"><?php echo $data->masa_kerja ?></td>
-			<td class="colpading bdkanan"><?php echo $data->pejabat_menetapkan ?></td>
-		</tr>
-	<?php endforeach ?>
-</table>
-<table class="penuh" border="1" style="margin-top: 14px">
-	<tr>
-		<td colspan="5" class="colpading bdatas bdkiri bdkanan"><b>Data Hukuman</b></td>
-	</tr>
-	<tr>
-		<td class="colpading bdkiri bdkanan">Uraian</td>
-		<td class="colpading bdkiri bdkanan">Tgl Mulai</td>
-		<td class="colpading bdkiri bdkanan">Tgl Selesai</td>
-		<td class="colpading bdkiri bdkanan">Masa Berlaku</td>
-		<td class="colpading bdkiri bdkanan">Pejabat Menetapkan</td>
-	</tr>
-	<?php foreach ($hukuman as $data): ?>
-		<tr>
-			<td class="colpading bdkanan bdkiri"><?php echo $data->uraian ?></td>
-			<td class="colpading bdkanan"><?php echo $data->tanggal_mulai ?></td>
-			<td class="colpading bdkanan"><?php echo $data->tanggal_selesai ?></td>
-			<td class="colpading bdkanan"><?php echo $data->masa_berlaku ?></td>
-			<td class="colpading bdkanan"><?php echo $data->pejabat_menetapkan ?></td>
-		</tr>
-	<?php endforeach ?>
-</table>
-<table class="penuh" border="1" style="margin-top: 14px">
-	<tr>
-		<td colspan="5" class="colpading bdatas bdkiri bdkanan"><b>Data SKP</b></td>
-	</tr>
-	<tr>
-		<td class="colpading bdkiri bdkanan">Tahun</td>
-		<td class="colpading bdkiri bdkanan">Rata-rata</td>
-		<td class="colpading bdkiri bdkanan">Atasan</td>
-		<td class="colpading bdkiri bdkanan">Penilai</td>
-		<td class="colpading bdkiri bdkanan">Mengatahui</td>
-	</tr>
-	<?php foreach ($data_dp3 as $data): ?>
-		<tr>
-			<td class="colpading bdkanan bdkiri"><?php echo $data->tahun ?></td>
-			<td class="colpading bdkanan"><?php echo $data->rata_rata ?></td>
-			<td class="colpading bdkanan"><?php echo $data->atasan ?></td>
-			<td class="colpading bdkanan"><?php echo $data->penilai ?></td>
-			<td class="colpading bdkanan"><?php echo $data->mengetahui ?></td>
 		</tr>
 	<?php endforeach ?>
 </table>

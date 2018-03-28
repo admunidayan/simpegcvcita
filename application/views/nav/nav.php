@@ -15,26 +15,27 @@
 					<div class="col-md-10">Pegawai</div>
 				</div>
 			</li>
-			<a href="<?php echo base_url('index.php/admin/users/') ?>">
-				<li class="linkmenu">
-					<div class="row">
-						<div class="col-md-2 text-center"><i class="material-icons">account_circle</i> </div>
-						<div class="col-md-10">Users</div>
-					</div>
-				</li>
-			</a>
-			<a href="<?php echo base_url('index.php/admin/setting/') ?>">
-				<li class="linkmenu">
-					<div class="row">
-						<div class="col-md-2 text-center"><i class="material-icons">account_balance</i> </div>
-						<div class="col-md-10">Instansi</div>
-					</div>
-				</li>
-			</a>
-			<div class="collapse" id="collapseExample">
-				<div class="">
+		</a>
+		<a href="<?php echo base_url('index.php/admin/users/') ?>">
+			<li class="linkmenu">
+				<div class="row">
+					<div class="col-md-2 text-center"><i class="material-icons">account_circle</i> </div>
+					<div class="col-md-10">Users</div>
 				</div>
+			</li>
+		</a>
+		<a href="<?php echo base_url('index.php/admin/setting/') ?>">
+			<li class="linkmenu">
+				<div class="row">
+					<div class="col-md-2 text-center"><i class="material-icons">account_balance</i> </div>
+					<div class="col-md-10">Instansi</div>
+				</div>
+			</li>
+		</a>
+		<div class="collapse" id="collapseExample">
+			<div class="">
 			</div>
-			<div style="margin-bottom: 40px"></div>
-		</ul>
-	</div>
+		</div>
+		<div style="margin-bottom: 40px"></div>
+	</ul>
+</div>

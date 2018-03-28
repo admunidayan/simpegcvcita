@@ -65,15 +65,6 @@
 				</select>
 			</div>
 			<div class="form-group">
-				<label class="text-info" for="agama">GOLONGAN</label>
-				<select class="form-control" name="id_golongan">
-					<option value="<?php echo $hasil->id_golongan ?>">-- <?php echo $this->Pegawai_m->detail_data('master_golongan','id_golongan',$hasil->id_golongan)->golongan; ?> --</option>
-					<?php foreach ($golongan as $data): ?>
-						<option value="<?php echo $data->id_golongan ?>"><?php echo $data->golongan; ?></option>
-					<?php endforeach ?>
-				</select>
-			</div>
-			<div class="form-group">
 				<label class="text-info" for="status_pegawai">STATUS PEGAWAI</label>
 				<select class="form-control" name="status_pegawai">
 					<option value="<?php echo $hasil->id_status_pegawai ?>"><?php echo $hasil->nama_status; ?></option>

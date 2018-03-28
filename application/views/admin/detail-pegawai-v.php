@@ -20,7 +20,7 @@
 				<div class="submenu">
 					<div class="row">
 						<div class="col-md-2 text-center text-secondary"><i class="material-icons">trending_up</i> </div>
-						<div class="col-md-10">Riwayat Pangkat</div>
+						<div class="col-md-10">Riwayat Golongan</div>
 					</div>
 				</div>
 			</a>

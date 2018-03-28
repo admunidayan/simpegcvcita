@@ -105,7 +105,7 @@ function data_pegawai(){
       $sheet->mergeCells('A1:AA1');
       $sheet->setCellValue ( "A1", "DAFTAR LISTING NOMINATIF PNS" );
       $sheet->mergeCells('A2:AA2');
-      $sheet->setCellValue ( "A2", "DI LINGKUNGAN BADAN KEPEGAWAIAN, PENDIDIKAN DAN PELATIHAN DAERAH KABUPATEN BUTON" );
+      $sheet->setCellValue ( "A2", "DI LINGKUP PEMERINTAH KABUPATEN BUTON" );
       /*end - BLOCK SETUP SHEET*/
 
       /*start - BLOCK HEADER*/

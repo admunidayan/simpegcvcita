@@ -25,7 +25,7 @@ rel="stylesheet">
 <body>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-2" style="background-color: #1da9f4">
+      <div class="col-md-2 bglog">
         <h2 class="text-light text-center" style="margin-top: 20px "><?php echo $infopt->alias_pt; ?></h2>
         <div class="media">
           <img class="rounded-circle align-self-center mr-3" src="<?php echo base_url('asset/img/users/'.$users->profile) ?>" alt="<?php echo $users->profile;?>" width="50px">
@@ -56,7 +56,7 @@ rel="stylesheet">
                   <a class="dropdown-item" href="<?php echo base_url('index.php/admin/master/eselon') ?>"><i class="material-icons">autorenew</i>Eselon</a>
                   <a class="dropdown-item" href="<?php echo base_url('index.php/admin/master/pelatihan') ?>"><i class="material-icons">assignment</i>Pelatihan</a>
                   <a class="dropdown-item" href="<?php echo base_url('index.php/admin/master/jabatan') ?>"><i class="material-icons">work</i>Jabatan</a>
-                  <a class="dropdown-item" href="<?php echo base_url('index.php/admin/master/status_jabatan') ?>"><i class="material-icons">playlist_add_check</i>Status Jabatan</a>
+                  <a class="dropdown-item" href="<?php echo base_url('index.php/admin/master/status_jabatan') ?>"><i class="material-icons">playlist_add_check</i>Jenis KP</a>
                   <a class="dropdown-item" href="<?php echo base_url('index.php/admin/master/penghargaan') ?>"><i class="material-icons">stars</i>Penghargaan</a>
                   <a class="dropdown-item" href="<?php echo base_url('index.php/admin/master/hukuman') ?>"><i class="material-icons">select_all</i>Hukuman</a>
                   <a class="dropdown-item" href="<?php echo base_url('index.php/admin/master/lokasi_pelatihan') ?>"><i class="material-icons">location_on</i>Lokasi Pelatihan</a>

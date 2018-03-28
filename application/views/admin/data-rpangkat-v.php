@@ -1,10 +1,10 @@
 <div style="margin-top: 14px; background-color: white;padding: 30px">
 	<div class="media">
 		<div class="media-body">
-			<h4>Data Riwayat Pangkat</h4>
+			<h4>Data Riwayat Golongan</h4>
 		</div>
 		<div class="media-right">
-			<button type="button" class="btn btn-outline-success btn-sm" data-toggle="modal" data-target="#addrpangkat"><i class="material-icons">note_add</i> Tambah Data Riwayat Pangkat</button>
+			<button type="button" class="btn btn-outline-success btn-sm" data-toggle="modal" data-target="#addrpangkat"><i class="material-icons">note_add</i> Tambah Data Riwayat Golongan</button>
 		</div>
 	</div>
 	<hr/>
@@ -12,11 +12,13 @@
 		<thead>
 			<tr class="bg-app text-light">
 				<td class="jrktbl text-center">No</td>
+				<td class="jrktbl">Golongan</td>
 				<td class="jrktbl">No SK</td>
 				<td class="jrktbl">Tgl SK</td>
-				<td class="jrktbl">Tgl Mulai</td>
-				<td class="jrktbl">Tgl Selesai</td>
-				<td class="jrktbl">Masa Kerja</td>
+				<td class="jrktbl">TMT Golongan</td>
+				<td class="jrktbl">No BKN</td>
+				<td class="jrktbl">Tgl BKN</td>
+				<td class="jrktbl">Jenis KP</td>
 				<td class="jrktbl" colspan="2">Aksi</td>
 			</tr>
 		</thead>
@@ -43,7 +45,7 @@
 				<?php endforeach ?>
 			<?php else: ?>
 				<tr>
-					<td class="jrktbl text-center" colspan="8">Belum ada data Riwayat Pangkat</td>
+					<td class="jrktbl text-center" colspan="8">Belum ada data Riwayat Gologan</td>
 				</tr>
 			<?php endif ?>
 		</tbody>

@@ -424,6 +424,35 @@ class Pegawai extends CI_Controller {
             redirect(base_url('index.php/login'));
         }
     }
+    public function detail_rgolongan($id){
+        if ($this->ion_auth->logged_in()) {
+            $level = array('admin','members');
+            if (!$this->ion_auth->in_group($level)) {
+                $pesan = 'Anda tidak memiliki Hak untuk Mengakses halaman ini';
+                $this->session->set_flashdata('message', $pesan );
+                redirect(base_url('index.php/admin/dashboard'));
+            }else{
+                $result = $this->Pegawai_m->detail_pegawai($id);
+                // echo "<pre>";print_r($result);echo "<pre/>";exit();
+                $data['title'] = $result->nama_pegawai;
+                $data['infopt'] = $this->Admin_m->info_pt(1);
+                $data['brand'] = 'asset/img/lembaga/'.$this->Admin_m->info_pt(1)->logo_pt;
+                $data['users'] = $this->ion_auth->user()->row();
+                $data['aside'] = 'nav/nav';
+                $data['hasil'] = $result;
+                $data['rgolongan'] = $this->Pegawai_m->data_rgolongan($id);
+                $data['status'] = $this->Pegawai_m->select_data('master_status_pegawai');
+                $data['bagian'] = 'admin/data-rgolongan-v';
+                $data['page'] = 'admin/detail-pegawai-v';
+                // pagging setting
+                $this->load->view('admin/dashboard-v',$data);
+            }
+        }else{
+            $pesan = 'Login terlebih dahulu';
+            $this->session->set_flashdata('message', $pesan );
+            redirect(base_url('index.php/login'));
+        }
+    }
     public function create(){
         if ($this->ion_auth->logged_in()) {
             $level = array('admin','members');
@@ -780,6 +809,34 @@ class Pegawai extends CI_Controller {
                 $pesan = 'Data riwayat jabatan baru berhasil di tambahkan';
                 $this->session->set_flashdata('message', $pesan );
                 redirect(base_url('index.php/admin/pegawai/detail_dp3/'.$idpegawai));
+            }
+        }else{
+            $pesan = 'Login terlebih dahulu';
+            $this->session->set_flashdata('message', $pesan );
+            redirect(base_url('index.php/login'));
+        }
+    }
+    public function create_rgolongan($idpegawai){
+        if ($this->ion_auth->logged_in()) {
+            $level = array('admin','members');
+            if (!$this->ion_auth->in_group($level)) {
+                $pesan = 'Anda tidak memiliki Hak untuk Mengakses halaman ini';
+                $this->session->set_flashdata('message', $pesan );
+                redirect(base_url('index.php/admin/dashboard'));
+            }else{
+                $post = $this->input->post();
+                $datainput = array(
+                    'id_pegawai' => $idpegawai,
+                    'nomor_sk'=>$post['nomor_sk'],
+                    'tanggal_sk'=>$post['tanggal_sk'],
+                    'tmt_golongan'=>$post['tmt_golongan'],
+                    'nomor_bkn'=>$post['nomor_bkn'],
+                    'tanggal_bkn'=>$post['tanggal_bkn']
+                );
+                $this->Pegawai_m->insert_data('data_riawayat_golongan',$datainput);
+                $pesan = 'Data riwayat golongan baru berhasil di tambahkan';
+                $this->session->set_flashdata('message', $pesan );
+                redirect(base_url('index.php/admin/pegawai/detail_rgolongan/'.$idpegawai));
             }
         }else{
             $pesan = 'Login terlebih dahulu';

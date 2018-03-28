@@ -12,6 +12,7 @@
 		<thead>
 			<tr class="bg-app text-light">
 				<td class="jrktbl text-center">No</td>
+				<td class="jrktbl">Status</td>
 				<td class="jrktbl">Penempatan</td>
 				<td class="jrktbl">Tgl Mulai</td>
 				<td class="jrktbl">Tgl Selesai</td>
