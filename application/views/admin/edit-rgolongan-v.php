@@ -1,4 +1,4 @@
-<form action="<?php echo base_url('index.php/admin/pegawai/update_rpangkat/'.$hasil->id_pegawai.'/'.$detail->id_riwayat_pangkat) ?>" method="post">
+<form action="<?php echo base_url('index.php/admin/pegawai/update_rgolongan/'.$hasil->id_pegawai.'/'.$detail->id_riwayat_pangkat) ?>" method="post">
 	<div class="row">
 		<div class="col-md-12">
 			<div class="form-group">

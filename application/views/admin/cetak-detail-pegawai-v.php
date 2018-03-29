@@ -15,8 +15,8 @@
 				<img src="<?php echo base_url('asset/img/lembaga/'.$infopt->logo_pt) ?>" width="100px">
 			</td>
 			<td class="colpading bdkanan bdatas colpading text-center">
-				<h3 style="margin-bottom: 0px"><?php echo $unit_org->lokasi_kerja; ?></h3><br/>
-				<span><?php echo $unit_org->alamat_loker; ?></span>
+				<h3 style="margin-bottom: 0px"><?php echo $unit_org->nama_satuan_kerja; ?></h3><br/>
+				<span><?php echo $unit_org->alamat; ?></span>
 			</td>
 		</tr>
 	</table>
@@ -45,15 +45,15 @@
 		</tr>
 		<tr>
 			<td class="colpading bdkiri bdkanan">Agama</td>
-			<td class="colpading bdkanan" colspan="2"><?php echo $hasil->agama; ?></td>
+			<td class="colpading bdkanan" colspan="2"><?php echo $agama->nm_agama; ?></td>
 		</tr>
 		<tr>
-			<td class="colpading bdkiri bdkanan">Tempat Tanggal Lahir</td>
+			<td class="colpading bdkiri bdkanan">TTL</td>
 			<td class="colpading bdkanan" colspan="2"><?php echo $hasil->tempat_lahir; ?> / <?php echo $hasil->tanggal_lahir; ?></td>
 		</tr>
 		<tr>
 			<td class="colpading bdkiri bdkanan">Status Pegawai</td>
-			<td class="colpading bdkanan" colspan="2"><?php echo $hasil->status_pegawai; ?></td>
+			<td class="colpading bdkanan" colspan="2"><?php echo $statpeg->nama_status; ?></td>
 		</tr>
 		<tr>
 			<td class="colpading bdkiri bdkanan">Usia</td>
@@ -72,12 +72,8 @@
 			<td class="colpading bdkanan" colspan="2"><?php echo $hasil->no_npwp; ?></td>
 		</tr>
 		<tr>
-			<td class="colpading bdkiri bdkanan">Status Pegawai</td>
-			<td class="colpading bdkanan" colspan="2"><?php echo $hasil->status_pegawai_pangkat; ?></td>
-		</tr>
-		<tr>
 			<td class="colpading bdkiri bdkanan">Lokasi Kerja</td>
-			<td class="colpading bdkanan" colspan="2"><?php echo $hasil->lokasi_kerja; ?></td>
+			<td class="colpading bdkanan" colspan="2"><?php echo $unit_org->nama_satuan_kerja; ?></td>
 		</tr>
 	</table>
 </td>

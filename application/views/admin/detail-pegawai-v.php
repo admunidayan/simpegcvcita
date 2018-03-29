@@ -16,7 +16,7 @@
 					</div>
 				</div>
 			</a>
-			<a class="text-dark" href="<?php echo base_url('index.php/admin/pegawai/detail_rpangkat/'.$hasil->id_pegawai); ?>">
+			<a class="text-dark" href="<?php echo base_url('index.php/admin/pegawai/detail_rgolongan/'.$hasil->id_pegawai); ?>">
 				<div class="submenu">
 					<div class="row">
 						<div class="col-md-2 text-center text-secondary"><i class="material-icons">trending_up</i> </div>
@@ -44,7 +44,7 @@
 				<div class="submenu">
 					<div class="row">
 						<div class="col-md-2 text-center text-secondary"><i class="material-icons">work</i> </div>
-						<div class="col-md-10">Pelatihan</div>
+						<div class="col-md-10">Diklat</div>
 					</div>
 				</div>
 			</a>

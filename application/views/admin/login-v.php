@@ -53,7 +53,7 @@
 				</div>
 			</div>
 			<div class="col">
-				<div class="login-box text-center" style="background-image: url(<?php echo base_url('asset/img/lembaga/bg.jpeg'); ?>);">
+				<div class="login-box text-center" style="background-image: url(<?php echo base_url('asset/img/lembaga/bg.jpg'); ?>);">
 					<h4 class="text-light text-left" style="margin-top: 150px;"><?php echo $infopt->slogan; ?></h4>
 				</div>
 			</div>

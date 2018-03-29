@@ -50,8 +50,8 @@
 						<td class="jrktbl text-center"><?php echo $no; ?></td>
 						<td class="jrktbl"><a class="text-dark" href="<?php echo base_url('index.php/admin/pegawai/detail/'.$data->id_pegawai) ?>"><?php echo strtoupper($data->nama_pegawai); ?></a></td>
 						<td class="jrktbl text-secondary"><?php echo $data->nip; ?></td>
-						<td class="jrktbl text-secondary"><?php echo strtolower($data->golongan); ?></td>
-						<td class="jrktbl text-secondary"><?php echo $data->lokasi_kerja; ?></td>
+						<td class="jrktbl text-secondary"><?php echo $data->golongan; ?></td>
+						<td class="jrktbl text-secondary"><?php echo @$this->Admin_m->detail_data_order('master_satuan_kerja','id_satuan_kerja',$data->id_satuan_kerja)->nama_satuan_kerja; ?></td>
 						<td class="jrktbl text-center text-secondary"><?php echo $data->nama_status; ?></td>
 						<td class="jrktbl">
 							<a href="#" class="text-danger">hapus</a>
@@ -149,7 +149,6 @@
 								</div>
 								</div>
 							</div>
-
 							<div class="form-group">
 								<label class="text-info" for="id_golongan">GOLONGAN</label>
 								<select class="form-control" name="id_golongan">

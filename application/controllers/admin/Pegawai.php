@@ -56,6 +56,7 @@ class Pegawai extends CI_Controller {
                 $data['agama'] = $this->Pegawai_m->select_data('master_agama');
                 $data['golongan'] = $this->Pegawai_m->select_data('master_golongan');
                 $data['eselon'] = $this->Pegawai_m->select_data('master_eselon');
+                $data['sjabatan'] = $this->Pegawai_m->select_data('master_status_jabatan');
 
                 // pengaturan searching
                 $data['jmldata'] = $jumlah;
@@ -89,8 +90,9 @@ class Pegawai extends CI_Controller {
                 $data['hasil'] = $result;
                 $data['status'] = $this->Pegawai_m->select_data('master_status_pegawai');
                 $data['agama'] = $this->Pegawai_m->select_data('master_agama');
-                $data['golongan'] = $this->Pegawai_m->select_data('master_golongan');
                 $data['eselon'] = $this->Pegawai_m->select_data('master_eselon');
+                $data['golongan'] = $this->Pegawai_m->select_data('master_golongan');
+                $data['sjabatan'] = $this->Pegawai_m->select_data('master_status_jabatan');
                 $data['bagian'] = 'admin/data-pegawai-v';
                 $data['page'] = 'admin/detail-pegawai-v';
                 // pagging setting
@@ -133,7 +135,7 @@ class Pegawai extends CI_Controller {
             redirect(base_url('index.php/login'));
         }
     }
-    public function detail_rpangkat($id){
+    public function detail_rgolongan($id){
         if ($this->ion_auth->logged_in()) {
             $level = array('admin','members');
             if (!$this->ion_auth->in_group($level)) {
@@ -149,9 +151,11 @@ class Pegawai extends CI_Controller {
                 $data['users'] = $this->ion_auth->user()->row();
                 $data['aside'] = 'nav/nav';
                 $data['hasil'] = $result;
-                $data['rpangkat'] = $this->Pegawai_m->data_rpangkat($id);
+                $data['rgolongan'] = $this->Pegawai_m->data_rgolongan($id);
                 $data['status'] = $this->Pegawai_m->select_data('master_status_pegawai');
-                $data['bagian'] = 'admin/data-rpangkat-v';
+                $data['sjabatan'] = $this->Pegawai_m->select_data('master_status_jabatan');
+                $data['golongan'] = $this->Pegawai_m->select_data('master_golongan');
+                $data['bagian'] = 'admin/data-rgolongan-v';
                 $data['page'] = 'admin/detail-pegawai-v';
                 // pagging setting
                 $this->load->view('admin/dashboard-v',$data);
@@ -424,35 +428,6 @@ class Pegawai extends CI_Controller {
             redirect(base_url('index.php/login'));
         }
     }
-    public function detail_rgolongan($id){
-        if ($this->ion_auth->logged_in()) {
-            $level = array('admin','members');
-            if (!$this->ion_auth->in_group($level)) {
-                $pesan = 'Anda tidak memiliki Hak untuk Mengakses halaman ini';
-                $this->session->set_flashdata('message', $pesan );
-                redirect(base_url('index.php/admin/dashboard'));
-            }else{
-                $result = $this->Pegawai_m->detail_pegawai($id);
-                // echo "<pre>";print_r($result);echo "<pre/>";exit();
-                $data['title'] = $result->nama_pegawai;
-                $data['infopt'] = $this->Admin_m->info_pt(1);
-                $data['brand'] = 'asset/img/lembaga/'.$this->Admin_m->info_pt(1)->logo_pt;
-                $data['users'] = $this->ion_auth->user()->row();
-                $data['aside'] = 'nav/nav';
-                $data['hasil'] = $result;
-                $data['rgolongan'] = $this->Pegawai_m->data_rgolongan($id);
-                $data['status'] = $this->Pegawai_m->select_data('master_status_pegawai');
-                $data['bagian'] = 'admin/data-rgolongan-v';
-                $data['page'] = 'admin/detail-pegawai-v';
-                // pagging setting
-                $this->load->view('admin/dashboard-v',$data);
-            }
-        }else{
-            $pesan = 'Login terlebih dahulu';
-            $this->session->set_flashdata('message', $pesan );
-            redirect(base_url('index.php/login'));
-        }
-    }
     public function create(){
         if ($this->ion_auth->logged_in()) {
             $level = array('admin','members');
@@ -520,7 +495,7 @@ class Pegawai extends CI_Controller {
             redirect(base_url('index.php/login'));
         }
     }
-    public function create_rpangkat($idpegawai){
+    public function create_rgolongan($idpegawai){
         if ($this->ion_auth->logged_in()) {
             $level = array('admin','members');
             if (!$this->ion_auth->in_group($level)) {
@@ -530,18 +505,19 @@ class Pegawai extends CI_Controller {
             }else{
                 $post = $this->input->post();
                 $datainput = array(
-                    'status' => $post['status'],
                     'id_pegawai' => $idpegawai,
+                    'id_golongan'=>$post['id_golongan'],
                     'nomor_sk'=>$post['nomor_sk'],
                     'tanggal_sk'=>$post['tanggal_sk_thn'].'-'.$post['tanggal_sk_bln'].'-'.$post['tanggal_sk_hr'],
-                    'tanggal_mulai'=>$post['tanggal_mulai_thn'].'-'.$post['tanggal_mulai_bln'].'-'.$post['tanggal_mulai_hr'],
-                    'tanggal_selesai'=>$post['tanggal_selesai_thn'].'-'.$post['tanggal_selesai_bln'].'-'.$post['tanggal_selesai_hr'],
-                    'masa_kerja'=>$post['masa_kerja']
+                    'tmt_golongan'=>$post['tmt_golongan_thn'].'-'.$post['tmt_golongan_bln'].'-'.$post['tmt_golongan_hr'],
+                    'nomor_bkn'=>$post['nomor_bkn'],
+                    'tanggal_bkn'=>$post['tanggal_bkn_thn'].'-'.$post['tanggal_bkn_bln'].'-'.$post['tanggal_bkn_hr'],
+                    'id_status_jabatan'=>$post['id_status_jabatan']
                 );
-                $this->Pegawai_m->insert_data('data_riwayat_pangkat',$datainput);
-                $pesan = 'Data riwayat pangkat baru berhasil di tambahkan';
+                $this->Pegawai_m->insert_data('data_riwayat_golongan',$datainput);
+                $pesan = 'Data riwayat golongan baru berhasil di tambahkan';
                 $this->session->set_flashdata('message', $pesan );
-                redirect(base_url('index.php/admin/pegawai/detail_rpangkat/'.$idpegawai));
+                redirect(base_url('index.php/admin/pegawai/detail_rgolongan/'.$idpegawai));
             }
         }else{
             $pesan = 'Login terlebih dahulu';
@@ -816,35 +792,7 @@ class Pegawai extends CI_Controller {
             redirect(base_url('index.php/login'));
         }
     }
-    public function create_rgolongan($idpegawai){
-        if ($this->ion_auth->logged_in()) {
-            $level = array('admin','members');
-            if (!$this->ion_auth->in_group($level)) {
-                $pesan = 'Anda tidak memiliki Hak untuk Mengakses halaman ini';
-                $this->session->set_flashdata('message', $pesan );
-                redirect(base_url('index.php/admin/dashboard'));
-            }else{
-                $post = $this->input->post();
-                $datainput = array(
-                    'id_pegawai' => $idpegawai,
-                    'nomor_sk'=>$post['nomor_sk'],
-                    'tanggal_sk'=>$post['tanggal_sk'],
-                    'tmt_golongan'=>$post['tmt_golongan'],
-                    'nomor_bkn'=>$post['nomor_bkn'],
-                    'tanggal_bkn'=>$post['tanggal_bkn']
-                );
-                $this->Pegawai_m->insert_data('data_riawayat_golongan',$datainput);
-                $pesan = 'Data riwayat golongan baru berhasil di tambahkan';
-                $this->session->set_flashdata('message', $pesan );
-                redirect(base_url('index.php/admin/pegawai/detail_rgolongan/'.$idpegawai));
-            }
-        }else{
-            $pesan = 'Login terlebih dahulu';
-            $this->session->set_flashdata('message', $pesan );
-            redirect(base_url('index.php/login'));
-        }
-    }
-    public function edit_rpangkat($id,$idr){
+    public function edit_rgolongan($id,$idr){
         if ($this->ion_auth->logged_in()) {
             $level = array('admin','members');
             if (!$this->ion_auth->in_group($level)) {
@@ -860,9 +808,10 @@ class Pegawai extends CI_Controller {
                 $data['users'] = $this->ion_auth->user()->row();
                 $data['aside'] = 'nav/nav';
                 $data['hasil'] = $result;
-                $data['detail'] = $this->Pegawai_m->detail_data('data_riwayat_pangkat','id_riwayat_pangkat',$idr);
+                $data['detail'] = $this->Pegawai_m->detail_data('data_riwayat_golongan','id_riwayat_golongan',$idr);
                 $data['status'] = $this->Pegawai_m->select_data('master_status_pegawai');
-                $data['bagian'] = 'admin/edit-rpangkat-v';
+
+                $data['bagian'] = 'admin/edit-rgolongan-v';
                 $data['page'] = 'admin/detail-pegawai-v';
                 // pagging setting
                 $this->load->view('admin/dashboard-v',$data);
@@ -873,7 +822,7 @@ class Pegawai extends CI_Controller {
             redirect(base_url('index.php/login'));
         }
     }
-    public function update_rpangkat($idpegawai,$idr){
+    public function update_rgolongan($idpegawai,$idr){
         if ($this->ion_auth->logged_in()) {
             $level = array('admin','members');
             if (!$this->ion_auth->in_group($level)) {
@@ -883,17 +832,16 @@ class Pegawai extends CI_Controller {
             }else{
                 $post = $this->input->post();
                 $datainput = array(
-                    'status' => $post['status'],
                     'nomor_sk'=>$post['nomor_sk'],
                     'tanggal_sk'=>$post['tanggal_sk_thn'].'-'.$post['tanggal_sk_bln'].'-'.$post['tanggal_sk_hr'],
-                    'tanggal_mulai'=>$post['tanggal_mulai_thn'].'-'.$post['tanggal_mulai_bln'].'-'.$post['tanggal_mulai_hr'],
-                    'tanggal_selesai'=>$post['tanggal_selesai_thn'].'-'.$post['tanggal_selesai_bln'].'-'.$post['tanggal_selesai_hr'],
-                    'masa_kerja'=>$post['masa_kerja']
+                    'tmt_golongan'=>$post['tmt_golongan_thn'].'-'.$post['tmt_golongan_bln'].'-'.$post['tmt_golongan_hr'],
+                    'nomor_bkn'=>$post['nomor_bkn'],
+                    'tanggal_bkn'=>$post['tanggal_bkn_thn'].'-'.$post['tanggal_bkn_bln'].'-'.$post['tanggal_bkn_hr']
                 );
-                $this->Pegawai_m->update_data('data_riwayat_pangkat','id_riwayat_pangkat',$idr,$datainput);
-                $pesan = 'Data riwayat pangkat baru berhasil di diubah';
+                $this->Pegawai_m->update_data('data_riwayat_golongan','id_riwayat_golongan',$idr,$datainput);
+                $pesan = 'Data riwayat golongan baru berhasil di diubah';
                 $this->session->set_flashdata('message', $pesan );
-                redirect(base_url('index.php/admin/pegawai/detail_rpangkat/'.$idpegawai));
+                redirect(base_url('index.php/admin/pegawai/detail_rgolongan/'.$idpegawai));
             }
         }else{
             $pesan = 'Login terlebih dahulu';
@@ -919,6 +867,8 @@ class Pegawai extends CI_Controller {
                 $data['hasil'] = $result;
                 $data['detail'] = $this->Pegawai_m->detail_data('data_riwayat_jabatan','id_riwayat_jabatan',$idr);
                 $data['status'] = $this->Pegawai_m->select_data('master_status_pegawai');
+                $data['golongan'] = $this->Pegawai_m->select_data('master_golongan');
+                $data['sjabatan'] = $this->Pegawai_m->select_data('master_status_jabatan');
                 $data['bagian'] = 'admin/edit-rjabatan-v';
                 $data['page'] = 'admin/detail-pegawai-v';
                 // pagging setting
@@ -1517,7 +1467,7 @@ class Pegawai extends CI_Controller {
             redirect(base_url('index.php/admin//login'));
         }
     }
-    public function delete_rpangkat($idpegawai,$idr){
+    public function delete_rgolongan($idpegawai,$idr){
         if ($this->ion_auth->logged_in()) {
             $level = array('admin','members');
             if (!$this->ion_auth->in_group($level)) {
@@ -1525,10 +1475,10 @@ class Pegawai extends CI_Controller {
                 $this->session->set_flashdata('message', $pesan );
                 redirect(base_url('index.php/admin/dashboard'));
             }else{
-                $this->Pegawai_m->delete_data('data_riwayat_pangkat','id_riwayat_pangkat',$idr);
-                $pesan = 'Data riwayat pangkat baru berhasil di diubah dihapus';
+                $this->Pegawai_m->delete_data('data_riwayat_golongan','id_riwayat_golongan',$idr);
+                $pesan = 'Data riwayat golongan baru berhasil di diubah dihapus';
                 $this->session->set_flashdata('message', $pesan );
-                redirect(base_url('index.php/admin/pegawai/detail_rpangkat/'.$idpegawai));
+                redirect(base_url('index.php/admin/pegawai/detail_rgolongan/'.$idpegawai));
             }
         }else{
             $pesan = 'Login terlebih dahulu';
@@ -1701,7 +1651,9 @@ class Pegawai extends CI_Controller {
                 $data['title'] = $result->nama_pegawai;
                 $data['hasil'] = $result;
                 $data['pelatihan'] = $this->Pegawai_m->data_pelatihan($id);
-                $data['unit_org'] = $this->Admin_m->detail_data_order('master_lokasi_kerja','id_lokasi_kerja',$result->lokasi_kerja);
+                $data['statpeg'] = $this->Admin_m->detail_data_order('master_status_pegawai','id_status_pegawai',$result->id_status_pegawai);
+                $data['agama'] = $this->Admin_m->detail_data_order('master_agama','id_agama',$result->agama);
+                $data['unit_org'] = $this->Admin_m->detail_data_order('master_satuan_kerja','id_satuan_kerja',$result->id_satuan_kerja);
                 $data['keluarga'] = $this->Admin_m->select_data_order('data_keluarga','id_pegawai',$id);
                 $data['pangkat'] = $this->Admin_m->select_data_order('data_riwayat_pangkat','id_pegawai',$id);
                 $data['jabatan'] = $this->Admin_m->select_data_order('data_riwayat_jabatan','id_pegawai',$id);

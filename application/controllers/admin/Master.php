@@ -696,9 +696,9 @@ class Master extends CI_Controller {
             }else{
                 $post = $this->input->post();
                 $datainput = array(
-                   'golongan' => strtoupper($post['golongan']),
-                   'uraian' => strtoupper($post['uraian']),
-                   'level' => strtoupper($post['level'])
+                   'golongan' => $post['golongan'],
+                   'uraian' => $post['uraian'],
+                   'level' => $post['level']
                 );
                 $this->Master_m->update_data('master_golongan','id_golongan',$id,$datainput);
                 $pesan = 'Data Golongan baru berhasil di diubah';

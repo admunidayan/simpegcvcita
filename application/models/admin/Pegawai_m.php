@@ -9,7 +9,7 @@ class Pegawai_m extends CI_Model
 			$this->db->or_like('nip_lama',$string);
 		}
 		if (!empty($skpd)) {
-			$this->db->where('lokasi_kerja',$string);
+			$this->db->where('id_satuan_kerja',$string);
 		}
 		$rs = $this->db->count_all_results();
 		return $rs;
@@ -25,7 +25,7 @@ class Pegawai_m extends CI_Model
 			$this->db->or_like('nip_lama',$string);
 		}
 		if (!empty($skpd)) {
-			$this->db->where('lokasi_kerja',$string);
+			$this->db->where('id_satuan_kerja',$skpd);
 		}
 		$this->db->order_by('nama_pegawai','asc');
 		$query = $this->db->get('data_pegawai',$sampai,$dari);
@@ -55,9 +55,9 @@ class Pegawai_m extends CI_Model
 		$query = $this->db->get('data_keluarga');
 		return $query->result();
 	}
-	public function data_rpangkat($id){
+	public function data_rgolongan($id){
 		$this->db->where('id_pegawai', $id);
-		$query = $this->db->get('data_riwayat_pangkat');
+		$query = $this->db->get('data_riwayat_golongan');
 		return $query->result();
 	}
 	public function data_rjabatan($id){
