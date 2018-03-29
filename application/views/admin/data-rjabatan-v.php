@@ -68,9 +68,13 @@
 						<div class="row">
 							<div class="col-md-12">
 								<div class="form-group">
-									<label class="text-info" for="penempatan">PENEMPATAN</label>
-									<input type="text" class="form-control" id="penempatan" name="penempatan" placeholder="PENEMPATAN" >
-								</div>
+								<label class="text-info" for="id_jenis_jabatan">JENIS JABATAN</label>
+								<select class="form-control" name="id_jenis_jabatan">
+									<?php foreach ($golongan as $data): ?>
+										<option value="<?php echo $data->id_jenis_jabatan ?>"><?php echo $data->id_jenis_jabatan; ?></option>
+									<?php endforeach ?>
+								</select>
+							</div>
 								<div class="form-group">
 									<label class="text-info" for="uraian">URAIAN</label>
 									<input type="text" class="form-control" id="uraian" name="uraian" placeholder="URAIAN">

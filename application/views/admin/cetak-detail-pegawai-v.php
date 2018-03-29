@@ -105,7 +105,7 @@
 </table>
 <table class="penuh" border="1" style="margin-top: 14px">
 	<tr>
-		<td colspan="6" class="colpading bdatas bdkiri bdkanan"><b>Data Riwayat Golongan</b></td>
+		<td colspan="7" class="colpading bdatas bdkiri bdkanan"><b>Data Riwayat Golongan</b></td>
 	</tr>
 	<tr>
 		<td class="colpading bdkiri bdkanan">Golongan</td>
@@ -130,7 +130,7 @@
 </table>
 <table class="penuh" border="1" style="margin-top: 14px">
 	<tr>
-		<td colspan="6" class="colpading bdatas bdkiri bdkanan"><b>Data Riwayat Jabatan</b></td>
+		<td colspan="8" class="colpading bdatas bdkiri bdkanan"><b>Data Riwayat Jabatan</b></td>
 	</tr>
 	<tr>
 		<td class="colpading bdkiri bdkanan">Jenis Jabatan</td>
@@ -169,7 +169,7 @@
 	</tr>
 	<?php foreach ($pendidikan as $data): ?>
 		<tr>
-			<td class="colpading bdkanan bdkiri"><?php echo $data->tingkat_pendidikan ?></td>
+			<td class="colpading bdkanan bdkiri"><?php echo $this->Admin_m->detail_data_order('master_pendidikan','id',$data->tingkat_pendidikan)->pendidikan; ?></td>
 			<td class="colpading bdkanan"><?php echo $data->jurusan ?></td>
 			<td class="colpading bdkanan"><?php echo $data->sekolah ?></td>
 			<td class="colpading bdkanan"><?php echo $data->tempat_sekolah ?></td>
