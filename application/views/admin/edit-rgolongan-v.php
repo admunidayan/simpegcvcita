@@ -1,9 +1,14 @@
-<form action="<?php echo base_url('index.php/admin/pegawai/update_rgolongan/'.$hasil->id_pegawai.'/'.$detail->id_riwayat_pangkat) ?>" method="post">
+<form action="<?php echo base_url('index.php/admin/pegawai/update_rgolongan/'.$hasil->id_pegawai.'/'.$detail->id_riwayat_golongan) ?>" method="post">
 	<div class="row">
 		<div class="col-md-12">
 			<div class="form-group">
-				<label class="text-info" for="status">STATUS</label>
-				<input type="text" class="form-control" id="status" name="status" placeholder="STATUS" value="<?php echo $detail->status?>">
+				<label class="text-info">GOLONGAN</label>
+				<select class="form-control" name="id_golongan">
+					<option value="<?php echo @$detail->id_golongan ?>">--<?php echo @$this->Admin_m->detail_data_order('master_golongan','id_golongan',$detail->id_golongan)->golongan; ?>--</option>
+					<?php foreach ($golongan as $data): ?>
+						<option value="<?php echo $data->id_golongan ?>"><?php echo $data->golongan; ?></option>
+					<?php endforeach ?>
+				</select>
 			</div>
 			<div class="form-group">
 				<label class="text-info" for="nomor_sk">NOMOR SK</label>
@@ -24,36 +29,45 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label class="text-info" for="tanggal_mulai">TANGGAL MULAI</label>
+				<label class="text-info" for="tanggal_mulai">TMT GOLONGAN</label>
 				<div class="row">
 					<div class="col">
-						<input type="text" class="form-control" id="tanggal_mulai" name="tanggal_mulai_hr" placeholder="HH" value="<?php echo substr($detail->tanggal_mulai,8,2)?>">
+						<input type="text" class="form-control" id="tanggal_mulai" name="tmt_golongan_hr" placeholder="HH" value="<?php echo substr($detail->tmt_golongan,8,2)?>">
 					</div>
 					<div class="col">
-						<input type="text" class="form-control" id="tanggal_mulai" name="tanggal_mulai_bln" placeholder="BB" value="<?php echo substr($detail->tanggal_mulai,5,2)?>">
+						<input type="text" class="form-control" id="tanggal_mulai" name="tmt_golongan_bln" placeholder="BB" value="<?php echo substr($detail->tmt_golongan,5,2)?>">
 					</div>
 					<div class="col">
-						<input type="text" class="form-control" id="tanggal_mulai" name="tanggal_mulai_thn" placeholder="TTTT" value="<?php echo substr($detail->tanggal_mulai,0,4)?>">
+						<input type="text" class="form-control" id="tanggal_mulai" name="tmt_golongan_thn" placeholder="TTTT" value="<?php echo substr($detail->tmt_golongan,0,4)?>">
 					</div>
 				</div>
 			</div>
 			<div class="form-group">
-				<label class="text-info" for="tanggal_selesai">TANGGAL SELESAI</label>
+				<label class="text-info">NOMOR BKN</label>
+				<input type="text" class="form-control" name="nomor_bkn" placeholder="Masukan Nomor BKN" value="<?php echo $detail->nomor_bkn ?>">
+			</div>
+			<div class="form-group">
+				<label class="text-info" for="tanggal_selesai">TANGGAL BKN</label>
 				<div class="row">
 					<div class="col">
-						<input type="text" class="form-control" id="tanggal_selesai" name="tanggal_selesai_hr" placeholder="HH" value="<?php echo substr($detail->tanggal_selesai,8,2)?>">
+						<input type="text" class="form-control" id="tanggal_bkn" name="tanggal_bkn_hr" placeholder="HH" value="<?php echo substr($detail->tanggal_bkn,8,2)?>">
 					</div>
 					<div class="col">
-						<input type="text" class="form-control" id="tanggal_selesai" name="tanggal_selesai_bln" placeholder="BB" value="<?php echo substr($detail->tanggal_selesai,5,2)?>">
+						<input type="text" class="form-control" id="tanggal_bkn" name="tanggal_bkn_bln" placeholder="BB" value="<?php echo substr($detail->tanggal_bkn,5,2)?>">
 					</div>
 					<div class="col">
-						<input type="text" class="form-control" id="tanggal_selesai" name="tanggal_selesai_thn" placeholder="TTTT" value="<?php echo substr($detail->tanggal_selesai,0,4)?>">
+						<input type="text" class="form-control" id="tanggal_bkn" name="tanggal_bkn_thn" placeholder="TTTT" value="<?php echo substr($detail->tanggal_bkn,0,4)?>">
 					</div>
 				</div>
 			</div>
 			<div class="form-group">
-				<label class="text-info" for="masa_kerja">MASA KERJA</label>
-				<input type="text" class="form-control" id="masa_kerja" name="masa_kerja" placeholder="MASA KERJA" value="<?php echo $detail->masa_kerja ?>">
+				<label class="text-info">JENIS KP</label>
+				<select class="form-control" name="id_status_jabatan">
+					<option value="<?php echo @$detail->id_status_jabatan ?>">--<?php echo @$this->Admin_m->detail_data_order('master_status_jabatan','id_status_jabatan',$detail->id_status_jabatan)->nama_jabatan; ?>--</option>
+					<?php foreach ($jeniskp as $data): ?>
+						<option value="<?php echo $data->id_status_jabatan ?>"><?php echo $data->nama_jabatan; ?></option>
+					<?php endforeach ?>
+				</select>
 			</div>
 		</div>
 	</div>

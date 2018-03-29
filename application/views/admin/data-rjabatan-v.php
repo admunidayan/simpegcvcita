@@ -12,11 +12,14 @@
 		<thead>
 			<tr class="bg-app text-light">
 				<td class="jrktbl text-center">No</td>
-				<td class="jrktbl">Status</td>
-				<td class="jrktbl">Penempatan</td>
-				<td class="jrktbl">Tgl Mulai</td>
-				<td class="jrktbl">Tgl Selesai</td>
-				<td class="jrktbl">Lokasi</td>
+				<td class="jrktbl">Jns Jabatan</td>
+				<td class="jrktbl">Nama Jabatan</td>
+				<td class="jrktbl">SKPD</td>
+				<td class="jrktbl">Eselon</td>
+				<td class="jrktbl">TMT Jabatan</td>
+				<td class="jrktbl">Tgl SK</td>
+				<td class="jrktbl">TMT Pelantikan</td>
+				<td class="jrktbl">No SK</td>
 				<td class="jrktbl" colspan="2">Aksi</td>
 			</tr>
 		</thead>
@@ -26,11 +29,14 @@
 				<?php foreach ($rjabatan as $data): ?>
 					<tr>
 						<td class="jrktbl text-center"><?php echo $no; ?></td>
-						<td class="jrktbl"><?php echo $data->status; ?></td>
-						<td class="jrktbl"><?php echo $data->penempatan; ?></td>
-						<td class="jrktbl"><?php echo date('d F Y', strtotime($data->tanggal_mulai)); ?></td>
-						<td class="jrktbl"><?php echo date('d F Y', strtotime($data->tanggal_selesai)); ?></td>
-						<td class="jrktbl"><?php echo $data->lokasi; ?></td>
+						<td class="jrktbl"><?php echo $this->Admin_m->detail_data_order('master_jenis_jabatan','id_jenis_jabatan',$data->id_jenis_jabatan)->nama_jenis_jabatan; ?></td>
+						<td class="jrktbl"><?php echo $this->Admin_m->detail_data_order('master_jabatan','id_jabatan',$data->id_jabatan)->nama_jabatan; ?></td>
+						<td class="jrktbl"><?php echo $this->Admin_m->detail_data_order('master_satuan_kerja','id_satuan_kerja',$data->id_satuan_kerja)->nama_satuan_kerja; ?></td>
+						<td class="jrktbl"><?php echo $this->Admin_m->detail_data_order('master_eselon','id_eselon',$data->id_eselon)->nama_eselon;?></td>
+						<td class="jrktbl"><?php echo $data->tmt_jabatan_rj; ?></td>
+						<td class="jrktbl"><?php echo $data->tanggal_sk_rj; ?></td>
+						<td class="jrktbl"><?php echo $data->tmt_pelantikan_rj; ?></td>
+						<td class="jrktbl"><?php echo $data->nomor_sk; ?></td>
 						<td class="jrktbl">
 							<a href="<?php echo base_url('index.php/admin/pegawai/edit_rjabatan/'.$hasil->id_pegawai.'/'.$data->id_riwayat_jabatan) ?>" class="text-success">Edit</a>
 						</td>

@@ -14,11 +14,11 @@
 				<td class="jrktbl text-center">No</td>
 				<td class="jrktbl">Tngkt Pendidikan</td>
 				<td class="jrktbl">Jurusan</td>
-				<td class="jrktbl">Uraian</td>
 				<td class="jrktbl">Sekolah</td>
-				<td class="jrktbl">No STTB</td>
-				<td class="jrktbl">Tgl STTB</td>
+				<td class="jrktbl">Alamat</td>
 				<td class="jrktbl">Tgl Lulus</td>
+				<td class="jrktbl">No Ijazah</td>
+				<td class="jrktbl">Tahun Lulus</td>
 				<td class="jrktbl" colspan="2">Aksi</td>
 			</tr>
 		</thead>
@@ -28,13 +28,13 @@
 				<?php foreach ($pendidikan as $data): ?>
 					<tr>
 						<td class="jrktbl text-center"><?php echo $no; ?></td>
-						<td class="jrktbl"><?php echo $data->tingkat_pendidikan; ?></td>
+						<td class="jrktbl"><?php echo @$this->Admin_m->detail_data_order('master_pendidikan','id',$data->tingkat_pendidikan)->pendidikan; ?></td>
 						<td class="jrktbl"><?php echo $data->jurusan; ?></td>
-						<td class="jrktbl"><?php echo $data->uraian; ?></td>
 						<td class="jrktbl"><?php echo $data->sekolah; ?></td>
-						<td class="jrktbl"><?php echo $data->nomor_sttb; ?></td>
-						<td class="jrktbl"><?php echo date('d F Y', strtotime($data->tanggal_sttb)); ?></td>
+						<td class="jrktbl"><?php echo $data->tempat_sekolah; ?></td>
 						<td class="jrktbl"><?php echo date('d F Y', strtotime($data->tanggal_lulus)); ?></td>
+						<td class="jrktbl"><?php echo $data->nomor_ijazah; ?></td>
+						<td class="jrktbl"><?php echo $data->tahun_lulus; ?></td>
 						<td class="jrktbl">
 							<a href="<?php echo base_url('index.php/admin/pegawai/edit_pendidikan/'.$hasil->id_pegawai.'/'.$data->id_pendidikan) ?>" class="text-success">Edit</a>
 						</td>
@@ -79,38 +79,12 @@
 									<input type="text" class="form-control" id="jurusan" name="jurusan" placeholder="JURUSAN" >
 								</div>
 								<div class="form-group">
-									<label class="text-info" for="uraian">URAIAN</label>
-									<input type="text" class="form-control" id="uraian" name="uraian" placeholder="URAIAN">
-								</div>
-								<div class="form-group">
-									<label class="text-info" for="teknik_non_teknik">TEKNIK NON TEKNIK</label>
-									<input type="text" class="form-control" id="teknik_non_teknik" name="teknik_non_teknik" placeholder="TEKNIK NON TEKNIK">
-								</div>
-								<div class="form-group">
 									<label class="text-info" for="sekolah">SEKOLAH</label>
 									<input type="text" class="form-control" id="sekolah" name="sekolah" placeholder="SEKOLAH">
 								</div>
 								<div class="form-group">
 									<label class="text-info" for="tempat_sekolah">TEMPAT SEKOLAH</label>
 									<input type="text" class="form-control" id="tempat_sekolah" name="tempat_sekolah" placeholder="TEMPAT SEKOLAH">
-								</div>
-								<div class="form-group">
-									<label class="text-info" for="nomor_sttb">NOMOR STTB</label>
-									<input type="text" class="form-control" id="nomor_sttb" name="nomor_sttb" placeholder="NOMOR STTB">
-								</div>
-								<div class="form-group">
-									<label class="text-info" for="tanggal_sttb">TANGGAL STTB</label>
-									<div class="row">
-										<div class="col">
-											<input type="text" class="form-control" id="tanggal_sttb" name="tanggal_sttb_hr" placeholder="HH">
-										</div>
-										<div class="col">
-											<input type="text" class="form-control" id="tanggal_sttb" name="tanggal_sttb_bln" placeholder="BB">
-										</div>
-										<div class="col">
-											<input type="text" class="form-control" id="tanggal_sttb" name="tanggal_sttb_thn" placeholder="TTTT">
-										</div>
-									</div>
 								</div>
 								<div class="form-group">
 									<label class="text-info" for="tanggal_lulus">TANGGAL LULUS</label>
@@ -124,6 +98,16 @@
 										<div class="col">
 											<input type="text" class="form-control" id="tanggal_lulus" name="tanggal_lulus_thn" placeholder="TTTT">
 										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="text-info" for="nomor_ijazah">NOMOR IJAZAH</label>
+									<input type="text" class="form-control" id="nomor_ijazah" name="nomor_ijazah" placeholder="NOMOR IJAZAH">
+								</div>
+								<div class="form-group">
+									<label class="text-info" for="tahun_lulus">TAHUN LULUS</label>
+									<input type="text" class="form-control" id="tahun_lulus" name="tahun_lulus" placeholder="TAHUN LULUS">
+								</div>
 									</div>
 								</div>
 							</div>

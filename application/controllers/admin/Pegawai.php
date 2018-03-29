@@ -570,13 +570,11 @@ class Pegawai extends CI_Controller {
                     'tingkat_pendidikan' => $post['tingkat_pendidikan'],
                     'id_pegawai' => $idpegawai,
                     'jurusan'=>$post['jurusan'],
-                    'uraian'=>$post['uraian'],
-                    'teknik_non_teknik'=>$post['teknik_non_teknik'],
                     'sekolah'=>$post['sekolah'],
                     'tempat_sekolah'=>$post['tempat_sekolah'],
-                    'nomor_sttb'=>$post['nomor_sttb'],
-                    'tanggal_sttb'=>$post['tanggal_sttb_thn'].'-'.$post['tanggal_sttb_bln'].'-'.$post['tanggal_sttb_hr'],
-                    'tanggal_lulus'=>$post['tanggal_lulus_thn'].'-'.$post['tanggal_lulus_bln'].'-'.$post['tanggal_lulus_hr']
+                    'tanggal_lulus'=>$post['tanggal_lulus_thn'].'-'.$post['tanggal_lulus_bln'].'-'.$post['tanggal_lulus_hr'],
+                    'nomor_ijazah'=>$post['nomor_ijazah'],
+                    'tahun_lulus'=>$post['tahun_lulus']
                 );
                 $this->Pegawai_m->insert_data('data_pendidikan',$datainput);
                 $pesan = 'Data pendidikan baru berhasil di tambahkan';
@@ -809,9 +807,9 @@ class Pegawai extends CI_Controller {
                 $data['aside'] = 'nav/nav';
                 $data['hasil'] = $result;
                 $data['detail'] = $this->Pegawai_m->detail_data('data_riwayat_golongan','id_riwayat_golongan',$idr);
-                $data['status'] = $this->Pegawai_m->select_data('master_status_pegawai');
-
                 $data['bagian'] = 'admin/edit-rgolongan-v';
+                $data['jeniskp'] = $this->Admin_m->select_data('master_status_jabatan');
+                $data['golongan'] = $this->Admin_m->select_data('master_golongan');
                 $data['page'] = 'admin/detail-pegawai-v';
                 // pagging setting
                 $this->load->view('admin/dashboard-v',$data);
@@ -832,11 +830,13 @@ class Pegawai extends CI_Controller {
             }else{
                 $post = $this->input->post();
                 $datainput = array(
+                    'id_golongan'=>$post['id_golongan'],
                     'nomor_sk'=>$post['nomor_sk'],
                     'tanggal_sk'=>$post['tanggal_sk_thn'].'-'.$post['tanggal_sk_bln'].'-'.$post['tanggal_sk_hr'],
                     'tmt_golongan'=>$post['tmt_golongan_thn'].'-'.$post['tmt_golongan_bln'].'-'.$post['tmt_golongan_hr'],
                     'nomor_bkn'=>$post['nomor_bkn'],
-                    'tanggal_bkn'=>$post['tanggal_bkn_thn'].'-'.$post['tanggal_bkn_bln'].'-'.$post['tanggal_bkn_hr']
+                    'tanggal_bkn'=>$post['tanggal_bkn_thn'].'-'.$post['tanggal_bkn_bln'].'-'.$post['tanggal_bkn_hr'],
+                    'id_status_jabatan'=>$post['id_status_jabatan']
                 );
                 $this->Pegawai_m->update_data('data_riwayat_golongan','id_riwayat_golongan',$idr,$datainput);
                 $pesan = 'Data riwayat golongan baru berhasil di diubah';
@@ -929,6 +929,7 @@ class Pegawai extends CI_Controller {
                 $data['hasil'] = $result;
                 $data['detail'] = $this->Pegawai_m->detail_data('data_pendidikan','id_pendidikan',$idr);
                 $data['status'] = $this->Pegawai_m->select_data('master_status_pegawai');
+                $data['ipendidikan'] = $this->Pegawai_m->select_data('master_pendidikan');
                 $data['bagian'] = 'admin/edit-pendidikan-v';
                 $data['page'] = 'admin/detail-pegawai-v';
                 // pagging setting
@@ -950,15 +951,14 @@ class Pegawai extends CI_Controller {
             }else{
                 $post = $this->input->post();
                 $datainput = array(
-                    'tingkat_pendidikan' => $post['tingkat_pendidikan'],
+                     'tingkat_pendidikan' => $post['tingkat_pendidikan'],
+                    'id_pegawai' => $idpegawai,
                     'jurusan'=>$post['jurusan'],
-                    'uraian'=>$post['uraian'],
-                    'teknik_non_teknik'=>$post['teknik_non_teknik'],
                     'sekolah'=>$post['sekolah'],
                     'tempat_sekolah'=>$post['tempat_sekolah'],
-                    'nomor_sttb'=>$post['nomor_sttb'],
-                    'tanggal_sttb'=>$post['tanggal_sttb_thn'].'-'.$post['tanggal_sttb_bln'].'-'.$post['tanggal_sttb_hr'],
-                    'tanggal_lulus'=>$post['tanggal_lulus_thn'].'-'.$post['tanggal_lulus_bln'].'-'.$post['tanggal_lulus_hr']
+                    'tanggal_lulus'=>$post['tanggal_lulus_thn'].'-'.$post['tanggal_lulus_bln'].'-'.$post['tanggal_lulus_hr'],
+                    'nomor_ijazah'=>$post['nomor_ijazah'],
+                    'tahun_lulus'=>$post['tahun_lulus']
                 );
                 $this->Pegawai_m->update_data('data_pendidikan','id_pendidikan',$idr,$datainput);
                 $pesan = 'Data riwayat pendidikan baru berhasil di diubah';
@@ -1655,7 +1655,7 @@ class Pegawai extends CI_Controller {
                 $data['agama'] = $this->Admin_m->detail_data_order('master_agama','id_agama',$result->agama);
                 $data['unit_org'] = $this->Admin_m->detail_data_order('master_satuan_kerja','id_satuan_kerja',$result->id_satuan_kerja);
                 $data['keluarga'] = $this->Admin_m->select_data_order('data_keluarga','id_pegawai',$id);
-                $data['pangkat'] = $this->Admin_m->select_data_order('data_riwayat_pangkat','id_pegawai',$id);
+                $data['golongan'] = $this->Admin_m->select_data_order('data_riwayat_golongan','id_pegawai',$id);
                 $data['jabatan'] = $this->Admin_m->select_data_order('data_riwayat_jabatan','id_pegawai',$id);
                 $data['pendidikan'] = $this->Admin_m->select_data_order('data_pendidikan','id_pegawai',$id);
                 $data['pelatihan'] = $this->Admin_m->select_data_order('data_pelatihan','id_pegawai',$id);
