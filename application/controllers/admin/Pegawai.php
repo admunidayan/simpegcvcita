@@ -184,6 +184,10 @@ class Pegawai extends CI_Controller {
                 $data['hasil'] = $result;
                 $data['rjabatan'] = $this->Pegawai_m->data_rjabatan($id);
                 $data['status'] = $this->Pegawai_m->select_data('master_status_pegawai');
+                $data['jnsjabatan'] = $this->Pegawai_m->select_data('master_jenis_jabatan');
+                $data['satuankerja'] = $this->Pegawai_m->select_data('master_satuan_kerja');
+                $data['eselon'] = $this->Pegawai_m->select_data('master_eselon');
+                $data['jabatan'] = $this->Pegawai_m->select_data('master_jabatan');
                 $data['bagian'] = 'admin/data-rjabatan-v';
                 $data['page'] = 'admin/detail-pegawai-v';
                 // pagging setting
@@ -535,16 +539,15 @@ class Pegawai extends CI_Controller {
             }else{
                 $post = $this->input->post();
                 $datainput = array(
-                    'status' => $post['status'],
                     'id_pegawai' => $idpegawai,
-                    'penempatan'=>$post['penempatan'],
-                    'uraian'=>$post['uraian'],
-                    'tmt_eselon'=>$post['tmt_eselon_thn'].'-'.$post['tmt_eselon_bln'].'-'.$post['tmt_eselon_hr'],
-                    'nomor_sk'=>$post['nomor_sk'],
-                    'tanggal_sk'=>$post['tanggal_sk_thn'].'-'.$post['tanggal_sk_bln'].'-'.$post['tanggal_sk_hr'],
-                    'tanggal_mulai'=>$post['tanggal_mulai_thn'].'-'.$post['tanggal_mulai_bln'].'-'.$post['tanggal_mulai_hr'],
-                    'tanggal_selesai'=>$post['tanggal_selesai_thn'].'-'.$post['tanggal_selesai_bln'].'-'.$post['tanggal_selesai_hr'],
-                    'lokasi'=>$post['lokasi']
+                    'id_jenis_jabatan'=>$post['id_jenis_jabatan'],
+                    'id_jabatan'=>$post['id_jabatan'],
+                    'id_satuan_kerja'=>$post['id_satuan_kerja'],
+                    'id_eselon'=>$post['id_eselon'],
+                    'tmt_jabatan_rj'=>$post['tmt_jabatan_rj_thn'].'-'.$post['tmt_jabatan_rj_bln'].'-'.$post['tmt_jabatan_rj_hr'],
+                    'tanggal_sk_rj'=>$post['tanggal_sk_rj_thn'].'-'.$post['tanggal_sk_rj_bln'].'-'.$post['tanggal_sk_rj_hr'],
+                    'tmt_pelantikan_rj'=>$post['tmt_pelantikan_rj_thn'].'-'.$post['tmt_pelantikan_rj_bln'].'-'.$post['tmt_pelantikan_rj_hr'],
+                    'nomor_sk'=>$post['nomor_sk']
                 );
                 $this->Pegawai_m->insert_data('data_riwayat_jabatan',$datainput);
                 $pesan = 'Data riwayat jabatan baru berhasil di tambahkan';
@@ -869,6 +872,10 @@ class Pegawai extends CI_Controller {
                 $data['status'] = $this->Pegawai_m->select_data('master_status_pegawai');
                 $data['golongan'] = $this->Pegawai_m->select_data('master_golongan');
                 $data['sjabatan'] = $this->Pegawai_m->select_data('master_status_jabatan');
+                $data['jnsjabatan'] = $this->Pegawai_m->select_data('master_jenis_jabatan');
+                $data['satuankerja'] = $this->Pegawai_m->select_data('master_satuan_kerja');
+                $data['eselon'] = $this->Pegawai_m->select_data('master_eselon');
+                $data['jabatan'] = $this->Pegawai_m->select_data('master_jabatan');
                 $data['bagian'] = 'admin/edit-rjabatan-v';
                 $data['page'] = 'admin/detail-pegawai-v';
                 // pagging setting
@@ -890,15 +897,17 @@ class Pegawai extends CI_Controller {
             }else{
                 $post = $this->input->post();
                 $datainput = array(
-                    'status' => $post['status'],
-                    'penempatan'=>$post['penempatan'],
-                    'uraian'=>$post['uraian'],
-                    'tmt_eselon'=>$post['tmt_eselon_thn'].'-'.$post['tmt_eselon_bln'].'-'.$post['tmt_eselon_hr'],
+                    'id_pegawai' => $idpegawai,
+                    'id_jenis_jabatan'=>$post['id_jenis_jabatan'],
+                    'id_jabatan'=>$post['id_jabatan'],
+                    'id_satuan_kerja'=>$post['id_satuan_kerja'],
+                    'id_eselon'=>$post['id_eselon'],
+                    'tmt_jabatan_rj'=>$post['tmt_jabatan_rj_thn'].'-'.$post['tmt_jabatan_rj_bln'].'-'.$post['tmt_jabatan_rj_hr'],
                     'nomor_sk'=>$post['nomor_sk'],
-                    'tanggal_sk'=>$post['tanggal_sk_thn'].'-'.$post['tanggal_sk_bln'].'-'.$post['tanggal_sk_hr'],
-                    'tanggal_mulai'=>$post['tanggal_mulai_thn'].'-'.$post['tanggal_mulai_bln'].'-'.$post['tanggal_mulai_hr'],
+                    'tanggal_sk_rj'=>$post['tanggal_sk_rj_thn'].'-'.$post['tanggal_sk_rj_bln'].'-'.$post['tanggal_sk_rj_hr'],
+                    'tmt_pelantikan_rj'=>$post['tmt_pelantikan_rj_thn'].'-'.$post['tmt_pelantikan_rj_bln'].'-'.$post['tmt_pelantikan_rj_hr'],
                     'tanggal_selesai'=>$post['tanggal_selesai_thn'].'-'.$post['tanggal_selesai_bln'].'-'.$post['tanggal_selesai_hr'],
-                    'lokasi'=>$post['lokasi']
+                    'nomor_sk'=>$post['nomor_sk']
                 );
                 $this->Pegawai_m->update_data('data_riwayat_jabatan','id_riwayat_jabatan',$idr,$datainput);
                 $pesan = 'Data riwayat jabatan baru berhasil di diubah';

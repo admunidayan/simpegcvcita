@@ -70,78 +70,80 @@
 								<div class="form-group">
 								<label class="text-info" for="id_jenis_jabatan">JENIS JABATAN</label>
 								<select class="form-control" name="id_jenis_jabatan">
-									<?php foreach ($golongan as $data): ?>
-										<option value="<?php echo $data->id_jenis_jabatan ?>"><?php echo $data->id_jenis_jabatan; ?></option>
+									<?php foreach ($jnsjabatan as $data): ?>
+										<option value="<?php echo $data->id_jenis_jabatan ?>"><?php echo $data->nama_jenis_jabatan; ?></option>
 									<?php endforeach ?>
 								</select>
 							</div>
 								<div class="form-group">
-									<label class="text-info" for="uraian">URAIAN</label>
-									<input type="text" class="form-control" id="uraian" name="uraian" placeholder="URAIAN">
-								</div>
+								<label class="text-info" for="id_jabatan">NAMA JABATAN</label>
+								<select class="form-control" name="id_jabatan">
+									<?php foreach ($jabatan as $data): ?>
+										<option value="<?php echo $data->id_jabatan ?>"><?php echo $data->nama_jabatan; ?></option>
+									<?php endforeach ?>
+								</select>
+							</div>
+							<div class="form-group">
+								<label class="text-info" for="id_satuan_kerja">SATUAN KERJA</label>
+								<select class="form-control" name="id_satuan_kerja">
+									<?php foreach ($satuankerja as $data): ?>
+										<option value="<?php echo $data->id_satuan_kerja ?>"><?php echo $data->nama_satuan_kerja; ?></option>
+									<?php endforeach ?>
+								</select>
+							</div>
+							<div class="form-group">
+								<label class="text-info" for="id_eselon">ESELON</label>
+								<select class="form-control" name="id_eselon">
+									<?php foreach ($eselon as $data): ?>
+										<option value="<?php echo $data->id_eselon ?>"><?php echo $data->nama_eselon; ?></option>
+									<?php endforeach ?>
+								</select>
+							</div>
 								<div class="form-group">
-									<label class="text-info" for="tmt_eselon">TMT ESELON</label>
+									<label class="text-info" for="tmt_jabatan_rj">TMT JABATAN</label>
 									<div class="row">
 										<div class="col">
-											<input type="text" class="form-control" id="tmt_eselon" name="tmt_eselon_hr" placeholder="HH">
+											<input type="text" class="form-control" id="tmt_jabatan_rj" name="tmt_jabatan_rj_hr" placeholder="HH">
 										</div>
 										<div class="col">
-											<input type="text" class="form-control" id="tmt_eselon" name="tmt_eselon_bln" placeholder="BB">
+											<input type="text" class="form-control" id="tmt_jabatan_rj" name="tmt_jabatan_rj_bln" placeholder="BB">
 										</div>
 										<div class="col">
-											<input type="text" class="form-control" id="tmt_eselon" name="tmt_eselon_thn" placeholder="TTTT">
+											<input type="text" class="form-control" id="tmt_jabatan_rj" name="tmt_jabatan_rj_thn" placeholder="TTTT">
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="text-info" for="tanggal_sk_rj">TANGGAL SK</label>
+									<div class="row">
+										<div class="col">
+											<input type="text" class="form-control" id="tanggal_sk_rj" name="tanggal_sk_rj_hr" placeholder="HH">
+										</div>
+										<div class="col">
+											<input type="text" class="form-control" id="tanggal_sk_rj" name="tanggal_sk_rj_bln" placeholder="BB">
+										</div>
+										<div class="col">
+											<input type="text" class="form-control" id="tanggal_sk_rj" name="tanggal_sk_rj_thn" placeholder="TTTT">
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="text-info" for="tmt_pelantikan_rj">TMT PELANTIKAN</label>
+									<div class="row">
+										<div class="col">
+											<input type="text" class="form-control" id="tmt_pelantikan_rj" name="tmt_pelantikan_rj_hr" placeholder="HH" >
+										</div>
+										<div class="col">
+											<input type="text" class="form-control" id="tmt_pelantikan_rj" name="tmt_pelantikan_rj_bln" placeholder="BB" >
+										</div>
+										<div class="col">
+											<input type="text" class="form-control" id="tmt_pelantikan_rj" name="tmt_pelantikan_rj_thn" placeholder="TTTT">
 										</div>
 									</div>
 								</div>
 								<div class="form-group">
 									<label class="text-info" for="nomor_sk">NOMOR SK</label>
 									<input type="text" class="form-control" id="nomor_sk" name="nomor_sk" placeholder="NOMOR SK">
-								</div>
-								<div class="form-group">
-									<label class="text-info" for="tanggal_sk">TANGGAL SK</label>
-									<div class="row">
-										<div class="col">
-											<input type="text" class="form-control" id="tanggal_sk" name="tanggal_sk_hr" placeholder="HH">
-										</div>
-										<div class="col">
-											<input type="text" class="form-control" id="tanggal_sk" name="tanggal_sk_bln" placeholder="BB">
-										</div>
-										<div class="col">
-											<input type="text" class="form-control" id="tanggal_sk" name="tanggal_sk_thn" placeholder="TTTT">
-										</div>
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="text-info" for="tanggal_mulai">TANGGAL MULAI</label>
-									<div class="row">
-										<div class="col">
-											<input type="text" class="form-control" id="tanggal_mulai" name="tanggal_mulai_hr" placeholder="HH" >
-										</div>
-										<div class="col">
-											<input type="text" class="form-control" id="tanggal_mulai" name="tanggal_mulai_bln" placeholder="BB" >
-										</div>
-										<div class="col">
-											<input type="text" class="form-control" id="tanggal_mulai" name="tanggal_mulai_thn" placeholder="TTTT">
-										</div>
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="text-info" for="tanggal_selesai">TANGGAL SELESAI</label>
-									<div class="row">
-										<div class="col">
-											<input type="text" class="form-control" id="tanggal_selesai" name="tanggal_selesai_hr" placeholder="HH" >
-										</div>
-										<div class="col">
-											<input type="text" class="form-control" id="tanggal_selesai" name="tanggal_selesai_bln" placeholder="BB" >
-										</div>
-										<div class="col">
-											<input type="text" class="form-control" id="tanggal_selesai" name="tanggal_selesai_thn" placeholder="TTTT">
-										</div>
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="text-info" for="lokasi">LOKASI</label>
-									<input type="text" class="form-control" id="lokasi" name="lokasi" placeholder="LOKASI">
 								</div>
 							</div>
 						</div>

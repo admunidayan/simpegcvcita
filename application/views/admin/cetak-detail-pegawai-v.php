@@ -158,7 +158,7 @@
 </table>
 <table class="penuh" border="1" style="margin-top: 14px">
 	<tr>
-		<td colspan="6" class="colpading bdatas bdkiri bdkanan"><b>Data Riwayat Pendidikan</b></td>
+		<td colspan="7" class="colpading bdatas bdkiri bdkanan"><b>Data Riwayat Pendidikan</b></td>
 	</tr>
 	<tr>
 		<td class="colpading bdkiri bdkanan">Tingkat Pendidikan</td>
@@ -166,6 +166,8 @@
 		<td class="colpading bdkiri bdkanan">Sekolah</td>
 		<td class="colpading bdkiri bdkanan">Tmpt Sekolah</td>
 		<td class="colpading bdkiri bdkanan">Tgl Lulus</td>
+		<td class="colpading bdkiri bdkanan">No Ijazah</td>
+		<td class="colpading bdkiri bdkanan">Tahun Lulus</td>
 	</tr>
 	<?php foreach ($pendidikan as $data): ?>
 		<tr>
@@ -174,6 +176,8 @@
 			<td class="colpading bdkanan"><?php echo $data->sekolah ?></td>
 			<td class="colpading bdkanan"><?php echo $data->tempat_sekolah ?></td>
 			<td class="colpading bdkanan"><?php echo $data->tanggal_lulus ?></td>
+			<td class="colpading bdkanan"><?php echo $data->nomor_ijazah ?></td>
+			<td class="colpading bdkanan"><?php echo $data->tahun_lulus ?></td>
 		</tr>
 	<?php endforeach ?>
 </table>
