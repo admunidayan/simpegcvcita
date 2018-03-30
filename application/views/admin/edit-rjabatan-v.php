@@ -5,7 +5,7 @@
 					<div class="form-group">
 						<label class="text-info">JENIS JABATAN</label>
 						<select class="form-control" name="id_jenis_jabatan">
-							<option value="<?php echo $detail->id_jenis_jabatan ?>">--<?php echo @$this->Admin_m->detail_data_order('master_jenis_jabatan','id',$detail->id_jenis_jabatan)->nama_jenis_jabatan; ?>--</option>
+							<option value="<?php echo @$detail->id_jenis_jabatan ?>">--<?php echo @$this->Admin_m->detail_data_order('master_jenis_jabatan','id_jenis_jabatan',$detail->id_jenis_jabatan)->nama_jenis_jabatan; ?>--</option>
 							<?php foreach ($jnsjabatan as $data): ?>
 								<option value="<?php echo $data->id_jenis_jabatan ?>"><?php echo $data->nama_jenis_jabatan; ?></option>
 							<?php endforeach ?>
@@ -14,7 +14,7 @@
 					<div class="form-group">
 						<label class="text-info">NAMA JABATAN</label>
 						<select class="form-control" name="id_jabatan">
-							<option value="<?php echo $detail->id_jabatan ?>">--<?php echo @$this->Admin_m->detail_data_order('master_jabatan','id',$detail->id_jabatan)->nama_jabatan; ?>--</option>
+							<option value="<?php echo $detail->id_jabatan ?>">--<?php echo @$this->Admin_m->detail_data_order('master_jabatan','id_jabatan',$detail->id_jabatan)->nama_jabatan; ?>--</option>
 							<?php foreach ($jabatan as $data): ?>
 								<option value="<?php echo $data->id_jabatan ?>"><?php echo $data->nama_jabatan; ?></option>
 							<?php endforeach ?>
@@ -23,7 +23,7 @@
 					<div class="form-group">
 						<label class="text-info">SATUAN KERJA</label>
 						<select class="form-control" name="id_satuan_kerja">
-							<option value="<?php echo $detail->id_satuan_kerja ?>">--<?php echo @$this->Admin_m->detail_data_order('master_satuan_kerja','id',$detail->id_satuan_kerja)->nama_satuan_kerja; ?>--</option>
+							<option value="<?php echo $detail->id_satuan_kerja ?>">--<?php echo @$this->Admin_m->detail_data_order('master_satuan_kerja','id_satuan_kerja',$detail->id_satuan_kerja)->nama_satuan_kerja; ?>--</option>
 							<?php foreach ($satuankerja as $data): ?>
 								<option value="<?php echo $data->id_satuan_kerja ?>"><?php echo $data->nama_satuan_kerja; ?></option>
 							<?php endforeach ?>
@@ -32,7 +32,7 @@
 					<div class="form-group">
 						<label class="text-info">ESELON</label>
 						<select class="form-control" name="id_eselon">
-							<option value="<?php echo $detail->id_eselon ?>">--<?php echo @$this->Admin_m->detail_data_order('master_eselon','id',$detail->id_eselon)->nama_eselon; ?>--</option>
+							<option value="<?php echo $detail->id_eselon ?>">--<?php echo @$this->Admin_m->detail_data_order('master_eselon','id_eselon',$detail->id_eselon)->nama_eselon; ?>--</option>
 							<?php foreach ($eselon as $data): ?>
 								<option value="<?php echo $data->id_eselon ?>"><?php echo $data->nama_eselon; ?></option>
 							<?php endforeach ?>

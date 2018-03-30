@@ -869,6 +869,7 @@ class Pegawai extends CI_Controller {
                 $data['aside'] = 'nav/nav';
                 $data['hasil'] = $result;
                 $data['detail'] = $this->Pegawai_m->detail_data('data_riwayat_jabatan','id_riwayat_jabatan',$idr);
+                // echo "<pre/>";print_r($data['detail']);echo "<pre/>";exit();
                 $data['status'] = $this->Pegawai_m->select_data('master_status_pegawai');
                 $data['golongan'] = $this->Pegawai_m->select_data('master_golongan');
                 $data['sjabatan'] = $this->Pegawai_m->select_data('master_status_jabatan');
@@ -906,7 +907,6 @@ class Pegawai extends CI_Controller {
                     'nomor_sk'=>$post['nomor_sk'],
                     'tanggal_sk_rj'=>$post['tanggal_sk_rj_thn'].'-'.$post['tanggal_sk_rj_bln'].'-'.$post['tanggal_sk_rj_hr'],
                     'tmt_pelantikan_rj'=>$post['tmt_pelantikan_rj_thn'].'-'.$post['tmt_pelantikan_rj_bln'].'-'.$post['tmt_pelantikan_rj_hr'],
-                    'tanggal_selesai'=>$post['tanggal_selesai_thn'].'-'.$post['tanggal_selesai_bln'].'-'.$post['tanggal_selesai_hr'],
                     'nomor_sk'=>$post['nomor_sk']
                 );
                 $this->Pegawai_m->update_data('data_riwayat_jabatan','id_riwayat_jabatan',$idr,$datainput);
@@ -959,8 +959,9 @@ class Pegawai extends CI_Controller {
                 redirect(base_url('index.php/admin/dashboard'));
             }else{
                 $post = $this->input->post();
+                // echo "<pre>";print_r($post) ;echo "<pre/>";exit();
                 $datainput = array(
-                     'tingkat_pendidikan' => $post['tingkat_pendidikan'],
+                    'tingkat_pendidikan' => $post['tingkat_pendidikan'],
                     'id_pegawai' => $idpegawai,
                     'jurusan'=>$post['jurusan'],
                     'sekolah'=>$post['sekolah'],
