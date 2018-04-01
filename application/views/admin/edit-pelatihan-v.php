@@ -1,3 +1,4 @@
+<div style="margin-top: 14px; background-color: white;padding: 30px">
 <form action="<?php echo base_url('index.php/admin/pegawai/update_pelatihan/'.$hasil->id_pegawai.'/'.$detail->id_pelatihan) ?>" method="post">
 	<div class="row">
 		<div class="col-md-12">
@@ -37,3 +38,4 @@
 			</div>
 			<button type="submit" name="submit" value="submit" class="btn btn-success">Simpan data</button>
 		</form>
+	</div>
