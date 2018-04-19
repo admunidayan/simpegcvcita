@@ -81,7 +81,7 @@
 </table>
 <table class="penuh" border="1" style="margin-top: 14px">
 	<tr>
-		<td colspan="6" class="colpading bdatas bdkiri bdkanan"><b>Data Keluarga</b></td>
+		<td colspan="7" class="colpading bdatas bdkiri bdkanan"><b>Data Keluarga</b></td>
 	</tr>
 	<tr>
 		<td class="colpading bdkiri bdkanan">Nama Anggota Keluarga</td>
@@ -90,6 +90,7 @@
 		<td class="colpading bdkiri bdkanan">Status Kawin</td>
 		<td class="colpading bdkiri bdkanan">Tanggal Nikah</td>
 		<td class="colpading bdkiri bdkanan">Pekerjaan</td>
+		<td class="colpading bdkiri bdkanan">No Kartu Suami/Istri</td>
 
 	</tr>
 	<?php foreach ($keluarga as $data): ?>
@@ -100,6 +101,7 @@
 			<td class="colpading bdkanan"><?php echo $data->status_kawin ?></td>
 			<td class="colpading bdkanan"><?php echo $data->tanggal_nikah ?></td>
 			<td class="colpading bdkanan"><?php echo $data->pekerjaan ?></td>
+			<td class="colpading bdkanan"><?php echo $data->no_kartu ?></td>
 		</tr>
 	<?php endforeach ?>
 </table>
@@ -216,40 +218,6 @@
 			<td class="colpading bdkanan bdkiri"><?php echo $data->uraian ?></td>
 			<td class="colpading bdkanan"><?php echo $data->nomor_sk ?></td>
 			<td class="colpading bdkanan"><?php echo $data->tanggal_sk ?></td>
-		</tr>
-	<?php endforeach ?>
-</table>
-<table class="penuh" border="1" style="margin-top: 14px">
-	<tr>
-		<td colspan="3" class="colpading bdatas bdkiri bdkanan"><b>Data Seminar</b></td>
-	</tr>
-	<tr>
-		<td class="colpading bdkiri bdkanan">Uraian</td>
-		<td class="colpading bdkiri bdkanan">Lokasi</td>
-		<td class="colpading bdkiri bdkanan">Tanggal</td>
-	</tr>
-	<?php foreach ($seminar as $data): ?>
-		<tr>
-			<td class="colpading bdkanan bdkiri"><?php echo $data->uraian ?></td>
-			<td class="colpading bdkanan"><?php echo $data->lokasi ?></td>
-			<td class="colpading bdkanan"><?php echo $data->tanggal ?></td>
-		</tr>
-	<?php endforeach ?>
-</table>
-<table class="penuh" border="1" style="margin-top: 14px">
-	<tr>
-		<td colspan="3" class="colpading bdatas bdkiri bdkanan"><b>Data Organisasi</b></td>
-	</tr>
-	<tr>
-		<td class="colpading bdkiri bdkanan">Uraian</td>
-		<td class="colpading bdkiri bdkanan">Lokasi</td>
-		<td class="colpading bdkiri bdkanan">Tanggal</td>
-	</tr>
-	<?php foreach ($organisasi as $data): ?>
-		<tr>
-			<td class="colpading bdkanan bdkiri"><?php echo $data->uraian ?></td>
-			<td class="colpading bdkanan"><?php echo $data->lokasi ?></td>
-			<td class="colpading bdkanan"><?php echo $data->tanggal ?></td>
 		</tr>
 	<?php endforeach ?>
 </table>

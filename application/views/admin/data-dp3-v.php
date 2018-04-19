@@ -13,12 +13,9 @@
 			<tr class="bg-app text-light">
 				<td class="jrktbl text-center">No</td>
 				<td class="jrktbl">Tahun</td>
-				<td class="jrktbl">Kesetiaan</td>
-				<td class="jrktbl">Prestasi</td>
-				<td class="jrktbl">Tanggung Jawab</td>
-				<td class="jrktbl">Kejujuran</td>
-				<td class="jrktbl">Kerjasama</td>
-				<td class="jrktbl">Mengetahui</td>
+				<td class="jrktbl">Rata-Rata</td>
+				<td class="jrktbl">Penilai</td>
+				<td class="jrktbl">Atasan</td>
 				<td class="jrktbl" colspan="2">Aksi</td>
 			</tr>
 		</thead>
@@ -29,12 +26,9 @@
 					<tr>
 						<td class="jrktbl text-center"><?php echo $no; ?></td>
 						<td class="jrktbl"><?php echo $data->tahun; ?></td>
-						<td class="jrktbl"><?php echo $data->kesetiaan; ?></td>
-						<td class="jrktbl"><?php echo $data->prestasi; ?></td>
-						<td class="jrktbl"><?php echo $data->tanggung_jawab; ?></td>
-						<td class="jrktbl"><?php echo $data->kejujuran; ?></td>
-						<td class="jrktbl"><?php echo $data->kerjasama; ?></td>
-						<td class="jrktbl"><?php echo $data->mengetahui; ?></td>
+						<td class="jrktbl"><?php echo $data->rata_rata; ?></td>
+						<td class="jrktbl"><?php echo $data->penilai; ?></td>
+						<td class="jrktbl"><?php echo $data->atasan; ?></td>
 						<td class="jrktbl">
 							<a href="<?php echo base_url('index.php/admin/pegawai/edit_dp3/'.$hasil->id_pegawai.'/'.$data->id_dp3) ?>" class="text-success">Edit</a>
 						</td>

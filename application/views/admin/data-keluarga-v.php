@@ -19,6 +19,7 @@
 				<td class="jrktbl">Tgl Nikah</td>
 				<td class="jrktbl">Tgl Cerai Meniggal</td>
 				<td class="jrktbl">Pekerjaan</td>
+				<td class="jrktbl">No Kartu Suami/Istri</td>
 				<td class="jrktbl" colspan="2">Aksi</td>
 			</tr>
 		</thead>
@@ -35,6 +36,7 @@
 						<td class="jrktbl"><?php echo date('d F Y', strtotime($data->tanggal_nikah)); ?></td>
 						<td class="jrktbl"><?php echo date('d F Y', strtotime($data->tanggal_cerai_meninggal)); ?></td>
 						<td class="jrktbl"><?php echo $data->pekerjaan; ?></td>
+						<td class="jrktbl"><?php echo $data->no_kartu; ?></td>
 						<td class="jrktbl">
 							<a href="<?php echo base_url('index.php/admin/pegawai/edit_keluarga/'.$hasil->id_pegawai.'/'.$data->id_data_keluarga) ?>" class="text-success">Edit</a>
 						</td>

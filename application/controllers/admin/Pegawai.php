@@ -486,7 +486,8 @@ class Pegawai extends CI_Controller {
                     'tanggal_nikah'=>$post['tanggal_nikah_thn'].'-'.$post['tanggal_nikah_bln'].'-'.$post['tanggal_nikah_hr'],
                     'uraian'=>$post['uraian'],
                     'tanggal_cerai_meninggal'=>$post['tanggal_cerai_meninggal_thn'].'-'.$post['tanggal_cerai_meninggal_bln'].'-'.$post['tanggal_cerai_meninggal_hr'],
-                    'pekerjaan'=>$post['pekerjaan']
+                    'pekerjaan'=>$post['pekerjaan'],
+                    'no_kartu'=>$post['no_kartu']
                 );
                 $this->Pegawai_m->insert_data('data_keluarga',$datainput);
                 $pesan = 'Data kerluarga baru berhasil di tambahkan';
@@ -630,7 +631,6 @@ class Pegawai extends CI_Controller {
                 $datainput = array(
                     'uraian' => $post['uraian'],
                     'id_pegawai' => $idpegawai,
-                    'nomor_sk'=>$post['nomor_sk'],
                     'tanggal_sk'=>$post['tanggal_sk_thn'].'-'.$post['tanggal_sk_bln'].'-'.$post['tanggal_sk_hr']
                 );
                 $this->Pegawai_m->insert_data('data_penghargaan',$datainput);
@@ -1077,7 +1077,6 @@ class Pegawai extends CI_Controller {
                 $post = $this->input->post();
                 $datainput = array(
                  'uraian' => $post['uraian'],
-                 'nomor_sk'=>$post['nomor_sk'],
                  'tanggal_sk'=>$post['tanggal_sk_thn'].'-'.$post['tanggal_sk_bln'].'-'.$post['tanggal_sk_hr']
              );
                 $this->Pegawai_m->update_data('data_penghargaan','id_penghargaan',$idr,$datainput);
@@ -1426,7 +1425,8 @@ class Pegawai extends CI_Controller {
                     'tanggal_nikah'=>$post['tanggal_nikah_thn'].'-'.$post['tanggal_nikah_bln'].'-'.$post['tanggal_nikah_hr'],
                     'uraian'=>$post['uraian'],
                     'tanggal_cerai_meninggal'=>$post['tanggal_cerai_meninggal_thn'].'-'.$post['tanggal_cerai_meninggal_bln'].'-'.$post['tanggal_cerai_meninggal_hr'],
-                    'pekerjaan'=>$post['pekerjaan']
+                    'pekerjaan'=>$post['pekerjaan'],
+                    'no_kartu'=>$post['no_kartu']
                 );
                 $this->Pegawai_m->update_data('data_keluarga','id_data_keluarga',$idr,$datainput);
                 $pesan = 'Data riwayat keluarga baru berhasil di diubah';

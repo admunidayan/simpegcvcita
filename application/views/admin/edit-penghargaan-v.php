@@ -9,10 +9,6 @@
 						<input type="text" class="form-control" id="uraian" name="uraian" placeholder="URAIAN" value="<?php echo $detail->uraian?>">
 					</div>
 					<div class="form-group">
-						<label class="text-info" for="nomor_sk">NOMOR SK</label>
-						<input type="text" class="form-control" id="nomor_sk" name="nomor_sk" placeholder="NOMOR SK" value="<?php echo $detail->nomor_sk?>">
-					</div>
-					<div class="form-group">
 						<label class="text-info" for="tanggal_sk">TANGGAL SK</label>
 						<div class="row">
 							<div class="col">

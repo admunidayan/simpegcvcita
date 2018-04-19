@@ -68,6 +68,10 @@
 				<label class="text-info" for="pekerjaan">PEKERJAAN</label>
 				<input type="text" class="form-control" id="pekerjaan" name="pekerjaan" placeholder="PEKERJAAN" value="<?php echo $detail->pekerjaan?>">
 			</div>
+			<div class="form-group">
+				<label class="text-info" for="pekerjaan">NO KARTU SUAMI/ISTRI</label>
+				<input type="text" class="form-control" id="no_kartu" name="no_kartu" placeholder="NO KARTU SUAMI/ISTRI" value="<?php echo $detail->no_kartu?>">
+			</div>
 		</div>
 	</div>
 	<button type="submit" name="submit" value="submit" class="btn btn-success">Simpan data</button>

@@ -13,7 +13,6 @@
 			<tr class="bg-app text-light">
 				<td class="jrktbl text-center">No</td>
 				<td class="jrktbl">Uraian</td>
-				<td class="jrktbl">Nomor SK</td>
 				<td class="jrktbl">Tanggal SK</td>
 				<td class="jrktbl" colspan="2">Aksi</td>
 			</tr>
@@ -25,7 +24,6 @@
 					<tr>
 						<td class="jrktbl text-center"><?php echo $no; ?></td>
 						<td class="jrktbl"><?php echo $data->uraian; ?></td>
-						<td class="jrktbl"><?php echo $data->nomor_sk; ?></td>
 						<td class="jrktbl"><?php echo date('d F Y', strtotime($data->tanggal_sk)); ?></td>
 						<td class="jrktbl">
 							<a href="<?php echo base_url('index.php/admin/pegawai/edit_penghargaan/'.$hasil->id_pegawai.'/'.$data->id_penghargaan) ?>" class="text-success">Edit</a>
@@ -61,10 +59,6 @@
 							<div class="form-group">
 								<label class="text-info" for="uraian">URAIAN</label>
 								<input type="text" class="form-control" id="uraian" name="uraian" placeholder="URAIAN" >
-							</div>
-							<div class="form-group">
-								<label class="text-info" for="nomor_sk">NOMOR SK</label>
-								<input type="text" class="form-control" id="nomor_sk" name="nomor_sk" placeholder="NOMOR SK" >
 							</div>
 							<div class="form-group">
 								<label class="text-info" for="tanggal_sk">TANGGAL SK</label>
