@@ -206,17 +206,15 @@
 </table>
 <table class="penuh" border="1" style="margin-top: 14px">
 	<tr>
-		<td colspan="3" class="colpading bdatas bdkiri bdkanan"><b>Data Penghargaan</b></td>
+		<td colspan="2" class="colpading bdatas bdkiri bdkanan"><b>Data Penghargaan</b></td>
 	</tr>
 	<tr>
 		<td class="colpading bdkiri bdkanan">Uraian</td>
-		<td class="colpading bdkiri bdkanan">No SK</td>
 		<td class="colpading bdkiri bdkanan">Tgl SK</td>
 	</tr>
 	<?php foreach ($penghargaan as $data): ?>
 		<tr>
 			<td class="colpading bdkanan bdkiri"><?php echo $data->uraian ?></td>
-			<td class="colpading bdkanan"><?php echo $data->nomor_sk ?></td>
 			<td class="colpading bdkanan"><?php echo $data->tanggal_sk ?></td>
 		</tr>
 	<?php endforeach ?>
