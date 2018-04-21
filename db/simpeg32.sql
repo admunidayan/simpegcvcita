@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 29 Mar 2018 pada 17.49
+-- Generation Time: 21 Apr 2018 pada 14.51
 -- Versi Server: 10.1.19-MariaDB
 -- PHP Version: 5.6.28
 
@@ -123,18 +123,19 @@ CREATE TABLE `tbl_data_keluarga` (
   `tanggal_nikah` varchar(100) NOT NULL,
   `uraian` text NOT NULL,
   `tanggal_cerai_meninggal` text NOT NULL,
-  `pekerjaan` varchar(50) NOT NULL
+  `pekerjaan` varchar(50) NOT NULL,
+  `no_kartu` varchar(50) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `tbl_data_keluarga`
 --
 
-INSERT INTO `tbl_data_keluarga` (`id_data_keluarga`, `id_pegawai`, `nama_anggota_keluarga`, `tanggal_lahir`, `status_keluarga`, `status_kawin`, `tanggal_nikah`, `uraian`, `tanggal_cerai_meninggal`, `pekerjaan`) VALUES
-(1, 1, 'HELENA P. NGOEO', '1967-04-19', '', 'KAWIN', '1967-04-19', '-', '14 November 2012', '-'),
-(2, 9, 'SITI RAHAYU', '1967-04-19', '', 'KAWIN', '1967-04-19', '-', '-', '-'),
-(3, 19, '-', '1967-04-19', '', '-', '1967-04-19', '-', '-', '-'),
-(4, 6, 'Isa Rabiati', '2012-04-19', 'istri', 'Sudah Menikah', '2012-12-12', '-', '----', 'TIDAK BEKERJA');
+INSERT INTO `tbl_data_keluarga` (`id_data_keluarga`, `id_pegawai`, `nama_anggota_keluarga`, `tanggal_lahir`, `status_keluarga`, `status_kawin`, `tanggal_nikah`, `uraian`, `tanggal_cerai_meninggal`, `pekerjaan`, `no_kartu`) VALUES
+(1, 1, 'HELENA P. NGOEO', '1967-04-19', '', 'KAWIN', '1967-04-19', '-', '14 November 2012', '-', '0'),
+(2, 9, 'SITI RAHAYU', '1967-04-19', '', 'KAWIN', '1967-04-19', '-', '-', '-', '0'),
+(3, 19, '-', '1967-04-19', '', '-', '1967-04-19', '-', '-', '-', '0'),
+(4, 6, 'Isa Rabiati', '2012-04-19', 'istri', 'Sudah Menikah', '2012-12-12', '-', '-------', 'TIDAK BEKERJA', '0');
 
 -- --------------------------------------------------------
 
@@ -300,7 +301,7 @@ INSERT INTO `tbl_data_pendidikan` (`id_pendidikan`, `id_pegawai`, `tingkat_pendi
 (7, 18, 3, 'MANAJEMEN', '-', '-', '-', '', 0),
 (8, 18, 3, 'IPS', '-', '-', '19/04/1984', '', 0),
 (9, 19, 3, 'EKONOMI JUR UMUM', '-', '-', '-', '', 0),
-(10, 6, 3, 'TES', 'TES', 'TE', '1987-12-12', '', 0);
+(10, 6, 2, 'IPA', 'TES', 'TE', '1987-12-12', '1234567890', 121212);
 
 -- --------------------------------------------------------
 
@@ -313,7 +314,6 @@ CREATE TABLE `tbl_data_penghargaan` (
   `id_pegawai` int(50) NOT NULL,
   `id_master_penghargaan` int(50) NOT NULL,
   `uraian` text NOT NULL,
-  `nomor_sk` varchar(100) NOT NULL,
   `tanggal_sk` varchar(100) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -321,9 +321,9 @@ CREATE TABLE `tbl_data_penghargaan` (
 -- Dumping data untuk tabel `tbl_data_penghargaan`
 --
 
-INSERT INTO `tbl_data_penghargaan` (`id_penghargaan`, `id_pegawai`, `id_master_penghargaan`, `uraian`, `nomor_sk`, `tanggal_sk`) VALUES
-(1, 9, 69, 'SATYALANCANA KARYA SATYA XX TAHUN', '062/TK/TAHUN 2012', '06 August 2012'),
-(2, 6, 0, 'URAIAN', 'NOMOR SK', '2017-12-12');
+INSERT INTO `tbl_data_penghargaan` (`id_penghargaan`, `id_pegawai`, `id_master_penghargaan`, `uraian`, `tanggal_sk`) VALUES
+(1, 9, 69, 'SATYALANCANA KARYA SATYA XX TAHUN', '06 August 2012'),
+(2, 6, 0, 'URAIAN', '2017-12-12');
 
 -- --------------------------------------------------------
 
@@ -348,8 +348,9 @@ CREATE TABLE `tbl_data_riwayat_golongan` (
 --
 
 INSERT INTO `tbl_data_riwayat_golongan` (`id_riwayat_golongan`, `id_pegawai`, `id_golongan`, `nomor_sk`, `tanggal_sk`, `tmt_golongan`, `nomor_bkn`, `tanggal_bkn`, `id_status_jabatan`) VALUES
-(2, 6, 9, '123445', '2012-12-12', '2012-12-12', '1234', '2018-12-12', 6),
-(3, 6, 13, '123546879', '2018-03-29', '2017-12-12', '123456789', '1992-12-12', 4);
+(2, 6, 4, '123445', '2012-12-12', '2012-12-12', '1234', '2018-12-12', 6),
+(3, 6, 13, '123546879', '2018-03-29', '2017-12-12', '123456789', '1992-12-12', 4),
+(5, 7, 4, '12345678', '1994-12-12', '1994-12-12', '12345678', '1994-12-12', 3);
 
 -- --------------------------------------------------------
 
@@ -380,7 +381,7 @@ INSERT INTO `tbl_data_riwayat_jabatan` (`id_riwayat_jabatan`, `id_pegawai`, `id_
 (4, 18, 3, 1, 1, 23, '0000-00-00', '0000-00-00', NULL, NULL),
 (5, 18, 3, 1, 1, 23, '0000-00-00', '0000-00-00', NULL, NULL),
 (6, 19, 3, 1, 1, 23, '0000-00-00', '0000-00-00', NULL, NULL),
-(7, 6, 3, 1, 1, 23, '0000-00-00', '0000-00-00', NULL, NULL);
+(8, 6, 1, 2, 6, 27, '2018-12-12', '2018-12-12', '2017-12-12', '1234567');
 
 -- --------------------------------------------------------
 
@@ -495,6 +496,22 @@ INSERT INTO `tbl_groups` (`id`, `name`, `description`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `tbl_honorer`
+--
+
+CREATE TABLE `tbl_honorer` (
+  `id_honorer` int(5) NOT NULL,
+  `nama` int(114) NOT NULL,
+  `alamat` int(114) NOT NULL,
+  `nomor_sk` int(50) NOT NULL,
+  `id_lokasi_kerja` int(50) NOT NULL,
+  `tmt` int(50) NOT NULL,
+  `no_hp` int(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `tbl_info_pt`
 --
 
@@ -519,7 +536,7 @@ CREATE TABLE `tbl_info_pt` (
 --
 
 INSERT INTO `tbl_info_pt` (`id_info_pt`, `nama_info_pt`, `alias_pt`, `kode_pt`, `kontak_1`, `kontak_2`, `kontak_3`, `kontak_4`, `header_pt`, `alamat_pt`, `slogan`, `logo_pt`, `logo_kecil_pt`) VALUES
-(1, 'Sistem Informasi Kepegawaian', 'SIMPEG', '000012', '1111-11111-1111', '1111-11111-1111', '1111-11111-1111', '1111-11111-1111', NULL, 'Pasar Wajo, Kabupaten Buton', '', 'logo-sistem-informasi-kepegawaian-20180328-1522225762.png', 'logo.png');
+(1, 'Sistem Informasi Manajemen Pegawai', 'SIMPEG', '000012', '1111-11111-1111', '1111-11111-1111', '1111-11111-1111', '1111-11111-1111', NULL, 'Pasar Wajo, Kabupaten Buton', '', 'logo-sistem-informasi-manajemen-pegawai-20180401-1522588626.png', 'logo.png');
 
 -- --------------------------------------------------------
 
@@ -1572,7 +1589,6 @@ CREATE TABLE `tbl_master_status_pegawai` (
 
 INSERT INTO `tbl_master_status_pegawai` (`id_status_pegawai`, `nama_status`) VALUES
 (1, 'PENSIUN'),
-(2, 'KONTRAK'),
 (3, 'AKTIF'),
 (4, 'MENINGGAL'),
 (5, 'PNS AKTIF'),
@@ -1642,7 +1658,7 @@ CREATE TABLE `tbl_users` (
 --
 
 INSERT INTO `tbl_users` (`id`, `id_mhs_pt`, `ip_address`, `username`, `password`, `repassword`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`, `hostname`, `port`, `userfeeder`, `passfeeder`, `jabatan`, `profile`) VALUES
-(1, NULL, '127.0.0.1', 'administrator', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', 'password', '', 'admin@admin.com', '', NULL, NULL, NULL, 1268889823, 1522337173, 1, 'Admin', 'istrator', 'ADMIN', '08239566666', 'localhost', '8082', '091006', 'palagimatA', 3, 'avatar.jpg'),
+(1, NULL, '127.0.0.1', 'administrator', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', 'password', '', 'admin@admin.com', '', NULL, NULL, NULL, 1268889823, 1524203032, 1, 'Admin', 'istrator', 'ADMIN', '08239566666', 'localhost', '8082', '091006', 'palagimatA', 3, 'avatar.jpg'),
 (15, NULL, '::1', 'ejhayoe', '$2y$08$sMK/KvMzOXPZBanMhhAggu4A6FQ2EWRNvY4hpJNoGpjgzgqhZF9xW', 'ejhayoe', NULL, 'admin@admin.com', NULL, NULL, NULL, NULL, 1519736735, NULL, 1, 'Reza', 'Rafiq', 'Sistem Informasi Kepegawaian', '123456789', NULL, NULL, NULL, NULL, 0, 'avatar.jpg');
 
 -- --------------------------------------------------------
@@ -1774,6 +1790,12 @@ ALTER TABLE `tbl_data_seminar`
 --
 ALTER TABLE `tbl_groups`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_honorer`
+--
+ALTER TABLE `tbl_honorer`
+  ADD PRIMARY KEY (`id_honorer`);
 
 --
 -- Indexes for table `tbl_info_pt`
@@ -1962,7 +1984,7 @@ ALTER TABLE `tbl_data_pelatihan`
 -- AUTO_INCREMENT for table `tbl_data_pendidikan`
 --
 ALTER TABLE `tbl_data_pendidikan`
-  MODIFY `id_pendidikan` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_pendidikan` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `tbl_data_penghargaan`
 --
@@ -1972,12 +1994,12 @@ ALTER TABLE `tbl_data_penghargaan`
 -- AUTO_INCREMENT for table `tbl_data_riwayat_golongan`
 --
 ALTER TABLE `tbl_data_riwayat_golongan`
-  MODIFY `id_riwayat_golongan` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_riwayat_golongan` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `tbl_data_riwayat_jabatan`
 --
 ALTER TABLE `tbl_data_riwayat_jabatan`
-  MODIFY `id_riwayat_jabatan` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_riwayat_jabatan` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `tbl_data_riwayat_pangkat`
 --
@@ -1993,6 +2015,11 @@ ALTER TABLE `tbl_data_seminar`
 --
 ALTER TABLE `tbl_groups`
   MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+--
+-- AUTO_INCREMENT for table `tbl_honorer`
+--
+ALTER TABLE `tbl_honorer`
+  MODIFY `id_honorer` int(5) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `tbl_info_pt`
 --
