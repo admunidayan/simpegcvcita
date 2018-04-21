@@ -30,7 +30,7 @@
 					<tr>
 						<td class="jrktbl text-center"><?php echo $no; ?></td>
 						<td class="jrktbl"><?php echo $this->Admin_m->detail_data_order('master_jenis_jabatan','id_jenis_jabatan',$data->id_jenis_jabatan)->nama_jenis_jabatan; ?></td>
-						<td class="jrktbl"><?php echo $this->Admin_m->detail_data_order('master_jabatan','id_jabatan',$data->id_jabatan)->nama_jabatan; ?></td>
+						<td class="jrktbl"><?php echo $data->nm_jabatan; ?></td>
 						<td class="jrktbl"><?php echo $this->Admin_m->detail_data_order('master_satuan_kerja','id_satuan_kerja',$data->id_satuan_kerja)->nama_satuan_kerja; ?></td>
 						<td class="jrktbl"><?php echo $this->Admin_m->detail_data_order('master_eselon','id_eselon',$data->id_eselon)->nama_eselon;?></td>
 						<td class="jrktbl"><?php echo $data->tmt_jabatan_rj; ?></td>
@@ -77,11 +77,8 @@
 							</div>
 								<div class="form-group">
 								<label class="text-info" for="id_jabatan">NAMA JABATAN</label>
-								<select class="form-control" name="id_jabatan">
-									<?php foreach ($jabatan as $data): ?>
-										<option value="<?php echo $data->id_jabatan ?>"><?php echo $data->nama_jabatan; ?></option>
-									<?php endforeach ?>
-								</select>
+								
+									<input type="text" class="form-control" id="id_jabatan" name="nm_jabatan" placeholder="Nama Jabatan">
 							</div>
 							<div class="form-group">
 								<label class="text-info" for="id_satuan_kerja">SATUAN KERJA</label>

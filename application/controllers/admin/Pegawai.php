@@ -542,7 +542,7 @@ class Pegawai extends CI_Controller {
                 $datainput = array(
                     'id_pegawai' => $idpegawai,
                     'id_jenis_jabatan'=>$post['id_jenis_jabatan'],
-                    'id_jabatan'=>$post['id_jabatan'],
+                    'nm_jabatan'=>$post['nm_jabatan'],
                     'id_satuan_kerja'=>$post['id_satuan_kerja'],
                     'id_eselon'=>$post['id_eselon'],
                     'tmt_jabatan_rj'=>$post['tmt_jabatan_rj_thn'].'-'.$post['tmt_jabatan_rj_bln'].'-'.$post['tmt_jabatan_rj_hr'],

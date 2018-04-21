@@ -14,12 +14,7 @@
 					</div>
 					<div class="form-group">
 						<label class="text-info">NAMA JABATAN</label>
-						<select class="form-control" name="id_jabatan">
-							<option value="<?php echo $detail->id_jabatan ?>">--<?php echo @$this->Admin_m->detail_data_order('master_jabatan','id_jabatan',$detail->id_jabatan)->nama_jabatan; ?>--</option>
-							<?php foreach ($jabatan as $data): ?>
-								<option value="<?php echo $data->id_jabatan ?>"><?php echo $data->nama_jabatan; ?></option>
-							<?php endforeach ?>
-						</select>
+ 						<input type="text" class="form-control" id="id_jabatan" name="nm_jabatan" value="<?php echo $detail->nm_jabatan ?>" placeholder="Nama Jabatan">
 					</div>
 					<div class="form-group">
 						<label class="text-info">SATUAN KERJA</label>
