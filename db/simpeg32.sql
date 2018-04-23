@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 21 Apr 2018 pada 15.24
--- Versi Server: 10.1.19-MariaDB
--- PHP Version: 5.6.28
+-- Generation Time: Apr 23, 2018 at 04:11 PM
+-- Server version: 10.1.16-MariaDB
+-- PHP Version: 5.6.24
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -23,7 +23,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_data_dp3`
+-- Table structure for table `tbl_data_dp3`
 --
 
 CREATE TABLE `tbl_data_dp3` (
@@ -45,7 +45,7 @@ CREATE TABLE `tbl_data_dp3` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_data_dp3`
+-- Dumping data for table `tbl_data_dp3`
 --
 
 INSERT INTO `tbl_data_dp3` (`id_dp3`, `id_pegawai`, `tahun`, `kesetiaan`, `prestasi`, `tanggung_jawab`, `ketaatan`, `kejujuran`, `kerjasama`, `prakarsa`, `kepemimpinan`, `rata_rata`, `atasan`, `penilai`, `mengetahui`) VALUES
@@ -56,7 +56,7 @@ INSERT INTO `tbl_data_dp3` (`id_dp3`, `id_pegawai`, `tahun`, `kesetiaan`, `prest
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_data_gaji_pokok`
+-- Table structure for table `tbl_data_gaji_pokok`
 --
 
 CREATE TABLE `tbl_data_gaji_pokok` (
@@ -74,7 +74,7 @@ CREATE TABLE `tbl_data_gaji_pokok` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_data_gaji_pokok`
+-- Dumping data for table `tbl_data_gaji_pokok`
 --
 
 INSERT INTO `tbl_data_gaji_pokok` (`id_gaji_pokok`, `id_pegawai`, `id_golongan`, `nomor_sk`, `tanggal_sk`, `dasar_perubahan`, `gaji_pokok`, `tanggal_mulai`, `tanggal_selesai`, `masa_kerja`, `pejabat_menetapkan`) VALUES
@@ -84,7 +84,7 @@ INSERT INTO `tbl_data_gaji_pokok` (`id_gaji_pokok`, `id_pegawai`, `id_golongan`,
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_data_hukuman`
+-- Table structure for table `tbl_data_hukuman`
 --
 
 CREATE TABLE `tbl_data_hukuman` (
@@ -101,7 +101,7 @@ CREATE TABLE `tbl_data_hukuman` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_data_hukuman`
+-- Dumping data for table `tbl_data_hukuman`
 --
 
 INSERT INTO `tbl_data_hukuman` (`id_hukuman`, `id_pegawai`, `id_master_hukuman`, `uraian`, `nomor_sk`, `tanggal_sk`, `tanggal_mulai`, `tanggal_selesai`, `masa_berlaku`, `pejabat_menetapkan`) VALUES
@@ -110,7 +110,7 @@ INSERT INTO `tbl_data_hukuman` (`id_hukuman`, `id_pegawai`, `id_master_hukuman`,
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_data_keluarga`
+-- Table structure for table `tbl_data_keluarga`
 --
 
 CREATE TABLE `tbl_data_keluarga` (
@@ -128,7 +128,7 @@ CREATE TABLE `tbl_data_keluarga` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_data_keluarga`
+-- Dumping data for table `tbl_data_keluarga`
 --
 
 INSERT INTO `tbl_data_keluarga` (`id_data_keluarga`, `id_pegawai`, `nama_anggota_keluarga`, `tanggal_lahir`, `status_keluarga`, `status_kawin`, `tanggal_nikah`, `uraian`, `tanggal_cerai_meninggal`, `pekerjaan`, `no_kartu`) VALUES
@@ -140,7 +140,7 @@ INSERT INTO `tbl_data_keluarga` (`id_data_keluarga`, `id_pegawai`, `nama_anggota
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_data_organisasi`
+-- Table structure for table `tbl_data_organisasi`
 --
 
 CREATE TABLE `tbl_data_organisasi` (
@@ -152,7 +152,7 @@ CREATE TABLE `tbl_data_organisasi` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_data_organisasi`
+-- Dumping data for table `tbl_data_organisasi`
 --
 
 INSERT INTO `tbl_data_organisasi` (`id_organisasi`, `id_pegawai`, `uraian`, `lokasi`, `tanggal`) VALUES
@@ -161,7 +161,7 @@ INSERT INTO `tbl_data_organisasi` (`id_organisasi`, `id_pegawai`, `uraian`, `lok
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_data_pegawai`
+-- Table structure for table `tbl_data_pegawai`
 --
 
 CREATE TABLE `tbl_data_pegawai` (
@@ -206,7 +206,7 @@ CREATE TABLE `tbl_data_pegawai` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_data_pegawai`
+-- Dumping data for table `tbl_data_pegawai`
 --
 
 INSERT INTO `tbl_data_pegawai` (`id_pegawai`, `nip`, `nip_lama`, `no_kartu_pegawai`, `nama_pegawai`, `agama`, `tempat_lahir`, `tanggal_lahir`, `nomor_kk`, `nomor_ktp`, `jenis_kelamin`, `usia`, `status_pegawai`, `tanggal_pengangkatan_cpns`, `alamat`, `no_npwp`, `kartu_askes_pegawai`, `status_pegawai_pangkat`, `id_golongan`, `nomor_sk_pangkat`, `tanggal_sk_pangkat`, `tanggal_mulai_pangkat`, `tanggal_selesai_pangkat`, `id_status_jabatan`, `id_jabatan`, `id_unit_kerja`, `id_satuan_kerja`, `nomor_sk_jabatan`, `tanggal_sk_jabatan`, `tanggal_mulai_jabatan`, `tanggal_selesai_jabatan`, `id_eselon`, `tmt_eselon`, `tmt_cpns`, `tmt_pns`, `foto`, `gelar_dpn`, `gelar_belakang`) VALUES
@@ -232,12 +232,13 @@ INSERT INTO `tbl_data_pegawai` (`id_pegawai`, `nip`, `nip_lama`, `no_kartu_pegaw
 (21, '196006012006041003', '110058300', '-', 'JAN MOVIE SEROY ST', 1, 'MINAHASA, PROPINSI SULAWESI UTARA', '01 Juni 1960', '', '', 'Laki-Laki', '52 tahun,', '5', '01 April 2006', '-', '-', '-', '5', 18, 'DB/709/B/2010-J', '26 Juli 2010', '26 Juli 2010', '-', 2, 2345, 31, 11, '11/KPTS/BS/2011', '16 Maret 2011', '16 Maret 2011', '-', 32, '-', '0000-00-00', '0000-00-00', '', NULL, NULL),
 (22, '1234567654', '12345678654', '123456787654', 'qwertyuyt', 1, 'BAUBAU', '24-12-1993', '', '', 'Laki-Laki', '25 Tahun', '7', '06-04-2015', 'Jalan Sultan Hasanuddin Baubau', '123456765', '1234567654', '0', 18, '', '', '', '', 2, 0, 0, 21, '', '', '', '', 0, '', '0000-00-00', '0000-00-00', 'avatar.png', NULL, NULL),
 (23, '12345676432', '234567876543', '3456789876543', 'Hapzih, SST, SKM, MM', 1, 'Kendari', '21-05-1989', '', '', 'Laki-Laki', '', '6', '06-04-2015', 'jalan Gadjha Madha', '2345678987654', '23456787654', '', 13, '', '', '', '', 0, 0, 0, 19, '', '', '', '', 0, '', '0000-00-00', '0000-00-00', 'avatar.png', NULL, NULL),
-(24, '123456', '', '', 'MUGI', 1, '', '', '', '', 'Laki-Laki', '', '1', '--', '', '', '', '', 4, '', '', '', '', 0, 0, 0, 0, '', '', '', '', 0, '', '0000-00-00', '0000-00-00', 'avatar.png', NULL, NULL);
+(24, '123456', '', '', 'MUGI', 1, '', '', '', '', 'Laki-Laki', '', '1', '--', '', '', '', '', 4, '', '', '', '', 0, 0, 0, 0, '', '', '', '', 0, '', '0000-00-00', '0000-00-00', 'avatar.png', NULL, NULL),
+(25, '', '', '', 'iyonah', 1, '', '', '', '', 'Laki-Laki', '', '1', '--', '', '', '', '', 4, '', '', '', '', 0, 0, 0, 0, '', '', '', '', 0, '', '0000-00-00', '0000-00-00', 'avatar.png', NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_data_pelatihan`
+-- Table structure for table `tbl_data_pelatihan`
 --
 
 CREATE TABLE `tbl_data_pelatihan` (
@@ -252,7 +253,7 @@ CREATE TABLE `tbl_data_pelatihan` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_data_pelatihan`
+-- Dumping data for table `tbl_data_pelatihan`
 --
 
 INSERT INTO `tbl_data_pelatihan` (`id_pelatihan`, `id_pegawai`, `id_master_pelatihan`, `uraian`, `lokasi`, `tanggal_sertifikat`, `jam_pelatihan`, `negara`) VALUES
@@ -274,7 +275,7 @@ INSERT INTO `tbl_data_pelatihan` (`id_pelatihan`, `id_pegawai`, `id_master_pelat
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_data_pendidikan`
+-- Table structure for table `tbl_data_pendidikan`
 --
 
 CREATE TABLE `tbl_data_pendidikan` (
@@ -290,7 +291,7 @@ CREATE TABLE `tbl_data_pendidikan` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_data_pendidikan`
+-- Dumping data for table `tbl_data_pendidikan`
 --
 
 INSERT INTO `tbl_data_pendidikan` (`id_pendidikan`, `id_pegawai`, `tingkat_pendidikan`, `jurusan`, `sekolah`, `tempat_sekolah`, `tanggal_lulus`, `nomor_ijazah`, `tahun_lulus`) VALUES
@@ -303,12 +304,12 @@ INSERT INTO `tbl_data_pendidikan` (`id_pendidikan`, `id_pegawai`, `tingkat_pendi
 (7, 18, 3, 'MANAJEMEN', '-', '-', '-', '', 0),
 (8, 18, 3, 'IPS', '-', '-', '19/04/1984', '', 0),
 (9, 19, 3, 'EKONOMI JUR UMUM', '-', '-', '-', '', 0),
-(10, 6, 2, 'IPA', 'TES', 'TE', '1987-12-12', '1234567890', 121212);
+(12, 6, 0, '', '', '', '--', '', 0);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_data_penghargaan`
+-- Table structure for table `tbl_data_penghargaan`
 --
 
 CREATE TABLE `tbl_data_penghargaan` (
@@ -320,7 +321,7 @@ CREATE TABLE `tbl_data_penghargaan` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_data_penghargaan`
+-- Dumping data for table `tbl_data_penghargaan`
 --
 
 INSERT INTO `tbl_data_penghargaan` (`id_penghargaan`, `id_pegawai`, `id_master_penghargaan`, `uraian`, `tanggal_sk`) VALUES
@@ -330,7 +331,7 @@ INSERT INTO `tbl_data_penghargaan` (`id_penghargaan`, `id_pegawai`, `id_master_p
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_data_riwayat_golongan`
+-- Table structure for table `tbl_data_riwayat_golongan`
 --
 
 CREATE TABLE `tbl_data_riwayat_golongan` (
@@ -346,7 +347,7 @@ CREATE TABLE `tbl_data_riwayat_golongan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_data_riwayat_golongan`
+-- Dumping data for table `tbl_data_riwayat_golongan`
 --
 
 INSERT INTO `tbl_data_riwayat_golongan` (`id_riwayat_golongan`, `id_pegawai`, `id_golongan`, `nomor_sk`, `tanggal_sk`, `tmt_golongan`, `nomor_bkn`, `tanggal_bkn`, `id_status_jabatan`) VALUES
@@ -357,13 +358,14 @@ INSERT INTO `tbl_data_riwayat_golongan` (`id_riwayat_golongan`, `id_pegawai`, `i
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_data_riwayat_jabatan`
+-- Table structure for table `tbl_data_riwayat_jabatan`
 --
 
 CREATE TABLE `tbl_data_riwayat_jabatan` (
   `id_riwayat_jabatan` int(50) NOT NULL,
   `id_pegawai` int(50) NOT NULL,
   `id_jenis_jabatan` int(11) NOT NULL,
+  `nm_jabatan` varchar(114) DEFAULT NULL,
   `id_jabatan` int(11) NOT NULL,
   `id_satuan_kerja` int(11) NOT NULL,
   `id_eselon` int(11) NOT NULL,
@@ -374,21 +376,21 @@ CREATE TABLE `tbl_data_riwayat_jabatan` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_data_riwayat_jabatan`
+-- Dumping data for table `tbl_data_riwayat_jabatan`
 --
 
-INSERT INTO `tbl_data_riwayat_jabatan` (`id_riwayat_jabatan`, `id_pegawai`, `id_jenis_jabatan`, `id_jabatan`, `id_satuan_kerja`, `id_eselon`, `tmt_jabatan_rj`, `tanggal_sk_rj`, `tmt_pelantikan_rj`, `nomor_sk`) VALUES
-(2, 15, 3, 1, 1, 23, '0000-00-00', '0000-00-00', NULL, NULL),
-(3, 16, 3, 1, 1, 23, '0000-00-00', '0000-00-00', NULL, NULL),
-(4, 18, 3, 1, 1, 23, '0000-00-00', '0000-00-00', NULL, NULL),
-(5, 18, 3, 1, 1, 23, '0000-00-00', '0000-00-00', NULL, NULL),
-(6, 19, 3, 1, 1, 23, '0000-00-00', '0000-00-00', NULL, NULL),
-(8, 6, 1, 2, 6, 27, '2018-12-12', '2018-12-12', '2017-12-12', '1234567');
+INSERT INTO `tbl_data_riwayat_jabatan` (`id_riwayat_jabatan`, `id_pegawai`, `id_jenis_jabatan`, `nm_jabatan`, `id_jabatan`, `id_satuan_kerja`, `id_eselon`, `tmt_jabatan_rj`, `tanggal_sk_rj`, `tmt_pelantikan_rj`, `nomor_sk`) VALUES
+(2, 15, 3, NULL, 1, 1, 23, '0000-00-00', '0000-00-00', NULL, NULL),
+(3, 16, 3, NULL, 1, 1, 23, '0000-00-00', '0000-00-00', NULL, NULL),
+(4, 18, 3, NULL, 1, 1, 23, '0000-00-00', '0000-00-00', NULL, NULL),
+(5, 18, 3, NULL, 1, 1, 23, '0000-00-00', '0000-00-00', NULL, NULL),
+(6, 19, 3, NULL, 1, 1, 23, '0000-00-00', '0000-00-00', NULL, NULL),
+(8, 6, 1, 'kosong', 0, 6, 27, '2018-12-12', '2018-12-12', '2017-12-12', '1234567');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_data_riwayat_pangkat`
+-- Table structure for table `tbl_data_riwayat_pangkat`
 --
 
 CREATE TABLE `tbl_data_riwayat_pangkat` (
@@ -406,7 +408,7 @@ CREATE TABLE `tbl_data_riwayat_pangkat` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_data_riwayat_pangkat`
+-- Dumping data for table `tbl_data_riwayat_pangkat`
 --
 
 INSERT INTO `tbl_data_riwayat_pangkat` (`id_riwayat_pangkat`, `id_pegawai`, `id_golongan`, `status`, `nomor_sk`, `tanggal_sk`, `tanggal_mulai`, `tanggal_selesai`, `masa_kerja`, `masa_kerja_bulan`, `masa_kerja_tahun`) VALUES
@@ -426,7 +428,7 @@ INSERT INTO `tbl_data_riwayat_pangkat` (`id_riwayat_pangkat`, `id_pegawai`, `id_
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_data_seminar`
+-- Table structure for table `tbl_data_seminar`
 --
 
 CREATE TABLE `tbl_data_seminar` (
@@ -438,7 +440,7 @@ CREATE TABLE `tbl_data_seminar` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_data_seminar`
+-- Dumping data for table `tbl_data_seminar`
 --
 
 INSERT INTO `tbl_data_seminar` (`id_seminar`, `id_pegawai`, `uraian`, `lokasi`, `tanggal`) VALUES
@@ -447,7 +449,7 @@ INSERT INTO `tbl_data_seminar` (`id_seminar`, `id_pegawai`, `uraian`, `lokasi`, 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_groups`
+-- Table structure for table `tbl_groups`
 --
 
 CREATE TABLE `tbl_groups` (
@@ -457,7 +459,7 @@ CREATE TABLE `tbl_groups` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data untuk tabel `tbl_groups`
+-- Dumping data for table `tbl_groups`
 --
 
 INSERT INTO `tbl_groups` (`id`, `name`, `description`) VALUES
@@ -498,23 +500,35 @@ INSERT INTO `tbl_groups` (`id`, `name`, `description`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_honorer`
+-- Table structure for table `tbl_honorer`
 --
 
 CREATE TABLE `tbl_honorer` (
   `id_honorer` int(5) NOT NULL,
-  `nama` int(114) NOT NULL,
-  `alamat` int(114) NOT NULL,
-  `nomor_sk` int(50) NOT NULL,
-  `id_lokasi_kerja` int(50) NOT NULL,
-  `tmt` int(50) NOT NULL,
-  `no_hp` int(15) NOT NULL
+  `nama` varchar(114) NOT NULL,
+  `alamat` varchar(114) NOT NULL,
+  `nomor_sk` varchar(50) NOT NULL,
+  `id_lokasi_kerja` varchar(50) DEFAULT NULL,
+  `tmt` varchar(50) DEFAULT NULL,
+  `no_hp` varchar(15) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_honorer`
+--
+
+INSERT INTO `tbl_honorer` (`id_honorer`, `nama`, `alamat`, `nomor_sk`, `id_lokasi_kerja`, `tmt`, `no_hp`) VALUES
+(1, 'Mugi', 'dimanasaja', '1233496i0492', '3', '213456789', '852345678'),
+(2, 'Reza', 'disitumi', '123456789', '4', '13245678', '82345675'),
+(3, 'iyar1', 'itumi', '2213245678', '1', '1234', '2147483647'),
+(4, 'ok', '', '', '9', '0', '0'),
+(5, 'simpan', '', '', '1', '0', '0'),
+(6, 'aris', 'disanaeh', '1234557', '1', '1994-12-12', '897435896');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_info_pt`
+-- Table structure for table `tbl_info_pt`
 --
 
 CREATE TABLE `tbl_info_pt` (
@@ -534,7 +548,7 @@ CREATE TABLE `tbl_info_pt` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_info_pt`
+-- Dumping data for table `tbl_info_pt`
 --
 
 INSERT INTO `tbl_info_pt` (`id_info_pt`, `nama_info_pt`, `alias_pt`, `kode_pt`, `kontak_1`, `kontak_2`, `kontak_3`, `kontak_4`, `header_pt`, `alamat_pt`, `slogan`, `logo_pt`, `logo_kecil_pt`) VALUES
@@ -543,7 +557,7 @@ INSERT INTO `tbl_info_pt` (`id_info_pt`, `nama_info_pt`, `alias_pt`, `kode_pt`, 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_jk`
+-- Table structure for table `tbl_jk`
 --
 
 CREATE TABLE `tbl_jk` (
@@ -553,7 +567,7 @@ CREATE TABLE `tbl_jk` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_jk`
+-- Dumping data for table `tbl_jk`
 --
 
 INSERT INTO `tbl_jk` (`id_jk`, `kode_jk`, `nm_jk`) VALUES
@@ -563,7 +577,7 @@ INSERT INTO `tbl_jk` (`id_jk`, `kode_jk`, `nm_jk`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_login_attempts`
+-- Table structure for table `tbl_login_attempts`
 --
 
 CREATE TABLE `tbl_login_attempts` (
@@ -576,7 +590,7 @@ CREATE TABLE `tbl_login_attempts` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_master_agama`
+-- Table structure for table `tbl_master_agama`
 --
 
 CREATE TABLE `tbl_master_agama` (
@@ -585,7 +599,7 @@ CREATE TABLE `tbl_master_agama` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_master_agama`
+-- Dumping data for table `tbl_master_agama`
 --
 
 INSERT INTO `tbl_master_agama` (`id_agama`, `nm_agama`) VALUES
@@ -599,7 +613,7 @@ INSERT INTO `tbl_master_agama` (`id_agama`, `nm_agama`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_master_eselon`
+-- Table structure for table `tbl_master_eselon`
 --
 
 CREATE TABLE `tbl_master_eselon` (
@@ -609,7 +623,7 @@ CREATE TABLE `tbl_master_eselon` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_master_eselon`
+-- Dumping data for table `tbl_master_eselon`
 --
 
 INSERT INTO `tbl_master_eselon` (`id_eselon`, `nama_eselon`, `level`) VALUES
@@ -629,7 +643,7 @@ INSERT INTO `tbl_master_eselon` (`id_eselon`, `nama_eselon`, `level`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_master_golongan`
+-- Table structure for table `tbl_master_golongan`
 --
 
 CREATE TABLE `tbl_master_golongan` (
@@ -640,7 +654,7 @@ CREATE TABLE `tbl_master_golongan` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_master_golongan`
+-- Dumping data for table `tbl_master_golongan`
 --
 
 INSERT INTO `tbl_master_golongan` (`id_golongan`, `golongan`, `uraian`, `level`) VALUES
@@ -666,7 +680,7 @@ INSERT INTO `tbl_master_golongan` (`id_golongan`, `golongan`, `uraian`, `level`)
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_master_hukuman`
+-- Table structure for table `tbl_master_hukuman`
 --
 
 CREATE TABLE `tbl_master_hukuman` (
@@ -675,7 +689,7 @@ CREATE TABLE `tbl_master_hukuman` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_master_hukuman`
+-- Dumping data for table `tbl_master_hukuman`
 --
 
 INSERT INTO `tbl_master_hukuman` (`id_hukuman`, `nama_hukuman`) VALUES
@@ -693,7 +707,7 @@ INSERT INTO `tbl_master_hukuman` (`id_hukuman`, `nama_hukuman`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_master_jabatan`
+-- Table structure for table `tbl_master_jabatan`
 --
 
 CREATE TABLE `tbl_master_jabatan` (
@@ -703,7 +717,7 @@ CREATE TABLE `tbl_master_jabatan` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_master_jabatan`
+-- Dumping data for table `tbl_master_jabatan`
 --
 
 INSERT INTO `tbl_master_jabatan` (`id_jabatan`, `nama_jabatan`, `level`) VALUES
@@ -713,7 +727,7 @@ INSERT INTO `tbl_master_jabatan` (`id_jabatan`, `nama_jabatan`, `level`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_master_jenis_jabatan`
+-- Table structure for table `tbl_master_jenis_jabatan`
 --
 
 CREATE TABLE `tbl_master_jenis_jabatan` (
@@ -723,7 +737,7 @@ CREATE TABLE `tbl_master_jenis_jabatan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_master_jenis_jabatan`
+-- Dumping data for table `tbl_master_jenis_jabatan`
 --
 
 INSERT INTO `tbl_master_jenis_jabatan` (`id_jenis_jabatan`, `nama_jenis_jabatan`, `kode_jenis_jabatan`) VALUES
@@ -734,7 +748,7 @@ INSERT INTO `tbl_master_jenis_jabatan` (`id_jenis_jabatan`, `nama_jenis_jabatan`
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_master_lokasi_kerja`
+-- Table structure for table `tbl_master_lokasi_kerja`
 --
 
 CREATE TABLE `tbl_master_lokasi_kerja` (
@@ -745,7 +759,7 @@ CREATE TABLE `tbl_master_lokasi_kerja` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_master_lokasi_kerja`
+-- Dumping data for table `tbl_master_lokasi_kerja`
 --
 
 INSERT INTO `tbl_master_lokasi_kerja` (`id_lokasi_kerja`, `lokasi_kerja`, `unit_kerja_induk`, `alamat_loker`) VALUES
@@ -798,7 +812,7 @@ INSERT INTO `tbl_master_lokasi_kerja` (`id_lokasi_kerja`, `lokasi_kerja`, `unit_
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_master_lokasi_pelatihan`
+-- Table structure for table `tbl_master_lokasi_pelatihan`
 --
 
 CREATE TABLE `tbl_master_lokasi_pelatihan` (
@@ -807,7 +821,7 @@ CREATE TABLE `tbl_master_lokasi_pelatihan` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_master_lokasi_pelatihan`
+-- Dumping data for table `tbl_master_lokasi_pelatihan`
 --
 
 INSERT INTO `tbl_master_lokasi_pelatihan` (`id_lokasi_pelatihan`, `nama_lokasi`) VALUES
@@ -830,7 +844,7 @@ INSERT INTO `tbl_master_lokasi_pelatihan` (`id_lokasi_pelatihan`, `nama_lokasi`)
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_master_pelatihan`
+-- Table structure for table `tbl_master_pelatihan`
 --
 
 CREATE TABLE `tbl_master_pelatihan` (
@@ -840,7 +854,7 @@ CREATE TABLE `tbl_master_pelatihan` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_master_pelatihan`
+-- Dumping data for table `tbl_master_pelatihan`
 --
 
 INSERT INTO `tbl_master_pelatihan` (`id_pelatihan`, `nama_pelatihan`, `level`) VALUES
@@ -1243,7 +1257,7 @@ INSERT INTO `tbl_master_pelatihan` (`id_pelatihan`, `nama_pelatihan`, `level`) V
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_master_pendidikan`
+-- Table structure for table `tbl_master_pendidikan`
 --
 
 CREATE TABLE `tbl_master_pendidikan` (
@@ -1252,7 +1266,7 @@ CREATE TABLE `tbl_master_pendidikan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_master_pendidikan`
+-- Dumping data for table `tbl_master_pendidikan`
 --
 
 INSERT INTO `tbl_master_pendidikan` (`id`, `pendidikan`) VALUES
@@ -1270,7 +1284,7 @@ INSERT INTO `tbl_master_pendidikan` (`id`, `pendidikan`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_master_penghargaan`
+-- Table structure for table `tbl_master_penghargaan`
 --
 
 CREATE TABLE `tbl_master_penghargaan` (
@@ -1279,7 +1293,7 @@ CREATE TABLE `tbl_master_penghargaan` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_master_penghargaan`
+-- Dumping data for table `tbl_master_penghargaan`
 --
 
 INSERT INTO `tbl_master_penghargaan` (`id_penghargaan`, `nama_penghargaan`) VALUES
@@ -1401,7 +1415,7 @@ INSERT INTO `tbl_master_penghargaan` (`id_penghargaan`, `nama_penghargaan`) VALU
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_master_ppk`
+-- Table structure for table `tbl_master_ppk`
 --
 
 CREATE TABLE `tbl_master_ppk` (
@@ -1411,7 +1425,7 @@ CREATE TABLE `tbl_master_ppk` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_master_ppk`
+-- Dumping data for table `tbl_master_ppk`
 --
 
 INSERT INTO `tbl_master_ppk` (`id_ppk`, `nama_ppk`, `parent_satuan_kerja`) VALUES
@@ -1450,7 +1464,7 @@ INSERT INTO `tbl_master_ppk` (`id_ppk`, `nama_ppk`, `parent_satuan_kerja`) VALUE
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_master_satuan_kerja`
+-- Table structure for table `tbl_master_satuan_kerja`
 --
 
 CREATE TABLE `tbl_master_satuan_kerja` (
@@ -1461,7 +1475,7 @@ CREATE TABLE `tbl_master_satuan_kerja` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_master_satuan_kerja`
+-- Dumping data for table `tbl_master_satuan_kerja`
 --
 
 INSERT INTO `tbl_master_satuan_kerja` (`id_satuan_kerja`, `nama_satuan_kerja`, `parent_unit`, `alamat`) VALUES
@@ -1514,7 +1528,7 @@ INSERT INTO `tbl_master_satuan_kerja` (`id_satuan_kerja`, `nama_satuan_kerja`, `
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_master_status_dalam_keluarga`
+-- Table structure for table `tbl_master_status_dalam_keluarga`
 --
 
 CREATE TABLE `tbl_master_status_dalam_keluarga` (
@@ -1523,7 +1537,7 @@ CREATE TABLE `tbl_master_status_dalam_keluarga` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_master_status_dalam_keluarga`
+-- Dumping data for table `tbl_master_status_dalam_keluarga`
 --
 
 INSERT INTO `tbl_master_status_dalam_keluarga` (`id`, `status_keluarga`) VALUES
@@ -1534,7 +1548,7 @@ INSERT INTO `tbl_master_status_dalam_keluarga` (`id`, `status_keluarga`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_master_status_jabatan`
+-- Table structure for table `tbl_master_status_jabatan`
 --
 
 CREATE TABLE `tbl_master_status_jabatan` (
@@ -1543,7 +1557,7 @@ CREATE TABLE `tbl_master_status_jabatan` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_master_status_jabatan`
+-- Dumping data for table `tbl_master_status_jabatan`
 --
 
 INSERT INTO `tbl_master_status_jabatan` (`id_status_jabatan`, `nama_jabatan`) VALUES
@@ -1556,7 +1570,7 @@ INSERT INTO `tbl_master_status_jabatan` (`id_status_jabatan`, `nama_jabatan`) VA
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_master_status_kawin`
+-- Table structure for table `tbl_master_status_kawin`
 --
 
 CREATE TABLE `tbl_master_status_kawin` (
@@ -1565,7 +1579,7 @@ CREATE TABLE `tbl_master_status_kawin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_master_status_kawin`
+-- Dumping data for table `tbl_master_status_kawin`
 --
 
 INSERT INTO `tbl_master_status_kawin` (`id`, `status_kawin`) VALUES
@@ -1577,7 +1591,7 @@ INSERT INTO `tbl_master_status_kawin` (`id`, `status_kawin`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_master_status_pegawai`
+-- Table structure for table `tbl_master_status_pegawai`
 --
 
 CREATE TABLE `tbl_master_status_pegawai` (
@@ -1586,7 +1600,7 @@ CREATE TABLE `tbl_master_status_pegawai` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_master_status_pegawai`
+-- Dumping data for table `tbl_master_status_pegawai`
 --
 
 INSERT INTO `tbl_master_status_pegawai` (`id_status_pegawai`, `nama_status`) VALUES
@@ -1599,7 +1613,7 @@ INSERT INTO `tbl_master_status_pegawai` (`id_status_pegawai`, `nama_status`) VAL
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_master_unit_kerja`
+-- Table structure for table `tbl_master_unit_kerja`
 --
 
 CREATE TABLE `tbl_master_unit_kerja` (
@@ -1610,7 +1624,7 @@ CREATE TABLE `tbl_master_unit_kerja` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_master_unit_kerja`
+-- Dumping data for table `tbl_master_unit_kerja`
 --
 
 INSERT INTO `tbl_master_unit_kerja` (`id_unit_kerja`, `nama_unit_kerja`, `eselon`, `parent_unit`) VALUES
@@ -1624,7 +1638,7 @@ INSERT INTO `tbl_master_unit_kerja` (`id_unit_kerja`, `nama_unit_kerja`, `eselon
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_users`
+-- Table structure for table `tbl_users`
 --
 
 CREATE TABLE `tbl_users` (
@@ -1656,17 +1670,17 @@ CREATE TABLE `tbl_users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data untuk tabel `tbl_users`
+-- Dumping data for table `tbl_users`
 --
 
 INSERT INTO `tbl_users` (`id`, `id_mhs_pt`, `ip_address`, `username`, `password`, `repassword`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`, `hostname`, `port`, `userfeeder`, `passfeeder`, `jabatan`, `profile`) VALUES
-(1, NULL, '127.0.0.1', 'administrator', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', 'password', '', 'admin@admin.com', '', NULL, NULL, NULL, 1268889823, 1524315160, 1, 'Admin', 'istrator', 'ADMIN', '08239566666', 'localhost', '8082', '091006', 'palagimatA', 3, 'avatar.jpg'),
+(1, NULL, '127.0.0.1', 'administrator', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', 'password', '', 'admin@admin.com', '', NULL, NULL, NULL, 1268889823, 1524488696, 1, 'Admin', 'istrator', 'ADMIN', '08239566666', 'localhost', '8082', '091006', 'palagimatA', 3, 'avatar.jpg'),
 (15, NULL, '::1', 'ejhayoe', '$2y$08$sMK/KvMzOXPZBanMhhAggu4A6FQ2EWRNvY4hpJNoGpjgzgqhZF9xW', 'ejhayoe', NULL, 'admin@admin.com', NULL, NULL, NULL, NULL, 1519736735, NULL, 1, 'Reza', 'Rafiq', 'Sistem Informasi Kepegawaian', '123456789', NULL, NULL, NULL, NULL, 0, 'avatar.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_users_groups`
+-- Table structure for table `tbl_users_groups`
 --
 
 CREATE TABLE `tbl_users_groups` (
@@ -1676,7 +1690,7 @@ CREATE TABLE `tbl_users_groups` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data untuk tabel `tbl_users_groups`
+-- Dumping data for table `tbl_users_groups`
 --
 
 INSERT INTO `tbl_users_groups` (`id`, `user_id`, `group_id`) VALUES
@@ -1687,7 +1701,7 @@ INSERT INTO `tbl_users_groups` (`id`, `user_id`, `group_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_user_login`
+-- Table structure for table `tbl_user_login`
 --
 
 CREATE TABLE `tbl_user_login` (
@@ -1699,7 +1713,7 @@ CREATE TABLE `tbl_user_login` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_user_login`
+-- Dumping data for table `tbl_user_login`
 --
 
 INSERT INTO `tbl_user_login` (`id_user_login`, `username`, `password`, `nama_lengkap`, `stts`) VALUES
@@ -1976,7 +1990,7 @@ ALTER TABLE `tbl_data_organisasi`
 -- AUTO_INCREMENT for table `tbl_data_pegawai`
 --
 ALTER TABLE `tbl_data_pegawai`
-  MODIFY `id_pegawai` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id_pegawai` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 --
 -- AUTO_INCREMENT for table `tbl_data_pelatihan`
 --
@@ -1986,7 +2000,7 @@ ALTER TABLE `tbl_data_pelatihan`
 -- AUTO_INCREMENT for table `tbl_data_pendidikan`
 --
 ALTER TABLE `tbl_data_pendidikan`
-  MODIFY `id_pendidikan` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_pendidikan` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `tbl_data_penghargaan`
 --
@@ -2001,7 +2015,7 @@ ALTER TABLE `tbl_data_riwayat_golongan`
 -- AUTO_INCREMENT for table `tbl_data_riwayat_jabatan`
 --
 ALTER TABLE `tbl_data_riwayat_jabatan`
-  MODIFY `id_riwayat_jabatan` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_riwayat_jabatan` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `tbl_data_riwayat_pangkat`
 --
@@ -2021,7 +2035,7 @@ ALTER TABLE `tbl_groups`
 -- AUTO_INCREMENT for table `tbl_honorer`
 --
 ALTER TABLE `tbl_honorer`
-  MODIFY `id_honorer` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_honorer` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `tbl_info_pt`
 --
