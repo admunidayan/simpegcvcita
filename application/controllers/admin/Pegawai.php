@@ -983,7 +983,7 @@ class Pegawai extends CI_Controller {
             redirect(base_url('index.php/login'));
         }
     }
-    public function update_pegawai($idpegawai,$idr){
+    public function update_pegawai($idpegawai){
         if ($this->ion_auth->logged_in()) {
             $level = array('admin','members');
             if (!$this->ion_auth->in_group($level)) {
@@ -994,16 +994,24 @@ class Pegawai extends CI_Controller {
                 $post = $this->input->post();
                 // echo "<pre>";print_r($post) ;echo "<pre/>";exit();
                 $datainput = array(
-                    'tingkat_pendidikan' => $post['tingkat_pendidikan'],
-                    'id_pegawai' => $idpegawai,
-                    'jurusan'=>$post['jurusan'],
-                    'sekolah'=>$post['sekolah'],
-                    'tempat_sekolah'=>$post['tempat_sekolah'],
-                    'tanggal_lulus'=>$post['tanggal_lulus_thn'].'-'.$post['tanggal_lulus_bln'].'-'.$post['tanggal_lulus_hr'],
-                    'nomor_ijazah'=>$post['nomor_ijazah'],
-                    'tahun_lulus'=>$post['tahun_lulus']
+                    'nama_pegawai' => $post['nama_pegawai'],
+                    'nip'=>$post['nip'],
+                    'nip_lama'=>$post['nip_lama'],
+                    'no_kartu_pegawai'=>$post['no_kartu_pegawai'],
+                    'no_npwp'=>$post['no_npwp'],
+                    'kartu_askes_pegawai'=>$post['kartu_askes_pegawai'],
+                    'tempat_lahir'=>$post['tempat_lahir'],
+                    'tanggal_lahir'=>$post['tanggal_lahir'],
+                    'nomor_kk'=>$post['nomor_kk'],
+                    'nomor_ktp'=>$post['nomor_ktp'],
+                    'jenis_kelamin'=>$post['jenis_kelamin'],
+                    'agama'=>$post['agama'],
+                    'id_golongan'=>$post['id_golongan'],
+                    'status_pegawai'=>$post['status_pegawai'],
+                    'tanggal_pengangkatan_cpns'=>$post['tanggal_pengangkatan_cpns_thn'].'-'.$post['tanggal_pengangkatan_cpns_bln'].'-'.$post['tanggal_pengangkatan_cpns_hr'],
+                    'alamat'=>$post['alamat']
                 );
-                $this->Pegawai_m->update_data('data_pendidikan','id_pendidikan',$idr,$datainput);
+                $this->Pegawai_m->update_data('data_pegawai','id_pegawai',$idpegawai,$datainput);
                 $pesan = 'Data riwayat pendidikan baru berhasil di diubah';
                 $this->session->set_flashdata('message', $pesan );
                 redirect(base_url('index.php/admin/pegawai/detail_pendidikan/'.$idpegawai));
