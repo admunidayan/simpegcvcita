@@ -983,6 +983,37 @@ class Pegawai extends CI_Controller {
             redirect(base_url('index.php/login'));
         }
     }
+    public function update_pegawai($idpegawai,$idr){
+        if ($this->ion_auth->logged_in()) {
+            $level = array('admin','members');
+            if (!$this->ion_auth->in_group($level)) {
+                $pesan = 'Anda tidak memiliki Hak untuk Mengakses halaman ini';
+                $this->session->set_flashdata('message', $pesan );
+                redirect(base_url('index.php/admin/dashboard'));
+            }else{
+                $post = $this->input->post();
+                // echo "<pre>";print_r($post) ;echo "<pre/>";exit();
+                $datainput = array(
+                    'tingkat_pendidikan' => $post['tingkat_pendidikan'],
+                    'id_pegawai' => $idpegawai,
+                    'jurusan'=>$post['jurusan'],
+                    'sekolah'=>$post['sekolah'],
+                    'tempat_sekolah'=>$post['tempat_sekolah'],
+                    'tanggal_lulus'=>$post['tanggal_lulus_thn'].'-'.$post['tanggal_lulus_bln'].'-'.$post['tanggal_lulus_hr'],
+                    'nomor_ijazah'=>$post['nomor_ijazah'],
+                    'tahun_lulus'=>$post['tahun_lulus']
+                );
+                $this->Pegawai_m->update_data('data_pendidikan','id_pendidikan',$idr,$datainput);
+                $pesan = 'Data riwayat pendidikan baru berhasil di diubah';
+                $this->session->set_flashdata('message', $pesan );
+                redirect(base_url('index.php/admin/pegawai/detail_pendidikan/'.$idpegawai));
+            }
+        }else{
+            $pesan = 'Login terlebih dahulu';
+            $this->session->set_flashdata('message', $pesan );
+            redirect(base_url('index.php/login'));
+        }
+    }
     public function edit_pelatihan($id,$idr){
         if ($this->ion_auth->logged_in()) {
             $level = array('admin','members');
