@@ -1006,7 +1006,6 @@ class Pegawai extends CI_Controller {
                     'nomor_ktp'=>$post['nomor_ktp'],
                     'jenis_kelamin'=>$post['jenis_kelamin'],
                     'agama'=>$post['agama'],
-                    'id_golongan'=>$post['id_golongan'],
                     'status_pegawai'=>$post['status_pegawai'],
                     'tanggal_pengangkatan_cpns'=>$post['tanggal_pengangkatan_cpns_thn'].'-'.$post['tanggal_pengangkatan_cpns_bln'].'-'.$post['tanggal_pengangkatan_cpns_hr'],
                     'alamat'=>$post['alamat']
@@ -1014,7 +1013,7 @@ class Pegawai extends CI_Controller {
                 $this->Pegawai_m->update_data('data_pegawai','id_pegawai',$idpegawai,$datainput);
                 $pesan = 'Data riwayat pendidikan baru berhasil di diubah';
                 $this->session->set_flashdata('message', $pesan );
-                redirect(base_url('index.php/admin/pegawai/detail_pendidikan/'.$idpegawai));
+                redirect(base_url('index.php/admin/pegawai/detail/'.$idpegawai));
             }
         }else{
             $pesan = 'Login terlebih dahulu';

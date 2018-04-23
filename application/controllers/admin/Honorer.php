@@ -146,7 +146,7 @@ public function update_honorer(){
                     'no_hp'=>$post['no_hp'],
                 );
                 // echo "<pre>";print_r($datainput);echo "<pre/>";exit();
-                
+
                 $this->honorer_m->update_data('honorer','id_honorer',$post['id_honorer'],$datainput);
                 $pesan = 'Data Honorer golongan baru berhasil di diubah';
                 $this->session->set_flashdata('message', $pesan );
@@ -159,7 +159,7 @@ public function update_honorer(){
         }
     }
     
-    public function delete($id_honorer,$idr){
+    public function delete_honorer($id_honorer){
         if ($this->ion_auth->logged_in()) {
             $level = array('admin','members');
             if (!$this->ion_auth->in_group($level)) {
@@ -167,10 +167,10 @@ public function update_honorer(){
                 $this->session->set_flashdata('message', $pesan );
                 redirect(base_url('index.php/admin/dashboard'));
             }else{
-                $this->honorer_m->delete_data('nama','id_honorer',$idr);
-                $pesan = 'Data riwayat hukuman baru berhasil di diubah dihapus';
+                $this->honorer_m->delete_data('honorer','id_honorer',$id_honorer);
+                $pesan = 'Data Honorer berhasil di diubah dihapus';
                 $this->session->set_flashdata('message', $pesan );
-                redirect(base_url('index.php/admin/honorer/'.$id_honorer));
+                redirect(base_url('index.php/admin/honorer/'));
             }
         }else{
             $pesan = 'Login terlebih dahulu';

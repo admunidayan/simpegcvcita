@@ -37,8 +37,8 @@
 					<td class="jrktbl text-center">No</td>
 					<td class="jrktbl"><i class="material-icons">assignment_ind</i>Nama Pegawai</td>
 					<td class="jrktbl"><i class="material-icons">card_giftcard</i>NIP</td>
-					<td class="jrktbl"><i class="material-icons">compare_arrows</i>Golongan</td>
-					<td class="jrktbl"><i class="material-icons">location_on</i>Unit Organisasi</td>
+					<td class="jrktbl"><i class="material-icons">card_giftcard</i>NIP Lama</td>
+					<td class="jrktbl"><i class="material-icons">location_on</i>Alamat Pegawai</td>
 					<td class="jrktbl"><i class="material-icons">lightbulb_outline</i>Status</td>
 					<td class="jrktbl"><i class="material-icons">power_settings_new</i>Aksi</td>
 				</tr>
@@ -50,8 +50,8 @@
 						<td class="jrktbl text-center"><?php echo $no; ?></td>
 						<td class="jrktbl"><a class="text-dark" href="<?php echo base_url('index.php/admin/pegawai/detail/'.$data->id_pegawai) ?>"><?php echo strtoupper($data->nama_pegawai); ?></a></td>
 						<td class="jrktbl text-secondary"><?php echo $data->nip; ?></td>
-						<td class="jrktbl text-secondary"><?php echo $data->golongan; ?></td>
-						<td class="jrktbl text-secondary"><?php echo @$this->Admin_m->detail_data_order('master_satuan_kerja','id_satuan_kerja',$data->id_satuan_kerja)->nama_satuan_kerja; ?></td>
+						<td class="jrktbl text-secondary"><?php echo $data->nip_lama; ?></td>
+						<td class="jrktbl text-secondary"><?php echo strtoupper($data->alamat); ?></td>
 						<td class="jrktbl text-center text-secondary"><?php echo $data->nama_status; ?></td>
 						<td class="jrktbl">
 							<a href="#" class="text-danger">hapus</a>
