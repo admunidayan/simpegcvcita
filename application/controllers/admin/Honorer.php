@@ -23,7 +23,7 @@ class Honorer extends CI_Controller {
                 $data['aside'] = 'nav/nav';
                 $data['page'] = 'admin/honorer-v';
                 $jumlah = $this->honorer_m->jumlah_data(@$post['string'],@$post['skpd']);
-                $config['base_url'] = base_url().'/index.php/admin/honorer/';
+                $config['base_url'] = base_url().'/index.php/admin/honorer/index/';
                 $config['total_rows'] = $jumlah;
                 $config['per_page'] = '10';
                 $config['first_page'] = 'Awal';

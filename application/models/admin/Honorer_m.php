@@ -7,7 +7,7 @@ class Honorer_m extends CI_Model
 			$this->db->like('nama',$string);
 		}
 		if (!empty($skpd)) {
-			$this->db->where('id_satuan_kerja',$string);
+			$this->db->where('id_lokasi_kerja',$string);
 		}
 		$rs = $this->db->count_all_results();
 		return $rs;
@@ -17,9 +17,9 @@ class Honorer_m extends CI_Model
 		
 		$this->db->join('master_lokasi_kerja', 'master_lokasi_kerja.id_lokasi_kerja = honorer.id_lokasi_kerja');
 		if (!empty($string)) {
-			$this->db->like('nama',$string);}
+			$this->db->like('honorer.nama',$string);}
 		if (!empty($skpd)) {
-			$this->db->where('id_satuan_kerja',$skpd);
+			$this->db->where('honorer.id_lokasi_kerja',$skpd);
 		}
 		$this->db->order_by('nama','asc');
 		$query = $this->db->get('honorer',$sampai,$dari);
