@@ -57,7 +57,7 @@
 						<td class="jrktbl text-secondary"><?php echo $data->tmt; ?></td>
 						<td class="jrktbl text-secondary"><?php echo $data->no_hp; ?></td>
 						<td class="jrktbl">
-							<a href="<?php echo base_url('index.php/admin/honorer/update_honorer/'.$data->id_honorer) ?>" class="text-success">Edit</a>
+							<a href="<?php echo base_url('index.php/admin/honorer/edit_honorer/'.$data->id_honorer) ?>" class="text-success">Edit</a>
 						</td>
 						<td class="jrktbl">
 							<a href="<?php echo base_url('index.php/admin/honorer/delete_honorer/'.$data->id_honorer) ?>" class="text-danger">Hapus</a>

@@ -101,6 +101,33 @@ class Honorer extends CI_Controller {
             redirect(base_url('index.php/login'));
         }
     }
+    public function edit_honorer($id){
+        if ($this->ion_auth->logged_in()) {
+            $level = array('admin','members');
+            if (!$this->ion_auth->in_group($level)) {
+                $pesan = 'Anda tidak memiliki Hak untuk Mengakses halaman ini';
+                $this->session->set_flashdata('message', $pesan );
+                redirect(base_url('index.php/admin/dashboard'));
+            }else{
+                $result = $this->honorer_m->detail_data('honorer','id_honorer',$id);
+                // echo "<pre>";print_r($result);echo "<pre/>";exit();
+                $data['title'] = $result->nama;
+                $data['infopt'] = $this->Admin_m->info_pt(1);
+                $data['brand'] = 'asset/img/lembaga/'.$this->Admin_m->info_pt(1)->logo_pt;
+                $data['users'] = $this->ion_auth->user()->row();
+                $data['aside'] = 'nav/nav';
+                $data['detail'] = $result;
+                $data['skpd'] = $this->honorer_m->select_data('master_lokasi_kerja');
+                $data['page'] = 'admin/edit-honorer-v';
+                // pagging setting
+                $this->load->view('admin/dashboard-v',$data);
+            }
+        }else{
+            $pesan = 'Login terlebih dahulu';
+            $this->session->set_flashdata('message', $pesan );
+            redirect(base_url('index.php/login'));
+        }
+    }
 public function update_honorer(){
         if ($this->ion_auth->logged_in()) {
             $level = array('admin','members');
@@ -115,10 +142,10 @@ public function update_honorer(){
                     'alamat'=>$post['alamat'],
                     'nomor_sk'=>$post['nomor_sk'],
                     'id_lokasi_kerja'=>$post['id_lokasi_kerja'],
-                    'tmt'=>$post['tmt'],
+                    'tmt'=>$post['tmt_thn'].'-'.$post['tmt_bln'].'-'.$post['tmt_hr'],
                     'no_hp'=>$post['no_hp'],
                 );
-                $this->honorer_m->update_data('honorer',$datainput);
+                $this->honorer_m->update_data('honorer','id_honorer',$post['id_honorer'],$datainput);
                 $pesan = 'Data Honorer golongan baru berhasil di diubah';
                 $this->session->set_flashdata('message', $pesan );
                 redirect(base_url('index.php/admin/honorer/'));
