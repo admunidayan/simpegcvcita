@@ -52,6 +52,15 @@
 				<input type="text" class="form-control" id="tanggal_lahir" name="tanggal_lahir" placeholder="12-01-1993" value="<?php echo $hasil->tanggal_lahir ?>">
 			</div>
 			<div class="form-group">
+				<label class="text-info" for="tanggal_lahir">NOMOR KK</label>
+				<input type="text" class="form-control" id="nomor_kk" name="nomor_kk" placeholder="Nomor Kartu Keluarga" value="<?php echo $hasil->nomor_kk ?>">
+			</div>
+			<div class="form-group">
+				<label class="text-info" for="tanggal_lahir">NOMOR KTP</label>
+				<input type="text" class="form-control" id="nomor_ktp" name="nomor_ktp" placeholder="Nomor KTP" value="<?php echo $hasil->nomor_ktp ?>">
+			</div>
+
+			<div class="form-group">
 				<label class="text-info" for="jenis_kelamin">JENIS KELAMIN</label>
 				<input type="text" class="form-control" id="jenis_kelamin" name="jenis_kelamin" placeholder="GENDER" value="<?php echo $hasil->jenis_kelamin ?>">
 			</div>
@@ -98,4 +107,7 @@
 			</div>
 		</div>
 	</div>
+	<div class="modal-footer">
+					<button type="submit" name="submit" value="submit" class="btn btn-success">Simpan</button>
+				</div>
 </div >

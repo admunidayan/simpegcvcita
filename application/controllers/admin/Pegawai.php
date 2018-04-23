@@ -450,6 +450,8 @@ class Pegawai extends CI_Controller {
                     'kartu_askes_pegawai'=>$post['kartu_askes_pegawai'],
                     'tempat_lahir'=>$post['tempat_lahir'],
                     'tanggal_lahir'=>$post['tanggal_lahir'],
+                    'nomor_kk'=>$post['nomor_kk'],
+                    'nomor_ktp'=>$post['nomor_ktp'],
                     'jenis_kelamin'=>$post['jenis_kelamin'],
                     'agama'=>$post['agama'],
                     'id_golongan'=>$post['id_golongan'],
