@@ -30,13 +30,13 @@
 							<label class="text-info" for="tmt_jabatan_rj">TMT JABATAN</label>
 							<div class="row">
 								<div class="col">
-									<input type="text" class="form-control" id="tmt_jabatan_rj" name="tmt_hr" placeholder="HH" value="<?php echo substr($detail->tmt,8,2)?>">
+									<input type="text" class="form-control" name="tmt_hr" placeholder="HH" value="<?php echo substr($detail->tmt,8,2)?>">
 								</div>
 								<div class="col">
-									<input type="text" class="form-control" id="tmt_jabatan_rj" name="tmt_bln" placeholder="BB" value="<?php echo substr($detail->tmt,5,2)?>">
+									<input type="text" class="form-control" name="tmt_bln" placeholder="BB" value="<?php echo substr($detail->tmt,5,2)?>">
 								</div>
 								<div class="col">
-									<input type="text" class="form-control" id="tmt_jabatan_rj" name="tmt_thn" placeholder="TTTT" value="<?php echo substr($detail->tmt,0,4)?>">
+									<input type="text" class="form-control" name="tmt_thn" placeholder="TTTT" value="<?php echo substr($detail->tmt,0,4)?>">
 								</div>
 							</div>
 						</div>

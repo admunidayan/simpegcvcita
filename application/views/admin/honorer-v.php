@@ -104,11 +104,20 @@
 							<?php endforeach ?>
 				</select>
 							</div>
-						
-							<div class="form-group">
-								<label class="text-info" for="tmt">TMT</label>
-								<input type="text" class="form-control" id="tmt" name="tmt" placeholder="TMT">
+												<div class="form-group">
+							<label class="text-info" for="tmt">TMT </label>
+							<div class="row">
+								<div class="col">
+									<input type="text" class="form-control" id="tmt_jabatan_rj" name="tmt_hr" placeholder="HH" >
+								</div>
+								<div class="col">
+									<input type="text" class="form-control" id="tmt_jabatan_rj" name="tmt_bln" placeholder="BB" >
+								</div>
+								<div class="col">
+									<input type="text" class="form-control" id="tmt_jabatan_rj" name="tmt_thn" placeholder="TTTT" >
+								</div>
 							</div>
+						</div>
 							<div class="form-group">
 								<label class="text-info" for="no_hp">Nomor Handphone</label>
 								<input type="text" class="form-control" id="no_hp" name="no_hp" placeholder="Nomor Handphone">

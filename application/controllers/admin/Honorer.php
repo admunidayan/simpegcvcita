@@ -87,7 +87,7 @@ class Honorer extends CI_Controller {
                     'alamat'=>$post['alamat'],
                     'nomor_sk'=>$post['nomor_sk'],
                     'id_lokasi_kerja'=>$post['id_lokasi_kerja'],
-                    'tmt'=>$post['tmt'],
+                    'tmt'=>$post['tmt_thn'].'-'.$post['tmt_bln'].'-'.$post['tmt_hr'],
                     'no_hp'=>$post['no_hp'],
                 );
                 $this->honorer_m->insert_data('honorer',$datainput);
@@ -142,9 +142,11 @@ public function update_honorer(){
                     'alamat'=>$post['alamat'],
                     'nomor_sk'=>$post['nomor_sk'],
                     'id_lokasi_kerja'=>$post['id_lokasi_kerja'],
-                    'tmt'=>$post['tmt_thn'].'-'.$post['tmt_bln'].'-'.$post['tmt_hr'],
+                    'tmt'=> $post['tmt_thn'].'-'.$post['tmt_bln'].'-'.$post['tmt_hr'],
                     'no_hp'=>$post['no_hp'],
                 );
+                // echo "<pre>";print_r($datainput);echo "<pre/>";exit();
+                
                 $this->honorer_m->update_data('honorer','id_honorer',$post['id_honorer'],$datainput);
                 $pesan = 'Data Honorer golongan baru berhasil di diubah';
                 $this->session->set_flashdata('message', $pesan );
