@@ -73,6 +73,7 @@ rel="stylesheet">
                   <a class="dropdown-item" href="<?php echo base_url('index.php/admin/export/') ?>"><i class="material-icons">select_all</i>Laporan Pegawai Per Golongan</a>
                   <a class="dropdown-item" href="<?php echo base_url('index.php/admin/export/') ?>"><i class="material-icons">work</i>Laporan Pegawai Per Jabatan</a>
                   <a class="dropdown-item" href="<?php echo base_url('index.php/admin/export/') ?>"><i class="material-icons">remove_red_eye</i>Laporan Pegawai Per Pendidikan</a>
+                  <a class="dropdown-item" href="<?php echo base_url('index.php/admin/Export_data') ?>"><i class="material-icons">assignment_ind</i>Laporan Data Honorer</a>
                 </div>
               </li>
             </ul>
