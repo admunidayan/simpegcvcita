@@ -52,6 +52,15 @@
 			<td class="colpading bdkanan" colspan="2"><?php echo $hasil->tempat_lahir; ?> / <?php echo $hasil->tanggal_lahir; ?></td>
 		</tr>
 		<tr>
+			<td class="colpading bdkiri bdkanan">Nomor Kartu Keluarga</td>
+			<td class="colpading bdkanan" colspan="2"><?php echo $hasil->nomor_kk; ?> </td>
+		</tr>
+		<tr>
+			<td class="colpading bdkiri bdkanan">Nomor KTP</td>
+			<td class="colpading bdkanan" colspan="2"><?php echo $hasil->nomor_ktp; ?> </td>
+		</tr>
+
+		<tr>
 			<td class="colpading bdkiri bdkanan">Status Pegawai</td>
 			<td class="colpading bdkanan" colspan="2"><?php echo $statpeg->nama_status; ?></td>
 		</tr>
