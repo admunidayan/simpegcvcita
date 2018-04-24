@@ -8,7 +8,7 @@
 				<?php
 				$table = '				
 				
-				<tr class="bg-app text-light">
+				<tr class="table-success">
 				<th>No.</th>
 				<th>Nama Honorer</th>
 				<th>Alamat</th>
@@ -27,7 +27,7 @@
 					<td class="jrktbl">'.$d->nama.'</td>
 					<td class="jrktbl">'.$d->alamat.'</td>
 					<td class="jrktbl">'.$d->nomor_sk.'</td>
-					<td class="jrktbl">'.$d->id_lokasi_kerja.'</td>
+					<td class="jrktbl">'.$this->Admin_m->detail_data_order('master_lokasi_kerja','id_lokasi_kerja',$d->id_lokasi_kerja)->lokasi_kerja.'</td>
 					<td class="jrktbl">'.$d->tmt.'</td>
 					<td class="jrktbl">'.$d->no_hp.'</td>
 					</tr>';

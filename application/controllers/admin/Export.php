@@ -128,7 +128,7 @@ function dataexcel_honorer(){
         $sheet->setCellValue ( "B".$nocel, strtoupper($data->nama));
         $sheet->setCellValue ( "C".$nocel, strtoupper($data->alamat) );
         $sheet->setCellValue ( "D".$nocel, strtoupper($data->nomor_sk));
-        $sheet->setCellValue ( "E".$nocel, strtoupper($data->id_lokasi_kerja) );
+        $sheet->setCellValue ( "E".$nocel, strtoupper($this->Admin_m->detail_data_order('master_lokasi_kerja','id_lokasi_kerja',$data->id_lokasi_kerja)->lokasi_kerja) );
         $sheet->setCellValue ( "F".$nocel, strtoupper($data->tmt));
         $sheet->setCellValue ( "G".$nocel, strtoupper($data->no_hp) );
         $nomor++;

@@ -4,6 +4,7 @@ class Export_honorer extends CI_Controller {
 
 	function __construct(){
 		parent::__construct();
+		$this->load->model('admin/Admin_m');
 		$this->load->model('admin/Model_honorer');
 		$this->load->library('Excel');
 	}
