@@ -37,7 +37,7 @@
 
 				echo $table;
 				?>
-				<a href="<?php echo base_url('index.php/admin/export/dataexcel') ?>" class="btn btn-success">Export menjadi file excel</a>
+				<a href="<?php echo base_url('index.php/admin/export/dataexcel_honorer') ?>" class="btn btn-success">Export menjadi file excel</a>
 			</div>
 		</div>
 	</div>
