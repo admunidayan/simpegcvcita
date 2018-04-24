@@ -1,96 +1,91 @@
-<div style="margin-top: 14px; padding: 30px">
-	<!-- load library jquery dan highcharts -->
-<script src="<?php echo base_url();?>asset/js/jquery.js"></script>
-<script src="<?php echo base_url();?>asset/js/highcharts.js"></script>
-<!-- end load library -->
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Highcharts Example</title>
 
-<?php
-/* Mengambil query report*/
-foreach($chart as $result){
-        // echo "<pre>";print_r($result->tahun);echo "<pre/>";exit();
-        $tahun[] = $result->nm_jk; //ambil bulan
-        $value[] = (float) $this->Admin_m->jumlah_data($result->nm_jk);
-         //ambil nilai
-    }
-    /* end mengambil query*/
-    
-    ?>
-    
-    <!-- Load chart dengan menggunakan ID -->
-    <div id="report"></div>
-    <!-- END load chart -->
-    
-    <!-- Script untuk memanggil library Highcharts -->
+    <style type="text/css">
+
+</style>
+</head>
+<body>
+    <script src="<?php echo base_url('asset/grafik/code/highcharts.js') ?>"></script>
+    <script src="<?php echo base_url('asset/grafik/code/modules/exporting.js') ?>"></script>
+
+    <div id="container" style="min-width: 300px; height: 400px; margin: 0 auto"></div>
     <script type="text/javascript">
-        $(function () {
-            $('#report').highcharts({
-                chart: {
-                    type: 'column',
-                    margin: 75,
-                    options3d: {
-                        enabled: false,
-                        alpha: 10,
-                        beta: 25,
-                        depth: 70
-                    }
-                },
-                title: {
-                    text: 'Grafik',
-                    style: {
-                        fontSize: '18px',
-                        fontFamily: 'Verdana, sans-serif'
-                    }
-                },
-                subtitle: {
-                 text: 'Pegawai Berdasarkan Jenis Kelamin',
-                 style: {
-                    fontSize: '15px',
-                    fontFamily: 'Verdana, sans-serif'
-                }
-            },
-            plotOptions: {
-                column: {
-                    depth: 25
-                }
-            },
-            credits: {
-                enabled: false
-            },
-            xAxis: {
-                categories:  <?php echo json_encode($tahun);?>
-            },
-            exporting: { 
-                enabled: false 
-            },
-            yAxis: {
-                title: {
-                    text: 'Jumlah'
-                },
-            },
-            tooltip: {
-               formatter: function() {
-                   return 'Jumlah untuk <b>' + this.x + '</b> adalah <b>' + Highcharts.numberFormat(this.y,0) + '</b>  orang pada '+ this.series.name;
-               }
-           },
-           series: [{
-            name: 'Data Pegawai',
-            data: <?php echo json_encode($value);?>,
-            shadow : true,
-            dataLabels: {
-                enabled: true,
-                color: '#045396',
-                align: 'center',
-                formatter: function() {
-                   return Highcharts.numberFormat(this.y, 0);
-                }, // one decimal
-                y: 0, // 10 pixels down from the top
+
+    Highcharts.chart('container', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'World\'s largest cities per 2014'
+        },
+        subtitle: {
+            text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
+        },
+        xAxis: {
+            type: 'category',
+            labels: {
+                rotation: -45,
                 style: {
                     fontSize: '13px',
                     fontFamily: 'Verdana, sans-serif'
                 }
             }
-        }]
-    });
-        });
-    </script>
-</div>
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Population (millions)'
+            }
+        },
+        legend: {
+            enabled: false
+        },
+        tooltip: {
+            pointFormat: 'Population in 2008: <b>{point.y:.1f} millions</b>'
+        },
+
+        series: [{
+            name: 'Population',
+            data: [            
+            ['Lagos', 16.1],
+            ['Istanbul', 14.2],
+            ['Karachi', 14.0],
+            ['Mumbai', 12.5],
+            ['Moscow', 12.1],
+            ['São Paulo', 11.8],
+            ['Beijing', 11.7],
+            ['Guangzhou', 11.1],
+            ['Delhi', 11.1],
+            ['Shenzhen', 10.5],
+            ['Seoul', 10.4],
+            ['Jakarta', 10.0],
+            ['Kinshasa', 9.3],
+            ['Tianjin', 9.3],
+            ['Tokyo', 9.0],
+            ['Cairo', 8.9],
+            ['Dhaka', 8.9],
+            ['Mexico City', 8.9],
+            ['Lima', 8.9]
+            ],
+            dataLabels: {
+                enabled: true,
+                rotation: -90,
+                color: '#FFFFFF',
+                align: 'right',
+            format: '{point.y:.1f}', // one decimal
+            y: 10, // 10 pixels down from the top
+            style: {
+                fontSize: '13px',
+                fontFamily: 'Verdana, sans-serif'
+            }
+        }
+    }]
+});
+</script>
+</body>
+</html>

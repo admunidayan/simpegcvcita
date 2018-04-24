@@ -22,7 +22,8 @@ class Dashboard extends CI_Controller {
                 $data['users'] = $this->ion_auth->user()->row();
                 $data['aside'] = 'nav/nav';
                 $data['chart'] = $this->Mread->chart();
-                // echo "<pre>";print_r($data['chart']);echo "<pre/>";exit();
+                $data['skpd'] = $this->Admin_m->select_data('master_satuan_kerja');
+                // echo "<pre>";print_r($data['skpd']);echo "<pre/>";exit();
                 $data['page'] = 'admin/beranda-v';
                 // pagging setting
                 $this->load->view('admin/dashboard-v',$data);
