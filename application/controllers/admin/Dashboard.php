@@ -34,5 +34,15 @@ class Dashboard extends CI_Controller {
             redirect(base_url('index.php/login'));
         }
     }
+    public function dataskpd(){
+    $queryResult = $this->Admin_m->select_data('master_satuan_kerja');
+    $result  = array();
+    while($fethData = $queryResult->fetch_assoc()){
+        $result[] = $fethData;
+    }
+    echo json_encode($result);
 }
+}
+
+
 ?>

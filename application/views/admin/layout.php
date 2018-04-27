@@ -8,7 +8,7 @@
 				<?php
 				$table = '				
 				
-				<tr class="bg-app text-light">
+				<tr class="table-success">
 				<th>No.</th>
 				<th>Nama Satuan Kerja</th>
 				<th>Parent Unit</th>
