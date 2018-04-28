@@ -28,7 +28,7 @@
             xAxis: {
                 type: 'category',
                 labels: {
-                    rotation: -45,
+                    rotation: -90,
                     style: {
                         fontSize: '13px',
                         fontFamily: 'Verdana, sans-serif'
@@ -50,27 +50,7 @@
 
             series: [{
                 name: 'Population',
-                data: [            
-                ['Lagos', 19.2],
-                ['Istanbul', 14.2],
-                ['Karachi', 14.0],
-                ['Mumbai', 12.5],
-                ['Moscow', 12.1],
-                ['São Paulo', 11.8],
-                ['Beijing', 11.7],
-                ['Guangzhou', 11.1],
-                ['Delhi', 11.1],
-                ['Shenzhen', 10.5],
-                ['Seoul', 10.4],
-                ['Jakarta', 10.0],
-                ['Kinshasa', 9.3],
-                ['Tianjin', 9.3],
-                ['Tokyo', 9.0],
-                ['Cairo', 8.9],
-                ['Dhaka', 8.9],
-                ['Mexico City', 8.9],
-                ['Lima', 8.9]
-                ],
+                data: [<?php foreach ($fmgol as $datas): ?><?php echo '['."'".$datas->nama_satuan_kerja."'".','.$this->Admin_m->jumlah_skpd($datas->id_satuan_kerja).'],'; ?><?php endforeach ?>],
                 dataLabels: {
                     enabled: true,
                     rotation: -90,

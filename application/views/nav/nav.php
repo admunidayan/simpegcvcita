@@ -40,6 +40,14 @@
 				</div>
 			</li>
 		</a>
+		<a href="<?php echo base_url('index.php/login/logout/') ?>">
+			<li class="linkmenu">
+				<div class="row">
+					<div class="col-md-2 text-center"><i class="material-icons">power_settings_new</i> </div>
+					<div class="col-md-10">Logout</div>
+				</div>
+			</li>
+		</a>
 		<div class="collapse" id="collapseExample">
 			<div class="">
 			</div>

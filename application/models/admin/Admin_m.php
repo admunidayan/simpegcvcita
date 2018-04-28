@@ -12,6 +12,18 @@ class Admin_m extends CI_Model
 		$rs = $this->db->count_all_results();
 		return $rs;
 	}
+	public function jumlah_skpd($id){
+		$this->db->from('data_pegawai');
+		$this->db->where('id_satuan_kerja',$id);
+		$rs = $this->db->count_all_results();
+		return $rs;
+	}
+	public function jml_data($table,$field,$id){
+		$this->db->from($table);
+		$this->db->where($field,$id);
+		$rs = $this->db->count_all_results();
+		return $rs;
+	}
 	public function cek_pt($id){
 		$this->db->where('id_info_pt', $id);
 		$query = $this->db->get('info_pt');

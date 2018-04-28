@@ -25,6 +25,16 @@ class Dashboard extends CI_Controller {
                 $data['skpd'] = $this->Admin_m->select_data('master_satuan_kerja');
                 // echo "<pre>";print_r($data['skpd']);echo "<pre/>";exit();
                 $data['page'] = 'admin/beranda-v';
+                $nskpd = $this->Admin_m->select_data('master_satuan_kerja');
+        // echo "<pre>";print_r($nskpd);echo "<pre/>";exit();
+                $namagol = array();
+                foreach ($nskpd as $gol) {
+                    $namagol[] = $gol->nama_satuan_kerja.','.'19.2';
+                }
+                $data['mgol'] = $namagol;
+                $data['fmgol'] = $nskpd;
+        // echo "<pre>";print_r( $data['mgol']);echo "<pre/>";exit();
+
                 // pagging setting
                 $this->load->view('admin/dashboard-v',$data);
             }
