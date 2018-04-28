@@ -175,6 +175,7 @@
 							</div>
 						</div>
 					</div>
+					
 				</div>
 				<div class="modal-footer">
 					<button type="submit" name="submit" value="submit" class="btn btn-success">Simpan</button>

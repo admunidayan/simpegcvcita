@@ -12,6 +12,7 @@
 				<div class="submenu">
 					<div class="row">
 						<div class="col-md-2 text-center text-secondary"><i class="material-icons">face</i> </div>
+
 						<div class="col-md-10">Keluarga</div>
 					</div>
 				</div>
@@ -99,16 +100,25 @@
 		</div>
 		<div class="col-md-9">
 			<div class="media">
+
+				
 				<?php if (!empty($hasil->foto)): ?>
+				
 					<img class="align-self-center mr-3 rounded-circle" style="width: 100px" src="<?php echo base_url('asset/img/users/'.$hasil->foto) ?>" alt="<?php echo $hasil->foto ?>">
+
 				<?php else: ?>
 					<img class="align-self-center mr-3 rounded-circle" style="width: 100px" src="<?php echo base_url('asset/img/users/avatar.png') ?>" alt="foto kosong">
+
 				<?php endif ?>
 				<div class="media-body">
 					<h5 class="mt-0"><?php echo $hasil->nama_pegawai; ?></h5>
 					<span class="text-secondary">NIP : <?php echo $hasil->nip; ?></span><br/>
-					<span class="border border-success rounded" style="font-size: 12px;padding: 7px 5px;"><?php echo $hasil->nama_status; ?></span>
+					<input type="file" name="foto" id="uploadBtn" lang="es"></br>
+					<span class="border border-success rounded" style="font-size: 12px;padding: 2px 5px; margin-top: 12px; "><?php echo $hasil->nama_status; ?></span>
+
+				
 				</div>
+
 				<div class="media-right">
 				<a href="<?php echo base_url('index.php/admin/pegawai/cetak_data_pegawai/'.$hasil->id_pegawai) ?>" target="_blank" class="btn btn-success">Cetak Data Pegawai</a>
 				</div>

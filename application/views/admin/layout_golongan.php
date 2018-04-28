@@ -24,7 +24,7 @@
 					<td class="jrktbl">'.$no++.'</td>
 					<td class="jrktbl">'.$d->golongan.'</td>
 					<td class="jrktbl">'.$d->uraian.'</td>
-					<td class="jrktbl">'.$no++.'</td>
+					<td class="jrktbl">'..'</td>
 							
 						
 					</tr>';
