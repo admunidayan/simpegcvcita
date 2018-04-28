@@ -95,10 +95,10 @@
 							type: 'pie'
 						},
 						title: {
-							text: 'Browser market shares January, 2015 to May, 2015'
+							text: 'GRAFIK PEGAWAI PER-GOLONGAN'
 						},
 						tooltip: {
-							pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+							pointFormat: '{series.name}: <b>{point.percentage:.1f} Orang</b>'
 						},
 						plotOptions: {
 							pie: {
@@ -106,7 +106,7 @@
 								cursor: 'pointer',
 								dataLabels: {
 									enabled: true,
-									format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+									format: '<b>{point.name}</b>: {point.percentage:.1f} Orang',
 									style: {
 										color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
 									}
@@ -114,7 +114,7 @@
 							}
 						},
 						series: [{
-							name: 'Brands',
+							name: 'Jumlah',
 							colorByPoint: true,
 							data: [<?php foreach ($mgol as $datas): ?><?php echo '{name:'."'".$datas->golongan."'".',y:'.$this->Admin_m->jml_data('data_riwayat_golongan','id_golongan',$datas->id_golongan).'},'; ?><?php endforeach ?>],
 						}]

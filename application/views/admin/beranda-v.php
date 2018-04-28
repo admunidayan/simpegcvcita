@@ -20,10 +20,10 @@
                 type: 'column'
             },
             title: {
-                text: 'World\'s largest cities per 2014'
+                text: 'GRAFIK JUMLAH PEGAWAI PER-SKPD'
             },
             subtitle: {
-                text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
+                text: 'Source: Database Kabupaten Buton'
             },
             xAxis: {
                 type: 'category',
@@ -38,14 +38,14 @@
             yAxis: {
                 min: 0,
                 title: {
-                    text: 'Population (millions)'
+                    text: 'Jumlah (Orang)'
                 }
             },
             legend: {
                 enabled: false
             },
             tooltip: {
-                pointFormat: 'Population in 2008: <b>{point.y:.1f} millions</b>'
+                pointFormat: 'Jumlah : <b>{point.y:.1f} Orang</b>'
             },
 
             series: [{
