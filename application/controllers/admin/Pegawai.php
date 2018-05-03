@@ -1009,7 +1009,36 @@ class Pegawai extends CI_Controller {
                     'status_pegawai'=>$post['status_pegawai'],
                     'tanggal_pengangkatan_cpns'=>$post['tanggal_pengangkatan_cpns_thn'].'-'.$post['tanggal_pengangkatan_cpns_bln'].'-'.$post['tanggal_pengangkatan_cpns_hr'],
                     'alamat'=>$post['alamat']
+
                 );
+
+                if (!empty($_FILES["foto"])) {
+                    $config['file_name'] = strtolower(url_title('pegawai'.'-'.$post['foto']));
+                    $config['upload_path'] = './asset/img/pegawai/';
+                    $config['allowed_types'] = 'gif|jpg|png';
+                    $config['max_size'] = 2048;
+                    $config['max_width'] = '';
+                    $config['max_height'] = '';
+
+                    $this->load->library('upload', $config);
+                    if (!$this->upload->do_upload('foto')){
+                        $error = $this->upload->display_errors();
+                        $this->session->set_flashdata('eror', $error );
+                        redirect(base_url('index.php/admin/pegawai'));
+                    }
+                    else{
+                        $file = $this->Admin_m->data_pegawai(1)->row('foto');
+                        if ($file != "avatar.png") {
+                            unlink("asset/img/user/$file");
+                        }
+                        $img = $this->upload->data('file_name');
+                        $data['nama'] = $img;
+                        $file = "asset/img/pegawai/$img";
+                        //output resize (bisa juga di ubah ke format yang berbeda ex: jpg, png dll)
+                        $resizedFile = "asset/img/pegawai/$img";
+                        $this->resize->smart_resize_image(null , file_get_contents($file), 250 , 250 , false , $resizedFile , true , false ,100 );
+                    }
+                }
                 $this->Pegawai_m->update_data('data_pegawai','id_pegawai',$idpegawai,$datainput);
                 $pesan = 'Data riwayat pendidikan baru berhasil di diubah';
                 $this->session->set_flashdata('message', $pesan );
@@ -1686,6 +1715,48 @@ class Pegawai extends CI_Controller {
             $pesan = 'Login terlebih dahulu';
             $this->session->set_flashdata('message', $pesan );
             redirect(base_url('index.php/admin//login'));
+        }
+    }
+
+
+
+public function uploadImage() {
+        $this->load->helper(array('form', 'url'));  
+        $config['upload_path'] = 'assets/images/pegawai';
+        $config['allowed_types'] = 'gif|jpg|png';
+        $config['max_size'] = '1000';
+        $config['max_width'] = '';
+        $config['max_height'] = '';
+        $config['width'] = 75;
+        $config['height'] = 50;
+        if (isset($_FILES['foto']['nama_pegawai'])) {
+            $filename = "-" . $_FILES['foto']['nama_pegawai'];
+            $config['file_name'] = substr(md5(time()), 0, 28) . $filename;
+        }
+        $config['overwrite'] = TRUE;
+        $config['remove_spaces'] = TRUE;
+        $field_name = "foto";
+        $this->load->library('upload', $config);
+        if ($this->input->post('selsub')) {
+            if (!$this->upload->do_upload('foto')) {
+                //no file uploaded or failed upload
+                $error = array('error' => $this->upload->display_errors());
+            } else {
+                $dat = array('upload_data' => $this->upload->data());
+                $this->resize($dat['upload_data']['full_path'],           $dat['upload_data']['file_name']);
+            }
+            $ip = $_SERVER['REMOTE_ADDR'];
+            if (empty($dat['upload_data']['file_name'])) {
+                $catimage = '';
+            } else {
+                $catimage = $dat['upload_data']['file_name'];
+            }
+            $data = array(            
+                'ctg_image' => $catimage,
+                'ctg_dated' => time()
+            );
+            $this->b2bcategory_model->form_insert($data);
+
         }
     }
     public function cetak_data_pegawai($id){

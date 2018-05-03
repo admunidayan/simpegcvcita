@@ -60,11 +60,17 @@
 					<label class="text-info" for="tanggal_lahir">NOMOR KTP</label>
 					<input type="text" class="form-control" id="nomor_ktp" name="nomor_ktp" placeholder="Nomor KTP" value="<?php echo $hasil->nomor_ktp ?>">
 				</div>
-
 				<div class="form-group">
-					<label class="text-info" for="jenis_kelamin">JENIS KELAMIN</label>
-					<input type="text" class="form-control" id="jenis_kelamin" name="jenis_kelamin" placeholder="GENDER" value="<?php echo $hasil->jenis_kelamin ?>">
+								<label class="text-info" for="jenis_kelamin">JENIS KELAMIN</label>
+								<select class="form-control" name="jenis_kelamin">
+							<option value="<?php echo $hasil->jenis_kelamin ?>"> --<?php echo $hasil->jenis_kelamin ?>--</option>
+									<option value="Laki-Laki">Laki-Laki</option>
+									<option value="Perempuan">Perempuan</option>
+						
+								</select>
 				</div>
+
+				
 				<div class="form-group">
 					<label class="text-info" for="agama">AGAMA</label>
 					<select class="form-control" name="agama">
