@@ -1,7 +1,7 @@
 <div style="margin-top: 14px; background-color: white;padding: 30px">
 	<div class="media">
 		<div class="media-body">
-			<h4>Data Pelatihan</h4>
+			<h4>Diklat</h4>
 		</div>
 		<div class="media-right">
 			<button type="button" class="btn btn-outline-success btn-sm" data-toggle="modal" data-target="#addpelatihan"><i class="material-icons">note_add</i> Tambah Data Pelatihan</button>
@@ -14,9 +14,9 @@
 				<td class="jrktbl text-center">No</td>
 				<td class="jrktbl">Uraian</td>
 				<td class="jrktbl">Lokasi</td>
-				<td class="jrktbl">Tgl Sertifikat</td>
-				<td class="jrktbl">Jam Pelatihan</td>
-				<td class="jrktbl">Negara</td>
+				<td class="jrktbl">Nomor</td>
+				<td class="jrktbl">Tanggal</td>
+				<td class="jrktbl">Tahun</td>
 				<td class="jrktbl" colspan="2">Aksi</td>
 			</tr>
 		</thead>
@@ -28,9 +28,9 @@
 						<td class="jrktbl text-center"><?php echo $no; ?></td>
 						<td class="jrktbl"><?php echo $data->uraian; ?></td>
 						<td class="jrktbl"><?php echo $data->lokasi; ?></td>
-						<td class="jrktbl"><?php echo date('d F Y', strtotime($data->tanggal_sertifikat)); ?></td>
-						<td class="jrktbl"><?php echo $data->jam_pelatihan; ?></td>
-						<td class="jrktbl"><?php echo $data->negara; ?></td>
+						<td class="jrktbl"><?php echo $data->nomor; ?></td>
+						<td class="jrktbl"><?php echo date('d F Y', strtotime($data->tanggal)); ?></td>
+						<td class="jrktbl"><?php echo $data->tahun; ?></td>
 						<td class="jrktbl">
 							<a href="<?php echo base_url('index.php/admin/pegawai/edit_pelatihan/'.$hasil->id_pegawai.'/'.$data->id_pelatihan) ?>" class="text-success">Edit</a>
 						</td>
@@ -71,26 +71,26 @@
 								<input type="text" class="form-control" id="lokasi" name="lokasi" placeholder="LOKASI" >
 							</div>
 							<div class="form-group">
-								<label class="text-info" for="tanggal_sertifikat">TANGGAL SERTIFIKAT</label>
+								<label class="text-info" for="nomor">NOMOR</label>
+								<input type="text" class="form-control" id="nomor" name="nomor" placeholder="NOMOR" >
+							</div>
+							<div class="form-group">
+								<label class="text-info" for="tanggal">TANGGAL</label>
 								<div class="row">
 									<div class="col">
-										<input type="text" class="form-control" id="tanggal_sertifikat" name="tanggal_sertifikat_hr" placeholder="HH">
+										<input type="text" class="form-control" id="tanggal" name="tanggal_hr" placeholder="HH">
 									</div>
 									<div class="col">
-										<input type="text" class="form-control" id="tanggal_sertifikat" name="tanggal_sertifikat_bln" placeholder="BB">
+										<input type="text" class="form-control" id="tanggal" name="tanggal_bln" placeholder="BB">
 									</div>
 									<div class="col">
-										<input type="text" class="form-control" id="tanggal_sertifikat" name="tanggal_sertifikat_thn" placeholder="TTTT">
+										<input type="text" class="form-control" id="tanggal" name="tanggal_thn" placeholder="TTTT">
 									</div>
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="text-info" for="jam_pelatihan">JAM PELATIHAN</label>
-								<input type="text" class="form-control" id="jam_pelatihan" name="jam_pelatihan" placeholder="JAM PELATIHAN">
-							</div>
-							<div class="form-group">
-								<label class="text-info" for="negara">NEGARA</label>
-								<input type="text" class="form-control" id="negara" name="negara" placeholder="NEGARA">
+								<label class="text-info" for="tahun">TAHUN</label>
+								<input type="text" class="form-control" id="tahun" name="tahun" placeholder="TAHUN">
 							</div>
 						</div>
 					</div>

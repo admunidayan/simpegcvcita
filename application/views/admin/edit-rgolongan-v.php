@@ -62,13 +62,8 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label class="text-info">JENIS KP</label>
-				<select class="form-control" name="id_status_jabatan">
-					<option value="<?php echo @$detail->id_status_jabatan ?>">--<?php echo @$this->Admin_m->detail_data_order('master_status_jabatan','id_status_jabatan',$detail->id_status_jabatan)->nama_jabatan; ?>--</option>
-					<?php foreach ($jeniskp as $data): ?>
-						<option value="<?php echo $data->id_status_jabatan ?>"><?php echo $data->nama_jabatan; ?></option>
-					<?php endforeach ?>
-				</select>
+				<label class="text-info">MASA KERJA</label>
+				<input type="text" class="form-control" name="masa_kerja" placeholder="Masukan Masa Kerja" value="<?php echo $detail->masa_kerja ?>">
 			</div>
 		</div>
 	</div>

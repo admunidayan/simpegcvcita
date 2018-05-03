@@ -1,6 +1,6 @@
 <!-- <link rel="stylesheet" type="text/css" href="<?php echo base_url('asset/datepicker/css/bootstrap.css') ?>"> -->
 <div style="margin-top: 14px; background-color: white;padding: 30px">
-	<h4 class="text-secondary">Data Diri</h4><hr/>
+	<h4 class="text-secondary">Data Utama</h4><hr/>
 	<form action="<?php echo base_url('index.php/admin/pegawai/update_pegawai/'.$hasil->id_pegawai) ?>" method="post">
 		<div class="row">
 			<div class="col">
@@ -42,7 +42,12 @@
 						</div>
 					</div>
 				</div>
+				<div class="form-group">
+					<label class="text-info" for="gaji_pokok">GAJI POKOK</label>
+					<input type="text" class="form-control" id="gaji_pokok" name="gaji_pokok" placeholder="GAJI POKOK" value="<?php echo $hasil->gaji_pokok ?>">
+				</div>
 			</div>
+			
 			<div class="col">
 				<div class="form-group">
 					<label class="text-info" for="tmpt_lahir">TEMPAT LAHIR</label>

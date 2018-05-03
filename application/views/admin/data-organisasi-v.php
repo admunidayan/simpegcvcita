@@ -1,7 +1,7 @@
 <div style="margin-top: 14px; background-color: white;padding: 30px">
 	<div class="media">
 		<div class="media-body">
-			<h4>Data Organisasi</h4>
+			<h4>Unit Organisasi</h4>
 		</div>
 		<div class="media-right">
 			<button type="button" class="btn btn-outline-success btn-sm" data-toggle="modal" data-target="#addorganisasi"><i class="material-icons">note_add</i> Tambah Data Organisasi</button>
@@ -12,8 +12,8 @@
 		<thead>
 			<tr class="bg-app text-light">
 				<td class="jrktbl text-center">No</td>
-				<td class="jrktbl">Uraian</td>
-				<td class="jrktbl">Lokasi</td>
+				<td class="jrktbl">Unit Organisasi</td>
+				<td class="jrktbl">Nomor</td>
 				<td class="jrktbl">Tanggal</td>
 				<td class="jrktbl" colspan="2">Aksi</td>
 			</tr>
@@ -24,8 +24,8 @@
 				<?php foreach ($organisasi as $data): ?>
 					<tr>
 						<td class="jrktbl text-center"><?php echo $no; ?></td>
-						<td class="jrktbl"><?php echo $data->uraian; ?></td>
-						<td class="jrktbl"><?php echo $data->lokasi; ?></td>
+						<td class="jrktbl"><td class="jrktbl"><?php echo $this->Admin_m->detail_data_order('master_satuan_kerja','id_satuan_kerja',$data->id_satuan_kerja)->nama_satuan_kerja; ?></td>
+						<td class="jrktbl"><?php echo $data->nomor; ?></td>
 						<td class="jrktbl"><?php echo date('d F Y', strtotime($data->tanggal)); ?></td>
 						<td class="jrktbl">
 							<a href="<?php echo base_url('index.php/admin/pegawai/edit_organisasi/'.$hasil->id_pegawai.'/'.$data->id_organisasi) ?>" class="text-success">Edit</a>
@@ -59,12 +59,16 @@
 					<div class="row">
 						<div class="col-md-12">
 							<div class="form-group">
-								<label class="text-info" for="uraian">URAIAN</label>
-								<input type="text" class="form-control" id="uraian" name="uraian" placeholder="URAIAN" >
-							</div>
+								<label class="text-info" for="id_satuan_kerja">SATUAN KERJA</label>
+								<select class="form-control" name="id_satuan_kerja">
+									<?php foreach ($satuankerja as $data): ?>
+										<option value="<?php echo $data->id_satuan_kerja ?>"><?php echo $data->nama_satuan_kerja; ?></option>
+									<?php endforeach ?>
+								</select>
+							</div>					
 							<div class="form-group">
-								<label class="text-info" for="lokasi">LOKASI</label>
-								<input type="text" class="form-control" id="lokasi" name="lokasi" placeholder="LOKASI" >
+								<label class="text-info" for="nomor">NOMOR</label>
+								<input type="text" class="form-control" id="nomor" name="nomor" placeholder="NOMOR" >
 							</div>
 							<div class="form-group">
 								<label class="text-info" for="tanggal">TANGGAL</label>

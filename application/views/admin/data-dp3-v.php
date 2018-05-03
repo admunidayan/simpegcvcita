@@ -14,8 +14,8 @@
 				<td class="jrktbl text-center">No</td>
 				<td class="jrktbl">Tahun</td>
 				<td class="jrktbl">Rata-Rata</td>
-				<td class="jrktbl">Penilai</td>
-				<td class="jrktbl">Atasan</td>
+				<td class="jrktbl">Pejabat Penilai</td>
+				<td class="jrktbl">Atasan Pejabat Penilai</td>
 				<td class="jrktbl" colspan="2">Aksi</td>
 			</tr>
 		</thead>
@@ -27,8 +27,8 @@
 						<td class="jrktbl text-center"><?php echo $no; ?></td>
 						<td class="jrktbl"><?php echo $data->tahun; ?></td>
 						<td class="jrktbl"><?php echo $data->rata_rata; ?></td>
-						<td class="jrktbl"><?php echo $data->penilai; ?></td>
-						<td class="jrktbl"><?php echo $data->atasan; ?></td>
+						<td class="jrktbl"><?php echo $data->pejabat_penilai; ?></td>
+						<td class="jrktbl"><?php echo $data->atasan_pejabat_penilai; ?></td>
 						<td class="jrktbl">
 							<a href="<?php echo base_url('index.php/admin/pegawai/edit_dp3/'.$hasil->id_pegawai.'/'.$data->id_dp3) ?>" class="text-success">Edit</a>
 						</td>
@@ -101,12 +101,12 @@
 								<input type="text" class="form-control" id="rata_rata" name="rata_rata" placeholder="RATA-RATA">
 							</div>
 							<div class="form-group">
-								<label class="text-info" for="atasan">ATASAN</label>
-								<input type="text" class="form-control" id="atasan" name="atasan" placeholder="ATASAN">
+								<label class="text-info" for="pejabat_penilai">PEJABAT PENILAI</label>
+								<input type="text" class="form-control" id="pejabat_penilai" name="pejabat_penilai" placeholder="PEJABAT PENILAI">
 							</div>
 							<div class="form-group">
-								<label class="text-info" for="penilai">PENILAI</label>
-								<input type="text" class="form-control" id="penilai" name="penilai" placeholder="PENILAI">
+								<label class="text-info" for="atasan_pejabat_penilai">ATASAN PEJABAT PENILAI</label>
+								<input type="text" class="form-control" id="atasan_pejabat_penilai" name="atasan_pejabat_penilai" placeholder="ATASAN PEJABAT PENILAI">
 							</div>
 							<div class="form-group">
 								<label class="text-info" for="mengetahui">MENGETAHUI</label>

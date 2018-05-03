@@ -89,6 +89,11 @@ class Admin_m extends CI_Model
 		$query = $this->db->get($tabel);
 		return $query->result();
 	}
+	public function select_data_s_k(){
+		$this->db->order_by('id_satuan_kerja','asc');
+		$query = $this->db->get('master_satuan_kerja');
+		return $query->result();
+	}
 	public function detail_data_order($tabel,$field,$id){
 		$this->db->where($field, $id);
 		$query = $this->db->get($tabel);

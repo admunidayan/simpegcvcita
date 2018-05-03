@@ -1,7 +1,7 @@
 <div style="margin-top: 14px; background-color: white;padding: 30px">
 	<div class="media">
 		<div class="media-body">
-			<h4>Data Penghargaan</h4>
+			<h4>Penghargaan</h4>
 		</div>
 		<div class="media-right">
 			<button type="button" class="btn btn-outline-success btn-sm" data-toggle="modal" data-target="#addpenghargaan"><i class="material-icons">note_add</i> Tambah Data Penghargaan</button>
@@ -12,8 +12,10 @@
 		<thead>
 			<tr class="bg-app text-light">
 				<td class="jrktbl text-center">No</td>
-				<td class="jrktbl">Uraian</td>
-				<td class="jrktbl">Tanggal SK</td>
+				<td class="jrktbl">Jenis Penghargaan</td>
+				<td class="jrktbl">No. Keputusan</td>
+				<td class="jrktbl">Tanggal</td>
+				<td class="jrktbl">Tahun</td>
 				<td class="jrktbl" colspan="2">Aksi</td>
 			</tr>
 		</thead>
@@ -23,8 +25,10 @@
 				<?php foreach ($penghargaan as $data): ?>
 					<tr>
 						<td class="jrktbl text-center"><?php echo $no; ?></td>
-						<td class="jrktbl"><?php echo $data->uraian; ?></td>
-						<td class="jrktbl"><?php echo date('d F Y', strtotime($data->tanggal_sk)); ?></td>
+						<td class="jrktbl"><?php echo $data->jenis_penghargaan; ?></td>
+						<td class="jrktbl"><?php echo $data->no_keputusan; ?></td>
+						<td class="jrktbl"><?php echo date('d F Y', strtotime($data->tanggal)); ?></td>
+						<td class="jrktbl"><?php echo $data->tahun; ?></td>
 						<td class="jrktbl">
 							<a href="<?php echo base_url('index.php/admin/pegawai/edit_penghargaan/'.$hasil->id_pegawai.'/'.$data->id_penghargaan) ?>" class="text-success">Edit</a>
 						</td>
@@ -57,22 +61,30 @@
 					<div class="row">
 						<div class="col-md-12">
 							<div class="form-group">
-								<label class="text-info" for="uraian">URAIAN</label>
-								<input type="text" class="form-control" id="uraian" name="uraian" placeholder="URAIAN" >
+								<label class="text-info" for="jenis_penghargaan">JENIS PENGHARGAAN</label>
+								<input type="text" class="form-control" id="jenis_penghargaan" name="jenis_penghargaan" placeholder="JENIS PENGHARGAAN" >
 							</div>
 							<div class="form-group">
-								<label class="text-info" for="tanggal_sk">TANGGAL SK</label>
+								<label class="text-info" for="no_keputusan">NO. KEPUTUSAN</label>
+								<input type="text" class="form-control" id="no_keputusan" name="no_keputusan" placeholder="NO KEPUTUSAN" >
+							</div>
+							<div class="form-group">
+								<label class="text-info" for="tanggal">TANGGAL</label>
 								<div class="row">
 									<div class="col">
-										<input type="text" class="form-control" id="tanggal_sk" name="tanggal_sk_hr" placeholder="HH">
+										<input type="text" class="form-control" id="tanggal" name="tanggal_hr" placeholder="HH">
 									</div>
 									<div class="col">
-										<input type="text" class="form-control" id="tanggal_sk" name="tanggal_sk_bln" placeholder="BB">
+										<input type="text" class="form-control" id="tanggal" name="tanggal_bln" placeholder="BB">
 									</div>
 									<div class="col">
-										<input type="text" class="form-control" id="tanggal_sk" name="tanggal_sk_thn" placeholder="TTTT">
+										<input type="text" class="form-control" id="tanggal" name="tanggal_thn" placeholder="TTTT">
 									</div>
 								</div>
+								<div class="form-group">
+								<label class="text-info" for="tahun">TAHUN</label>
+								<input type="text" class="form-control" id="tahun" name="tahun" placeholder="TAHUN" >
+							</div>
 							</div>
 						</div>
 					</div>

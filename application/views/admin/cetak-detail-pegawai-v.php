@@ -84,6 +84,10 @@
 			<td class="colpading bdkiri bdkanan">Lokasi Kerja</td>
 			<td class="colpading bdkanan" colspan="2"><?php echo $unit_org->nama_satuan_kerja; ?></td>
 		</tr>
+		<tr>
+			<td class="colpading bdkiri bdkanan">Gaji Pokok</td>
+			<td class="colpading bdkanan" colspan="2"><?php echo $hasil->gaji_pokok; ?></td>
+		</tr>
 	</table>
 </td>
 </tr>
@@ -95,7 +99,7 @@
 	<tr>
 		<td class="colpading bdkiri bdkanan">Nama Anggota Keluarga</td>
 		<td class="colpading bdkiri bdkanan">Tanggal Lahir</td>
-		<td class="colpading bdkiri bdkanan">Status Dalam Keluarga</td>
+		<td class="colpading bdkiri bdkanan">Hubungan Keluarga</td>
 		<td class="colpading bdkiri bdkanan">Status Kawin</td>
 		<td class="colpading bdkiri bdkanan">Tanggal Nikah</td>
 		<td class="colpading bdkiri bdkanan">Pekerjaan</td>
@@ -125,7 +129,7 @@
 		<td class="colpading bdkiri bdkanan">TMT Golongan</td>
 		<td class="colpading bdkiri bdkanan">No Bkn</td>
 		<td class="colpading bdkiri bdkanan">Tanggal Bkn</td>
-		<td class="colpading bdkiri bdkanan">Status Jabatan</td>
+		<td class="colpading bdkiri bdkanan">Masa Kerja</td>
 	</tr>
 	<?php foreach ($golongan as $data): ?>
 		<tr>
@@ -135,7 +139,7 @@
 			<td class="colpading bdkanan"><?php echo $data->tmt_golongan ?></td>
 			<td class="colpading bdkanan"><?php echo $data->nomor_bkn ?></td>
 			<td class="colpading bdkanan"><?php echo $data->tanggal_bkn ?></td>
-			<td class="colpading bdkanan"><?php echo @$this->Admin_m->detail_data_order('master_status_jabatan','id_status_jabatan',$data->id_status_jabatan)->nama_jabatan ?></td>
+			<td class="colpading bdkanan"><?php echo $data->masa_kerja ?></td>
 		</tr>
 	<?php endforeach ?>
 </table>
@@ -146,24 +150,23 @@
 	<tr>
 		<td class="colpading bdkiri bdkanan">Jenis Jabatan</td>
 		<td class="colpading bdkiri bdkanan">Nama Jabatan</td>
-		<td class="colpading bdkiri bdkanan">Satuan Kerja</td>
 		<td class="colpading bdkiri bdkanan">Eselon</td>
-		<td class="colpading bdkiri bdkanan">TMT Jabatan</td>
-		<td class="colpading bdkiri bdkanan">Tgl SK</td>
-		<td class="colpading bdkiri bdkanan">TMT Pelantikan</td>
 		<td class="colpading bdkiri bdkanan">No SK</td>
+		<td class="colpading bdkiri bdkanan">Tgl SK</td>
+		<td class="colpading bdkiri bdkanan">TMT Jabatan</td>
+		<td class="colpading bdkiri bdkanan">TMT Pelantikan</td>
+		<td class="colpading bdkiri bdkanan">Satuan Kerja</td>		
 	</tr>
 	<?php foreach ($jabatan as $data): ?>
 		<tr>
 			<td class="colpading bdkanan bdkiri"><?php echo $this->Admin_m->detail_data_order('master_jenis_jabatan','id_jenis_jabatan',$data->id_jenis_jabatan)->nama_jenis_jabatan; ?></td>
 			<td class="colpading bdkanan"><?php echo $this->Admin_m->detail_data_order('master_jabatan','id_jabatan',$data->id_jabatan)->nama_jabatan; ?></td>
-			<td class="colpading bdkanan"><?php echo $this->Admin_m->detail_data_order('master_satuan_kerja','id_satuan_kerja',$data->id_satuan_kerja)->nama_satuan_kerja; ?></td>
 			<td class="colpading bdkanan"><?php echo $this->Admin_m->detail_data_order('master_eselon','id_eselon',$data->id_eselon)->nama_eselon;?></td>
-			<td class="colpading bdkanan"><?php echo $data->tmt_jabatan_rj ?></td>
-			<td class="colpading bdkanan"><?php echo $data->tanggal_sk_rj ?></td>
-			<td class="colpading bdkanan"><?php echo $data->tmt_pelantikan_rj ?></td>
 			<td class="colpading bdkanan"><?php echo $data->nomor_sk ?></td>
-
+			<td class="colpading bdkanan"><?php echo $data->tanggal_sk_rj ?></td>
+			<td class="colpading bdkanan"><?php echo $data->tmt_jabatan_rj ?></td>
+			<td class="colpading bdkanan"><?php echo $data->tmt_pelantikan_rj ?></td>
+			<td class="colpading bdkanan"><?php echo $this->Admin_m->detail_data_order('master_satuan_kerja','id_satuan_kerja',$data->id_satuan_kerja)->nama_satuan_kerja; ?></td>
 		</tr>
 	<?php endforeach ?>
 </table>
@@ -173,43 +176,41 @@
 	</tr>
 	<tr>
 		<td class="colpading bdkiri bdkanan">Tingkat Pendidikan</td>
-		<td class="colpading bdkiri bdkanan">Jurusan</td>
 		<td class="colpading bdkiri bdkanan">Sekolah</td>
-		<td class="colpading bdkiri bdkanan">Tmpt Sekolah</td>
-		<td class="colpading bdkiri bdkanan">Tgl Lulus</td>
+		<td class="colpading bdkiri bdkanan">Jurusan</td>
 		<td class="colpading bdkiri bdkanan">No Ijazah</td>
-		<td class="colpading bdkiri bdkanan">Tahun Lulus</td>
+		<td class="colpading bdkiri bdkanan">Tgl Ijazah</td>
+		<td class="colpading bdkiri bdkanan">Tmpt Sekolah</td>
 	</tr>
 	<?php foreach ($pendidikan as $data): ?>
 		<tr>
 			<td class="colpading bdkanan bdkiri"><?php echo $this->Admin_m->detail_data_order('master_pendidikan','id',$data->tingkat_pendidikan)->pendidikan; ?></td>
-			<td class="colpading bdkanan"><?php echo $data->jurusan ?></td>
 			<td class="colpading bdkanan"><?php echo $data->sekolah ?></td>
-			<td class="colpading bdkanan"><?php echo $data->tempat_sekolah ?></td>
-			<td class="colpading bdkanan"><?php echo $data->tanggal_lulus ?></td>
+			<td class="colpading bdkanan"><?php echo $data->jurusan ?></td>
 			<td class="colpading bdkanan"><?php echo $data->nomor_ijazah ?></td>
-			<td class="colpading bdkanan"><?php echo $data->tahun_lulus ?></td>
+			<td class="colpading bdkanan"><?php echo $data->tanggal_lulus ?></td>
+			<td class="colpading bdkanan"><?php echo $data->tempat_sekolah ?></td>
 		</tr>
 	<?php endforeach ?>
 </table>
 <table class="penuh" border="1" style="margin-top: 14px">
 	<tr>
-		<td colspan="6" class="colpading bdatas bdkiri bdkanan"><b>Data Pelatihan</b></td>
+		<td colspan="6" class="colpading bdatas bdkiri bdkanan"><b>Data Diklat</b></td>
 	</tr>
 	<tr>
 		<td class="colpading bdkiri bdkanan">Uraian</td>
 		<td class="colpading bdkiri bdkanan">Lokasi</td>
-		<td class="colpading bdkiri bdkanan">Tgl Sertifikat</td>
-		<td class="colpading bdkiri bdkanan">Jam Pelatihan</td>
-		<td class="colpading bdkiri bdkanan">Negara</td>
+		<td class="colpading bdkiri bdkanan">Nomor</td>
+		<td class="colpading bdkiri bdkanan">Tanggal</td>
+		<td class="colpading bdkiri bdkanan">Tahun</td>
 	</tr>
 	<?php foreach ($pelatihan as $data): ?>
 		<tr>
 			<td class="colpading bdkanan bdkiri"><?php echo $data->uraian ?></td>
 			<td class="colpading bdkanan"><?php echo $data->lokasi ?></td>
-			<td class="colpading bdkanan"><?php echo $data->tanggal_sertifikat ?></td>
-			<td class="colpading bdkanan"><?php echo $data->jam_pelatihan ?></td>
-			<td class="colpading bdkanan"><?php echo $data->negara ?></td>
+			<td class="colpading bdkanan"><?php echo $data->nomor ?></td>
+			<td class="colpading bdkanan"><?php echo $data->tanggal ?></td>
+			<td class="colpading bdkanan"><?php echo $data->tahun ?></td>
 		</tr>
 	<?php endforeach ?>
 </table>
@@ -218,13 +219,13 @@
 		<td colspan="2" class="colpading bdatas bdkiri bdkanan"><b>Data Penghargaan</b></td>
 	</tr>
 	<tr>
-		<td class="colpading bdkiri bdkanan">Uraian</td>
-		<td class="colpading bdkiri bdkanan">Tgl SK</td>
+		<td class="colpading bdkiri bdkanan">Jenis Penghargaan</td>
+		<td class="colpading bdkiri bdkanan">No. Keputusan</td>
 	</tr>
 	<?php foreach ($penghargaan as $data): ?>
 		<tr>
-			<td class="colpading bdkanan bdkiri"><?php echo $data->uraian ?></td>
-			<td class="colpading bdkanan"><?php echo $data->tanggal_sk ?></td>
+			<td class="colpading bdkanan bdkiri"><?php echo $data->jenis_penghargaan ?></td>
+			<td class="colpading bdkanan"><?php echo $data->no_keputusan ?></td>
 		</tr>
 	<?php endforeach ?>
 </table>

@@ -1,7 +1,7 @@
 <div style="margin-top: 14px; background-color: white;padding: 30px">
 	<div class="media">
 		<div class="media-body">
-			<h4>Data Riwayat Golongan</h4>
+			<h4>Riwayat Golongan</h4>
 		</div>
 		<div class="media-right">
 			<button type="button" class="btn btn-outline-success btn-sm" data-toggle="modal" data-target="#addrgolongan"><i class="material-icons">note_add</i> Tambah Data Riwayat Golongan</button>
@@ -18,7 +18,7 @@
 				<td class="jrktbl">TMT Golongan</td>
 				<td class="jrktbl">No BKN</td>
 				<td class="jrktbl">Tgl BKN</td>
-				<td class="jrktbl">Jenis KP</td>
+				<td class="jrktbl">Masa Kerja</td>
 				<td class="jrktbl" colspan="2">Aksi</td>
 			</tr>
 		</thead>
@@ -34,7 +34,7 @@
 						<td class="jrktbl"><?php echo date('d F Y', strtotime($data->tmt_golongan)) ; ?></td>
 						<td class="jrktbl"><?php echo $data->nomor_bkn; ?></td>
 						<td class="jrktbl"><?php echo date('d F Y', strtotime($data->tanggal_bkn)) ; ?></td>
-						<td class="jrktbl"><?php echo @$this->Admin_m->detail_data_order('master_status_jabatan','id_status_jabatan',$data->id_status_jabatan)->nama_jabatan; ?></td>
+						<td class="jrktbl"><?php echo $data->masa_kerja; ?></td>
 						<td class="jrktbl">
 							<a href="<?php echo base_url('index.php/admin/pegawai/edit_rgolongan/'.$hasil->id_pegawai.'/'.$data->id_riwayat_golongan) ?>" class="text-success">Edit</a>
 						</td>
@@ -125,12 +125,9 @@
 									</div>
 								</div>
 								<div class="form-group">
-								<label class="text-info" for="id_status_jabatan">JENIS KP</label>
-								<select class="form-control" name="id_status_jabatan">
-									<?php foreach ($sjabatan as $data): ?>
-										<option value="<?php echo $data->id_status_jabatan ?>"><?php echo $data->nama_jabatan; ?></option>
-									<?php endforeach ?>
-								</select>
+								<label class="text-info" for="masa_kerja">MASA KERJA</label>
+								<input type="text" class="form-control" id="masa_kerja" name="masa_kerja" placeholder="MASA KERJA">
+								</div>
 							</div>
 							</div>
 						</div>

@@ -1,10 +1,10 @@
 <div style="margin-top: 14px; background-color: white;padding: 30px">
 	<div class="media">
 		<div class="media-body">
-			<h4>Data Hukuman</h4>
+			<h4>Disiplin</h4>
 		</div>
 		<div class="media-right">
-			<button type="button" class="btn btn-outline-success btn-sm" data-toggle="modal" data-target="#addhukuman"><i class="material-icons">note_add</i> Tambah Data Hukuman</button>
+			<button type="button" class="btn btn-outline-success btn-sm" data-toggle="modal" data-target="#addhukuman"><i class="material-icons">note_add</i> Tambah Data Disiplin</button>
 		</div>
 	</div>
 	<hr/>
@@ -17,8 +17,7 @@
 				<td class="jrktbl">Tgl SK</td>
 				<td class="jrktbl">Tgl Mulai</td>
 				<td class="jrktbl">Tgl Selesai</td>
-				<td class="jrktbl">Masa Berlaku</td>
-				<td class="jrktbl">Pejabat</td>
+				<td class="jrktbl">No SK Pembatalan</td>
 				<td class="jrktbl" colspan="2">Aksi</td>
 			</tr>
 		</thead>
@@ -33,8 +32,7 @@
 						<td class="jrktbl"><?php echo date('d F Y', strtotime($data->tanggal_sk)); ?></td>
 						<td class="jrktbl"><?php echo date('d F Y', strtotime($data->tanggal_mulai)); ?></td>
 						<td class="jrktbl"><?php echo date('d F Y', strtotime($data->tanggal_selesai)); ?></td>
-						<td class="jrktbl"><?php echo date('d F Y', strtotime($data->masa_berlaku)); ?></td>
-						<td class="jrktbl"><?php echo $data->pejabat_menetapkan; ?></td>
+						<td class="jrktbl"><?php echo $data->no_sk_pembatalan; ?></td>
 						<td class="jrktbl">
 							<a href="<?php echo base_url('index.php/admin/pegawai/edit_hukuman/'.$hasil->id_pegawai.'/'.$data->id_hukuman) ?>" class="text-success">Edit</a>
 						</td>
@@ -117,22 +115,8 @@
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="text-info" for="masa_berlaku">MASA BERLAKU</label>
-								<div class="row">
-									<div class="col">
-										<input type="text" class="form-control" id="masa_berlaku" name="masa_berlaku_hr" placeholder="HH" >
-									</div>
-									<div class="col">
-										<input type="text" class="form-control" id="masa_berlaku" name="masa_berlaku_bln" placeholder="BB" >
-									</div>
-									<div class="col">
-										<input type="text" class="form-control" id="masa_berlaku" name="masa_berlaku_thn" placeholder="TTTT">
-									</div>
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="text-info" for="pejabat_menetapkan">PEJABAT MENETAPKAN</label>
-								<input type="text" class="form-control" id="pejabat_menetapkan" name="pejabat_menetapkan" placeholder="PEJABAT MENETAPKAN">
+								<label class="text-info" for="no_sk_pembatalan">NO SK PEMBATALAN</label>
+								<input type="text" class="form-control" id="no_sk_pembatalan" name="no_sk_pembatalan" placeholder="NO SK PEMBATALAN">
 							</div>
 						</div>
 					</div>

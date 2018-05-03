@@ -16,13 +16,13 @@ rel="stylesheet">
 	</div>
 </nav>
 <div style="margin-top: 14px; padding: 30px">
-<div class="container-fluid" style="background: #008080; color: white">
+<div class="container-fluid" style="background: #17a2b8; color: white">
 	<div class="row">
 		<div class="col-sm" align="center">
 			<h4>JUMLAH PEGAWAI KABUPATEN BUTON</h4>
 		</div>
 		<div class="col-sm" align="center">
-			<h4>12.000</h4>
+			<h4>24 Orang</h4>
 		</div>
 	</div>
 </div>
@@ -81,7 +81,7 @@ rel="stylesheet">
 							type: 'column'
 						},
 						title: {
-							text: 'GRAFIK JUMLAH PEGAWAI PER-JABATAN'
+							text: 'Grafik Pegawai Per-Jabatan'
 						},
 						subtitle: {
 							text: 'Source: Database Kabupaten Buton'

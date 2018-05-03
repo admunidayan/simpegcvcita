@@ -1,7 +1,7 @@
 <div style="margin-top: 14px; background-color: white;padding: 30px">
 	<div class="media">
 		<div class="media-body">
-			<h4>Data Pendidikan</h4>
+			<h4>Pendidikan</h4>
 		</div>
 		<div class="media-right">
 			<button type="button" class="btn btn-outline-success btn-sm" data-toggle="modal" data-target="#addpendidikan"><i class="material-icons">note_add</i> Tambah Data Pendidikan</button>
@@ -13,12 +13,11 @@
 			<tr class="bg-app text-light">
 				<td class="jrktbl text-center">No</td>
 				<td class="jrktbl">Tngkt Pendidikan</td>
-				<td class="jrktbl">Jurusan</td>
 				<td class="jrktbl">Sekolah</td>
-				<td class="jrktbl">Alamat</td>
-				<td class="jrktbl">Tgl Lulus</td>
+				<td class="jrktbl">Jurusan</td>
 				<td class="jrktbl">No Ijazah</td>
-				<td class="jrktbl">Tahun Lulus</td>
+				<td class="jrktbl">Tgl Ijazah</td>
+				<td class="jrktbl">Tempat</td>
 				<td class="jrktbl" colspan="2">Aksi</td>
 			</tr>
 		</thead>
@@ -29,12 +28,11 @@
 					<tr>
 						<td class="jrktbl text-center"><?php echo $no; ?></td>
 						<td class="jrktbl"><?php echo @$this->Admin_m->detail_data_order('master_pendidikan','id',$data->tingkat_pendidikan)->pendidikan; ?></td>
-						<td class="jrktbl"><?php echo $data->jurusan; ?></td>
 						<td class="jrktbl"><?php echo $data->sekolah; ?></td>
-						<td class="jrktbl"><?php echo $data->tempat_sekolah; ?></td>
-						<td class="jrktbl"><?php echo date('d F Y', strtotime($data->tanggal_lulus)); ?></td>
+						<td class="jrktbl"><?php echo $data->jurusan; ?></td>
 						<td class="jrktbl"><?php echo $data->nomor_ijazah; ?></td>
-						<td class="jrktbl"><?php echo $data->tahun_lulus; ?></td>
+						<td class="jrktbl"><?php echo date('d F Y', strtotime($data->tanggal_lulus)); ?></td>
+						<td class="jrktbl"><?php echo $data->tempat_sekolah; ?></td>			
 						<td class="jrktbl">
 							<a href="<?php echo base_url('index.php/admin/pegawai/edit_pendidikan/'.$hasil->id_pegawai.'/'.$data->id_pendidikan) ?>" class="text-success">Edit</a>
 						</td>
@@ -70,21 +68,21 @@
 								<label class="text-info" for="tingkat_pendidikan">TINGKAT PENDIDIKAN</label>
 								<select class="form-control" name="tingkat_pendidikan">
 									<?php foreach ($ipendidikan as $data): ?>
-										<option value <?php echo $data->id; ?>><?php echo $data->pendidikan ?></option>
+										<option value="<?php echo $data->id; ?>"><?php echo $data->pendidikan ?></option>
 									<?php endforeach ?>
 								</select>
-							</div>
-							<div class="form-group">
-								<label class="text-info" for="jurusan">JURUSAN</label>
-								<input type="text" class="form-control" id="jurusan" name="jurusan" placeholder="JURUSAN" >
 							</div>
 							<div class="form-group">
 								<label class="text-info" for="sekolah">SEKOLAH</label>
 								<input type="text" class="form-control" id="sekolah" name="sekolah" placeholder="SEKOLAH">
 							</div>
 							<div class="form-group">
-								<label class="text-info" for="tempat_sekolah">TEMPAT SEKOLAH</label>
-								<input type="text" class="form-control" id="tempat_sekolah" name="tempat_sekolah" placeholder="TEMPAT SEKOLAH">
+								<label class="text-info" for="jurusan">JURUSAN</label>
+								<input type="text" class="form-control" id="jurusan" name="jurusan" placeholder="JURUSAN" >
+							</div>
+							<div class="form-group">
+								<label class="text-info" for="nomor_ijazah">NOMOR IJAZAH</label>
+								<input type="text" class="form-control" id="nomor_ijazah" name="nomor_ijazah" placeholder="NOMOR IJAZAH">
 							</div>
 							<div class="form-group">
 								<label class="text-info" for="tanggal_lulus">TANGGAL LULUS</label>
@@ -99,22 +97,18 @@
 										<input type="text" class="form-control" id="tanggal_lulus" name="tanggal_lulus_thn" placeholder="TTTT">
 									</div>
 								</div>
+									<div class="form-group">
+										<label class="text-info" for="tempat_sekolah">TEMPAT SEKOLAH</label>
+										<input type="text" class="form-control" id="tempat_sekolah" name="tempat_sekolah" placeholder="TEMPAT SEKOLAH">
+									</div>
+								</div>
 							</div>
-							<div class="form-group">
-								<label class="text-info" for="nomor_ijazah">NOMOR IJAZAH</label>
-								<input type="text" class="form-control" id="nomor_ijazah" name="nomor_ijazah" placeholder="NOMOR IJAZAH">
-							</div>
-							<div class="form-group">
-								<label class="text-info" for="tahun_lulus">TAHUN LULUS</label>
-								<input type="text" class="form-control" id="tahun_lulus" name="tahun_lulus" placeholder="TAHUN LULUS">
-							</div>
-						</div>
 					</div>
 				</div>
-			<div class="modal-footer">
-				<button type="submit" name="submit" value="submit" class="btn btn-success">Simpan</button>
-			</div>
-		</form>
+				<div class="modal-footer">
+					<button type="submit" name="submit" value="submit" class="btn btn-success">Simpan</button>
+				</div>
+			</form>
+		</div>
 	</div>
-</div>
 </div>

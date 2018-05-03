@@ -22,10 +22,9 @@ class Dashboard extends CI_Controller {
                 $data['users'] = $this->ion_auth->user()->row();
                 $data['aside'] = 'nav/nav';
                 $data['chart'] = $this->Mread->chart();
-                $data['skpd'] = $this->Admin_m->select_data('master_satuan_kerja');
                 // echo "<pre>";print_r($data['skpd']);echo "<pre/>";exit();
                 $data['page'] = 'admin/beranda-v';
-                $nskpd = $this->Admin_m->select_data('master_satuan_kerja');
+                $nskpd = $this->Admin_m->select_data_s_k();
         // echo "<pre>";print_r($nskpd);echo "<pre/>";exit();
                 $namagol = array();
                 foreach ($nskpd as $gol) {

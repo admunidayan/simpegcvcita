@@ -21,7 +21,7 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label class="text-info" for="status_kawin">STATUS DALAM KELUARGA</label>
+				<label class="text-info" for="status_kawin">HUBUNGAN KELUARGA</label>
 				<select class="form-control" name="status_keluarga">
 					<option value="suami">Suami</option>
 					<option value="istri">Istri</option>
