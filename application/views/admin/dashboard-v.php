@@ -81,8 +81,10 @@ rel="stylesheet">
         </div>
       </nav>
       <?php $this->view($page); ?>
+    <div id="footer_bottom" class="footer_bottom">
+      <div class="text-light text-center"><?php  echo date('Y'); ?> © BADAN KEPEGAWAIAN, PENDIDIKAN DAN PELATIHAN DAERAH KABUPATEN BUTON</div>
     </div>
   </div>
-</div>
 </body>
 </html>
+

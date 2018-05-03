@@ -131,3 +131,18 @@ background: linear-gradient(to right, #0b8793, #013c67); /* W3C, IE 10+/ Edge, F
 	color: white;
 	background-color: #1da9f4;
 }
+#footer_bottom {
+background-color: #0e639d;
+padding-top: 13px;
+padding-bottom: 17px;
+margin-top:70px;
+}
+#footer_bottom .copyright {
+text-align: center;
+font-size: 16px;
+color: #81ccff;
+}
+#footer_bottom .copyright a {
+color: #fff;
+font-size: 19px;
+}

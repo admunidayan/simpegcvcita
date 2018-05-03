@@ -12,8 +12,10 @@ class Depan extends CI_Controller {
         $data['brand'] = 'asset/img/lembaga/'.$this->Admin_m->info_pt(1)->logo_pt;
         $data['users'] = $this->ion_auth->user()->row();
         $megol = $this->Admin_m->select_data('master_golongan');
+        $mejab = $this->Admin_m->select_data('master_eselon');
         // echo "<pre>";print_r($megol);echo "<pre/>";exit();
         $data['mgol'] =$megol;
+        $data['mjab'] =$mejab;
         // echo "<pre>";print_r($data['mgol']);echo "<pre/>";exit();
                 // pagging setting
         $this->load->view('admin/depan',$data);
