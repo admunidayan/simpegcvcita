@@ -29,7 +29,7 @@
 						<td class="jrktbl"><?php echo $data->uraian; ?></td>
 						<td class="jrktbl"><?php echo $data->lokasi; ?></td>
 						<td class="jrktbl"><?php echo $data->nomor; ?></td>
-						<td class="jrktbl"><?php echo date('d F Y', strtotime($data->tanggal)); ?></td>
+						<td class="jrktbl"><?php echo $data->tanggal; ?></td>
 						<td class="jrktbl"><?php echo $data->tahun; ?></td>
 						<td class="jrktbl">
 							<a href="<?php echo base_url('index.php/admin/pegawai/edit_pelatihan/'.$hasil->id_pegawai.'/'.$data->id_pelatihan) ?>" class="text-success">Edit</a>
@@ -83,9 +83,7 @@
 									<div class="col">
 										<input type="text" class="form-control" id="tanggal" name="tanggal_bln" placeholder="BB">
 									</div>
-									<div class="col">
-										<input type="text" class="form-control" id="tanggal" name="tanggal_thn" placeholder="TTTT">
-									</div>
+
 								</div>
 							</div>
 							<div class="form-group">

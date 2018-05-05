@@ -524,7 +524,7 @@ class Pegawai extends CI_Controller {
                     'tmt_golongan'=>$post['tmt_golongan_thn'].'-'.$post['tmt_golongan_bln'].'-'.$post['tmt_golongan_hr'],
                     'nomor_bkn'=>$post['nomor_bkn'],
                     'tanggal_bkn'=>$post['tanggal_bkn_thn'].'-'.$post['tanggal_bkn_bln'].'-'.$post['tanggal_bkn_hr'],
-                    'id_status_jabatan'=>$post['id_status_jabatan']
+                    'masa_kerja' =>$post['masa_kerja']
                 );
                 $this->Pegawai_m->insert_data('data_riwayat_golongan',$datainput);
                 $pesan = 'Data riwayat golongan baru berhasil di tambahkan';
@@ -611,7 +611,8 @@ class Pegawai extends CI_Controller {
                     'uraian' => $post['uraian'],
                     'id_pegawai' => $idpegawai,
                     'lokasi'=>$post['lokasi'],
-                    'tanggal'=>$post['tanggal_thn'].'-'.$post['tanggal_bln'].'-'.$post['tanggal_hr'],
+                    'nomor'=>$post['nomor'],
+                    'tanggal'=>$post['tanggal_bln'].'-'.$post['tanggal_hr'],
                     'tahun'=>$post['tahun']
                 );
                 $this->Pegawai_m->insert_data('data_pelatihan',$datainput);
@@ -847,7 +848,7 @@ class Pegawai extends CI_Controller {
                     'tmt_golongan'=>$post['tmt_golongan_thn'].'-'.$post['tmt_golongan_bln'].'-'.$post['tmt_golongan_hr'],
                     'nomor_bkn'=>$post['nomor_bkn'],
                     'tanggal_bkn'=>$post['tanggal_bkn_thn'].'-'.$post['tanggal_bkn_bln'].'-'.$post['tanggal_bkn_hr'],
-                    'id_status_jabatan'=>$post['id_status_jabatan']
+                    'masa_kerja' =>$post['masa_kerja']
                 );
                 $this->Pegawai_m->update_data('data_riwayat_golongan','id_riwayat_golongan',$idr,$datainput);
                 $pesan = 'Data riwayat golongan baru berhasil di diubah';
@@ -1099,7 +1100,7 @@ class Pegawai extends CI_Controller {
                 $datainput = array(
                  'uraian' => $post['uraian'],
                  'lokasi'=>$post['lokasi'],
-                 'tanggal'=>$post['tanggal_thn'].'-'.$post['tanggal_bln'].'-'.$post['tanggal_hr'],
+                 'tanggal'=>$post['tanggal_bln'].'-'.$post['tanggal_hr'],
                  'tahun'=>$post['tahun']
              );
                 $this->Pegawai_m->update_data('data_pelatihan','id_pelatihan',$idr,$datainput);

@@ -31,7 +31,7 @@
 						<td class="jrktbl"><?php echo $data->sekolah; ?></td>
 						<td class="jrktbl"><?php echo $data->jurusan; ?></td>
 						<td class="jrktbl"><?php echo $data->nomor_ijazah; ?></td>
-						<td class="jrktbl"><?php echo date('d F Y', strtotime($data->tanggal_lulus)); ?></td>
+						<td class="jrktbl"><?php echo $data->tanggal_lulus; ?></td>
 						<td class="jrktbl"><?php echo $data->tempat_sekolah; ?></td>			
 						<td class="jrktbl">
 							<a href="<?php echo base_url('index.php/admin/pegawai/edit_pendidikan/'.$hasil->id_pegawai.'/'.$data->id_pendidikan) ?>" class="text-success">Edit</a>
@@ -85,7 +85,7 @@
 								<input type="text" class="form-control" id="nomor_ijazah" name="nomor_ijazah" placeholder="NOMOR IJAZAH">
 							</div>
 							<div class="form-group">
-								<label class="text-info" for="tanggal_lulus">TANGGAL LULUS</label>
+								<label class="text-info" for="tanggal_lulus">TANGGAL IJAZAH</label>
 								<div class="row">
 									<div class="col">
 										<input type="text" class="form-control" id="tanggal_lulus" name="tanggal_lulus_hr" placeholder="HH">
@@ -98,7 +98,7 @@
 									</div>
 								</div>
 									<div class="form-group">
-										<label class="text-info" for="tempat_sekolah">TEMPAT SEKOLAH</label>
+										<label class="text-info" for="tempat_sekolah">TEMPAT</label>
 										<input type="text" class="form-control" id="tempat_sekolah" name="tempat_sekolah" placeholder="TEMPAT SEKOLAH">
 									</div>
 								</div>
