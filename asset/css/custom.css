@@ -146,3 +146,6 @@ color: #81ccff;
 color: #fff;
 font-size: 19px;
 }
+.box {
+ background: linear-gradient(to right, #000046, #1cb5e0);   
+}
