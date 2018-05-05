@@ -14,7 +14,7 @@
 				<td class="jrktbl text-center">No</td>
 				<td class="jrktbl">Nama</td>
 				<td class="jrktbl">Tgl Lahir</td>
-				<td class="jrktbl">Hubungan Keluarga</td>
+				<td class="jrktbl">Hub. Keluarga</td>
 				<td class="jrktbl">Status Kawin</td>
 				<td class="jrktbl">Tgl Nikah</td>
 				<td class="jrktbl">Tgl Cerai</td>
@@ -31,12 +31,12 @@
 					<tr>
 						<td class="jrktbl text-center"><?php echo $no; ?></td>
 						<td class="jrktbl"><?php echo $data->nama_anggota_keluarga; ?></td>
-						<td class="jrktbl"><?php echo date('d F Y', strtotime($data->tanggal_lahir)) ; ?></td>
-						<td class="jrktbl"><?php echo $data->status_keluarga; ?></td>
-						<td class="jrktbl"><?php echo $data->status_kawin; ?></td>
-						<td class="jrktbl"><?php echo date('d F Y', strtotime($data->tanggal_nikah)); ?></td>
-						<td class="jrktbl"><?php echo date('d F Y', strtotime($data->tanggal_cerai_meninggal)); ?></td>
-						<td class="jrktbl"><?php echo date('d F Y', strtotime($data->tanggal_meninggal)); ?></td>
+						<td class="jrktbl"><?php echo $data->tanggal_lahir; ?></td>
+						<td class="jrktbl"><?php echo $this->Admin_m->detail_data_order('master_status_dalam_keluarga','id',$data->status_keluarga)->status_keluarga;?></td>
+						<td class="jrktbl"><?php echo $this->Admin_m->detail_data_order('master_status_kawin','id',$data->status_kawin)->status_kawin;?></td>
+						<td class="jrktbl"><?php echo $data->tanggal_nikah; ?></td>
+						<td class="jrktbl"><?php echo $data->tanggal_cerai_meninggal; ?></td>
+						<td class="jrktbl"><?php echo $data->tanggal_meninggal; ?></td>
 						<td class="jrktbl"><?php echo $data->pekerjaan; ?></td>
 						<td class="jrktbl"><?php echo $data->no_kartu; ?></td>
 						<td class="jrktbl">
@@ -55,7 +55,6 @@
 			<?php endif ?>
 		</tbody>
 	</table>
-</div >
 <!-- Modal -->
 <div class="modal fade" id="addkeluarga" tabindex="-1" role="dialog" aria-labelledby="addkeluargaa" aria-hidden="true">
 	<div class="modal-dialog modal-lg" role="document">
@@ -92,7 +91,7 @@
 								<label class="text-info" for="status_keluarga">HUBUNGAN KELUARGA</label>
 								<select class="form-control" name="status_keluarga">
 									<?php foreach ($stat_keluarga as $data): ?>
-										<option value <?php echo $data->id; ?><?php echo $data->status_keluarga ?></option>
+										<option value="<?php echo $data->id; ?>"><?php echo $data->status_keluarga ?></option>
 									<?php endforeach ?>
 								</select>
 							</div>
@@ -100,7 +99,7 @@
 								<label class="text-info" for="status_kawin">STATUS KAWIN</label>
 								<select class="form-control" name="status_kawin">
 									<?php foreach ($stat_kawin as $data): ?>
-										<option value <?php echo $data->id; ?><?php echo $data->status_kawin ?></option>
+										<option value="<?php echo $data->id; ?>"><?php echo $data->status_kawin ?></option>
 									<?php endforeach ?>
 								</select>
 							</div>
@@ -117,10 +116,6 @@
 										<input type="text" class="form-control" id="tanggal_nikah" name="tanggal_nikah_thn" placeholder="TTTT">
 									</div>
 								</div>
-							</div>
-							<div class="form-group">
-								<label class="text-info" for="uraian">URAIAN</label>
-								<input type="text" class="form-control" id="uraian" name="uraian" placeholder="URAIAN">
 							</div>
 							<div class="form-group">
 								<label class="text-info" for="tanggal_cerai_meninggal">TANGGAL CERAI</label>
@@ -156,13 +151,14 @@
 										<label class="text-info" for="no_kartu">NO KARTU SUAMI/ISTRI</label>
 										<input type="text" class="form-control" id="no_kartu" name="no_kartu" placeholder="NO KARTU SUAMI/ISTRI">
 									</div>
-
 								</div>
-							</div>
+						</div>
+						</div>
 						</div>
 						<div class="modal-footer">
 							<button type="submit" name="submit" value="submit" class="btn btn-success">Simpan</button>
 						</div>
+					</div>
 					</form>
 				</div>
 			</div>
