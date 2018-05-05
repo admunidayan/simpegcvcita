@@ -24,10 +24,10 @@
 						<label for="tanggal">TANGGAL</label>
 						<div class="row">
 							<div class="col">
-								<input type="text" class="form-control" id="tanggal" name="tanggal_hr" placeholder="HH" value="<?php echo substr($detail->tanggal,8,2)?>">
+								<input type="text" class="form-control" id="tanggal" name="tanggal_hr" placeholder="HH" value="<?php echo substr($detail->tanggal,3,2)?>">
 							</div>
 							<div class="col">
-								<input type="text" class="form-control" id="tanggal" name="tanggal_bln" placeholder="BB" value="<?php echo substr($detail->tanggal,5,2)?>">
+								<input type="text" class="form-control" id="tanggal" name="tanggal_bln" placeholder="BB" value="<?php echo substr($detail->tanggal,0,2)?>">
 							</div>
 					   </div>
 					</div>
