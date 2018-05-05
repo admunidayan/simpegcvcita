@@ -94,6 +94,16 @@
 								<label class="text-info" for="no_kartu_pegawai">NOMOR KARTU PEGAWAI</label>
 								<input type="text" class="form-control" id="no_kartu_pegawai" name="no_kartu_pegawai" placeholder="NOMOR KARTU PEGAWAI">
 							</div>
+
+							<div class="form-group">
+								<label class="text-info" for="nomor_kk">NOMOR KARTU KELUARGA</label>
+								<input type="text" class="form-control" id="NO_KK" name="nomor_kk" placeholder="NOMOR KARTU KELUARGA"">
+							</div>
+
+							<div class="form-group">
+								<label class="text-info" for="no_ktp">NOMOR KTP</label>
+								<input type="text" class="form-control" id="nomor_ktp" name="nomor_ktp" placeholder="NOMOR KTP"">
+							</div>
 							<div class="form-group">
 								<label class="text-info" for="no_npwp">NPWP</label>
 								<input type="text" class="form-control" id="no_npwp" name="no_npwp" placeholder="NPWP">
@@ -136,6 +146,11 @@
 								</select>
 							</div>
 							<div class="form-group">
+								<label class="text-info" for="gaji_pokok">Gaji Pokok</label>
+								<input type="text" class="form-control" id="gaji_pokok" name="gaji_pokok" placeholder="Gaji Pokok">
+							</div>
+
+							<div class="form-group">
 								<label class="text-info" for="tmt_cpns">TANGGAL PENGANGKATAN CPNS</label>
 								<div class="row">
 								<div class="col">
@@ -157,15 +172,36 @@
 									<?php endforeach ?>
 								</select>
 							</div>
-							<div class="form-group">
+						
+								<div class="form-group">
 								<label class="text-info" for="tmt_cpns">TMT CPNS</label>
-								<input type="text" class="form-control" id="tmt_cpns" name="tmt_cpns" placeholder="TMT CPNS">
-							</div>
+								<div class="row">
+								<div class="col">
+								<input type="text" class="form-control" name="tmt_cpns_hr" placeholder="DD" >
+								</div>
+								<div class="col">
+								<input type="text" class="form-control" name="tmt_cpns_bln" placeholder="BB" >
+								</div>
+								<div class="col">
+								<input type="text" class="form-control" name="tmt_cpns_thn" placeholder="TTTT" >
+								</div>
+								</div>
+						
 							<div class="form-group">
 								<label class="text-info" for="tmt_pns">TMT PNS</label>
-								<input type="text" class="form-control" id="tmt_pns" name="tmt_pns" placeholder="TMT PNS">
+								<div class="row">
+								<div class="col">
+								<input type="text" class="form-control" name="tmt_pns_hr" placeholder="DD" >
+								</div>
+								<div class="col">
+								<input type="text" class="form-control" name="tmt_pns_bln" placeholder="BB" >
+								</div>
+								<div class="col">
+								<input type="text" class="form-control" name="tmt_pns_thn" placeholder="TTTT" >
+								</div>
+								</div>
 							</div>
-						</div>
+						
 					</div>
 					<div class="row">
 						<div class="col-md-12">
