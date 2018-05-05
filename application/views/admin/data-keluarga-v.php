@@ -92,7 +92,7 @@
 								<label class="text-info" for="status_keluarga">HUBUNGAN KELUARGA</label>
 								<select class="form-control" name="status_keluarga">
 									<?php foreach ($stat_keluarga as $data): ?>
-										<option value <?php echo $data->id; ?>><?php echo $data->status_keluarga ?></option>
+										<option value <?php echo $data->id; ?><?php echo $data->status_keluarga ?></option>
 									<?php endforeach ?>
 								</select>
 							</div>
@@ -100,7 +100,7 @@
 								<label class="text-info" for="status_kawin">STATUS KAWIN</label>
 								<select class="form-control" name="status_kawin">
 									<?php foreach ($stat_kawin as $data): ?>
-										<option value <?php echo $data->id; ?>><?php echo $data->status_kawin ?></option>
+										<option value <?php echo $data->id; ?><?php echo $data->status_kawin ?></option>
 									<?php endforeach ?>
 								</select>
 							</div>
@@ -136,23 +136,27 @@
 									</div>
 								</div>
 								<div class="form-group">
-								<label class="text-info" for="tanggal_meninggal">TANGGAL MENINGGAL</label>
-								<div class="row">
-									<div class="col">
-										<input type="text" class="form-control" id="tanggal_meninggal" name="tanggal_meninggal_hr" placeholder="HH" >
+									<label class="text-info" for="tanggal_meninggal">TANGGAL MENINGGAL</label>
+									<div class="row">
+										<div class="col">
+											<input type="text" class="form-control" id="tanggal_meninggal" name="tanggal_meninggal_hr" placeholder="HH" >
+										</div>
+										<div class="col">
+											<input type="text" class="form-control" id="tanggal_meninggal" name="tanggal_meninggal_bln" placeholder="BB" >
+										</div>
+										<div class="col">
+											<input type="text" class="form-control" id="tanggal_meninggal" name="tanggal_meninggal_thn" placeholder="TTTT">
+										</div>
 									</div>
-									<div class="col">
-										<input type="text" class="form-control" id="tanggal_meninggal" name="tanggal_meninggal_bln" placeholder="BB" >
-									</div>
-									<div class="col">
-										<input type="text" class="form-control" id="tanggal_meninggal" name="tanggal_meninggal_thn" placeholder="TTTT">
-									</div>
-								</div>
-								<div class="col-md-12">
 									<div class="form-group">
 										<label class="text-info" for="pekerjaan">PEKERJAAN</label>
 										<input type="text" class="form-control" id="pekerjaan" name="pekerjaan" placeholder="PEKERJAAN">
 									</div>
+									<div class="form-group">
+										<label class="text-info" for="no_kartu">NO KARTU SUAMI/ISTRI</label>
+										<input type="text" class="form-control" id="no_kartu" name="no_kartu" placeholder="NO KARTU SUAMI/ISTRI">
+									</div>
+
 								</div>
 							</div>
 						</div>

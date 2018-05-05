@@ -107,10 +107,7 @@
 					<span class="text-secondary">NIP : <?php echo $hasil->nip; ?></span><br/>
 					<input type="file" name="foto" id="uploadBtn" lang="es"></br>
 					<span class="border border-success rounded" style="font-size: 12px;padding: 2px 5px; margin-top: 12px; "><?php echo $hasil->nama_status; ?></span>
-
-				
 				</div>
-
 				<div class="media-right">
 				<a href="<?php echo base_url('index.php/admin/pegawai/cetak_data_pegawai/'.$hasil->id_pegawai) ?>" target="_blank" class="btn btn-success">Cetak Data Pegawai</a>
 				</div>

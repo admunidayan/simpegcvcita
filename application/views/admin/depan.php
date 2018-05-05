@@ -81,7 +81,7 @@ rel="stylesheet">
 							type: 'column'
 						},
 						title: {
-							text: 'Grafik Pegawai Per-Jabatan'
+							text: 'Grafik Pegawai Per-Eselon'
 						},
 						subtitle: {
 							text: 'Source: Database Kabupaten Buton'
