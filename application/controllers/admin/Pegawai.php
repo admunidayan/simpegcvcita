@@ -1016,7 +1016,7 @@ class Pegawai extends CI_Controller {
                     'alamat'=>$post['alamat'],
                     'gaji_pokok'=>$post['gaji_pokok'],
                     'tmt_pns'=>$post['tmt_pns_thn'].'-'.$post['tmt_pns_bln'].'-'.$post['tmt_pns_hr'],
-                    'tmt_cpns'=>$post['tmt_cpns_hr'].'-'.$post['tmt_cpns_bln'].'-'.$post['tmt_cpns_thn'],
+                    'tmt_cpns'=>$post['tmt_cpns_thn'].'-'.$post['tmt_cpns_bln'].'-'.$post['tmt_cpns_hr']
 
                 );
 
