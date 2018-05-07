@@ -57,22 +57,8 @@
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="text-info" for="masa_berlaku">MASA BERLAKU</label>
-								<div class="row">
-									<div class="col">
-										<input type="text" class="form-control" id="masa_berlaku" name="masa_berlaku_hr" placeholder="HH" value="<?php echo substr($detail->masa_berlaku,8,2)?>">
-									</div>
-									<div class="col">
-										<input type="text" class="form-control" id="masa_berlaku" name="masa_berlaku_bln" placeholder="BB" value="<?php echo substr($detail->masa_berlaku,5,2)?>">
-									</div>
-									<div class="col">
-										<input type="text" class="form-control" id="masa_berlaku" name="masa_berlaku_thn" placeholder="TTTT" value="<?php echo substr($detail->masa_berlaku,0,4)?>">
-									</div>
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="text-info" for="pejabat_menetapkan">PEJABAT MENETAPKAN</label>
-								<input type="text" class="form-control" id="pejabat_menetapkan" name="pejabat_menetapkan" placeholder="PEJABAT MENETAPKAN" value="<?php echo $detail->pejabat_menetapkan?>">
+								<label class="text-info" for="no_sk_pembatalan">NOMOR SK PEMBATALAN</label>
+								<input type="text" class="form-control" id="no_sk_pembatalan" name="no_sk_pembatalan" placeholder="NOMOR SK PEMBATALAN" value="<?php echo $detail->no_sk_pembatalan?>">
 							</div>
 						</div>
 					</div>

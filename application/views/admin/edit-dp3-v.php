@@ -43,12 +43,12 @@
 				<input type="text" class="form-control" id="rata_rata" name="rata_rata" placeholder="RATA-RATA" value="<?php echo $detail->rata_rata?>">
 			</div>
 			<div class="form-group">
-				<label class="text-info" for="atasan">ATASAN</label>
-				<input type="text" class="form-control" id="atasan" name="atasan" placeholder="ATASAN" value="<?php echo $detail->atasan?>">
+				<label class="text-info" for="pejabat_penilai">PEJABAT PENILAI</label>
+				<input type="text" class="form-control" id="pejabat_penilai" name="pejabat_penilai" placeholder="PEJABAT PENILAI" value="<?php echo $detail->pejabat_penilai?>">
 			</div>
 			<div class="form-group">
-				<label class="text-info" for="penilai">PENILAI</label>
-				<input type="text" class="form-control" id="penilai" name="penilai" placeholder="PENILAI" value="<?php echo $detail->penilai?>">
+				<label class="text-info" for="atasan_pejabat_penilai">ATASAN PEJABAT PENILAI</label>
+				<input type="text" class="form-control" id="atasan_pejabat_penilai" name="atasan_pejabat_penilai" placeholder="ATASAN PEJABAT PENILAI" value="<?php echo $detail->atasan_pejabat_penilai?>">
 			</div>
 			<div class="form-group">
 				<label class="text-info" for="mengetahui">MENGETAHUI</label>

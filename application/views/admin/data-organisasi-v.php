@@ -24,7 +24,7 @@
 				<?php foreach ($organisasi as $data): ?>
 					<tr>
 						<td class="jrktbl text-center"><?php echo $no; ?></td>
-						<td class="jrktbl"><td class="jrktbl"><?php echo $this->Admin_m->detail_data_order('master_satuan_kerja','id_satuan_kerja',$data->id_satuan_kerja)->nama_satuan_kerja; ?></td>
+						<td class="jrktbl"><?php echo $this->Admin_m->detail_data_order('master_satuan_kerja','id_satuan_kerja',$data->id_satuan_kerja)->nama_satuan_kerja; ?></td>
 						<td class="jrktbl"><?php echo $data->nomor; ?></td>
 						<td class="jrktbl"><?php echo date('d F Y', strtotime($data->tanggal)); ?></td>
 						<td class="jrktbl">
