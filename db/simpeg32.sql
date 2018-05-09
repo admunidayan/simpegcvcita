@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 05 Mei 2018 pada 15.02
+-- Generation Time: 09 Mei 2018 pada 15.13
 -- Versi Server: 10.1.19-MariaDB
 -- PHP Version: 5.6.28
 
@@ -51,7 +51,8 @@ CREATE TABLE `tbl_data_dp3` (
 INSERT INTO `tbl_data_dp3` (`id_dp3`, `id_pegawai`, `tahun`, `kesetiaan`, `prestasi`, `tanggung_jawab`, `ketaatan`, `kejujuran`, `kerjasama`, `prakarsa`, `kepemimpinan`, `rata_rata`, `pejabat_penilai`, `atasan_pejabat_penilai`, `mengetahui`) VALUES
 (1, 9, '2011', '91', '82', '82', '82', '82', '81', '81', '0', '72.625', 'SOLO RIYADI LUMBONG', 'SYAHMANSYAH', '-'),
 (3, 2, '2011', '30', '89', '88', '76', '67', '54', '78', '76', '80', '90', 'tes', 'tes'),
-(4, 6, 'TAHUN', 'KESETIAAN', 'PRESTASI', 'TANGGUNG JAWAB', 'KETAATAN', 'KEJUJURAN', 'KERJA SAMA', 'PRAKARSA', 'KEPEMIMPINAN', 'RATA-RAT', 'ATASAN', 'PENILAI', 'MENGHATUI');
+(4, 6, 'TAHUN', 'KESETIAAN', 'PRESTASI', 'TANGGUNG JAWAB', 'KETAATAN', 'KEJUJURAN', 'KERJA SAMA', 'PRAKARSA', 'KEPEMIMPINAN', 'RATA-RAT', 'ATASAN', 'PENILAI', 'MENGHATUI'),
+(5, 14, '2018', '12', '12', '12', '12', '12', '12', '12', '12', '12', 'ASD', 'ASD', 'ASDF');
 
 -- --------------------------------------------------------
 
@@ -104,7 +105,8 @@ CREATE TABLE `tbl_data_hukuman` (
 --
 
 INSERT INTO `tbl_data_hukuman` (`id_hukuman`, `id_pegawai`, `id_master_hukuman`, `uraian`, `nomor_sk`, `tanggal_sk`, `tanggal_mulai`, `tanggal_selesai`, `no_sk_pembatalan`) VALUES
-(1, 6, 0, 'URAIAN', 'NOMOR SK', '2012-12-12', '2012-12-12', '2012-12-12', '2019-12-');
+(1, 6, 0, 'URAIAN', 'NOMOR SK', '2012-12-12', '2012-12-12', '2012-12-12', '2019-12-'),
+(2, 14, 0, 'asdf', 'asd', '2012-12-12', '2017-12-12', '2018-12-12', 'asdf');
 
 -- --------------------------------------------------------
 
@@ -120,7 +122,6 @@ CREATE TABLE `tbl_data_keluarga` (
   `status_keluarga` varchar(20) NOT NULL,
   `status_kawin` varchar(50) NOT NULL,
   `tanggal_nikah` varchar(100) NOT NULL,
-  `uraian` text NOT NULL,
   `tanggal_cerai_meninggal` text NOT NULL,
   `tanggal_meninggal` varchar(110) DEFAULT NULL,
   `pekerjaan` varchar(50) NOT NULL,
@@ -131,12 +132,12 @@ CREATE TABLE `tbl_data_keluarga` (
 -- Dumping data untuk tabel `tbl_data_keluarga`
 --
 
-INSERT INTO `tbl_data_keluarga` (`id_data_keluarga`, `id_pegawai`, `nama_anggota_keluarga`, `tanggal_lahir`, `status_keluarga`, `status_kawin`, `tanggal_nikah`, `uraian`, `tanggal_cerai_meninggal`, `tanggal_meninggal`, `pekerjaan`, `no_kartu`) VALUES
-(1, 1, 'HELENA P. NGOEO', '1967-04-19', '', 'KAWIN', '1967-04-19', '-', '14 November 2012', '', '-', '0'),
-(2, 9, 'SITI RAHAYU', '1967-04-19', '', 'KAWIN', '1967-04-19', '-', '-', '', '-', '0'),
-(3, 19, '-', '1967-04-19', '', '-', '1967-04-19', '-', '-', '', '-', '0'),
-(4, 6, 'Isa Rabiati', '2012-04-19', 'istri', 'Sudah Menikah', '2012-12-12', '-', '-------', '', 'TIDAK BEKERJA', '0'),
-(6, 14, 'JUMINTEN', '1987-12-12', 'suami', '', '2018-12-12', 'URAIAN', '------', '--', 'TIDABEKERJAK ', '123456789');
+INSERT INTO `tbl_data_keluarga` (`id_data_keluarga`, `id_pegawai`, `nama_anggota_keluarga`, `tanggal_lahir`, `status_keluarga`, `status_kawin`, `tanggal_nikah`, `tanggal_cerai_meninggal`, `tanggal_meninggal`, `pekerjaan`, `no_kartu`) VALUES
+(1, 1, 'HELENA P. NGOEO', '1967-04-19', '', 'KAWIN', '1967-04-19', '14 November 2012', '', '-', '0'),
+(2, 9, 'SITI RAHAYU', '1967-04-19', '', 'KAWIN', '1967-04-19', '-', '', '-', '0'),
+(3, 19, '-', '1967-04-19', '', '-', '1967-04-19', '-', '', '-', '0'),
+(4, 6, 'Isa Rabiati', '2012-04-19', 'istri', 'Sudah Menikah', '2012-12-12', '-------', '', 'TIDAK BEKERJA', '0'),
+(7, 14, 'SUMIATI', '1987-12-12', '2', '2', '2013-12-12', '------', '--', 'IBU RUMAH TANGGA', '123456789');
 
 -- --------------------------------------------------------
 
@@ -157,7 +158,8 @@ CREATE TABLE `tbl_data_organisasi` (
 --
 
 INSERT INTO `tbl_data_organisasi` (`id_organisasi`, `id_pegawai`, `id_satuan_kerja`, `nomor`, `tanggal`) VALUES
-(1, 6, 0, 'LOKASI', '2012-12-17');
+(1, 6, 0, 'LOKASI', '2012-12-17'),
+(2, 14, 4, 'asd', '2018-12-12');
 
 -- --------------------------------------------------------
 
@@ -224,7 +226,7 @@ INSERT INTO `tbl_data_pegawai` (`id_pegawai`, `nip`, `nip_lama`, `no_kartu_pegaw
 (11, '-', '110056174', '-', 'EVANDA LIENTJE CAROLIEN SALANGKA', 1, 'MANADO', '04 December 1967', '', '', 'Perempuan', '44 tahun, ', '5', '01 December 2002', '-', '-', '-', '1', 4, '-', '-', '01 October 2010', '-', 2, 1, 1, 1, '11/KPTS/BS/2011', '06 March 2011', '16 March 2011', '-', 32, '-', '0000-00-00', '', '0000-00-00', '', NULL, NULL),
 (12, '196308272002122', '110056237', '-', 'HELEN A.RANTUNG SE', 1, 'TUMPAAN', '27 August 1963', '', '', 'Perempuan', '49 tahun, ', '5', '01 December 2002', '-', '-', '-', '5', 14, '-', '-', '01 April 2010', '-', 2, 116, 16479, 20, '11/KPTS/BS/2011', '16 March 2011', '16 March 2011', '-', 32, '-', '0000-00-00', '', '0000-00-00', '', NULL, NULL),
 (13, '196307162002122002', '110056404', '-', 'RUSDA PODUNGE S.SOS', 1, 'GORONTALO, PROPINSI SULAWESI UTARA', '16 July 1963', '', '', 'Perempuan', '49 tahun, ', '5', '01 December 2012', 'JL.IRIAN KEL.DULALAWO GORONTALO', '-', '-', '5', 14, 'Db/435/B/2012-R', '23 July 2012', '01 October 2012', '-', 2, 116, 16479, 22, '11/KPTS/BS/2011', '16 March 2011', '16 March 2011', '-', 32, '-', '0000-00-00', '', '0000-00-00', '', NULL, NULL),
-(14, '196405312006041001', '110058297', '-', 'DENNY MEIKY PAENDONG SE', 1, 'MANADO, PROPINSI SULAWESI UTARA', '31 May 1964', '', '', 'Laki-Laki', '48 tahun, ', '5', '--', 'JLN. MUH HUSNI THAMRIN', '-', '-', '5', 14, 'Db/434/B/2012-D', '23 July 2012', '01 October 2012', '-', 2, 116, 16479, 13, '-', '-', '-', '-', 32, '-', '0000-00-00', '', '0000-00-00', '', NULL, NULL),
+(14, '196405312006041001', '110058297', '-', 'DENNY MEIKY PAENDONG SE', 1, 'MANADO, PROPINSI SULAWESI UTARA', '31 May 1964', '', '', 'Laki-Laki', '48 tahun, ', '5', '--', 'JLN. MUH HUSNI THAMRIN', '-', '-', '5', 14, 'Db/434/B/2012-D', '23 July 2012', '01 October 2012', '-', 2, 116, 16479, 13, '-', '-', '-', '-', 32, '-', '0000-00-00', '1200000', '--', '', NULL, NULL),
 (15, '196705092002121', '110056730', '-', 'FERYANTO SUPII S.ST', 1, 'MANADO, PROPINSI SULAWESI UTARA', '-', '', '', 'Laki-Laki', '45 tahun,', '5', '01 December 2002', '-', '-', '-', '5', 14, '-', '-', '-', '-', 2, 116, 1, 1, '11/KPTS/BS/2011', '-', '16 March 2011', '-', 32, '-', '0000-00-00', '', '0000-00-00', '', NULL, NULL),
 (16, '196410142008122001', '-', '-', 'OLVI KALENGKIAN SE', 1, 'TONDANO, PROPINSI SULAWESI TENGAH', '14 October 1964', '', '', 'Perempuan', '48 tahun, ', '4', '01 December 2008', '-', '-', '-', '5', 14, 'Db/018/C/2010 - O', '23 February 2010', '01 March 2010', '-', 2, 116, 16479, 15, '11/KPTS/BS/2011', '16 March 2011', '16 March 2011', '-', 32, '-', '0000-00-00', '', '0000-00-00', '', NULL, NULL),
 (17, '196712092006042002', '110058305', '-', 'JANSJE MONTOLALU SH', 1, 'TUMANI', '19 December 1967', '', '', 'Laki-Laki', '44 tahun,', '5', '01 April 2006', '-', '-', '-', '5', 14, '-', '-', '-', '-', 2, 116, 16479, 23, '11/KPTS/BS/2011', '16 March 2011', '16 March 2011', '-', 32, '-', '0000-00-00', '', '0000-00-00', '', NULL, NULL),
@@ -247,31 +249,33 @@ CREATE TABLE `tbl_data_pelatihan` (
   `id_pelatihan` int(50) NOT NULL,
   `id_pegawai` int(50) NOT NULL,
   `id_master_pelatihan` int(50) NOT NULL,
-  `uraian` text NOT NULL,
-  `lokasi` varchar(100) NOT NULL,
+  `nama_kursus` varchar(114) NOT NULL,
+  `lama_kursus` varchar(114) NOT NULL,
   `tanggal` varchar(50) NOT NULL,
-  `tahun` varchar(50) NOT NULL
+  `no_sertifikat` varchar(50) NOT NULL,
+  `instansi` varchar(100) NOT NULL,
+  `instansi_penyelenggara` varchar(100) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `tbl_data_pelatihan`
 --
 
-INSERT INTO `tbl_data_pelatihan` (`id_pelatihan`, `id_pegawai`, `id_master_pelatihan`, `uraian`, `lokasi`, `tanggal`, `tahun`) VALUES
-(1, 1, 18, 'ADUM (DIKLATPIM TK.IV)', 'MANADO', '06 July 2000', '0'),
-(2, 1, 310, 'PRAJABATAN UMUM TINGKAT III', 'MANADO', '10 October 1998', '0'),
-(3, 9, 12, 'UJIAN DINAS TINGKAT I', 'BANDUNG', '17 June 2004', '-'),
-(4, 9, 394, 'PEJABAT INTI SATUAN KERJA', 'JAKARTA', '29 September 2007', '-'),
-(5, 9, 394, 'LABORATORY TESTING EQUPMENT TRAINING', 'MAKASAR', '29 June 2007', '-'),
-(6, 9, 394, 'SOSIALISASI SISTIM AKUNTANSI BARANG MILIK NEGARA', 'JAKARTA', '15 June 2007', '-'),
-(7, 9, 394, 'PENGAWAS PELAKSANA JEMBATAN RANGKA BAJA', 'BANDUNG', '01 December 1999', '-'),
-(8, 2, 394, 'APLIKASI TEKNIS PENATAUSAHAAN BMN', 'MAKASSAR', '19 May 2008', '-'),
-(9, 2, 394, 'PENYULUHAN HUKUM PIDANA, PERDATA DAN TATA USAHA NEGARA', 'GORONTALO', '4 May 2007', '-'),
-(10, 2, 17, 'DIKLAT PIM III', 'WILAYAH II BANDUNG', '10 March 2007', '360'),
-(11, 2, 394, 'PENYELENGGARAAN PIMPRO/PIMBAGPRO BIDANG JALAN DAN JEMBATAN', 'MAKASSAR', '07 August 2003', '-'),
-(12, 2, 84, 'PEJABAT INTI PROYEK', 'BANDUNG', '24 September 1996', '-'),
-(13, 18, 394, 'PELATIHAN PRAJABATAN TINGKAT II', 'MANADO', '26 October 2009', '174'),
-(14, 6, 0, 'URAIAN', 'LOKASI', '2017-12-12', 'JAM PELATIHAN');
+INSERT INTO `tbl_data_pelatihan` (`id_pelatihan`, `id_pegawai`, `id_master_pelatihan`, `nama_kursus`, `lama_kursus`, `tanggal`, `no_sertifikat`, `instansi`, `instansi_penyelenggara`) VALUES
+(1, 1, 18, 'ADUM (DIKLATPIM TK.IV)', 'MANADO', '06 July 2000', '0', '', ''),
+(2, 1, 310, 'PRAJABATAN UMUM TINGKAT III', 'MANADO', '10 October 1998', '0', '', ''),
+(3, 9, 12, 'UJIAN DINAS TINGKAT I', 'BANDUNG', '17 June 2004', '-', '', ''),
+(4, 9, 394, 'PEJABAT INTI SATUAN KERJA', 'JAKARTA', '29 September 2007', '-', '', ''),
+(5, 9, 394, 'LABORATORY TESTING EQUPMENT TRAINING', 'MAKASAR', '29 June 2007', '-', '', ''),
+(6, 9, 394, 'SOSIALISASI SISTIM AKUNTANSI BARANG MILIK NEGARA', 'JAKARTA', '15 June 2007', '-', '', ''),
+(7, 9, 394, 'PENGAWAS PELAKSANA JEMBATAN RANGKA BAJA', 'BANDUNG', '01 December 1999', '-', '', ''),
+(8, 2, 394, 'APLIKASI TEKNIS PENATAUSAHAAN BMN', 'MAKASSAR', '19 May 2008', '-', '', ''),
+(9, 2, 394, 'PENYULUHAN HUKUM PIDANA, PERDATA DAN TATA USAHA NEGARA', 'GORONTALO', '4 May 2007', '-', '', ''),
+(10, 2, 17, 'DIKLAT PIM III', 'WILAYAH II BANDUNG', '10 March 2007', '360', '', ''),
+(11, 2, 394, 'PENYELENGGARAAN PIMPRO/PIMBAGPRO BIDANG JALAN DAN JEMBATAN', 'MAKASSAR', '07 August 2003', '-', '', ''),
+(12, 2, 84, 'PEJABAT INTI PROYEK', 'BANDUNG', '24 September 1996', '-', '', ''),
+(13, 18, 394, 'PELATIHAN PRAJABATAN TINGKAT II', 'MANADO', '26 October 2009', '174', '', ''),
+(14, 6, 0, 'URAIAN', 'LOKASI', '2017-12-12', 'JAM PELATIHAN', '', '');
 
 -- --------------------------------------------------------
 
@@ -305,7 +309,7 @@ INSERT INTO `tbl_data_pendidikan` (`id_pendidikan`, `id_pegawai`, `tingkat_pendi
 (8, 18, 3, 'IPS', '-', '-', '19/04/1984', ''),
 (9, 19, 3, 'EKONOMI JUR UMUM', '-', '-', '-', ''),
 (12, 6, 0, '', '', '', '--', ''),
-(14, 14, 1, 'asd', 'asd', 'asd', '12-12-12', 'asd');
+(14, 14, 1, 'asdf', 'asdf', 'asd', '1990-12-12', 'asdf');
 
 -- --------------------------------------------------------
 
@@ -328,7 +332,8 @@ CREATE TABLE `tbl_data_penghargaan` (
 
 INSERT INTO `tbl_data_penghargaan` (`id_penghargaan`, `id_pegawai`, `jenis_penghargaan`, `no_keputusan`, `tanggal`, `tahun`) VALUES
 (1, 9, '69', 'SATYALANCANA KARYA SATYA XX TAHUN', '06 August 2012', ''),
-(2, 6, '0', 'URAIAN', '2017-12-12', '');
+(2, 6, '0', 'URAIAN', '2017-12-12', ''),
+(3, 14, 'asd', 'asd', '2018-12-12', '2018');
 
 -- --------------------------------------------------------
 
@@ -356,7 +361,7 @@ INSERT INTO `tbl_data_riwayat_golongan` (`id_riwayat_golongan`, `id_pegawai`, `i
 (2, 6, 4, '123445', '2012-12-12', '2012-12-12', '1234', '2018-12-12', '6'),
 (3, 6, 13, '123546879', '2018-03-29', '2017-12-12', '123456789', '1992-12-12', '4'),
 (5, 7, 4, '12345678', '1994-12-12', '1994-12-12', '12345678', '1994-12-12', '3'),
-(6, 14, 5, '4123', '2012-12-12', '2012-12-12', '433241', '2012-12-12', '3');
+(6, 14, 5, '4123', '2012-12-12', '2012-12-12', '433241', '2012-12-12', '3 TAHUN');
 
 -- --------------------------------------------------------
 
@@ -389,7 +394,7 @@ INSERT INTO `tbl_data_riwayat_jabatan` (`id_riwayat_jabatan`, `id_pegawai`, `id_
 (5, 18, 3, NULL, 1, 1, 23, '0000-00-00', '0000-00-00', NULL, NULL),
 (6, 19, 3, NULL, 1, 1, 23, '0000-00-00', '0000-00-00', NULL, NULL),
 (8, 6, 1, 'kosong', 0, 6, 27, '2018-12-12', '2018-12-12', '2017-12-12', '1234567'),
-(10, 14, 1, 'TES', 0, 5, 23, '2017-12-12', '2012-12-12', '2019-12-12', '424');
+(10, 14, 1, 'TES', 0, 5, 23, '2017-12-12', '2012-12-12', '2019-12-12', '123456789');
 
 -- --------------------------------------------------------
 
@@ -448,7 +453,8 @@ CREATE TABLE `tbl_data_seminar` (
 --
 
 INSERT INTO `tbl_data_seminar` (`id_seminar`, `id_pegawai`, `uraian`, `lokasi`, `tanggal`) VALUES
-(1, 6, 'URAIAN', 'LOKASI', '2018-12-17');
+(1, 6, 'URAIAN', 'LOKASI', '2018-12-17'),
+(2, 14, 'asdf', 'asd', '2018-12-12');
 
 -- --------------------------------------------------------
 
@@ -1669,7 +1675,7 @@ CREATE TABLE `tbl_users` (
 --
 
 INSERT INTO `tbl_users` (`id`, `id_mhs_pt`, `ip_address`, `username`, `password`, `repassword`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`, `hostname`, `port`, `userfeeder`, `passfeeder`, `jabatan`, `profile`) VALUES
-(1, NULL, '127.0.0.1', 'administrator', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', 'password', '', 'admin@admin.com', '', NULL, NULL, NULL, 1268889823, 1525440321, 1, 'Admin', 'istrator', 'ADMIN', '08239566666', 'localhost', '8082', '091006', 'palagimatA', 3, 'avatar.jpg'),
+(1, NULL, '127.0.0.1', 'administrator', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', 'password', '', 'admin@admin.com', '', NULL, NULL, NULL, 1268889823, 1525747587, 1, 'Admin', 'istrator', 'ADMIN', '08239566666', 'localhost', '8082', '091006', 'palagimatA', 3, 'avatar.jpg'),
 (15, NULL, '::1', 'ejhayoe', '$2y$08$sMK/KvMzOXPZBanMhhAggu4A6FQ2EWRNvY4hpJNoGpjgzgqhZF9xW', 'ejhayoe', NULL, 'admin@admin.com', NULL, NULL, NULL, NULL, 1519736735, NULL, 1, 'Reza', 'Rafiq', 'Sistem Informasi Kepegawaian', '123456789', NULL, NULL, NULL, NULL, 0, 'avatar.jpg');
 
 -- --------------------------------------------------------
@@ -1960,7 +1966,7 @@ ALTER TABLE `tbl_user_login`
 -- AUTO_INCREMENT for table `tbl_data_dp3`
 --
 ALTER TABLE `tbl_data_dp3`
-  MODIFY `id_dp3` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_dp3` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `tbl_data_gaji_pokok`
 --
@@ -1970,17 +1976,17 @@ ALTER TABLE `tbl_data_gaji_pokok`
 -- AUTO_INCREMENT for table `tbl_data_hukuman`
 --
 ALTER TABLE `tbl_data_hukuman`
-  MODIFY `id_hukuman` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_hukuman` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `tbl_data_keluarga`
 --
 ALTER TABLE `tbl_data_keluarga`
-  MODIFY `id_data_keluarga` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_data_keluarga` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `tbl_data_organisasi`
 --
 ALTER TABLE `tbl_data_organisasi`
-  MODIFY `id_organisasi` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_organisasi` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `tbl_data_pegawai`
 --
@@ -2000,7 +2006,7 @@ ALTER TABLE `tbl_data_pendidikan`
 -- AUTO_INCREMENT for table `tbl_data_penghargaan`
 --
 ALTER TABLE `tbl_data_penghargaan`
-  MODIFY `id_penghargaan` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_penghargaan` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `tbl_data_riwayat_golongan`
 --
@@ -2020,7 +2026,7 @@ ALTER TABLE `tbl_data_riwayat_pangkat`
 -- AUTO_INCREMENT for table `tbl_data_seminar`
 --
 ALTER TABLE `tbl_data_seminar`
-  MODIFY `id_seminar` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_seminar` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `tbl_groups`
 --
