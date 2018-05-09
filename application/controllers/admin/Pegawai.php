@@ -460,7 +460,7 @@ class Pegawai extends CI_Controller {
                     'tanggal_pengangkatan_cpns'=>$post['tanggal_pengangkatan_cpns_thn'].'-'.$post['tanggal_pengangkatan_cpns_bln'].'-'.$post['tanggal_pengangkatan_cpns_hr'],
                     'alamat'=>$post['alamat'],
                     'gaji_pokok'=>$post['gaji_pokok'],
-                       'tmt_pns'=>$post['tmt_pns_thn'].'-'.$post['tmt_pns_bln'].'-'.$post['tmt_pns_hr'],
+                    'tmt_pns'=>$post['tmt_pns_thn'].'-'.$post['tmt_pns_bln'].'-'.$post['tmt_pns_hr'],
                     'tmt_cpns'=>$post['tmt_cpns_hr'].'-'.$post['tmt_cpns_bln'].'-'.$post['tmt_cpns_thn']
                 );
                 $this->Pegawai_m->insert_data('data_pegawai',$datainput);
@@ -607,12 +607,19 @@ class Pegawai extends CI_Controller {
             }else{
                 $post = $this->input->post();
                 $datainput = array(
-                    'uraian' => $post['uraian'],
+                    'nama_kursus' => $post['nama_kursus'],
                     'id_pegawai' => $idpegawai,
-                    'lokasi'=>$post['lokasi'],
+                    'lama_kursus'=>$post['lama_kursus'],
                     'nomor'=>$post['nomor'],
+<<<<<<< HEAD
                     'tanggal'=>$post['tanggal_hr'].'-'.$post['tanggal_bln'],
                     'tahun'=>$post['tahun']
+=======
+                    'tanggal'=>$post['tanggal_thn'].'-'.$post['tanggal_bln'].'-'.$post['tanggal_hr'],
+                    'no_sertifikat'=>$post['no_sertifikat'],
+                    'instansi'=>$post['instansi'],
+                    'instansi_penyelenggara'=>$post['instansi_penyelenggara']
+>>>>>>> 95e9acf333d00b18a0a7afb979d33690ab0b7e01
                 );
                 $this->Pegawai_m->insert_data('data_pelatihan',$datainput);
                 $pesan = 'Data pelatihan baru berhasil di tambahkan';
@@ -751,7 +758,11 @@ class Pegawai extends CI_Controller {
                     'tanggal_sk'=>$post['tanggal_sk_thn'].'-'.$post['tanggal_sk_bln'].'-'.$post['tanggal_sk_hr'],
                     'tanggal_mulai'=>$post['tanggal_mulai_thn'].'-'.$post['tanggal_mulai_bln'].'-'.$post['tanggal_mulai_hr'],
                     'tanggal_selesai'=>$post['tanggal_selesai_thn'].'-'.$post['tanggal_selesai_bln'].'-'.$post['tanggal_selesai_hr'],
+<<<<<<< HEAD
                     'no_sk_pembatalan' =>$post['no_sk_pembatalan']
+=======
+                    'no_sk_pembatalan'=>$post['no_sk_pembatalan']
+>>>>>>> 95e9acf333d00b18a0a7afb979d33690ab0b7e01
                 );
                 $this->Pegawai_m->insert_data('data_hukuman',$datainput);
                 $pesan = 'Data hukuman baru berhasil di tambahkan';
@@ -777,8 +788,14 @@ class Pegawai extends CI_Controller {
                     'tahun' => $post['tahun'],
                     'id_pegawai' => $idpegawai,
                     'rata_rata'=>$post['rata_rata'],
+<<<<<<< HEAD
                     'atasan_pejabat_penilai'=>$post['atasan_pejabat_penilai'],
                     'pejabat_penilai'=>$post['pejabat_penilai']
+=======
+                    'pejabat_penilai'=>$post['pejabat_penilai'],
+                    'atasan_pejabat_penilai'=>$post['atasan_pejabat_penilai'],
+                    'mengetahui'=>$post['mengetahui']
+>>>>>>> 95e9acf333d00b18a0a7afb979d33690ab0b7e01
                 );
                 $this->Pegawai_m->insert_data('data_dp3',$datainput);
                 $pesan = 'Data riwayat jabatan baru berhasil di tambahkan';
@@ -1087,12 +1104,23 @@ class Pegawai extends CI_Controller {
             }else{
                 $post = $this->input->post();
                 $datainput = array(
+<<<<<<< HEAD
                  'uraian' => $post['uraian'],
                  'lokasi'=>$post['lokasi'],
                  'nomor'=>$post['nomor'],
                  'tanggal'=>$post['tanggal_hr'].'-'.$post['tanggal_bln'],
                  'tahun'=>$post['tahun']
              );
+=======
+                    'nama_kursus' => $post['nama_kursus'],
+                    'lama_kursus'=>$post['lama_kursus'],
+                    'nomor'=>$post['nomor'],
+                    'tanggal'=>$post['tanggal_thn'].'-'.$post['tanggal_bln'].'-'.$post['tanggal_hr'],
+                    'no_sertifikat'=>$post['no_sertifikat'],
+                    'instansi'=>$post['instansi'],
+                    'instansi_penyelenggara'=>$post['instansi_penyelenggara']
+                );
+>>>>>>> 95e9acf333d00b18a0a7afb979d33690ab0b7e01
                 $this->Pegawai_m->update_data('data_pelatihan','id_pelatihan',$idr,$datainput);
                 $pesan = 'Data riwayat pelatihan baru berhasil di diubah';
                 $this->session->set_flashdata('message', $pesan );
@@ -1143,11 +1171,19 @@ class Pegawai extends CI_Controller {
             }else{
                 $post = $this->input->post();
                 $datainput = array(
+<<<<<<< HEAD
                  'jenis_penghargaan' => $post['jenis_penghargaan'],
                  'no_keputusan' => $post['no_keputusan'],
                  'tanggal'=>$post['tanggal_hr'].'-'.$post['tanggal_bln'],
                  'tahun' => $post['tahun']
              );
+=======
+                   'jenis_penghargaan' => $post['jenis_penghargaan'],
+                   'no_keputusan' => $post['no_keputusan'],
+                   'tanggal'=>$post['tanggal_thn'].'-'.$post['tanggal_bln'].'-'.$post['tanggal_hr'],
+                   'tahun' => $post['tahun']
+               );
+>>>>>>> 95e9acf333d00b18a0a7afb979d33690ab0b7e01
                 $this->Pegawai_m->update_data('data_penghargaan','id_penghargaan',$idr,$datainput);
                 $pesan = 'Data riwayat penghargaan baru berhasil di diubah';
                 $this->session->set_flashdata('message', $pesan );
@@ -1198,10 +1234,10 @@ class Pegawai extends CI_Controller {
             }else{
                 $post = $this->input->post();
                 $datainput = array(
-                 'uraian' => $post['uraian'],
-                 'lokasi'=>$post['lokasi'],
-                 'tanggal'=>$post['tanggal_thn'].'-'.$post['tanggal_bln'].'-'.$post['tanggal_hr']
-             );
+                   'uraian' => $post['uraian'],
+                   'lokasi'=>$post['lokasi'],
+                   'tanggal'=>$post['tanggal_thn'].'-'.$post['tanggal_bln'].'-'.$post['tanggal_hr']
+               );
                 $this->Pegawai_m->update_data('data_seminar','id_seminar',$idr,$datainput);
                 $pesan = 'Data riwayat seminar baru berhasil di diubah';
                 $this->session->set_flashdata('message', $pesan );
@@ -1253,10 +1289,10 @@ class Pegawai extends CI_Controller {
             }else{
                 $post = $this->input->post();
                 $datainput = array(
-                 'id_satuan_kerja'=>$post['id_satuan_kerja'],
-                 'nomor'=>$post['nomor'],
-                 'tanggal'=>$post['tanggal_thn'].'-'.$post['tanggal_bln'].'-'.$post['tanggal_hr']
-             );
+                   'id_satuan_kerja'=>$post['id_satuan_kerja'],
+                   'nomor'=>$post['nomor'],
+                   'tanggal'=>$post['tanggal_thn'].'-'.$post['tanggal_bln'].'-'.$post['tanggal_hr']
+               );
                 $this->Pegawai_m->update_data('data_organisasi','id_organisasi',$idr,$datainput);
                 $pesan = 'Data riwayat organisasi baru berhasil di diubah';
                 $this->session->set_flashdata('message', $pesan );
@@ -1307,15 +1343,15 @@ class Pegawai extends CI_Controller {
             }else{
                 $post = $this->input->post();
                 $datainput = array(
-                 'nomor_sk' => $post['nomor_sk'],
-                 'tanggal_sk'=>$post['tanggal_sk_thn'].'-'.$post['tanggal_sk_bln'].'-'.$post['tanggal_sk_hr'],
-                 'dasar_perubahan'=>$post['dasar_perubahan'],
-                 'gaji_pokok'=>$post['gaji_pokok'],
-                 'tanggal_mulai'=>$post['tanggal_mulai_thn'].'-'.$post['tanggal_mulai_bln'].'-'.$post['tanggal_mulai_hr'],
-                 'tanggal_selesai'=>$post['tanggal_selesai_thn'].'-'.$post['tanggal_selesai_bln'].'-'.$post['tanggal_selesai_hr'],
-                 'masa_kerja'=>$post['masa_kerja'],
-                 'pejabat_menetapkan'=>$post['pejabat_menetapkan']
-             );
+                   'nomor_sk' => $post['nomor_sk'],
+                   'tanggal_sk'=>$post['tanggal_sk_thn'].'-'.$post['tanggal_sk_bln'].'-'.$post['tanggal_sk_hr'],
+                   'dasar_perubahan'=>$post['dasar_perubahan'],
+                   'gaji_pokok'=>$post['gaji_pokok'],
+                   'tanggal_mulai'=>$post['tanggal_mulai_thn'].'-'.$post['tanggal_mulai_bln'].'-'.$post['tanggal_mulai_hr'],
+                   'tanggal_selesai'=>$post['tanggal_selesai_thn'].'-'.$post['tanggal_selesai_bln'].'-'.$post['tanggal_selesai_hr'],
+                   'masa_kerja'=>$post['masa_kerja'],
+                   'pejabat_menetapkan'=>$post['pejabat_menetapkan']
+               );
                 $this->Pegawai_m->update_data('data_gaji_pokok','id_gaji_pokok',$idr,$datainput);
                 $pesan = 'Data riwayat gaji pokok baru berhasil di diubah';
                 $this->session->set_flashdata('message', $pesan );
@@ -1366,6 +1402,7 @@ class Pegawai extends CI_Controller {
             }else{
                 $post = $this->input->post();
                 $datainput = array(
+<<<<<<< HEAD
                  'uraian' => $post['uraian'],
                  'nomor_sk'=>$post['nomor_sk'],
                  'tanggal_sk'=>$post['tanggal_sk_thn'].'-'.$post['tanggal_sk_bln'].'-'.$post['tanggal_sk_hr'],
@@ -1373,6 +1410,15 @@ class Pegawai extends CI_Controller {
                  'tanggal_selesai'=>$post['tanggal_selesai_thn'].'-'.$post['tanggal_selesai_bln'].'-'.$post['tanggal_selesai_hr'],
                  'no_sk_pembatalan' =>$post['no_sk_pembatalan']
              );
+=======
+                   'uraian' => $post['uraian'],
+                   'nomor_sk'=>$post['nomor_sk'],
+                   'tanggal_sk'=>$post['tanggal_sk_thn'].'-'.$post['tanggal_sk_bln'].'-'.$post['tanggal_sk_hr'],
+                   'tanggal_mulai'=>$post['tanggal_mulai_thn'].'-'.$post['tanggal_mulai_bln'].'-'.$post['tanggal_mulai_hr'],
+                   'tanggal_selesai'=>$post['tanggal_selesai_thn'].'-'.$post['tanggal_selesai_bln'].'-'.$post['tanggal_selesai_hr'],
+                   'no_sk_pembatalan'=>$post['no_sk_pembatalan']
+               );
+>>>>>>> 95e9acf333d00b18a0a7afb979d33690ab0b7e01
                 $this->Pegawai_m->update_data('data_hukuman','id_hukuman',$idr,$datainput);
                 $pesan = 'Data riwayat hukuman baru berhasil di diubah';
                 $this->session->set_flashdata('message', $pesan );
@@ -1423,6 +1469,7 @@ class Pegawai extends CI_Controller {
             }else{
                 $post = $this->input->post();
                 $datainput = array(
+<<<<<<< HEAD
                  'tahun' => $post['tahun'],
                  'id_pegawai' => $idpegawai,
                  'rata_rata'=>$post['rata_rata'],
@@ -1430,6 +1477,22 @@ class Pegawai extends CI_Controller {
                  'pejabat_penilai'=>$post['pejabat_penilai']
                  
              );
+=======
+                   'tahun' => $post['tahun'],
+                   'kesetiaan'=>$post['kesetiaan'],
+                   'prestasi'=>$post['prestasi'],
+                   'tanggung_jawab'=>$post['tanggung_jawab'],
+                   'ketaatan'=>$post['ketaatan'],
+                   'kejujuran'=>$post['kejujuran'],
+                   'kerjasama'=>$post['kerjasama'],
+                   'prakarsa'=>$post['prakarsa'],
+                   'kepemimpinan'=>$post['kepemimpinan'],
+                   'rata_rata'=>$post['rata_rata'],
+                   'pejabat_penilai'=>$post['pejabat_penilai'],
+                   'atasan_pejabat_penilai'=>$post['atasan_pejabat_penilai'],
+                   'mengetahui'=>$post['mengetahui']
+               );
+>>>>>>> 95e9acf333d00b18a0a7afb979d33690ab0b7e01
                 $this->Pegawai_m->update_data('data_dp3','id_dp3',$idr,$datainput);
                 $pesan = 'Data riwayat dp3 baru berhasil di diubah';
                 $this->session->set_flashdata('message', $pesan );
@@ -1715,7 +1778,7 @@ class Pegawai extends CI_Controller {
 
 
 
-public function uploadImage() {
+    public function uploadImage() {
         $this->load->helper(array('form', 'url'));  
         $config['upload_path'] = 'assets/images/pegawai';
         $config['allowed_types'] = 'gif|jpg|png';

@@ -11,6 +11,7 @@
 				<label class="text-info" for="rata_rata">RATA-RATA</label>
 				<input type="text" class="form-control" id="rata_rata" name="rata_rata" placeholder="RATA-RATA" value="<?php echo $detail->rata_rata?>">
 			</div>
+<<<<<<< HEAD
 				<div class="form-group">
 					<label class="text-info" for="pejabat_penilai">PEJABAT PENILAI</label>
 					<input type="text" class="form-control" id="pejabat_penilai" name="pejabat_penilai" placeholder="PEJABAT PENILAI"  value="<?php echo $detail->pejabat_penilai?>">
@@ -20,6 +21,20 @@
 					<input type="text" class="form-control" id="atasan_pejabat_penilai" name="atasan_pejabat_penilai" placeholder="ATASAN PEJABAT PENILAI"  value="<?php echo $detail->atasan_pejabat_penilai?>">
 				</div>
 		
+=======
+			<div class="form-group">
+				<label class="text-info" for="pejabat_penilai">PEJABAT PENILAI</label>
+				<input type="text" class="form-control" id="pejabat_penilai" name="pejabat_penilai" placeholder="PEJABAT PENILAI" value="<?php echo $detail->pejabat_penilai?>">
+			</div>
+			<div class="form-group">
+				<label class="text-info" for="atasan_pejabat_penilai">ATASAN PEJABAT PENILAI</label>
+				<input type="text" class="form-control" id="atasan_pejabat_penilai" name="atasan_pejabat_penilai" placeholder="ATASAN PEJABAT PENILAI" value="<?php echo $detail->atasan_pejabat_penilai?>">
+			</div>
+			<div class="form-group">
+				<label class="text-info" for="mengetahui">MENGETAHUI</label>
+				<input type="text" class="form-control" id="mengetahui" name="mengetahui" placeholder="MENGETAHUI" value="<?php echo $detail->mengetahui?>">
+			</div>
+>>>>>>> 95e9acf333d00b18a0a7afb979d33690ab0b7e01
 		</div>
 	</div>
 	<button type="submit" name="submit" value="submit" class="btn btn-success">Simpan data</button>
