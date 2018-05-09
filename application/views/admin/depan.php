@@ -23,7 +23,7 @@ rel="stylesheet">
 				<h4>JUMLAH PEGAWAI KABUPATEN BUTON</h4>
 			</div>
 			<div class="col-md-6" align="center">
-				<h4>24 Orang</h4>
+				<h4><?php echo $this->Pegawai_m->jml() ?> Orang</h4>
 			</div>
 		</div>
 	</div>

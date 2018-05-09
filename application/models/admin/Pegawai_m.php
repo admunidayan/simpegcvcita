@@ -14,6 +14,11 @@ class Pegawai_m extends CI_Model
 		$rs = $this->db->count_all_results();
 		return $rs;
 	}
+	public function jml(){
+		$this->db->from('data_pegawai');
+		$rs = $this->db->count_all_results();
+		return $rs;
+	}
 	public function searcing_data($sampai,$dari,$string,$skpd){
 		// $this->db->select('data_pegawai.*,master_golongan');
 		// $this->db->join('master_golongan', 'master_golongan.id_golongan = data_pegawai.id_golongan');

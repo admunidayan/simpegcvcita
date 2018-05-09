@@ -6,6 +6,7 @@ class Pegawai extends CI_Controller {
         parent::__construct();
         $this->load->model('admin/Admin_m');
         $this->load->model('admin/Pegawai_m');
+        $this->load->library('resize');
     }
     public function index($offset=0){
         if ($this->ion_auth->logged_in()) {
@@ -1021,8 +1022,28 @@ class Pegawai extends CI_Controller {
 
                 );
 
-                if (!empty($_FILES["foto"])) {
-                    $config['file_name'] = strtolower(url_title('pegawai'.'-'.$post['foto']));
+                $this->Pegawai_m->update_data('data_pegawai','id_pegawai',$idpegawai,$datainput);
+                $pesan = 'Data riwayat pendidikan baru berhasil di diubah';
+                $this->session->set_flashdata('message', $pesan );
+                redirect(base_url('index.php/admin/pegawai/detail/'.$idpegawai));
+            }
+        }else{
+            $pesan = 'Login terlebih dahulu';
+            $this->session->set_flashdata('message', $pesan );
+            redirect(base_url('index.php/login'));
+        }
+    }
+    public function update_foto_pegawai(){
+        $post = $this->input->post();
+        if ($this->ion_auth->logged_in()) {
+            $level = array('admin','members');
+            if (!$this->ion_auth->in_group($level)) {
+                $pesan = 'Anda tidak memiliki Hak untuk Mengakses halaman ini';
+                $this->session->set_flashdata('message', $pesan );
+                redirect(base_url('index.php/admin/dashboard'));
+            }else{
+                if (!empty($_FILES["fotop"])) {
+                    $config['file_name'] = strtolower(url_title('pegawai'.'-'.$post['id_pegawai'].'-'.date('ymd').'-'.time('hms')));
                     $config['upload_path'] = './asset/img/pegawai/';
                     $config['allowed_types'] = 'gif|jpg|png';
                     $config['max_size'] = 2048;
@@ -1030,28 +1051,28 @@ class Pegawai extends CI_Controller {
                     $config['max_height'] = '';
 
                     $this->load->library('upload', $config);
-                    if (!$this->upload->do_upload('foto')){
+                    if (!$this->upload->do_upload('fotop')){
                         $error = $this->upload->display_errors();
                         $this->session->set_flashdata('eror', $error );
-                        redirect(base_url('index.php/admin/pegawai'));
+                        redirect(base_url('index.php/admin/pegawai/detail/'.$post['id_pegawai']));
                     }
                     else{
-                        $file = $this->Admin_m->data_pegawai(1)->row('foto');
+                        $file = $this->Admin_m->detail_data_order('data_pegawai','id_pegawai',$post['id_pegawai'])->foto;
                         if ($file != "avatar.png") {
-                            unlink("asset/img/user/$file");
+                            unlink("asset/img/pegawai/$file");
                         }
                         $img = $this->upload->data('file_name');
-                        $data['nama'] = $img;
+                        $data['foto'] = $img;
+                        $this->Admin_m->update('data_pegawai','id_pegawai',$post['id_pegawai'],$data);
                         $file = "asset/img/pegawai/$img";
                         //output resize (bisa juga di ubah ke format yang berbeda ex: jpg, png dll)
                         $resizedFile = "asset/img/pegawai/$img";
                         $this->resize->smart_resize_image(null , file_get_contents($file), 250 , 250 , false , $resizedFile , true , false ,100 );
+                        $pesan = 'Foto Pegawai Berhasil diubah';
+                        $this->session->set_flashdata('message', $pesan );
+                        redirect(base_url('index.php/admin/pegawai/detail/'.$post['id_pegawai']));
                     }
                 }
-                $this->Pegawai_m->update_data('data_pegawai','id_pegawai',$idpegawai,$datainput);
-                $pesan = 'Data riwayat pendidikan baru berhasil di diubah';
-                $this->session->set_flashdata('message', $pesan );
-                redirect(base_url('index.php/admin/pegawai/detail/'.$idpegawai));
             }
         }else{
             $pesan = 'Login terlebih dahulu';
@@ -1731,9 +1752,6 @@ class Pegawai extends CI_Controller {
             redirect(base_url('index.php/admin//login'));
         }
     }
-
-
-
     public function uploadImage() {
         $this->load->helper(array('form', 'url'));  
         $config['upload_path'] = 'assets/images/pegawai';

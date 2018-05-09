@@ -28,7 +28,7 @@
 			<td class="colpading bdkiri bdkanan">Nama Lengkap</td>
 			<td class="colpading bdkanan"><?php echo $hasil->gelar_dpn; ?> <?php echo $hasil->nama_pegawai; ?> <?php echo $hasil->gelar_belakang; ?></td>
 			<td class="colpading bdkanan text-center" rowspan="4">
-				<img src="<?php echo base_url('asset/img/users/'.@$hasil->foto) ?>" width="100px">
+				<img src="<?php echo base_url('asset/img/pegawai/'.@$hasil->foto) ?>" width="100px">
 			</td>
 		</tr>
 		<tr>
