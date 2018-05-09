@@ -56,15 +56,9 @@
 									</div>
 								</div>
 							</div>
-							
 							<div class="form-group">
-<<<<<<< HEAD
-								<label class="text-info" for="no_sk_pembatalan">Nomor SK Pembatalan</label>
-								<input type="text" class="form-control" id="no_sk_pembatalan" name="no_sk_pembatalan" placeholder="Nomor SK" value="<?php echo $detail->no_sk_pembatalan?>">
-=======
 								<label class="text-info" for="no_sk_pembatalan">NOMOR SK PEMBATALAN</label>
 								<input type="text" class="form-control" id="no_sk_pembatalan" name="no_sk_pembatalan" placeholder="NOMOR SK PEMBATALAN" value="<?php echo $detail->no_sk_pembatalan?>">
->>>>>>> 95e9acf333d00b18a0a7afb979d33690ab0b7e01
 							</div>
 						</div>
 					</div>

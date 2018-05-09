@@ -28,7 +28,7 @@
 			<td class="colpading bdkiri bdkanan">Nama Lengkap</td>
 			<td class="colpading bdkanan"><?php echo $hasil->gelar_dpn; ?> <?php echo $hasil->nama_pegawai; ?> <?php echo $hasil->gelar_belakang; ?></td>
 			<td class="colpading bdkanan text-center" rowspan="4">
-				<img src="<?php echo base_url('asset/img/users/'.@$hasil->foto) ?>" width="100px">
+				<img src="<?php echo base_url('asset/img/pegawai/'.@$hasil->foto) ?>" width="100px">
 			</td>
 		</tr>
 		<tr>
@@ -160,7 +160,7 @@
 	<?php foreach ($jabatan as $data): ?>
 		<tr>
 			<td class="colpading bdkanan bdkiri"><?php echo $this->Admin_m->detail_data_order('master_jenis_jabatan','id_jenis_jabatan',$data->id_jenis_jabatan)->nama_jenis_jabatan; ?></td>
-			<td class="colpading bdkanan"><?php echo $data->nm_jabatan; ?></td>
+			<td class="colpading bdkanan"><?php echo $data->nm_jabatan ?></td>
 			<td class="colpading bdkanan"><?php echo $this->Admin_m->detail_data_order('master_eselon','id_eselon',$data->id_eselon)->nama_eselon;?></td>
 			<td class="colpading bdkanan"><?php echo $data->nomor_sk ?></td>
 			<td class="colpading bdkanan"><?php echo $data->tanggal_sk_rj ?></td>

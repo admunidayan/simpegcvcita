@@ -5,6 +5,7 @@ class Depan extends CI_Controller {
     function __construct(){
         parent::__construct();
         $this->load->model('admin/Admin_m');
+        $this->load->model('admin/Pegawai_m');
     }
     public function index($offset=0){
         $data['title'] = $this->Admin_m->info_pt(1)->nama_info_pt;

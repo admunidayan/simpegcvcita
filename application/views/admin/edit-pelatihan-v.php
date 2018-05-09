@@ -16,15 +16,18 @@
 						<label for="nomor">Nomor</label>
 						<input type="text" class="form-control" id="nomor" name="nomor" placeholder="nomor" value="<?php echo $detail->nomor?>">
 					</div>
-
+					<div class="form-group">
+						<label for="nomor">Nomor</label>
+						<input type="text" class="form-control" id="nomor" name="nomor" placeholder="nomor" value="<?php echo $detail->nomor?>">
+					</div>
 						<div class="form-group">
 						<label for="tanggal">TANGGAL</label>
 						<div class="row">
 							<div class="col">
-								<input type="text" class="form-control" id="tanggal" name="tanggal_hr" placeholder="Hari" value="<?php echo substr($detail->tanggal,0,2)?>">
+								<input type="text" class="form-control" id="tanggal" name="tanggal_hr" placeholder="HH" value="<?php echo substr($detail->tanggal,3,2)?>">
 							</div>
 							<div class="col">
-								<input type="text" class="form-control" id="tanggal" name="tanggal_bln" placeholder="Bulan" value="<?php echo substr($detail->tanggal,3,2)?>">
+								<input type="text" class="form-control" id="tanggal" name="tanggal_bln" placeholder="BB" value="<?php echo substr($detail->tanggal,0,2)?>">
 							</div>
 					   </div>
 					</div>

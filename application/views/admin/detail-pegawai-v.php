@@ -92,20 +92,21 @@
 		</div>
 		<div class="col-md-9">
 			<div class="media">
-
-				
 				<?php if (!empty($hasil->foto)): ?>
-				
-					<img class="align-self-center mr-3 rounded-circle" style="width: 100px" src="<?php echo base_url('asset/img/users/'.$hasil->foto) ?>" alt="<?php echo $hasil->foto ?>">
+					<img id="preview" class="align-self-center mr-3 rounded-circle" style="width: 100px" src="<?php echo base_url('asset/img/pegawai/'.$hasil->foto) ?>" alt="<?php echo $hasil->foto ?>">
 
 				<?php else: ?>
-					<img class="align-self-center mr-3 rounded-circle" style="width: 100px" src="<?php echo base_url('asset/img/users/avatar.png') ?>" alt="foto kosong">
+					<img id="preview" class="align-self-center mr-3 rounded-circle" style="width: 100px" src="<?php echo base_url('asset/img/pegawai/avatar.png') ?>" alt="foto kosong">
 
 				<?php endif ?>
 				<div class="media-body">
 					<h5 class="mt-0"><?php echo $hasil->nama_pegawai; ?></h5>
 					<span class="text-secondary">NIP : <?php echo $hasil->nip; ?></span><br/>
-					<input type="file" name="foto" id="uploadBtn" lang="es"></br>
+					<form action="<?php echo base_url('index.php/admin/pegawai/update_foto_pegawai') ?>" en method="post" enctype="multipart/form-data">
+						<input type="file" name="fotop" id="uploadBtn"></br>
+						<input type="hidden" name="id_pegawai" value="<?php echo $hasil->id_pegawai;?>">
+						<button type="submit" name="submit" value="submit" class="btn btn-success">Simpan</button>
+					</form>
 					<span class="border border-success rounded" style="font-size: 12px;padding: 2px 5px; margin-top: 12px; "><?php echo $hasil->nama_status; ?></span>
 				</div>
 				<div class="media-right">
@@ -116,3 +117,20 @@
 		</div>
 	</div>
 </div >
+<script type="text/javascript">
+	document.getElementById("uploadBtn").onchange = function () {
+		document.getElementById("uploadFile").value = this.value;
+	};
+	function readURL(input) {
+		if (input.files && input.files[0]) {
+			var reader = new FileReader();
+			reader.onload = function (e) {
+				$('#preview').attr('src', e.target.result);
+			}
+			reader.readAsDataURL(input.files[0]);
+		}
+	}
+	$("#uploadBtn").change(function(){
+		readURL(this);
+	});
+</script>

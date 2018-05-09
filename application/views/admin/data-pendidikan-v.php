@@ -31,7 +31,7 @@
 						<td class="jrktbl"><?php echo $data->sekolah; ?></td>
 						<td class="jrktbl"><?php echo $data->jurusan; ?></td>
 						<td class="jrktbl"><?php echo $data->nomor_ijazah; ?></td>
-						<td class="jrktbl"><?php echo date('d F Y', strtotime($data->tanggal_lulus)); ?></td>
+						<td class="jrktbl"><?php echo $data->tanggal_lulus; ?></td>
 						<td class="jrktbl"><?php echo $data->tempat_sekolah; ?></td>			
 						<td class="jrktbl">
 							<a href="<?php echo base_url('index.php/admin/pegawai/edit_pendidikan/'.$hasil->id_pegawai.'/'.$data->id_pendidikan) ?>" class="text-success">Edit</a>

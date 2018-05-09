@@ -20,7 +20,7 @@
 
 
 				$no = 1;
-				foreach ($data as $d) {
+				foreach ($datas as $d) {
 					$table .= '
 					<tr>
 					<td class="jrktbl">'.$no++.'</td>

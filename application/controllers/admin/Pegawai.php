@@ -6,6 +6,7 @@ class Pegawai extends CI_Controller {
         parent::__construct();
         $this->load->model('admin/Admin_m');
         $this->load->model('admin/Pegawai_m');
+        $this->load->library('resize');
     }
     public function index($offset=0){
         if ($this->ion_auth->logged_in()) {
@@ -612,8 +613,11 @@ class Pegawai extends CI_Controller {
                     'id_pegawai' => $idpegawai,
                     'lama_kursus'=>$post['lama_kursus'],
                     'nomor'=>$post['nomor'],
+<<<<<<< HEAD
                     'tanggal'=>$post['tanggal_hr'].'-'.$post['tanggal_bln'],
                     'tahun'=>$post['tahun'],
+=======
+>>>>>>> 3ec6882551b1c9aa1c18b0da71b7ad1a50fd2932
                     'tanggal'=>$post['tanggal_thn'].'-'.$post['tanggal_bln'].'-'.$post['tanggal_hr'],
                     'no_sertifikat'=>$post['no_sertifikat'],
                     'instansi'=>$post['instansi'],
@@ -643,7 +647,7 @@ class Pegawai extends CI_Controller {
                     'jenis_penghargaan' => $post['jenis_penghargaan'],
                     'id_pegawai' => $idpegawai,
                     'no_keputusan' => $post['no_keputusan'],
-                    'tanggal'=>$post['tanggal_hr'].'-'.$post['tanggal_bln'],
+                    'tanggal'=>$post['tanggal_thn'].'-'.$post['tanggal_bln'].'-'.$post['tanggal_hr'],
                     'tahun' => $post['tahun']
                 );
                 $this->Pegawai_m->insert_data('data_penghargaan',$datainput);
@@ -756,10 +760,14 @@ class Pegawai extends CI_Controller {
                     'tanggal_sk'=>$post['tanggal_sk_thn'].'-'.$post['tanggal_sk_bln'].'-'.$post['tanggal_sk_hr'],
                     'tanggal_mulai'=>$post['tanggal_mulai_thn'].'-'.$post['tanggal_mulai_bln'].'-'.$post['tanggal_mulai_hr'],
                     'tanggal_selesai'=>$post['tanggal_selesai_thn'].'-'.$post['tanggal_selesai_bln'].'-'.$post['tanggal_selesai_hr'],
+<<<<<<< HEAD
 
                     'no_sk_pembatalan' =>$post['no_sk_pembatalan']
 
                   
+=======
+                    'no_sk_pembatalan'=>$post['no_sk_pembatalan']
+>>>>>>> 3ec6882551b1c9aa1c18b0da71b7ad1a50fd2932
                 );
                 $this->Pegawai_m->insert_data('data_hukuman',$datainput);
                 $pesan = 'Data hukuman baru berhasil di tambahkan';
@@ -784,10 +792,21 @@ class Pegawai extends CI_Controller {
                 $datainput = array(
                     'tahun' => $post['tahun'],
                     'id_pegawai' => $idpegawai,
+                    'kesetiaan'=>$post['kesetiaan'],
+                    'prestasi'=>$post['prestasi'],
+                    'tanggung_jawab'=>$post['tanggung_jawab'],
+                    'ketaatan'=>$post['ketaatan'],
+                    'kejujuran'=>$post['kejujuran'],
+                    'kerjasama'=>$post['kerjasama'],
+                    'prakarsa'=>$post['prakarsa'],
+                    'kepemimpinan'=>$post['kepemimpinan'],
                     'rata_rata'=>$post['rata_rata'],
+<<<<<<< HEAD
 
                     'atasan_pejabat_penilai'=>$post['atasan_pejabat_penilai'],
                     'pejabat_penilai'=>$post['pejabat_penilai'],
+=======
+>>>>>>> 3ec6882551b1c9aa1c18b0da71b7ad1a50fd2932
                     'pejabat_penilai'=>$post['pejabat_penilai'],
                     'atasan_pejabat_penilai'=>$post['atasan_pejabat_penilai'],
                     'mengetahui'=>$post['mengetahui']
@@ -1022,8 +1041,28 @@ class Pegawai extends CI_Controller {
 
                 );
 
-                if (!empty($_FILES["foto"])) {
-                    $config['file_name'] = strtolower(url_title('pegawai'.'-'.$post['foto']));
+                $this->Pegawai_m->update_data('data_pegawai','id_pegawai',$idpegawai,$datainput);
+                $pesan = 'Data riwayat pendidikan baru berhasil di diubah';
+                $this->session->set_flashdata('message', $pesan );
+                redirect(base_url('index.php/admin/pegawai/detail/'.$idpegawai));
+            }
+        }else{
+            $pesan = 'Login terlebih dahulu';
+            $this->session->set_flashdata('message', $pesan );
+            redirect(base_url('index.php/login'));
+        }
+    }
+    public function update_foto_pegawai(){
+        $post = $this->input->post();
+        if ($this->ion_auth->logged_in()) {
+            $level = array('admin','members');
+            if (!$this->ion_auth->in_group($level)) {
+                $pesan = 'Anda tidak memiliki Hak untuk Mengakses halaman ini';
+                $this->session->set_flashdata('message', $pesan );
+                redirect(base_url('index.php/admin/dashboard'));
+            }else{
+                if (!empty($_FILES["fotop"])) {
+                    $config['file_name'] = strtolower(url_title('pegawai'.'-'.$post['id_pegawai'].'-'.date('ymd').'-'.time('hms')));
                     $config['upload_path'] = './asset/img/pegawai/';
                     $config['allowed_types'] = 'gif|jpg|png';
                     $config['max_size'] = 2048;
@@ -1031,28 +1070,28 @@ class Pegawai extends CI_Controller {
                     $config['max_height'] = '';
 
                     $this->load->library('upload', $config);
-                    if (!$this->upload->do_upload('foto')){
+                    if (!$this->upload->do_upload('fotop')){
                         $error = $this->upload->display_errors();
                         $this->session->set_flashdata('eror', $error );
-                        redirect(base_url('index.php/admin/pegawai'));
+                        redirect(base_url('index.php/admin/pegawai/detail/'.$post['id_pegawai']));
                     }
                     else{
-                        $file = $this->Admin_m->data_pegawai(1)->row('foto');
+                        $file = $this->Admin_m->detail_data_order('data_pegawai','id_pegawai',$post['id_pegawai'])->foto;
                         if ($file != "avatar.png") {
-                            unlink("asset/img/user/$file");
+                            unlink("asset/img/pegawai/$file");
                         }
                         $img = $this->upload->data('file_name');
-                        $data['nama'] = $img;
+                        $data['foto'] = $img;
+                        $this->Admin_m->update('data_pegawai','id_pegawai',$post['id_pegawai'],$data);
                         $file = "asset/img/pegawai/$img";
                         //output resize (bisa juga di ubah ke format yang berbeda ex: jpg, png dll)
                         $resizedFile = "asset/img/pegawai/$img";
                         $this->resize->smart_resize_image(null , file_get_contents($file), 250 , 250 , false , $resizedFile , true , false ,100 );
+                        $pesan = 'Foto Pegawai Berhasil diubah';
+                        $this->session->set_flashdata('message', $pesan );
+                        redirect(base_url('index.php/admin/pegawai/detail/'.$post['id_pegawai']));
                     }
                 }
-                $this->Pegawai_m->update_data('data_pegawai','id_pegawai',$idpegawai,$datainput);
-                $pesan = 'Data riwayat pendidikan baru berhasil di diubah';
-                $this->session->set_flashdata('message', $pesan );
-                redirect(base_url('index.php/admin/pegawai/detail/'.$idpegawai));
             }
         }else{
             $pesan = 'Login terlebih dahulu';
@@ -1099,12 +1138,15 @@ class Pegawai extends CI_Controller {
             }else{
                 $post = $this->input->post();
                 $datainput = array(
+<<<<<<< HEAD
 
                  'uraian' => $post['uraian'],
                  'lokasi'=>$post['lokasi'],
                  'nomor'=>$post['nomor'],
                  'tanggal'=>$post['tanggal_hr'].'-'.$post['tanggal_bln'],
                  'tahun'=>$post['tahun'],
+=======
+>>>>>>> 3ec6882551b1c9aa1c18b0da71b7ad1a50fd2932
                     'nama_kursus' => $post['nama_kursus'],
                     'lama_kursus'=>$post['lama_kursus'],
                     'nomor'=>$post['nomor'],
@@ -1113,7 +1155,10 @@ class Pegawai extends CI_Controller {
                     'instansi'=>$post['instansi'],
                     'instansi_penyelenggara'=>$post['instansi_penyelenggara']
                 );
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3ec6882551b1c9aa1c18b0da71b7ad1a50fd2932
                 $this->Pegawai_m->update_data('data_pelatihan','id_pelatihan',$idr,$datainput);
                 $pesan = 'Data riwayat pelatihan baru berhasil di diubah';
                 $this->session->set_flashdata('message', $pesan );
@@ -1164,18 +1209,24 @@ class Pegawai extends CI_Controller {
             }else{
                 $post = $this->input->post();
                 $datainput = array(
+<<<<<<< HEAD
 
                  'jenis_penghargaan' => $post['jenis_penghargaan'],
                  'no_keputusan' => $post['no_keputusan'],
                  'tanggal'=>$post['tanggal_hr'].'-'.$post['tanggal_bln'],
                  'tahun' => $post['tahun'],
    
+=======
+>>>>>>> 3ec6882551b1c9aa1c18b0da71b7ad1a50fd2932
                    'jenis_penghargaan' => $post['jenis_penghargaan'],
                    'no_keputusan' => $post['no_keputusan'],
                    'tanggal'=>$post['tanggal_thn'].'-'.$post['tanggal_bln'].'-'.$post['tanggal_hr'],
                    'tahun' => $post['tahun']
                );
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3ec6882551b1c9aa1c18b0da71b7ad1a50fd2932
                 $this->Pegawai_m->update_data('data_penghargaan','id_penghargaan',$idr,$datainput);
                 $pesan = 'Data riwayat penghargaan baru berhasil di diubah';
                 $this->session->set_flashdata('message', $pesan );
@@ -1260,7 +1311,6 @@ class Pegawai extends CI_Controller {
                 $data['detail'] = $this->Pegawai_m->detail_data('data_organisasi','id_organisasi',$idr);
                 $data['status'] = $this->Pegawai_m->select_data('master_status_pegawai');
                 $data['bagian'] = 'admin/edit-organisasi-v';
-                $data['satuankerja'] = $this->Pegawai_m->select_data('master_satuan_kerja');
                 $data['page'] = 'admin/detail-pegawai-v';
                 // pagging setting
                 $this->load->view('admin/dashboard-v',$data);
@@ -1394,6 +1444,7 @@ class Pegawai extends CI_Controller {
             }else{
                 $post = $this->input->post();
                 $datainput = array(
+<<<<<<< HEAD
 
                  'uraian' => $post['uraian'],
                  'nomor_sk'=>$post['nomor_sk'],
@@ -1402,6 +1453,8 @@ class Pegawai extends CI_Controller {
                  'tanggal_selesai'=>$post['tanggal_selesai_thn'].'-'.$post['tanggal_selesai_bln'].'-'.$post['tanggal_selesai_hr'],
                  'no_sk_pembatalan' =>$post['no_sk_pembatalan'],
   
+=======
+>>>>>>> 3ec6882551b1c9aa1c18b0da71b7ad1a50fd2932
                    'uraian' => $post['uraian'],
                    'nomor_sk'=>$post['nomor_sk'],
                    'tanggal_sk'=>$post['tanggal_sk_thn'].'-'.$post['tanggal_sk_bln'].'-'.$post['tanggal_sk_hr'],
@@ -1409,7 +1462,10 @@ class Pegawai extends CI_Controller {
                    'tanggal_selesai'=>$post['tanggal_selesai_thn'].'-'.$post['tanggal_selesai_bln'].'-'.$post['tanggal_selesai_hr'],
                    'no_sk_pembatalan'=>$post['no_sk_pembatalan']
                );
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3ec6882551b1c9aa1c18b0da71b7ad1a50fd2932
                 $this->Pegawai_m->update_data('data_hukuman','id_hukuman',$idr,$datainput);
                 $pesan = 'Data riwayat hukuman baru berhasil di diubah';
                 $this->session->set_flashdata('message', $pesan );
@@ -1460,6 +1516,7 @@ class Pegawai extends CI_Controller {
             }else{
                 $post = $this->input->post();
                 $datainput = array(
+<<<<<<< HEAD
 
                  'tahun' => $post['tahun'],
                  'id_pegawai' => $idpegawai,
@@ -1467,6 +1524,8 @@ class Pegawai extends CI_Controller {
                  'atasan_pejabat_penilai'=>$post['atasan_pejabat_penilai'],
                  'pejabat_penilai'=>$post['pejabat_penilai'],
                  
+=======
+>>>>>>> 3ec6882551b1c9aa1c18b0da71b7ad1a50fd2932
                    'tahun' => $post['tahun'],
                    'kesetiaan'=>$post['kesetiaan'],
                    'prestasi'=>$post['prestasi'],
@@ -1481,7 +1540,10 @@ class Pegawai extends CI_Controller {
                    'atasan_pejabat_penilai'=>$post['atasan_pejabat_penilai'],
                    'mengetahui'=>$post['mengetahui']
                );
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3ec6882551b1c9aa1c18b0da71b7ad1a50fd2932
                 $this->Pegawai_m->update_data('data_dp3','id_dp3',$idr,$datainput);
                 $pesan = 'Data riwayat dp3 baru berhasil di diubah';
                 $this->session->set_flashdata('message', $pesan );
@@ -1764,9 +1826,6 @@ class Pegawai extends CI_Controller {
             redirect(base_url('index.php/admin//login'));
         }
     }
-
-
-
     public function uploadImage() {
         $this->load->helper(array('form', 'url'));  
         $config['upload_path'] = 'assets/images/pegawai';
