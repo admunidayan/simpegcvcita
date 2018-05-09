@@ -64,38 +64,7 @@
 								<label class="text-info" for="tahun">TAHUN</label>
 								<input type="text" class="form-control" id="tahun" name="tahun" placeholder="TAHUN" >
 							</div>
-							<div class="form-group">
-								<label class="text-info" for="kesetiaan">KESETIAAN</label>
-								<input type="text" class="form-control" id="kesetiaan" name="kesetiaan" placeholder="KESETIAAN" >
-							</div>
-							<div class="form-group">
-								<label class="text-info" for="prestasi">PRESTASI</label>
-								<input type="text" class="form-control" id="prestasi" name="prestasi" placeholder="PRESTASI" >
-							</div>
-							<div class="form-group">
-								<label class="text-info" for="tanggung_jawab">TANGGUNG JAWAB</label>
-								<input type="text" class="form-control" id="tanggung_jawab" name="tanggung_jawab" placeholder="TANGGUNG JAWAB">
-							</div>
-							<div class="form-group">
-								<label class="text-info" for="ketaatan">KETAATAN</label>
-								<input type="text" class="form-control" id="ketaatan" name="ketaatan" placeholder="KETAATAN">
-							</div>
-							<div class="form-group">
-								<label class="text-info" for="kejujuran">KEJUJURAN</label>
-								<input type="text" class="form-control" id="kejujuran" name="kejujuran" placeholder="KEJUJURAN">
-							</div>
-							<div class="form-group">
-								<label class="text-info" for="kerjasama">KERJA SAMA</label>
-								<input type="text" class="form-control" id="kerjasama" name="kerjasama" placeholder="KERJA SAMA">
-							</div>
-							<div class="form-group">
-								<label class="text-info" for="prakarsa">PRAKARSA</label>
-								<input type="text" class="form-control" id="prakarsa" name="prakarsa" placeholder="PRAKARSA">
-							</div>
-							<div class="form-group">
-								<label class="text-info" for="kepemimpinan">KEPEMIMPINAN</label>
-								<input type="text" class="form-control" id="kepemimpinan" name="kepemimpinan" placeholder="KEPEMIMPINAN">
-							</div>
+
 							<div class="form-group">
 								<label class="text-info" for="rata_rata">RATA-RATA</label>
 								<input type="text" class="form-control" id="rata_rata" name="rata_rata" placeholder="RATA-RATA">
@@ -107,11 +76,6 @@
 							<div class="form-group">
 								<label class="text-info" for="atasan_pejabat_penilai">ATASAN PEJABAT PENILAI</label>
 								<input type="text" class="form-control" id="atasan_pejabat_penilai" name="atasan_pejabat_penilai" placeholder="ATASAN PEJABAT PENILAI">
-							</div>
-							<div class="form-group">
-								<label class="text-info" for="mengetahui">MENGETAHUI</label>
-								<input type="text" class="form-control" id="mengetahui" name="mengetahui" placeholder="MENGETAHUI">
-							</div>
 						</div>
 					</div>
 					<div class="modal-footer">

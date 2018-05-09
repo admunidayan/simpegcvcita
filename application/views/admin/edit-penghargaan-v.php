@@ -5,22 +5,27 @@
 			<div class="col-md-12">
 				<div class="col-md-12">
 					<div class="form-group">
-						<label class="text-info" for="">URAIAN</label>
-						<input type="text" class="form-control" id="uraian" name="uraian" placeholder="URAIAN" value="<?php echo $detail->uraian?>">
+						<label class="text-info" for="">JENIS PENGHARGAAN</label>
+						<input type="text" class="form-control" id="jenis_penghargaan" name="jenis_penghargaan" placeholder="jenis_penghargaan" value="<?php echo $detail->jenis_penghargaan?>">
 					</div>
 					<div class="form-group">
-						<label class="text-info" for="tanggal_sk">TANGGAL SK</label>
+						<label class="text-info" for="no_keputusan">NOMOR KEPUTUSAN</label>
+						<input type="text" class="form-control" id="no_keputusan" name="no_keputusan" placeholder="no_keputusan" value="<?php echo $detail->no_keputusan?>">
+					</div>
+					<div class="form-group">
+						<label for="tanggal">TANGGAL</label>
 						<div class="row">
 							<div class="col">
-								<input type="text" class="form-control" id="tanggal_sk" name="tanggal_sk_hr" placeholder="HH" value="<?php echo substr($detail->tanggal_sk,8,2)?>">
+								<input type="text" class="form-control" id="tanggal" name="tanggal_hr" placeholder="HH" value="<?php echo substr($detail->tanggal,0,2)?>">
 							</div>
 							<div class="col">
-								<input type="text" class="form-control" id="tanggal_sk" name="tanggal_sk_bln" placeholder="BB" value="<?php echo substr($detail->tanggal_sk,5,2)?>">
+								<input type="text" class="form-control" id="tanggal" name="tanggal_bln" placeholder="BB" value="<?php echo substr($detail->tanggal,3,2)?>">
 							</div>
-							<div class="col">
-								<input type="text" class="form-control" id="tanggal_sk" name="tanggal_sk_thn" placeholder="TTTT" value="<?php echo substr($detail->tanggal_sk,0,4)?>">
-							</div>
-						</div>
+					   </div>
+					</div>
+					<div class="form-group">
+						<label class="text-info" for="no_keputusan">TAHUN</label>
+						<input type="text" class="form-control" id="tahun" name="tahun" placeholder="tahun" value="<?php echo $detail->tahun?>">
 					</div>
 				</div>
 			</div>

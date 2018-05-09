@@ -160,7 +160,7 @@
 	<?php foreach ($jabatan as $data): ?>
 		<tr>
 			<td class="colpading bdkanan bdkiri"><?php echo $this->Admin_m->detail_data_order('master_jenis_jabatan','id_jenis_jabatan',$data->id_jenis_jabatan)->nama_jenis_jabatan; ?></td>
-			<td class="colpading bdkanan"><?php echo $this->Admin_m->detail_data_order('master_jabatan','id_jabatan',$data->id_jabatan)->nama_jabatan; ?></td>
+			<td class="colpading bdkanan"><?php echo $data->nm_jabatan; ?></td>
 			<td class="colpading bdkanan"><?php echo $this->Admin_m->detail_data_order('master_eselon','id_eselon',$data->id_eselon)->nama_eselon;?></td>
 			<td class="colpading bdkanan"><?php echo $data->nomor_sk ?></td>
 			<td class="colpading bdkanan"><?php echo $data->tanggal_sk_rj ?></td>

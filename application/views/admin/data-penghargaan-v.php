@@ -27,7 +27,7 @@
 						<td class="jrktbl text-center"><?php echo $no; ?></td>
 						<td class="jrktbl"><?php echo $data->jenis_penghargaan; ?></td>
 						<td class="jrktbl"><?php echo $data->no_keputusan; ?></td>
-						<td class="jrktbl"><?php echo date('d F Y', strtotime($data->tanggal)); ?></td>
+						<td class="jrktbl"><?php echo $data->tanggal; ?></td>
 						<td class="jrktbl"><?php echo $data->tahun; ?></td>
 						<td class="jrktbl">
 							<a href="<?php echo base_url('index.php/admin/pegawai/edit_penghargaan/'.$hasil->id_pegawai.'/'.$data->id_penghargaan) ?>" class="text-success">Edit</a>
@@ -77,9 +77,7 @@
 									<div class="col">
 										<input type="text" class="form-control" id="tanggal" name="tanggal_bln" placeholder="BB">
 									</div>
-									<div class="col">
-										<input type="text" class="form-control" id="tanggal" name="tanggal_thn" placeholder="TTTT">
-									</div>
+
 								</div>
 								<div class="form-group">
 								<label class="text-info" for="tahun">TAHUN</label>

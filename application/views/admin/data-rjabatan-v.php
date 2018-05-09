@@ -32,10 +32,10 @@
 						<td class="jrktbl"><?php echo $this->Admin_m->detail_data_order('master_jenis_jabatan','id_jenis_jabatan',$data->id_jenis_jabatan)->nama_jenis_jabatan; ?></td>
 						<td class="jrktbl"><?php echo $data->nm_jabatan; ?></td>
 						<td class="jrktbl"><?php echo $this->Admin_m->detail_data_order('master_eselon','id_eselon',$data->id_eselon)->nama_eselon;?></td>
-						<td class="jrktbl"><?php echo $data->nomor_sk; ?></td>
-						<td class="jrktbl"><?php echo $data->tanggal_sk_rj; ?></td>
-						<td class="jrktbl"><?php echo $data->tmt_jabatan_rj; ?></td>
-						<td class="jrktbl"><?php echo $data->tmt_pelantikan_rj; ?></td>
+						<td class="jrktbl"><?php echo $data->nomor_sk; ?></td> 
+						<td class="jrktbl"><?php echo date('d F Y', strtotime($data->tanggal_sk_rj)) ; ?></td>
+						<td class="jrktbl"><?php echo date('d F Y', strtotime($data->tmt_jabatan_rj)); ?></td>
+						<td class="jrktbl"><?php echo date('d F Y', strtotime($data->tmt_pelantikan_rj)); ?></td>
 						<td class="jrktbl"><?php echo $this->Admin_m->detail_data_order('master_satuan_kerja','id_satuan_kerja',$data->id_satuan_kerja)->nama_satuan_kerja; ?></td>				
 						<td class="jrktbl">
 							<a href="<?php echo base_url('index.php/admin/pegawai/edit_rjabatan/'.$hasil->id_pegawai.'/'.$data->id_riwayat_jabatan) ?>" class="text-success">Edit</a>
