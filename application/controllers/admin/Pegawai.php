@@ -1618,6 +1618,7 @@ class Pegawai extends CI_Controller {
             redirect(base_url('index.php/admin//login'));
         }
     }
+
     public function delete_rgolongan($idpegawai,$idr){
         if ($this->ion_auth->logged_in()) {
             $level = array('admin','members');
@@ -1782,6 +1783,25 @@ class Pegawai extends CI_Controller {
                 $pesan = 'Data riwayat hukuman baru berhasil di diubah dihapus';
                 $this->session->set_flashdata('message', $pesan );
                 redirect(base_url('index.php/admin/pegawai/detail_hukuman/'.$idpegawai));
+            }
+        }else{
+            $pesan = 'Login terlebih dahulu';
+            $this->session->set_flashdata('message', $pesan );
+            redirect(base_url('index.php/admin//login'));
+        }
+    }
+    public function delete_pegawai($id_pegawai){
+        if ($this->ion_auth->logged_in()) {
+            $level = array('admin','members');
+            if (!$this->ion_auth->in_group($level)) {
+                $pesan = 'Anda tidak memiliki Hak untuk Mengakses halaman ini';
+                $this->session->set_flashdata('message', $pesan );
+                redirect(base_url('index.php/admin/dashboard'));
+            }else{
+                $this->Pegawai_m->delete_data('data_pegawai','id_pegawai',$id_pegawai);
+                $pesan = 'Data Pegawai berhasil di diubah dihapus';
+                $this->session->set_flashdata('message', $pesan );
+                redirect(base_url('index.php/admin/pegawai/'));
             }
         }else{
             $pesan = 'Login terlebih dahulu';

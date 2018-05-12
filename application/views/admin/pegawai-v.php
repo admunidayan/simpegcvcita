@@ -54,7 +54,7 @@
 						<td class="jrktbl text-secondary"><?php echo strtoupper($data->alamat); ?></td>
 						<td class="jrktbl text-center text-secondary"><?php echo $data->nama_status; ?></td>
 						<td class="jrktbl">
-							<a href="#" class="text-danger">hapus</a>
+							<a href="<?php echo base_url('index.php/admin/pegawai/delete_pegawai/'.$data->id_pegawai) ?>" class="text-danger">Hapus</a>
 						</td>
 					</tr>
 					<?php $no++ ?>
