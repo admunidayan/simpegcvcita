@@ -5,8 +5,18 @@
 		<div class="row">
 			<div class="col">
 				<div class="form-group">
+					<label class="text-info" for="nama_pegawai">GELAR DEPAN</label>
+					<input type="text" class="form-control" id="gelar_dpn" name="gelar_dpn" placeholder="GELAR DEPAN" value="<?php echo $hasil->gelar_dpn ?>">
+				</div>
+							
+				
+				<div class="form-group">
 					<label class="text-info" for="nama_pegawai">NAMA LENGKAP</label>
 					<input type="text" class="form-control" id="nip" name="nama_pegawai" placeholder="NAMA LENGKAP TANPA GELAR" value="<?php echo $hasil->nama_pegawai ?>">
+				</div>
+				<div class="form-group">
+					<label class="text-info" for="nama_pegawai">GELAR BELAKANG</label>
+					<input type="text" class="form-control" id="gelar_belakang" name="gelar_belakang" placeholder="GELAR BELAKANG" value="<?php echo $hasil->gelar_belakang ?>">
 				</div>
 				<div class="form-group">
 					<label class="text-info" for="nip">NIP</label>

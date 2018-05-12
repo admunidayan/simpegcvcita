@@ -79,8 +79,17 @@
 					<div class="row">
 						<div class="col-md-12">
 							<div class="form-group">
+								<label class="text-info" for="nama_pegawai">GELAR DEPAN</label>
+								<input type="text" class="form-control" id="gelar_dpn" name="gelar_dpn" placeholder="GELAR DEPAN" >
+							</div>
+							
+							<div class="form-group">
 								<label class="text-info" for="nama_pegawai">NAMA LENGKAP</label>
 								<input type="text" class="form-control" id="nama_pegawai" name="nama_pegawai" placeholder="NAMA LENGKAP TANPA GELAR" >
+							</div>
+							<div class="form-group">
+								<label class="text-info" for="nama_pegawai">GELAR BELAKANG</label>
+								<input type="text" class="form-control" id="gelar_blkng" name="gelar_blkng" placeholder="GELAR BELAKANG" >
 							</div>
 							<div class="form-group">
 								<label class="text-info" for="nip">NIP</label>
