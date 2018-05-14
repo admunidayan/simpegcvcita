@@ -1,5 +1,6 @@
 <title><?php echo $title; ?></title>
 <link rel="stylesheet" href="<?php echo base_url('asset/css/bootstrap.min.css'); ?>">
+<link rel="stylesheet" href="<?php echo base_url('asset/css/custom.css'); ?>">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
