@@ -4,20 +4,26 @@
 rel="stylesheet">
 <link rel="shortcut icon" href="<?php echo base_url($brand); ?>">
 <div class="box">
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light navbar navbar-light" style="background-color: #e3f2fd;">
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	</button>
 	
-	<div class="col-md-6" style="margin-left: 7px"><H2>SISTEM INFORMASI KEPEGAWAIAN</H2></div>
+	<div class="col-md-6" style="margin-left: 7px" ><H2>SISTEM INFORMASI KEPEGAWAIAN</H2></div>
 	<div class="col-md-4"><i class="material-icons">location_on</i>PASAR WAJO, KABUPATEN BUTON</div>
 		<div class="col-md-3">
 			<a class="btn btn-outline-success my-2 my-sm-0" href="<?php echo base_url('index.php/login') ?>" style="margin-left: 50px">LOGIN</a>
 		</div>
 	</div>
 </nav>
-<div style="margin-top: 14px; padding: 30px">
-	<div class="container-fluid" style="background: #17a2b8; color: white">
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Fluid jumbotron</h1>
+    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+  </div>
+</div>
+<div style="margin-top: 14px; padding: 30px" class="p-3 mb-2 bg-secondary text-white">
+	<div class="container-fluid" style="background: #9c88ff background-image: linear-gradient( 135deg, #FCCF31 10%, #F55555 100%);; color: white">
 		<div class="row">
 			<div class="col-md-6" align="center">
 				<h4>JUMLAH PEGAWAI KABUPATEN BUTON</h4>
@@ -27,7 +33,7 @@ rel="stylesheet">
 			</div>
 		</div>
 	</div>
-	<div style="margin-top: 14px; background-color: white;padding: 30px">
+	<div style="margin-top: 14px; background-image: linear-gradient( 135deg, #FCCF31 10%, #F55555 100%);padding: 30px">
 		<div class="container">
 			<div class="row">
 				<div class="col">
