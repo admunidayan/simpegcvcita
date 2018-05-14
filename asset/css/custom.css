@@ -149,3 +149,43 @@ font-size: 19px;
 .box {
  background: linear-gradient(to right, #000046, #1cb5e0);   
 }
+h1 {
+	font-family: "Brush Script MT", cursive;
+	font-size: 24px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
+}
+.font1 {
+	font-family: "Brush Script MT", cursive;
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 15.4px;
+}
+.font2 {
+	font-family: "Pacifico", cursive;
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 20px;
+}
+blockquote {
+	font-family: "Brush Script MT", cursive;
+	font-size: 21px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 30px;
+}
+pre {
+	font-family: "Brush Script MT", cursive;
+	font-size: 13px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 18.5714px;
+}
