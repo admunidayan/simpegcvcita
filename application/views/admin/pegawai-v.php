@@ -119,7 +119,7 @@
 							</div>
 							<div class="form-group">
 								<label class="text-info" for="kartu_askes_pegawai">NOMOR KARTU ASKES PEGAWAI</label>
-								<input type="text" class="form-control" id="kartu_askes_pegawai" name="kartu_askes_pegawai" placeholder="NOMOR KARTU ASKES PEGAWAI"">
+								<input type="text" class="form-control" id="kartu_askes_pegawai" name="kartu_askes_pegawai" placeholder="NOMOR KARTU ASKES PEGAWAI">
 							</div>
 						</div>
 						<div class="col-md-12">
@@ -146,6 +146,16 @@
 									<?php endforeach ?>
 								</select>
 							</div>
+							<div class="form-group">
+								<label class="text-info" for="no_hp">NOMOR HANDPHONE</label>
+
+								<input type="text" class="form-control" id="no_hp" name="no_hp" placeholder="Nomor Handphone">
+								</div>
+							<div class="form-group">
+								<label class="text-info" for="email">EMAIL</label>
+
+								<input type="text" class="form-control" id="email" name="email" placeholder="EMAIL">
+								</div>
 							<div class="form-group">
 								<label class="text-info" for="status_pegawai">STATUS PEGAWAI</label>
 								<select class="form-control" name="status_pegawai">

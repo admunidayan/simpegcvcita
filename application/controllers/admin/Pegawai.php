@@ -464,7 +464,11 @@ class Pegawai extends CI_Controller {
                     'tmt_pns'=>$post['tmt_pns_thn'].'-'.$post['tmt_pns_bln'].'-'.$post['tmt_pns_hr'],
                     'tmt_cpns'=>$post['tmt_cpns_hr'].'-'.$post['tmt_cpns_bln'].'-'.$post['tmt_cpns_thn'],
                     'gelar_dpn'=>$post['gelar_dpn'],
-                    'gelar_belakang'=>$post['gelar_belakang']
+                    'gelar_belakang'=>$post['gelar_belakang'],
+                    'no_hp'=>$post['no_hp'],
+                    'email'=>$post['email'],
+                    
+                    
                 );
                 $this->Pegawai_m->insert_data('data_pegawai',$datainput);
                 $pesan = 'Data pegawai baru berhasil di tambahkan';
@@ -1028,7 +1032,9 @@ class Pegawai extends CI_Controller {
                     'tmt_pns'=>$post['tmt_pns_thn'].'-'.$post['tmt_pns_bln'].'-'.$post['tmt_pns_hr'],
                     'tmt_cpns'=>$post['tmt_cpns_thn'].'-'.$post['tmt_cpns_bln'].'-'.$post['tmt_cpns_hr'],
                     'gelar_dpn'=>$post['gelar_dpn'],
-                    'gelar_belakang'=>$post['gelar_belakang']
+                    'gelar_belakang'=>$post['gelar_belakang'],
+                    'no_hp'=>$post['no_hp'],
+                    'email'=>$post['email']
 
                 );
 

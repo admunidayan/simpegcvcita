@@ -69,6 +69,14 @@
 					<input type="text" class="form-control" id="tanggal_lahir" name="tanggal_lahir" placeholder="12-01-1993" value="<?php echo $hasil->tanggal_lahir ?>">
 				</div>
 				<div class="form-group">
+					<label class="text-info" for="no_hp">NOMOR HANDPHONE</label>
+					<input type="text" class="form-control" id="no_hp" name="no_hp" placeholder="Nomor Handphone" value="<?php echo $hasil->no_hp?>">
+				</div>
+				<div class="form-group">
+					<label class="text-info" for="email">EMAIL</label>
+                    <input type="text" class="form-control" id="email" name="email" placeholder="EMAIL" value="<?php echo $hasil->email?>">
+				</div>
+				<div class="form-group">
 					<label class="text-info" for="tanggal_lahir">NOMOR KK</label>
 					<input type="text" class="form-control" id="nomor_kk" name="nomor_kk" placeholder="Nomor Kartu Keluarga" value="<?php echo $hasil->nomor_kk ?>">
 				</div>
