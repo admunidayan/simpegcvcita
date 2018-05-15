@@ -50,7 +50,7 @@
 				<?php foreach ($hasil as $data): ?>
 					<tr>
 						<td class="jrktbl text-center"><?php echo $no; ?></td>
-						<td class="jrktbl"><a class="text-dark" href="<?php echo base_url('index.php/admin/honorer/detail/'.$data->id_honorer) ?>"><?php echo strtoupper($data->nama); ?></a></td>
+						<td class="jrktbl text-secondary"><?php echo strtoupper($data->nama); ?></td>
 						<td class="jrktbl text-secondary"><?php echo $data->alamat; ?></td>
 						<td class="jrktbl text-secondary"><?php echo $data->nomor_sk; ?></td>
 						<td class="jrktbl text-secondary"><?php echo @$this->Admin_m->detail_data_order('master_lokasi_kerja','id_lokasi_kerja',$data->id_lokasi_kerja)->lokasi_kerja; ?></td>

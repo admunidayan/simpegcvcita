@@ -116,7 +116,7 @@
 				<div class="form-group">
 					<label class="text-info" for="skpd">SKPD</label>	
 						<select class="form-control" name="skpd">
-							<option value="<?php echo $hasil->id_satuan_kerja ?>"><?php echo $hasil->nama_satuan_kerja; ?></option>
+							<option value="<?php echo $hasil->id_satuan_kerja ?>"><?php echo $this->Admin_m->detail_data_order('master_satuan_kerja','id_satuan_kerja',$hasil->id_satuan_kerja)->nama_satuan_kerja; ?></option>
 							<?php foreach ($skpd as $data): ?>
 								<option value="<?php echo $data->id_satuan_kerja ?>"><?php echo $data->nama_satuan_kerja; ?></option>
 								<?php endforeach ?>

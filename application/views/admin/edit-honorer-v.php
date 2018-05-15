@@ -18,11 +18,12 @@
 						<input type="text" class="form-control" id="no_hp" name="no_hp" value="<?php echo $detail->no_hp ?>" placeholder="Nomor HP">
 					</div>
 					<div class="form-group">
-						<label class="text-info" for="id_lokasi_kerja">UNIT ORGANISASI</label>
-						<select class="form-control" name="id_lokasi_kerja">
-							<?php foreach ($skpd as $dtskpd): ?>
-								<option value="<?php echo $dtskpd->id_lokasi_kerja ?>">--<?php echo @$this->Admin_m->detail_data_order('master_lokasi_kerja','id_lokasi_kerja',$detail->id_lokasi_kerja)->lokasi_kerja; ?>--</option>
-								<?php endforeach ?>
+						<label class="text-info" for="id_lokasi_kerja">Unit Organisasi</label>
+							<select class="form-control" name="id_lokasi_kerja">; ?></option>
+
+						<?php foreach ($skpd as $dtskpd): ?>
+								<option value="<?php echo $dtskpd->id_lokasi_kerja ?>"><?php echo $dtskpd->lokasi_kerja; ?></option>
+							<?php endforeach ?>
 
 							</select>
 						</div>
