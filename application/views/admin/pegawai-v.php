@@ -22,9 +22,9 @@
 						<select class="form-control" name="skpd" onchange="this.form.submit()">
 							<option value=""> Pilih Lokasi </option>
 							<option value=""> SEMUA LOKASI </option>
-							<?php foreach ($skpd as $dtskpd): ?>
-								<option value="<?php echo $dtskpd->id_lokasi_kerja ?>"><?php echo $dtskpd->lokasi_kerja; ?></option>
-							<?php endforeach ?>
+<?php foreach ($skpd as $data): ?>
+								<option value="<?php echo $data->id_satuan_kerja ?>"><?php echo $data->nama_satuan_kerja; ?></option>
+								<?php endforeach ?>
 						</select>
 						<small class="form-text text-muted">Pilih Unit Organisasi</small>
 					</div>
