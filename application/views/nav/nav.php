@@ -1,4 +1,4 @@
-<div class="navbox ">
+<div class="navbox">
 	<ul class="navbar-nav mr-auto ">
 		<a href="<?php echo base_url('index.php/admin/dashboard/') ?>">
 			<li class="linkmenu">

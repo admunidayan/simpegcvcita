@@ -4,6 +4,7 @@ class Export_excel extends CI_Controller {
 
 	function __construct(){
 		parent::__construct();
+		$this->load->model('admin/Admin_m');
 		$this->load->model('admin/Model_data');
 		$this->load->library('Excel');
 	}
@@ -15,8 +16,14 @@ class Export_excel extends CI_Controller {
 				$this->session->set_flashdata('message', $pesan );
 				redirect(base_url('index.php/admin/dashboard'));
 			}else{
-				$d['data'] = $this->Model_data->getData();
-				$this->load->view('admin/layout', $d);
+				$data['title'] = $this->Admin_m->info_pt(1)->nama_info_pt;
+                $data['infopt'] = $this->Admin_m->info_pt(1);
+                $data['brand'] = 'asset/img/lembaga/'.$this->Admin_m->info_pt(1)->logo_pt;
+                $data['users'] = $this->ion_auth->user()->row();
+                $data['aside'] = 'nav/nav';
+                $data['page'] = 'admin/layout';
+				$data['datas'] = $this->Model_data->getData();
+				$this->load->view('admin/dashboard-v', $data);
 			}
 		}else{
 			$pesan = 'Login terlebih dahulu';

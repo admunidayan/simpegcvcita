@@ -7,7 +7,7 @@ body{
 .bglog{
 	background: #360033;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to right, #0b8793, #013c67);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #0b8793, #013c67); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background-image: linear-gradient( 135deg, #43CBFF 10%, #9708CC 100%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
 .login-box{
@@ -47,6 +47,7 @@ background: linear-gradient(to right, #0b8793, #013c67); /* W3C, IE 10+/ Edge, F
 }
 .navbox{
 	margin-top: 50px;
+	
 }
 .beranda-menu-box{
 	text-align: center;
@@ -147,10 +148,10 @@ color: #fff;
 font-size: 19px;
 }
 .box {
- background: linear-gradient(to right, #000046, #1cb5e0);   
+ background-image: linear-gradient( 135deg, #43CBFF 10%, #9708CC 100%);   
 }
 h4 {
-	font-family: "Brush Script MT", cursive;
+	font-family: "Lucida Console", cursive;
 	font-size: 24px;
 	font-style: normal;
 	font-variant: normal;
@@ -159,15 +160,15 @@ h4 {
 }
 .font1 {
 	font-family: "Brush Script MT", cursive;
-	font-size: 14px;
+	font-size: 20px;
 	font-style: normal;
 	font-variant: normal;
 	font-weight: 500;
 	line-height: 15.4px;
 }
 h2{
-	font-family: "Lucida Console", cursive;
-	font-size: 14px;
+	font-family: "Skranji", cursive;
+	font-size: 25px;
 	font-style: normal;
 	font-variant: normal;
 	font-weight: 400;

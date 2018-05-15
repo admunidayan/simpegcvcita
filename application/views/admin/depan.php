@@ -6,29 +6,29 @@ rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
 <link rel="shortcut icon" href="<?php echo base_url($brand); ?>">
 <div class="box">
-<nav class="navbar navbar-expand-lg navbar-light bg-light navbar navbar-light" style="background-image: linear-gradient( 135deg, #92FFC0 10%, #002661 100%);">
+<nav class="navbar navbar-expand-lg navbar-light bg-light navbar navbar-light" style="background-image: linear-gradient( 135deg, #43CBFF 10%, #9708CC 100%);">
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	</button>
-	<div class="col-md-6" style="margin-left: 7px"><H2>SISTEM INFORMASI KEPEGAWAIAN</H2></div>
+	<div class="col-md-6" style="margin-left: 20px"><h2>SISTEM INFORMASI KEPEGAWAIAN</h2></div>
 	<div class="col-md-4" style="font-family:"Pacifico"><i class="material-icons">location_on</i>PASAR WAJO, KABUPATEN BUTON</div>
 		<div class="col-md-3">
 			<a class="btn btn-info" href="<?php echo base_url('index.php/login') ?>" style="margin-left: 50px">LOGIN</a>
 		</div>
 	</div>
 </nav>
-<div style="margin-top: 14px; background-image: linear-gradient( 135deg, #92FFC0 10%, #002661 100%);padding: 30px" class="p-3 mb-2 bg-secondary text-black">
+<div style="margin-top: 14px; background-image: linear-gradient( 135deg, #43CBFF 10%, #9708CC 100%);padding: 30px" class="p-3 mb-2 bg-secondary text-black">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-6" align="center">
-				<h4><p class="font-weight-bold font2 font-italic">JUMLAH PEGAWAI KABUPATEN BUTON</p></h4>
+				<h4><p>JUMLAH PEGAWAI KABUPATEN BUTON</p></h4>
 			</div>
 			<div class="col-md-6" align="center">
 				<h4><?php echo $this->Pegawai_m->jml() ?> Orang</h4>
 			</div>
 		</div>
 	</div>
-	<div style="margin-top: 14px; background-image: linear-gradient( 135deg, #92FFC0 10%, #002661 100%);padding: 30px">
+	<div style="margin-top: 14px; background-image: linear-gradient( 135deg, #43CBFF 10%, #9708CC 100%);padding: 30px">
 		<div class="container">
 			<div class="row">
 				<div class="col">
