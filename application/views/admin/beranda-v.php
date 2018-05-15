@@ -4,6 +4,7 @@
     <div class="col-md-8">
         <div>
             <div id="container" style="min-width: 600px; height: 600px; margin: 0 auto"></div>
+            
             <script type="text/javascript">
 
                 Highcharts.chart('container', {

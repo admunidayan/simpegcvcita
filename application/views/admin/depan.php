@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="<?php echo base_url('asset/css/custom.css'); ?>">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 <link rel="shortcut icon" href="<?php echo base_url($brand); ?>">
 <div class="box">
 <nav class="navbar navbar-expand-lg navbar-light bg-light navbar navbar-light" style="background-image: linear-gradient( 135deg, #43CBFF 10%, #9708CC 100%);">
@@ -11,7 +11,7 @@ rel="stylesheet">
 		<span class="navbar-toggler-icon"></span>
 	</button>
 	<div class="col-md-6" style="margin-left: 20px"><h2>SISTEM INFORMASI KEPEGAWAIAN</h2></div>
-	<div class="col-md-4" style="font-family:"Pacifico"><i class="material-icons">location_on</i>PASAR WAJO, KABUPATEN BUTON</div>
+	<div class="col-md-4"><i class="material-icons">location_on</i>PASAR WAJO, KABUPATEN BUTON</div>
 		<div class="col-md-3">
 			<a class="btn btn-info" href="<?php echo base_url('index.php/login') ?>" style="margin-left: 50px">LOGIN</a>
 		</div>
@@ -94,7 +94,7 @@ rel="stylesheet">
 									rotation: -45,
 									style: {
 										fontSize: '13px',
-										fontFamily: 'Verdana, sans-serif'
+										fontFamily: 'Roboto, sans-serif'
 									}
 								}
 							},

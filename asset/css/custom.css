@@ -47,7 +47,7 @@ background-image: linear-gradient( 135deg, #43CBFF 10%, #9708CC 100%); /* W3C, I
 }
 .navbox{
 	margin-top: 50px;
-	
+
 }
 .beranda-menu-box{
 	text-align: center;
@@ -151,7 +151,7 @@ font-size: 19px;
  background-image: linear-gradient( 135deg, #43CBFF 10%, #9708CC 100%);   
 }
 h4 {
-	font-family: "Lucida Console", cursive;
+	font-family: "Roboto",Helvetica Neue,Arial,Helvetica,sans-serif, cursive;
 	font-size: 24px;
 	font-style: normal;
 	font-variant: normal;
@@ -159,7 +159,7 @@ h4 {
 	line-height: 26.4px;
 }
 .font1 {
-	font-family: "Brush Script MT", cursive;
+	font-family: "Roboto", cursive;
 	font-size: 20px;
 	font-style: normal;
 	font-variant: normal;
@@ -167,15 +167,16 @@ h4 {
 	line-height: 15.4px;
 }
 h2{
-	font-family: "Skranji", cursive;
+	font-family: "Roboto",Helvetica Neue,Arial,Helvetica,sans-serif, cursive;
 	font-size: 25px;
 	font-style: normal;
 	font-variant: normal;
 	font-weight: 400;
+	color: green;
 	line-height: 20px;
 }
 blockquote {
-	font-family: "Brush Script MT", cursive;
+	font-family: "Roboto", cursive;
 	font-size: 21px;
 	font-style: normal;
 	font-variant: normal;
@@ -183,7 +184,7 @@ blockquote {
 	line-height: 30px;
 }
 pre {
-	font-family: "Brush Script MT", cursive;
+	font-family: "Roboto", cursive;
 	font-size: 13px;
 	font-style: normal;
 	font-variant: normal;
