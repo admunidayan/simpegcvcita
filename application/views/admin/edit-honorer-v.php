@@ -19,13 +19,12 @@
 					</div>
 					<div class="form-group">
 						<label class="text-info" for="id_lokasi_kerja">Unit Organisasi</label>
-							<select class="form-control" name="id_lokasi_kerja">; ?></option>
-
-						<?php foreach ($skpd as $dtskpd): ?>
-								<option value="<?php echo $dtskpd->id_lokasi_kerja ?>"><?php echo $dtskpd->lokasi_kerja; ?></option>
-							<?php endforeach ?>
-
-							</select>
+							<select class="form-control" name="id_lokasi_kerja">
+							<option value="<?php echo $detail->id_lokasi_kerja ?>">--<?php echo $this->Admin_m->detail_data_order('master_lokasi_kerja','id_lokasi_kerja',$detail->id_lokasi_kerja)->lokasi_kerja; ?></option>
+							<?php foreach ($skpd as $data): ?>
+								<option value="<?php echo $data->id_lokasi_kerja ?>"><?php echo $data->lokasi_kerja; ?></option>
+								<?php endforeach ?>
+						</select>
 						</div>
 						<div class="form-group">
 							<label class="text-info" for="tmt_jabatan_rj">TMT JABATAN</label>
