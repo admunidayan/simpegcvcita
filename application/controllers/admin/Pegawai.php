@@ -55,6 +55,7 @@ class Pegawai extends CI_Controller {
                 $data['skpd'] = $this->Pegawai_m->select_data('master_lokasi_kerja');
                 $data['status'] = $this->Pegawai_m->select_data('master_status_pegawai');
                 $data['agama'] = $this->Pegawai_m->select_data('master_agama');
+                $data['skpd'] = $this->Pegawai_m->select_data('master_satuan_kerja');
                 $data['golongan'] = $this->Pegawai_m->select_data('master_golongan');
                 $data['eselon'] = $this->Pegawai_m->select_data('master_eselon');
                 $data['sjabatan'] = $this->Pegawai_m->select_data('master_status_jabatan');
@@ -90,6 +91,7 @@ class Pegawai extends CI_Controller {
                 $data['aside'] = 'nav/nav';
                 $data['hasil'] = $result;
                 $data['status'] = $this->Pegawai_m->select_data('master_status_pegawai');
+                 $data['skpd'] = $this->Pegawai_m->select_data('master_satuan_kerja');
                 $data['agama'] = $this->Pegawai_m->select_data('master_agama');
                 $data['eselon'] = $this->Pegawai_m->select_data('master_eselon');
                 $data['golongan'] = $this->Pegawai_m->select_data('master_golongan');
@@ -467,6 +469,7 @@ class Pegawai extends CI_Controller {
                     'gelar_belakang'=>$post['gelar_belakang'],
                     'no_hp'=>$post['no_hp'],
                     'email'=>$post['email'],
+                    'id_satuan_kerja'=>$post['skpd']
                     
                     
                 );
@@ -1034,7 +1037,9 @@ class Pegawai extends CI_Controller {
                     'gelar_dpn'=>$post['gelar_dpn'],
                     'gelar_belakang'=>$post['gelar_belakang'],
                     'no_hp'=>$post['no_hp'],
-                    'email'=>$post['email']
+                    'email'=>$post['email'],
+                    'id_satuan_kerja'=>$post['skpd']
+
 
                 );
 

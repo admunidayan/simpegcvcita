@@ -89,7 +89,7 @@
 							</div>
 							<div class="form-group">
 								<label class="text-info" for="nama_pegawai">GELAR BELAKANG</label>
-								<input type="text" class="form-control" id="gelar_blkng" name="gelar_blkng" placeholder="GELAR BELAKANG" >
+								<input type="text" class="form-control" id="gelar_belakang" name="gelar_belakang" placeholder="GELAR BELAKANG" >
 							</div>
 							<div class="form-group">
 								<label class="text-info" for="nip">NIP</label>
@@ -167,6 +167,14 @@
 							<div class="form-group">
 								<label class="text-info" for="gaji_pokok">Gaji Pokok</label>
 								<input type="text" class="form-control" id="gaji_pokok" name="gaji_pokok" placeholder="Gaji Pokok">
+							</div>
+							<div class="form-group">
+								<label class="text-info" for="skpd">SKPD</label>
+								<select class="form-control" name="skpd">
+									<?php foreach ($skpd as $data): ?>
+										<option value="<?php echo $data->id_satuan_kerja ?>"><?php echo $data->nama_satuan_kerja; ?></option>
+									<?php endforeach ?>
+								</select>
 							</div>
 
 							<div class="form-group">
