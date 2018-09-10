@@ -4,7 +4,7 @@
 			<h4>Keluarga</h4>
 		</div>
 		<div class="media-right">
-			<button type="button" class="btn btn-outline-success btn-sm" data-toggle="modal" data-target="#addkeluarga"><i class="material-icons">note_add</i> Tambah data Keluarga</button>
+			<button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#addkeluarga"><i class="fa fa-plus-circle"></i> Tambah data Keluarga</button>
 		</div>
 	</div>
 	<hr/>
@@ -76,13 +76,13 @@
 							<div class="form-group">
 								<label class="text-info" for="tanggal_lahir">TANGGAL LAHIR</label>
 								<div class="row">
-									<div class="col">
+									<div class="col-md-4">
 										<input type="text" class="form-control" id="tanggal_lahir" name="tanggal_lahir_hr" placeholder="HH" >
 									</div>
-									<div class="col">
+									<div class="col-md-4">
 										<input type="text" class="form-control" id="tanggal_lahir" name="tanggal_lahir_bln" placeholder="BB" >
 									</div>
-									<div class="col">
+									<div class="col-md-4">
 										<input type="text" class="form-control" id="tanggal_lahir" name="tanggal_lahir_thn" placeholder="TTTT">
 									</div>
 								</div>
@@ -106,13 +106,13 @@
 							<div class="form-group">
 								<label class="text-info" for="tanggal_nikah">TANGGAL NIKAH</label>
 								<div class="row">
-									<div class="col">
+									<div class="col-md-4">
 										<input type="text" class="form-control" id="tanggal_nikah" name="tanggal_nikah_hr" placeholder="HH" >
 									</div>
-									<div class="col">
+									<div class="col-md-4">
 										<input type="text" class="form-control" id="tanggal_nikah" name="tanggal_nikah_bln" placeholder="BB" >
 									</div>
-									<div class="col">
+									<div class="col-md-4">
 										<input type="text" class="form-control" id="tanggal_nikah" name="tanggal_nikah_thn" placeholder="TTTT">
 									</div>
 								</div>
@@ -120,26 +120,26 @@
 							<div class="form-group">
 								<label class="text-info" for="tanggal_cerai_meninggal">TANGGAL CERAI</label>
 								<div class="row">
-									<div class="col">
+									<div class="col-md-4">
 										<input type="text" class="form-control" id="tanggal_cerai_meninggal" name="tanggal_cerai_meninggal_hr" placeholder="HH" >
 									</div>
-									<div class="col">
+									<div class="col-md-4">
 										<input type="text" class="form-control" id="tanggal_cerai_meninggal" name="tanggal_cerai_meninggal_bln" placeholder="BB" >
 									</div>
-									<div class="col">
+									<div class="col-md-4">
 										<input type="text" class="form-control" id="tanggal_cerai_meninggal" name="tanggal_cerai_meninggal_thn" placeholder="TTTT">
 									</div>
 								</div>
 								<div class="form-group">
 									<label class="text-info" for="tanggal_meninggal">TANGGAL MENINGGAL</label>
 									<div class="row">
-										<div class="col">
+										<div class="col-md-4">
 											<input type="text" class="form-control" id="tanggal_meninggal" name="tanggal_meninggal_hr" placeholder="HH" >
 										</div>
-										<div class="col">
+										<div class="col-md-4">
 											<input type="text" class="form-control" id="tanggal_meninggal" name="tanggal_meninggal_bln" placeholder="BB" >
 										</div>
-										<div class="col">
+										<div class="col-md-4">
 											<input type="text" class="form-control" id="tanggal_meninggal" name="tanggal_meninggal_thn" placeholder="TTTT">
 										</div>
 									</div>

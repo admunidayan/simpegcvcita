@@ -85,6 +85,8 @@ class Users extends CI_Controller {
 					}
 				}
 				$data['detail'] = $this->ion_auth->user($id)->row();
+				$data['skpd'] = $this->Admin_m->select_data('master_satuan_kerja');
+				// echo "<pre>";print_r($data['usergroups']);echo "<pre/>";exit();
 				$data['page'] = 'admin/edit-users-v';
 				$this->load->view('admin/dashboard-v',$data);
 			}
@@ -96,7 +98,7 @@ class Users extends CI_Controller {
 	}
 	public function proses_edit(){
 		if ($this->ion_auth->logged_in()) {
-			$level=array('admin');
+			$level=array('admin','members');
 			if (!$this->ion_auth->in_group($level)) {
 				$pesan = 'Anda tidak memiliki Hak untuk Mengakses halaman ini';
 				$this->session->set_flashdata('message', $pesan );
@@ -120,10 +122,26 @@ class Users extends CI_Controller {
 					'last_name' => $this->input->post('last_name'),
 					);
 				}
-				$groups = $this->input->post('groups');
+				if ($this->ion_auth->in_group('admin')) {
+					$groups = $this->input->post('groups');
+				}
+				else{
+					$dtg = $this->ion_auth->get_users_groups($id)->result();
+					$groups = array();
+					foreach ($dtg as $gerup) {
+						$groups[] = $gerup->id;
+					}
+				}
                 $this->ion_auth->remove_from_group(NULL, $id);
                 $this->ion_auth->add_to_group($groups, $id);
                 $this->ion_auth->update($id, $additional_data);
+
+                if ($this->input->post('id_skpd') == TRUE) {
+                	$dtskpd = array(
+                		'id_mhs_pt' => $this->input->post('id_skpd'),
+                	);
+                	$this->Admin_m->update_data('users','id',$id,$dtskpd);
+                }
 
 				$pesan = 'user '.$this->input->post('username').' Berhasil di edit';
 				$this->session->set_flashdata('message', $pesan );

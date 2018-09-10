@@ -1,27 +1,23 @@
 <div style="margin-top: 14px; background-color: white;padding: 30px">
-	<div class="ktk-jdl">
-		<div class="media">
-			<div class="media-body">
-				Data Honorer <span class="text-secondary">jumlah Honorer Ditemukan <?php echo $jmldata; ?></span>
-			</div>
-			<div class="media-right">
-				<button type="button" class="btn btn-outline-success btn-sm" data-toggle="modal" data-target="#addpegawai"><i class="material-icons">note_add</i> Tambah data Honorer</button>
-			</div>
-		</div>
+	<div class="col-md-6">
+		Data Honorer <span class="text-secondary">jumlah Honorer Ditemukan <?php echo $jmldata; ?></span>
+	</div>
+	<div class="col-md-6">
+		<button type="button" class="btn btn-success btn-sm" style="float: right" data-toggle="modal" data-target="#addpegawai"><i class="fa fa-plus"></i> Tambah Data Honorer</button>
 	</div>
 	<div class="ktk-badan bts-ats">
 		<form action="<?php echo base_url('index.php/admin/honorer/index/') ?>" method="get">
 			<div class="form-group">
 				<label> Cari Honorer</label>
 				<div class="row">
-					<div class="col">
+					<div class="col-md-6">
 						<input type="text" name="string" class="form-control" placeholder="Masukan Nama, NIP Baru atau NIP Lama">
 						<small class="form-text text-muted">Tekan Enter untuk melakukan pencarian honorer</small>
 					</div>
-					<div class="col">
+					<div class="col-md-6">
 						<select class="form-control" name="skpd" onchange="this.form.submit()">
 							<option value=""> Pilih Lokasi </option>
-							<option value=""> SEMUA LOKASI </option>
+							<option value=""> Semua Lokasi </option>
 							<?php foreach ($skpd as $dtskpd): ?>
 								<option value="<?php echo $dtskpd->id_lokasi_kerja ?>"><?php echo $dtskpd->lokasi_kerja; ?></option>
 							<?php endforeach ?>
@@ -35,13 +31,13 @@
 			<thead>
 				<tr class="bg-app text-light">
 					<td class="jrktbl text-center">No</td>
-					<td class="jrktbl"><i class="material-icons">assignment_ind</i>Nama Honorer</td>
-					<td class="jrktbl"><i class="material-icons">location_on</i>Alamat</td>
-					<td class="jrktbl"><i class="material-icons">compare_arrows</i>Nomor SK</td>
-					<td class="jrktbl"><i class="material-icons">location_on</i>Unit Organisasi</td>
-					<td class="jrktbl"><i class="material-icons">lightbulb_outline</i>TMT</td>
-					<td class="jrktbl"><i class="material-icons">lightbulb_outline</i>Nomor Handphone</td>
-					<td colspan="2" class="jrktbl"><i class="material-icons">lightbulb_outline</i>Aksi</td>
+					<td class="text-center">Nama Honorer</td>
+					<td class="text-center">Alamat</td>
+					<td class="text-center">Nomor SK</td>
+					<td class="text-center">Unit Organisasi</td>
+					<td class="text-center">TMT</td>
+					<td class="text-center">Nomor Handphone</td>
+					<td colspan="2" class="text-center">Aksi</td>
 					
 				</tr>
 			</thead>
@@ -75,7 +71,7 @@
 	<div class="modal-dialog modal-lg" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="addpegawaii">Tambah Data Hpnorer</h5>
+				<h5 class="modal-title" id="addpegawaii">Tambah Data Honorer</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
@@ -85,15 +81,15 @@
 					<div class="row">
 						<div class="col-md-12">
 							<div class="form-group">
-								<label class="text-info" for="nama">NAMA LENGKAP</label>
-								<input type="text" class="form-control" id="nama" name="nama" placeholder="NAMA LENGKAP TANPA GELAR" >
+								<label class="text-info" for="nama">Nama Lengkap</label>
+								<input type="text" class="form-control" id="nama" name="nama" placeholder="Nama Lengkap Tanpa Gelar" >
 							</div>
 							<div class="form-group">
-								<label class="text-info" for="alamat">ALAMAT</label>
+								<label class="text-info" for="alamat">Alamat</label>
 								<input type="text" class="form-control" id="alamat" name="alamat" placeholder="Alamat" >
 							</div>
 							<div class="form-group">
-								<label class="text-info" for="nip_lama">NOMOR  SK</label>
+								<label class="text-info" for="nip_lama">Nomor SK</label>
 								<input type="text" class="form-control" id="nomor_sk" name="nomor_sk" placeholder="Nomor SK">
 							</div>
 							<div class="form-group">
@@ -107,13 +103,13 @@
 												<div class="form-group">
 							<label class="text-info" for="tmt">TMT </label>
 							<div class="row">
-								<div class="col">
+								<div class="col-md-4">
 									<input type="text" class="form-control" id="tmt_jabatan_rj" name="tmt_hr" placeholder="HH" >
 								</div>
-								<div class="col">
+								<div class="col-md-4">
 									<input type="text" class="form-control" id="tmt_jabatan_rj" name="tmt_bln" placeholder="BB" >
 								</div>
-								<div class="col">
+								<div class="col-md-4">
 									<input type="text" class="form-control" id="tmt_jabatan_rj" name="tmt_thn" placeholder="TTTT" >
 								</div>
 							</div>

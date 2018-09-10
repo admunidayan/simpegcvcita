@@ -20,10 +20,14 @@ class Pegawai extends CI_Controller {
                 $data['title'] = $this->Admin_m->info_pt(1)->nama_info_pt;
                 $data['infopt'] = $this->Admin_m->info_pt(1);
                 $data['brand'] = 'asset/img/lembaga/'.$this->Admin_m->info_pt(1)->logo_pt;
-                            $data['users'] = $this->ion_auth->user()->row();
+                $data['users'] = $this->ion_auth->user()->row();
                 $data['aside'] = 'nav/nav';
                 $data['page'] = 'admin/pegawai-v';
-                $jumlah = $this->Pegawai_m->jumlah_data(@$post['string'],@$post['skpd']);
+                if (!$this->ion_auth->in_group('skpd')) {
+                    $jumlah = $this->Pegawai_m->jumlah_data(@$post['string'],@$post['skpd']);
+                }else{
+                    $jumlah = $this->Pegawai_m->jumlah_data(@$post['string'],$this->ion_auth->user()->row()->id_mhs_pt);
+                }
                 $config['base_url'] = base_url().'/index.php/admin/pegawai/index/';
                 $config['total_rows'] = $jumlah;
                 $config['per_page'] = '10';
@@ -63,7 +67,12 @@ class Pegawai extends CI_Controller {
                 // pengaturan searching
                 $data['jmldata'] = $jumlah;
                 $data['nmr'] = $offset;
-                $data['hasil'] = $this->Pegawai_m->searcing_data($config['per_page'],$offset,@$post['string'],@$post['skpd']);
+                if (!$this->ion_auth->in_group('skpd')) {
+                    $data['hasil'] = $this->Pegawai_m->searcing_data($config['per_page'],$offset,@$post['string'],@$post['skpd']);
+                }else{
+                    $data['hasil'] = $this->Pegawai_m->searcing_data($config['per_page'],$offset,@$post['string'],@$this->ion_auth->user()->row()->id_mhs_pt);
+                }
+                
                 $data['pagging'] = $this->pagination->create_links();
                 // pagging setting
                 $this->load->view('admin/dashboard-v',$data);
@@ -470,10 +479,24 @@ class Pegawai extends CI_Controller {
                     'no_hp'=>$post['no_hp'],
                     'email'=>$post['email'],
                     'id_satuan_kerja'=>$post['skpd']
-                    
-                    
                 );
                 $this->Pegawai_m->insert_data('data_pegawai',$datainput);
+                // Buat Akun User
+                $username = $post['nip'];
+                $email = $post['email'];
+                $password = 'password';
+                $group = array('2');
+
+                $additional_data = array(
+                    'first_name' => $post['nama_pegawai'],
+                    'last_name' => 'Butonkab',
+                    'company' => $this->Admin_m->info_pt(1)->nama_info_pt,
+                    'phone' => '123456789',
+                    'repassword' => $password,
+                    'id_pegawai' => $this->Admin_m->last_id_p()->id_pegawai,
+                    );
+                $this->ion_auth->register($username, $password, $email, $additional_data, $group);
+                // 
                 $pesan = 'Data pegawai baru berhasil di tambahkan';
                 $this->session->set_flashdata('message', $pesan );
                 redirect(base_url('index.php/admin/pegawai'));

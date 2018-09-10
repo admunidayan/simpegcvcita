@@ -1,14 +1,14 @@
 <div style="margin-top: 14px; background-color: white;padding: 30px">
-	<div class="media">
+	<div class="col-md-12">
 	<div class="media-body">
 			<h4>Data Master Status Jabatan</h4>
 		</div>
 		<div class="media-right">
-			<button type="button" class="btn btn-outline-success btn-sm" data-toggle="modal" data-target="#addmasterstatusjabatan"><i class="material-icons">note_add</i> Tambah Data </button>
+			<button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#addmasterstatusjabatan"><i class="fa fa-plus"></i> Tambah Data </button>
 		</div>
 	</div>
 	<hr/>
-			<table class="table">
+			<table class="table table-striped">
 				<tr >
 					<td>No</td>
 					<td>Nama jabatan</td>

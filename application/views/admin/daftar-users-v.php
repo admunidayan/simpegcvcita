@@ -1,10 +1,7 @@
 <div style="margin-top: 14px; background-color: white;padding: 30px">
-	<div class="media">
-		<div class="media-left">
-			<h5 class="text-info">Daftar Users</h5><hr/>
-		</div>
-		<div class="media-body"></div>
-		<div class="media-right"><button class="btn btn-outline-success" data-toggle="modal" data-target="#addobat"><i class="fa fa-plus-circle"></i> Tambah User</button></div>
+	<div class="row">
+		<div class="col-md-6"><h5 class="text-info">Daftar Users</h5></div>
+		<div class="col-md-6"><button class="btn btn-success" style="float:right" data-toggle="modal" data-target="#addobat"><i class="fa fa-plus-circle"></i> Tambah User</button></div>
 	</div>
 	<table class="table">
 		<tr>

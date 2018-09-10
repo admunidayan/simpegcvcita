@@ -11,14 +11,14 @@
 			</div>
 		</div><hr/>
 		<div class="row">
-			<div class="col">
+			<div class="col-md-6">
 				<div class="form-group">
 					<label for="nama_info_pt">Nama Perusahaan</label>
 					<input type="text" class="form-control" name="nama_info_pt" id="nama_info_pt" aria-describedby="nama_info_pt" placeholder="Nama Perusahaan" value="<?php echo $infopt->nama_info_pt ?>">
 					<small id="nama_menu" class="form-text text-muted">Semua jenis karakter (Huruf, Angka dan simbol) Dapat digunakan</small>
 				</div>
 			</div>
-			<div class="col">
+			<div class="col-md-6">
 				<div class="form-group">
 					<label for="kode_pt">Kode Perusahaan</label>
 					<input type="text" class="form-control" name="kode_pt" id="kode_pt" aria-describedby="kode_pt" placeholder="Kode Perusahaan" value="<?php echo $infopt->kode_pt ?>">
@@ -32,14 +32,14 @@
 			<small id="slogan" class="form-text text-muted">Penulisan slogan maksimal 144 karakter</small>
 		</div>
 		<div class="row">
-			<div class="col">
+			<div class="col-md-6">
 				<div class="form-group">
 					<label for="kontak_1">Kontak 1</label>
 					<input type="text" class="form-control" name="kontak_1" id="kontak_1" aria-describedby="kontak_1" placeholder="Nomor yang dapat dihubungi" value="<?php echo $infopt->kontak_1 ?>">
 					<small id="kontak_1" class="form-text text-muted">hanya boleh menggunakan angka</small>
 				</div>
 			</div>
-			<div class="col">
+			<div class="col-md-6">
 				<div class="form-group">
 					<label for="kontak_2">Kontak 2</label>
 					<input type="text" class="form-control" name="kontak_2" id="kontak_2" aria-describedby="kontak_2" placeholder="Nomor yang dapat dihubungi" value="<?php echo $infopt->kontak_2 ?>">
@@ -48,14 +48,14 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col">
+			<div class="col-md-6">
 				<div class="form-group">
 					<label for="kontak_3">Kontak 3</label>
 					<input type="text" class="form-control" name="kontak_3" id="kontak_3" aria-describedby="kontak_3" placeholder="Nomor yang dapat dihubungi" value="<?php echo $infopt->kontak_3 ?>">
 					<small id="kontak_3" class="form-text text-muted">hanya boleh menggunakan angka</small>
 				</div>
 			</div>
-			<div class="col">
+			<div class="col-md-6">
 				<div class="form-group">
 					<label for="kontak_4">Kontak 4</label>
 					<input type="text" class="form-control" name="kontak_4" id="kontak_4" aria-describedby="kontak_4" placeholder="Nomor yang dapat dihubungi" value="<?php echo $infopt->kontak_4 ?>">
@@ -68,7 +68,7 @@
 			<textarea name="alamat_pt" class="form-control"><?php echo $infopt->alamat_pt; ?></textarea>
 			<small id="alamat_pt" class="form-text text-muted">Semua jenis karakter (Huruf, Angka dan simbol) Dapat digunakan</small>
 		</div>
-		<button type="submit" name="submit" value="submit" class="btn btn-success">Simpan</button>
+		<button type="submit" name="submit" value="submit" class="btn btn-success">Simpan data instansi</button>
 	</form>
 </div>
 <script type="text/javascript">

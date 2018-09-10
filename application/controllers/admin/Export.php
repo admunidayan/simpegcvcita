@@ -24,7 +24,7 @@ class Export extends CI_Controller {
                 // setting web server
       $file = new PHPExcel ();
       $file->getProperties ()->setCreator ( "Goblooge" );
-      $file->getProperties ()->setLastModifiedBy ( "www.pmb.unidayan.ac.id" );
+      $file->getProperties ()->setLastModifiedBy ( "www.butonkab.com" );
       $file->getProperties ()->setTitle ( "List Calon Peserta sudah membayar" );
       $file->getProperties ()->setSubject ( "Daftar Calon Peserta" );
       $file->getProperties ()->setDescription ( "Daftar Calon Peserta" );
@@ -92,7 +92,7 @@ function dataexcel_honorer(){
                 // setting web server
       $file = new PHPExcel ();
       $file->getProperties ()->setCreator ( "Goblooge" );
-      $file->getProperties ()->setLastModifiedBy ( "www.simpegbuton.go.id" );
+      $file->getProperties ()->setLastModifiedBy ( "www.butonkab.com" );
       $file->getProperties ()->setTitle ( "List Laporan Data Honorer" );
       $file->getProperties ()->setSubject ( "Daftar Honorer" );
       $file->getProperties ()->setDescription ( "Daftar Honorer" );
@@ -104,23 +104,28 @@ function dataexcel_honorer(){
       $file->createSheet ( NULL,0);
       $file->setActiveSheetIndex ( 0 );
       $sheet = $file->getActiveSheet ( 0 );
+      
   //memberikan title pada sheet
-      $sheet->setTitle ( "Daftar Honorer" );
+      $sheet->setTitle ( "Laporan Honorer" );
+      $sheet->mergeCells('A1:G1');
+      $sheet->setCellValue ( "A1", "DAFTAR PEGAWAI HONORER" );
+      $sheet->mergeCells('A2:G2');
+      $sheet->setCellValue ( "A2", "DI LINGKUP PEMERINTAH KABUPATEN BUTON" );
       /*end - BLOCK SETUP SHEET*/
 
       /*start - BLOCK HEADER*/
-      $sheet->setCellValue ( "A1", "No" );
-      $sheet->setCellValue ( "B1", "NAMA" );
-      $sheet->setCellValue ( "C1", "ALAMAT" );
-      $sheet->setCellValue ( "D1", "NOMOR SK" );
-      $sheet->setCellValue ( "E1", "LOKASI KERJA" );
-      $sheet->setCellValue ( "F1", "TMT" );
-      $sheet->setCellValue ( "G1", "NOMOR HP" );
+      $sheet->setCellValue ( "A5", "No" );
+      $sheet->setCellValue ( "B5", "NAMA" );
+      $sheet->setCellValue ( "C5", "ALAMAT" );
+      $sheet->setCellValue ( "D5", "NOMOR SK" );
+      $sheet->setCellValue ( "E5", "LOKASI KERJA" );
+      $sheet->setCellValue ( "F5", "TMT" );
+      $sheet->setCellValue ( "G5", "NOMOR HP" );
       /*end - BLOCK HEADER*/
 
       /* start - BLOCK MEMASUKAN DATABASE*/
       $nomor = 1;
-      $nocel = 2;
+      $nocel = 6;
       $hasil = $this->Admin_m->select_data('honorer');
                 // echo "<pre>";print_r($hasil);echo "</pre>";exit();
       foreach ($hasil as $data) {
@@ -152,6 +157,108 @@ function dataexcel_honorer(){
     redirect(base_url('index.php/login'));
   }
 }
+function dataexcel_pegawaiall(){
+    if ($this->ion_auth->logged_in()){
+      $level = 'admin';  
+      if (!$this->ion_auth->in_group($level)) {
+       $pesan = 'Anda tidak memiliki Hak untuk Mengakses halaman ini';
+       $this->session->set_flashdata('message', $pesan );
+       redirect(base_url('index.php/admin/dashboard_c'));
+     }else{
+      $post = $this->input->post('');
+      $data['title'] = 'List Laporan Data Pegawai';
+      // $data['page'] = 'admin/export-v';
+      // $data['nav'] = 'nav/nav-admin';
+      // $data['dtadm'] = $this->ion_auth->user()->row();
+                // setting web server
+      $file = new PHPExcel ();
+      $file->getProperties ()->setCreator ( "Goblooge" );
+      $file->getProperties ()->setLastModifiedBy ( "www.butonkab.com" );
+      $file->getProperties ()->setTitle ( "List Laporan Data Pegawai" );
+      $file->getProperties ()->setSubject ( "Daftar Pegawai" );
+      $file->getProperties ()->setDescription ( "Daftar Pegawai" );
+      $file->getProperties ()->setKeywords ( "Daftar Pegawai" );
+      $file->getProperties ()->setCategory ( "Daftar Pegawai" );
+      /*end - BLOCK PROPERTIES FILE EXCEL*/
+
+      /*start - BLOCK SETUP SHEET*/
+      $file->createSheet ( NULL,0);
+      $file->setActiveSheetIndex ( 0 );
+      $sheet = $file->getActiveSheet ( 0 );
+  //memberikan title pada sheet
+      $sheet->setTitle ( "Laporan Data Pegawai" );
+      $sheet->mergeCells('A1:G1');
+      $sheet->setCellValue ( "A1", "DAFTAR PEGAWAI KABUPATEN BUTON" );
+      $sheet->mergeCells('A2:G2');
+      $sheet->setCellValue ( "A2", "PEMERINTAH KABUPATEN BUTON" );
+      /*end - BLOCK SETUP SHEET*/
+
+      /*start - BLOCK HEADER*/
+      $sheet->setCellValue ( "A5", "No" );
+      $sheet->setCellValue ( "B5", "NAMA PEGAWAI" );
+      $sheet->setCellValue ( "C5", "NIP" );
+      $sheet->setCellValue ( "D5", "NIP LAMA" );
+      $sheet->setCellValue ( "E5", "TEMPAT LAHIR" );
+      $sheet->setCellValue ( "F5", "TANGGAL LAHIR" );
+      $sheet->setCellValue ( "G5", "AGAMA" );
+      $sheet->setCellValue ( "G6", "NOMOR KARTU KELUARGA" );
+      $sheet->setCellValue ( "G7", "NOMOR KARTU PEGAWAI" );
+      $sheet->setCellValue ( "G8", "NO KTP" );
+      $sheet->setCellValue ( "G9", "JENIS KELAMIN" );
+      $sheet->setCellValue ( "G10", "STATUS PEGAWAI" );
+      $sheet->setCellValue ( "G11", "ALAMAT" );
+      $sheet->setCellValue ( "G12", "NO. HP" );
+      $sheet->setCellValue ( "G13", "EMAIL" );
+      $sheet->setCellValue ( "G14", "NO. NPWP" );
+      $sheet->setCellValue ( "G15", "GOLOGAN" );
+      $sheet->setCellValue ( "G16", "JABATAN" );
+      $sheet->setCellValue ( "G17", "SATUAN KERJA" );
+      $sheet->setCellValue ( "G18", "TMT CPNS" );
+      $sheet->setCellValue ( "G19", "TMT PNS" );
+      $sheet->setCellValue ( "G20", "SATUAN KERJA" );
+
+      /*end - BLOCK HEADER*/
+
+      /* start - BLOCK MEMASUKAN DATABASE*/
+      $nomor = 1;
+      $nocel = 6;
+      $hasil = $this->Admin_m->select_data('data_pegawai');
+                // echo "<pre>";print_r($hasil);echo "</pre>";exit();
+      foreach ($hasil as $data) {
+        $sheet->setCellValue ( "A".$nocel, $nomor );
+        $sheet->setCellValue ( "B".$nocel, $data->nama_pegawai );
+        $sheet->setCellValue ( "C".$nocel, $data->nip );
+        $sheet->setCellValue ( "D".$nocel, $data->nip_lama );
+        $sheet->setCellValue ( "E".$nocel, $data->tempat_lahir );
+        $sheet->setCellValue ( "F".$nocel, $data->tanggal_lahir );
+        
+        $sheet->setCellValue ( "B".$nocel, strtoupper($data->nama));
+        $sheet->setCellValue ( "C".$nocel, strtoupper($data->alamat) );
+        $sheet->setCellValue ( "D".$nocel, strtoupper($data->nomor_sk));
+        $sheet->setCellValue ( "E".$nocel, strtoupper($this->Admin_m->detail_data_order('master_lokasi_kerja','id_lokasi_kerja',$data->id_lokasi_kerja)->lokasi_kerja) );
+        $sheet->setCellValue ( "F".$nocel, strtoupper($data->tmt));
+        $sheet->setCellValue ( "G".$nocel, strtoupper($data->no_hp) );
+        $nomor++;
+        $nocel++;
+      }
+      /* end - BLOCK MEMASUKAN DATABASE*/
+
+      /* start - BLOCK MEMBUAT LINK DOWNLOAD*/
+      header ( 'Content-Type: application/vnd.ms-excel' );
+  //namanya adalah keluarga.xls
+      header ( 'Content-Disposition: attachment;filename="laporan_pegawai.xls"' ); 
+      header ( 'Cache-Control: max-age=0' );
+      $writer = PHPExcel_IOFactory::createWriter ( $file, 'Excel5' );
+      $writer->save ( 'php://output' );
+      /* start - BLOCK MEMBUAT LINK DOWNLOAD*/
+                // pagging setting
+    }
+  }else{
+    $pesan = 'Login terlebih dahulu';
+    $this->session->set_flashdata('message', $pesan );
+    redirect(base_url('index.php/login'));
+  }
+}
 function data_pegawai(){
     if ($this->ion_auth->logged_in()){
       $level = 'admin';  
@@ -164,7 +271,7 @@ function data_pegawai(){
                 // setting web server
       $file = new PHPExcel ();
       $file->getProperties ()->setCreator ( "simpeg" );
-      $file->getProperties ()->setLastModifiedBy ( "www.simpeg.com" );
+      $file->getProperties ()->setLastModifiedBy ( "www.butonkab.com" );
       $file->getProperties ()->setTitle ( "Daftar Pegawai" );
       $file->getProperties ()->setSubject ( "Daftar Pegawai" );
       $file->getProperties ()->setDescription ( "Daftar Pegawai" );
@@ -281,9 +388,9 @@ function data_pegawai(){
         $sheet->setCellValue ( "S".$nocel, @$this->Admin_m->jabatan_min($data->id_pegawai)->nama_jabatan );
         $sheet->setCellValue ( "T".$nocel, $data->nip_lama );
         $sheet->setCellValue ( "U".$nocel, $data->nip_lama );
-        $sheet->setCellValue ( "V".$nocel, $data->nip_lama );
-        $sheet->setCellValue ( "W".$nocel, @$this->Admin_m->detail_data_order('master_unit_kerja','id_unit_kerja',$data->id_unit_kerja)->nama_unit_kerja);
-        $sheet->setCellValue ( "X".$nocel, @$this->Admin_m->detail_data_order('master_unit_kerja','id_unit_kerja',$data->id_unit_kerja)->parent_unit);
+        $sheet->setCellValue ( "V".$nocel, @$this->Admin_m->detail_data_order('master_jabatan','id_jabatan',$data->id_jabatn)->nama_jabatan );
+        $sheet->setCellValue ( "W".$nocel, @$this->Admin_m->detail_data_order('master_satuan_kerja','id_satuan_kerja',$data->id_satuan_kerja)->nama_satuan_kerja);
+        $sheet->setCellValue ( "X".$nocel, @$this->Admin_m->detail_data_order('master_satuan_kerja','id_satuan_kerja',$data->id_satuan_kerja)->parent_unit);
         $sheet->setCellValue ( "Y".$nocel, @$this->Admin_m->detail_data_order('data_pendidikan','id_pegawai',$data->id_pegawai)->tingkat_pendidikan );
         $sheet->setCellValue ( "Z".$nocel, @$this->Admin_m->detail_data_order('data_pendidikan','id_pegawai',$data->id_pegawai)->tanggal_lulus );
         $sheet->setCellValue ( "AA".$nocel, $data->nip_lama );
@@ -295,7 +402,7 @@ function data_pegawai(){
       /* start - BLOCK MEMBUAT LINK DOWNLOAD*/
       header ( 'Content-Type: application/vnd.ms-excel' );
   //namanya adalah keluarga.xls
-      header ( 'Content-Disposition: attachment;filename="daftar_pegawai.xls"' ); 
+      header ( 'Content-Disposition: attachment;filename="daftar_listing_nominatif_pegawai.xls"' ); 
       header ( 'Cache-Control: max-age=0' );
       $writer = PHPExcel_IOFactory::createWriter ( $file, 'Excel5' );
       $writer->save ( 'php://output' );
@@ -323,9 +430,9 @@ function exceldaftargel2(){
       // $data['dtadm'] = $this->ion_auth->user()->row();
                 // setting web server
       $file = new PHPExcel ();
-      $file->getProperties ()->setCreator ( "Goblooge" );
-      $file->getProperties ()->setLastModifiedBy ( "www.pmb.unidayan.ac.id" );
-      $file->getProperties ()->setTitle ( "List Calon Peserta sudah membayar" );
+      $file->getProperties ()->setCreator ( "Butonkab" );
+      $file->getProperties ()->setLastModifiedBy ( "www.butonkab.go.id" );
+      $file->getProperties ()->setTitle ( "List Pegawai" );
       $file->getProperties ()->setSubject ( "Daftar Calon Peserta" );
       $file->getProperties ()->setDescription ( "Daftar Calon Peserta" );
       $file->getProperties ()->setKeywords ( "Daftar Calon Peserta" );
@@ -532,6 +639,474 @@ function exceldaftargel3(){
       header ( 'Content-Type: application/vnd.ms-excel' );
   //namanya adalah keluarga.xls
       header ( 'Content-Disposition: attachment;filename="daftar lengkap calon peserta gelombang ke 2.xls"' ); 
+      header ( 'Cache-Control: max-age=0' );
+      $writer = PHPExcel_IOFactory::createWriter ( $file, 'Excel5' );
+      $writer->save ( 'php://output' );
+      /* start - BLOCK MEMBUAT LINK DOWNLOAD*/
+                // pagging setting
+    }
+  }else{
+    $pesan = 'Login terlebih dahulu';
+    $this->session->set_flashdata('message', $pesan );
+    redirect(base_url('index.php/login'));
+  }
+}
+function ex_by_keluarga(){
+    if ($this->ion_auth->logged_in()){
+      $level = 'admin';  
+      if (!$this->ion_auth->in_group($level)) {
+       $pesan = 'Anda tidak memiliki Hak untuk Mengakses halaman ini';
+       $this->session->set_flashdata('message', $pesan );
+       redirect(base_url('index.php/admin/dashboard_c'));
+     }else{
+      $post = $this->input->post('');
+      $data['title'] = 'Laporan Pegawai Per-Keluarga';
+      // $data['page'] = 'admin/export-v';
+      // $data['nav'] = 'nav/nav-admin';
+      // $data['dtadm'] = $this->ion_auth->user()->row();
+                // setting web server
+      $file = new PHPExcel ();
+      $file->getProperties ()->setCreator ( "Goblooge" );
+      $file->getProperties ()->setLastModifiedBy ( "www.butonkab.com" );
+      $file->getProperties ()->setTitle ( "Laporan Pegawai Per-Golongan" );
+      $file->getProperties ()->setSubject ( "Laporan Pegawai Per-Golongan" );
+      $file->getProperties ()->setDescription ( "Laporan Pegawai Per-Golongan" );
+      $file->getProperties ()->setKeywords ( "Laporan Pegawai Per-Golongan" );
+      $file->getProperties ()->setCategory ( "Laporan Pegawai Per-Golongan" );
+      /*end - BLOCK PROPERTIES FILE EXCEL*/
+
+      /*start - BLOCK SETUP SHEET*/
+      $file->createSheet ( NULL,0);
+      $file->setActiveSheetIndex ( 0 );
+      $sheet = $file->getActiveSheet ( 0 );
+  //memberikan title pada sheet
+      $sheet->setTitle ( "Laporan Pegawai Per-Keluarga" );
+      /*end - BLOCK SETUP SHEET*/
+
+      /*start - BLOCK HEADER*/
+      $sheet->setCellValue ( "A1", "No" );
+      $sheet->setCellValue ( "B1", "Nama" );
+      $sheet->setCellValue ( "C1", "Tgl Lahir" );
+      $sheet->setCellValue ( "D1", "Hub. keluarga" );
+      $sheet->setCellValue ( "E1", "Status Kawin" );
+      $sheet->setCellValue ( "F1", "Tgl Nikah" );
+      $sheet->setCellValue ( "G1", "Tgl Cerai" );
+      $sheet->setCellValue ( "H1", "Tgl Meninggal" );
+      $sheet->setCellValue ( "I1", "Pekerjaan" );
+      $sheet->setCellValue ( "J1", "No Kartu Suami/Istri" );
+      /*end - BLOCK HEADER*/
+
+      /* start - BLOCK MEMASUKAN DATABASE*/
+      $nomor = 1;
+      $nocel = 2;
+      $hasil = $this->Admin_m->select_data_keluarga();
+                // echo "<pre>";print_r($hasil);echo "</pre>";exit();
+      foreach ($hasil as $data) {
+
+        $sheet->setCellValue ( "A".$nocel, $nomor );
+        $sheet->setCellValue ( "B".$nocel, $data->nama_anggota_keluarga );
+        $sheet->setCellValue ( "C".$nocel, $data->tanggal_lahir );
+        $sheet->setCellValue ( "D".$nocel, $data->status_keluarga );
+        $sheet->setCellValue ( "E".$nocel, $data->status_kawin );
+        $sheet->setCellValue ( "F".$nocel, $data->tanggal_nikah );
+        $sheet->setCellValue ( "G".$nocel, $data->tanggal_cerai_meninggal );
+        $sheet->setCellValue ( "H".$nocel, $data->tanggal_meninggal );
+        $sheet->setCellValue ( "I".$nocel, $data->pekerjaan );
+        $sheet->setCellValue ( "J".$nocel, $data->no_kartu);
+        $nomor++;
+        $nocel++;
+      }
+      /* end - BLOCK MEMASUKAN DATABASE*/
+
+      /* start - BLOCK MEMBUAT LINK DOWNLOAD*/
+      header ( 'Content-Type: application/vnd.ms-excel' );
+  //namanya adalah keluarga.xls
+      header ( 'Content-Disposition: attachment;filename="laporan_data_keluarga.xls"' ); 
+      header ( 'Cache-Control: max-age=0' );
+      $writer = PHPExcel_IOFactory::createWriter ( $file, 'Excel5' );
+      $writer->save ( 'php://output' );
+      /* start - BLOCK MEMBUAT LINK DOWNLOAD*/
+                // pagging setting
+    }
+  }else{
+    $pesan = 'Login terlebih dahulu';
+    $this->session->set_flashdata('message', $pesan );
+    redirect(base_url('index.php/login'));
+  }
+}
+function ex_by_jabatan(){
+    if ($this->ion_auth->logged_in()){
+      $level = 'admin';  
+      if (!$this->ion_auth->in_group($level)) {
+       $pesan = 'Anda tidak memiliki Hak untuk Mengakses halaman ini';
+       $this->session->set_flashdata('message', $pesan );
+       redirect(base_url('index.php/admin/dashboard_c'));
+     }else{
+      $post = $this->input->post('');
+      $data['title'] = 'Laporan Pegawai Per-Jabatan';
+      // $data['page'] = 'admin/export-v';
+      // $data['nav'] = 'nav/nav-admin';
+      // $data['dtadm'] = $this->ion_auth->user()->row();
+                // setting web server
+      $file = new PHPExcel ();
+      $file->getProperties ()->setCreator ( "Goblooge" );
+      $file->getProperties ()->setLastModifiedBy ( "www.butonkab.com" );
+      $file->getProperties ()->setTitle ( "Laporan Pegawai Per-Golongan" );
+      $file->getProperties ()->setSubject ( "Laporan Pegawai Per-Golongan" );
+      $file->getProperties ()->setDescription ( "Laporan Pegawai Per-Golongan" );
+      $file->getProperties ()->setKeywords ( "Laporan Pegawai Per-Golongan" );
+      $file->getProperties ()->setCategory ( "Laporan Pegawai Per-Golongan" );
+      /*end - BLOCK PROPERTIES FILE EXCEL*/
+
+      /*start - BLOCK SETUP SHEET*/
+      $file->createSheet ( NULL,0);
+      $file->setActiveSheetIndex ( 0 );
+      $sheet = $file->getActiveSheet ( 0 );
+  //memberikan title pada sheet
+      $sheet->setTitle ( "Laporan Pegawai Per-Jabatan" );
+      /*end - BLOCK SETUP SHEET*/
+
+      /*start - BLOCK HEADER*/
+      $sheet->setCellValue ( "A1", "No" );
+      $sheet->setCellValue ( "B1", "NIP" );
+      $sheet->setCellValue ( "C1", "Nama Pegawai" );
+      $sheet->setCellValue ( "D1", "Jenis Jabatan" );
+      $sheet->setCellValue ( "E1", "Nama Jabatan" );
+      $sheet->setCellValue ( "F1", "Eselon" );
+      $sheet->setCellValue ( "G1", "No SK" );
+      $sheet->setCellValue ( "H1", "Tgl SK" );
+      $sheet->setCellValue ( "I1", "TMT Jabatan" );
+      $sheet->setCellValue ( "J1", "TMT Pelantikan" );
+      $sheet->setCellValue ( "K1", "SKPD" );
+      /*end - BLOCK HEADER*/
+
+      /* start - BLOCK MEMASUKAN DATABASE*/
+      $nomor = 1;
+      $nocel = 2;
+      $hasil = $this->Admin_m->select_data_jabatan();
+                // echo "<pre>";print_r($hasil);echo "</pre>";exit();
+      foreach ($hasil as $data) {
+
+        $sheet->setCellValue ( "A".$nocel, $nomor );
+        $sheet->setCellValue ( "B".$nocel, $data->nip );
+        $sheet->setCellValue ( "C".$nocel, $data->nama_pegawai );
+        $sheet->setCellValue ( "D".$nocel, $data->nama_jenis_jabatan );
+        $sheet->setCellValue ( "E".$nocel, $data->nm_jabatan );
+        $sheet->setCellValue ( "F".$nocel, $data->nama_eselon );
+        $sheet->setCellValue ( "G".$nocel, $data->nomor_sk );
+        $sheet->setCellValue ( "H".$nocel, $data->tanggal_sk_rj );
+        $sheet->setCellValue ( "I".$nocel, $data->tmt_jabatan_rj );
+        $sheet->setCellValue ( "J".$nocel, $data->tmt_pelantikan_rj );
+        $sheet->setCellValue ( "K".$nocel, $data->nama_satuan_kerja );
+        $nomor++;
+        $nocel++;
+      }
+      /* end - BLOCK MEMASUKAN DATABASE*/
+
+      /* start - BLOCK MEMBUAT LINK DOWNLOAD*/
+      header ( 'Content-Type: application/vnd.ms-excel' );
+  //namanya adalah keluarga.xls
+      header ( 'Content-Disposition: attachment;filename="laporan_data_jabatan.xls"' ); 
+      header ( 'Cache-Control: max-age=0' );
+      $writer = PHPExcel_IOFactory::createWriter ( $file, 'Excel5' );
+      $writer->save ( 'php://output' );
+      /* start - BLOCK MEMBUAT LINK DOWNLOAD*/
+                // pagging setting
+    }
+  }else{
+    $pesan = 'Login terlebih dahulu';
+    $this->session->set_flashdata('message', $pesan );
+    redirect(base_url('index.php/login'));
+  }
+}
+  function ex_by_gol(){
+    if ($this->ion_auth->logged_in()){
+      $level = 'admin';  
+      if (!$this->ion_auth->in_group($level)) {
+       $pesan = 'Anda tidak memiliki Hak untuk Mengakses halaman ini';
+       $this->session->set_flashdata('message', $pesan );
+       redirect(base_url('index.php/admin/dashboard_c'));
+     }else{
+      $post = $this->input->post('');
+      $data['title'] = 'Laporan Pegawai Per-Golongan';
+      // $data['page'] = 'admin/export-v';
+      // $data['nav'] = 'nav/nav-admin';
+      // $data['dtadm'] = $this->ion_auth->user()->row();
+                // setting web server
+      $file = new PHPExcel ();
+      $file->getProperties ()->setCreator ( "Goblooge" );
+      $file->getProperties ()->setLastModifiedBy ( "www.butonkab.com" );
+      $file->getProperties ()->setTitle ( "Laporan Pegawai Per-Golongan" );
+      $file->getProperties ()->setSubject ( "Laporan Pegawai Per-Golongan" );
+      $file->getProperties ()->setDescription ( "Laporan Pegawai Per-Golongan" );
+      $file->getProperties ()->setKeywords ( "Laporan Pegawai Per-Golongan" );
+      $file->getProperties ()->setCategory ( "Laporan Pegawai Per-Golongan" );
+      /*end - BLOCK PROPERTIES FILE EXCEL*/
+
+      /*start - BLOCK SETUP SHEET*/
+      $file->createSheet ( NULL,0);
+      $file->setActiveSheetIndex ( 0 );
+      $sheet = $file->getActiveSheet ( 0 );
+  //memberikan title pada sheet
+      $sheet->setTitle ( "Laporan Pegawai Per-Golongan" );
+      /*end - BLOCK SETUP SHEET*/
+
+      /*start - BLOCK HEADER*/
+      $sheet->setCellValue ( "A1", "No" );
+      $sheet->setCellValue ( "B1", "NIP" );
+      $sheet->setCellValue ( "C1", "Nama Pegawai" );
+      $sheet->setCellValue ( "D1", "Golongan" );
+      $sheet->setCellValue ( "E1", "Nomor SK" );
+      $sheet->setCellValue ( "F1", "Tanggal SK" );
+      $sheet->setCellValue ( "G1", "TMT Golongan" );
+      $sheet->setCellValue ( "H1", "Nomor BKN" );
+      $sheet->setCellValue ( "I1", "Tanggal BKN" );
+      $sheet->setCellValue ( "J1", "Masa Kerja" );
+      /*end - BLOCK HEADER*/
+
+      /* start - BLOCK MEMASUKAN DATABASE*/
+      $nomor = 1;
+      $nocel = 2;
+      $hasil = $this->Admin_m->select_data_gol();
+                // echo "<pre>";print_r($hasil);echo "</pre>";exit();
+      foreach ($hasil as $data) {
+
+        $sheet->setCellValue ( "A".$nocel, $nomor );
+        $sheet->setCellValue ( "B".$nocel, strtoupper($data->nip));
+        $sheet->setCellValue ( "C".$nocel, strtoupper($data->nama_pegawai) );
+        $sheet->setCellValue ( "D".$nocel, $data->golongan );
+        $sheet->setCellValue ( "E".$nocel, $data->nomor_sk );
+        $sheet->setCellValue ( "F".$nocel, $data->tanggal_sk );
+        $sheet->setCellValue ( "G".$nocel, $data->tmt_golongan );
+        $sheet->setCellValue ( "H".$nocel, $data->nomor_bkn );
+        $sheet->setCellValue ( "I".$nocel, $data->tanggal_bkn );
+        $sheet->setCellValue ( "J".$nocel, $data->masa_kerja );
+        $nomor++;
+        $nocel++;
+      }
+      /* end - BLOCK MEMASUKAN DATABASE*/
+
+      /* start - BLOCK MEMBUAT LINK DOWNLOAD*/
+      header ( 'Content-Type: application/vnd.ms-excel' );
+  //namanya adalah keluarga.xls
+      header ( 'Content-Disposition: attachment;filename="laporan_pegawai_pergolongan.xls"' ); 
+      header ( 'Cache-Control: max-age=0' );
+      $writer = PHPExcel_IOFactory::createWriter ( $file, 'Excel5' );
+      $writer->save ( 'php://output' );
+      /* start - BLOCK MEMBUAT LINK DOWNLOAD*/
+                // pagging setting
+    }
+  }else{
+    $pesan = 'Login terlebih dahulu';
+    $this->session->set_flashdata('message', $pesan );
+    redirect(base_url('index.php/login'));
+  }
+}
+function ex_by_eselon($eselon){
+    if ($this->ion_auth->logged_in()){
+      $level = 'admin';  
+      if (!$this->ion_auth->in_group($level)) {
+       $pesan = 'Anda tidak memiliki Hak untuk Mengakses halaman ini';
+       $this->session->set_flashdata('message', $pesan );
+       redirect(base_url('index.php/admin/dashboard_c'));
+     }else{
+      $post = $this->input->post('');
+      $data['title'] = 'Laporan Pegawai Per-Eselon';
+      // $data['page'] = 'admin/export-v';
+      // $data['nav'] = 'nav/nav-admin';
+      // $data['dtadm'] = $this->ion_auth->user()->row();
+                // setting web server
+      $file = new PHPExcel ();
+      $file->getProperties ()->setCreator ( "Goblooge" );
+      $file->getProperties ()->setLastModifiedBy ( "www.butonkab.com" );
+      $file->getProperties ()->setTitle ( "Laporan Pegawai Per-Golongan" );
+      $file->getProperties ()->setSubject ( "Laporan Pegawai Per-Golongan" );
+      $file->getProperties ()->setDescription ( "Laporan Pegawai Per-Golongan" );
+      $file->getProperties ()->setKeywords ( "Laporan Pegawai Per-Golongan" );
+      $file->getProperties ()->setCategory ( "Laporan Pegawai Per-Golongan" );
+      /*end - BLOCK PROPERTIES FILE EXCEL*/
+
+      /*start - BLOCK SETUP SHEET*/
+      $file->createSheet ( NULL,0);
+      $file->setActiveSheetIndex ( 0 );
+      $sheet = $file->getActiveSheet ( 0 );
+  //memberikan title pada sheet
+      $sheet->setTitle ( "Laporan Pegawai Per-Eselon" );
+      /*end - BLOCK SETUP SHEET*/
+
+      /*start - BLOCK HEADER*/
+      $sheet->setCellValue ( "A1", "No" );
+      $sheet->setCellValue ( "B1", "NIP" );
+      $sheet->setCellValue ( "C1", "Nama Pegawai" );
+      $sheet->setCellValue ( "D1", "Eselon" );
+      $sheet->setCellValue ( "E1", "SKPD" );
+      /*end - BLOCK HEADER*/
+
+      /* start - BLOCK MEMASUKAN DATABASE*/
+      $nomor = 1;
+      $nocel = 2;
+      $hasil = $this->Admin_m->data_pegawai5($eselon);
+                // echo "<pre>";print_r($hasil);echo "</pre>";exit();
+      foreach ($hasil as $data) {
+
+        $sheet->setCellValue ( "A".$nocel, $nomor );
+        $sheet->setCellValue ( "B".$nocel, strtoupper($data->nip));
+        $sheet->setCellValue ( "C".$nocel, strtoupper($data->nama_pegawai) );
+        $sheet->setCellValue ( "D".$nocel, $this->Admin_m->detail_data_order('master_eselon','id_eselon',$data->id_eselon)->nama_eselon );
+        $sheet->setCellValue ( "E".$nocel, $this->Admin_m->detail_data_order('master_satuan_kerja','id_satuan_kerja',$data->id_satuan_kerja)->nama_satuan_kerja );
+        $nomor++;
+        $nocel++;
+      }
+      /* end - BLOCK MEMASUKAN DATABASE*/
+
+      /* start - BLOCK MEMBUAT LINK DOWNLOAD*/
+      header ( 'Content-Type: application/vnd.ms-excel' );
+  //namanya adalah keluarga.xls
+      header ( 'Content-Disposition: attachment;filename="laporan_pegawai_pereslon.xls"' ); 
+      header ( 'Cache-Control: max-age=0' );
+      $writer = PHPExcel_IOFactory::createWriter ( $file, 'Excel5' );
+      $writer->save ( 'php://output' );
+      /* start - BLOCK MEMBUAT LINK DOWNLOAD*/
+                // pagging setting
+    }
+  }else{
+    $pesan = 'Login terlebih dahulu';
+    $this->session->set_flashdata('message', $pesan );
+    redirect(base_url('index.php/login'));
+  }
+}
+function ex_by_skpd($skpd){
+    if ($this->ion_auth->logged_in()){
+      $level = 'admin';  
+      if (!$this->ion_auth->in_group($level)) {
+       $pesan = 'Anda tidak memiliki Hak untuk Mengakses halaman ini';
+       $this->session->set_flashdata('message', $pesan );
+       redirect(base_url('index.php/admin/dashboard_c'));
+     }else{
+      $post = $this->input->post('');
+      $data['title'] = 'Laporan Pegawai Per-SKPD';
+      // $data['page'] = 'admin/export-v';
+      // $data['nav'] = 'nav/nav-admin';
+      // $data['dtadm'] = $this->ion_auth->user()->row();
+                // setting web server
+      $file = new PHPExcel ();
+      $file->getProperties ()->setCreator ( "Goblooge" );
+      $file->getProperties ()->setLastModifiedBy ( "www.butonkab.com" );
+      $file->getProperties ()->setTitle ( "Laporan Pegawai Per-Golongan" );
+      $file->getProperties ()->setSubject ( "Laporan Pegawai Per-Golongan" );
+      $file->getProperties ()->setDescription ( "Laporan Pegawai Per-Golongan" );
+      $file->getProperties ()->setKeywords ( "Laporan Pegawai Per-Golongan" );
+      $file->getProperties ()->setCategory ( "Laporan Pegawai Per-Golongan" );
+      /*end - BLOCK PROPERTIES FILE EXCEL*/
+
+      /*start - BLOCK SETUP SHEET*/
+      $file->createSheet ( NULL,0);
+      $file->setActiveSheetIndex ( 0 );
+      $sheet = $file->getActiveSheet ( 0 );
+  //memberikan title pada sheet
+      $sheet->setTitle ( "Laporan Pegawai Per-SKPD" );
+      /*end - BLOCK SETUP SHEET*/
+
+      /*start - BLOCK HEADER*/
+      $sheet->setCellValue ( "A1", "No" );
+      $sheet->setCellValue ( "B1", "NIP" );
+      $sheet->setCellValue ( "C1", "Nama Pegawai" );
+      $sheet->setCellValue ( "D1", "SKPD" );
+      /*end - BLOCK HEADER*/
+
+      /* start - BLOCK MEMASUKAN DATABASE*/
+      $nomor = 1;
+      $nocel = 2;
+      $hasil = $this->Admin_m->data_pegawai6($skpd);
+                // echo "<pre>";print_r($hasil);echo "</pre>";exit();
+      foreach ($hasil as $data) {
+
+        $sheet->setCellValue ( "A".$nocel, $nomor );
+        $sheet->setCellValue ( "B".$nocel, strtoupper($data->nip));
+        $sheet->setCellValue ( "C".$nocel, strtoupper($data->nama_pegawai) );
+        $sheet->setCellValue ( "D".$nocel, $this->Admin_m->detail_data_order('master_satuan_kerja','id_satuan_kerja',$data->id_satuan_kerja)->nama_satuan_kerja );
+        $nomor++;
+        $nocel++;
+      }
+      /* end - BLOCK MEMASUKAN DATABASE*/
+
+      /* start - BLOCK MEMBUAT LINK DOWNLOAD*/
+      header ( 'Content-Type: application/vnd.ms-excel' );
+  //namanya adalah keluarga.xls
+      header ( 'Content-Disposition: attachment;filename="laporan_pegawai_perskpd.xls"' ); 
+      header ( 'Cache-Control: max-age=0' );
+      $writer = PHPExcel_IOFactory::createWriter ( $file, 'Excel5' );
+      $writer->save ( 'php://output' );
+      /* start - BLOCK MEMBUAT LINK DOWNLOAD*/
+                // pagging setting
+    }
+  }else{
+    $pesan = 'Login terlebih dahulu';
+    $this->session->set_flashdata('message', $pesan );
+    redirect(base_url('index.php/login'));
+  }
+}
+function ex_by_pelatihan($pelatihan){
+    if ($this->ion_auth->logged_in()){
+      $level = 'admin';  
+      if (!$this->ion_auth->in_group($level)) {
+       $pesan = 'Anda tidak memiliki Hak untuk Mengakses halaman ini';
+       $this->session->set_flashdata('message', $pesan );
+       redirect(base_url('index.php/admin/dashboard_c'));
+     }else{
+      $post = $this->input->post('');
+      $data['title'] = 'Laporan Pegawai Per-Pelatihan';
+      // $data['page'] = 'admin/export-v';
+      // $data['nav'] = 'nav/nav-admin';
+      // $data['dtadm'] = $this->ion_auth->user()->row();
+                // setting web server
+      $file = new PHPExcel ();
+      $file->getProperties ()->setCreator ( "Goblooge" );
+      $file->getProperties ()->setLastModifiedBy ( "www.butonkab.com" );
+      $file->getProperties ()->setTitle ( "Laporan Pegawai Per-Pelatihan" );
+      $file->getProperties ()->setSubject ( "Laporan Pegawai Per-Pelatihan" );
+      $file->getProperties ()->setDescription ( "Laporan Pegawai Per-Pelatihan" );
+      $file->getProperties ()->setKeywords ( "Laporan Pegawai Per-Pelatihan" );
+      $file->getProperties ()->setCategory ( "Laporan Pegawai Per-Pelatihan" );
+      /*end - BLOCK PROPERTIES FILE EXCEL*/
+
+      /*start - BLOCK SETUP SHEET*/
+      $file->createSheet ( NULL,0);
+      $file->setActiveSheetIndex ( 0 );
+      $sheet = $file->getActiveSheet ( 0 );
+  //memberikan title pada sheet
+      $sheet->setTitle ( "Laporan Pegawai Per-Pelatihan" );
+      /*end - BLOCK SETUP SHEET*/
+
+      /*start - BLOCK HEADER*/
+      $sheet->setCellValue ( "A1", "No" );
+      $sheet->setCellValue ( "B1", "NIP" );
+      $sheet->setCellValue ( "C1", "Nama Pegawai" );
+      $sheet->setCellValue ( "D1", "Pelatihan" );
+      $sheet->setCellValue ( "E1", "SKPD" );
+      /*end - BLOCK HEADER*/
+
+      /* start - BLOCK MEMASUKAN DATABASE*/
+      $nomor = 1;
+      $nocel = 2;
+      $hasil = $this->Admin_m->data_pegawai3($pelatihan);
+                // echo "<pre>";print_r($hasil);echo "</pre>";exit();
+      foreach ($hasil as $data) {
+
+        $sheet->setCellValue ( "A".$nocel, $nomor );
+        $sheet->setCellValue ( "B".$nocel, strtoupper($data->nip));
+        $sheet->setCellValue ( "C".$nocel, strtoupper($data->nama_pegawai) );
+        $sheet->setCellValue ( "D".$nocel, $this->Admin_m->detail_data_order('master_pelatihan','id_pelatihan',$data->id_pelatihan)->nama_pelatihan );
+        $sheet->setCellValue ( "E".$this->Admin_m->detail_data_order('master_satuan_kerja','id_satuan_kerja',$data->id_satuan_kerja)->nama_satuan_kerja );
+        $nomor++;
+        $nocel++;
+      }
+      /* end - BLOCK MEMASUKAN DATABASE*/
+
+      /* start - BLOCK MEMBUAT LINK DOWNLOAD*/
+      header ( 'Content-Type: application/vnd.ms-excel' );
+  //namanya adalah keluarga.xls
+      header ( 'Content-Disposition: attachment;filename="laporan_pegawai_perpelatihan.xls"' ); 
       header ( 'Cache-Control: max-age=0' );
       $writer = PHPExcel_IOFactory::createWriter ( $file, 'Excel5' );
       $writer->save ( 'php://output' );

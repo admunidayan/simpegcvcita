@@ -4,7 +4,7 @@
 			<h4>Data SKP</h4>
 		</div>
 		<div class="media-right">
-			<button type="button" class="btn btn-outline-success btn-sm" data-toggle="modal" data-target="#adddp3"><i class="material-icons">note_add</i> Tambah Data SKP</button>
+			<button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#adddp3"><i class="fa fa-plus-circle"></i> Tambah Data SKP</button>
 		</div>
 	</div>
 	<hr/>

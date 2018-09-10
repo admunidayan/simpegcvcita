@@ -4,7 +4,7 @@
 			<h4>Riwayat Jabatan</h4>
 		</div>
 		<div class="media-right">
-			<button type="button" class="btn btn-outline-success btn-sm" data-toggle="modal" data-target="#addrjabatan"><i class="material-icons">note_add</i> Tambah Data Riwayat Jabatan</button>
+			<button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#addrjabatan"><i class="fa fa-plus-circle"></i> Tambah Data Riwayat Jabatan</button>
 		</div>
 	</div>
 	<hr/>
@@ -95,13 +95,13 @@
 								<div class="form-group">
 									<label class="text-info" for="tanggal_sk_rj">TANGGAL SK</label>
 									<div class="row">
-										<div class="col">
+										<div class="col-md-4">
 											<input type="text" class="form-control" id="tanggal_sk_rj" name="tanggal_sk_rj_hr" placeholder="HH">
 										</div>
-										<div class="col">
+										<div class="col-md-4">
 											<input type="text" class="form-control" id="tanggal_sk_rj" name="tanggal_sk_rj_bln" placeholder="BB">
 										</div>
-										<div class="col">
+										<div class="col-md-4">
 											<input type="text" class="form-control" id="tanggal_sk_rj" name="tanggal_sk_rj_thn" placeholder="TTTT">
 										</div>
 									</div>
@@ -109,13 +109,13 @@
 								<div class="form-group">
 									<label class="text-info" for="tmt_jabatan_rj">TMT JABATAN</label>
 									<div class="row">
-										<div class="col">
+										<div class="col-md-4">
 											<input type="text" class="form-control" id="tmt_jabatan_rj" name="tmt_jabatan_rj_hr" placeholder="HH">
 										</div>
-										<div class="col">
+										<div class="col-md-4">
 											<input type="text" class="form-control" id="tmt_jabatan_rj" name="tmt_jabatan_rj_bln" placeholder="BB">
 										</div>
-										<div class="col">
+										<div class="col-md-4">
 											<input type="text" class="form-control" id="tmt_jabatan_rj" name="tmt_jabatan_rj_thn" placeholder="TTTT">
 										</div>
 									</div>
@@ -123,13 +123,13 @@
 								<div class="form-group">
 									<label class="text-info" for="tmt_pelantikan_rj">TMT PELANTIKAN</label>
 									<div class="row">
-										<div class="col">
+										<div class="col-md-4">
 											<input type="text" class="form-control" id="tmt_pelantikan_rj" name="tmt_pelantikan_rj_hr" placeholder="HH" >
 										</div>
-										<div class="col">
+										<div class="col-md-4">
 											<input type="text" class="form-control" id="tmt_pelantikan_rj" name="tmt_pelantikan_rj_bln" placeholder="BB" >
 										</div>
-										<div class="col">
+										<div class="col-md-4">
 											<input type="text" class="form-control" id="tmt_pelantikan_rj" name="tmt_pelantikan_rj_thn" placeholder="TTTT">
 										</div>
 									</div>

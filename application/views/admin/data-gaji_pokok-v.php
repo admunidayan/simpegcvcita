@@ -4,7 +4,7 @@
 			<h4>Data Gaji Pokok</h4>
 		</div>
 		<div class="media-right">
-			<button type="button" class="btn btn-outline-success btn-sm" data-toggle="modal" data-target="#addgajipokok"><i class="material-icons">note_add</i> Tambah Data Gaji Pokok</button>
+			<button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#addgajipokok"><i class="fa fa-plus-circle"></i> Tambah Data Gaji Pokok</button>
 		</div>
 	</div>
 	<hr/>
@@ -75,13 +75,13 @@
 							<div class="form-group">
 								<label class="text-info" for="tanggal_sk">TANGGAL SK</label>
 								<div class="row">
-									<div class="col">
+									<div class="col-4">
 										<input type="text" class="form-control" id="tanggal_sk" name="tanggal_sk_hr" placeholder="HH">
 									</div>
-									<div class="col">
+									<div class="col-4">
 										<input type="text" class="form-control" id="tanggal_sk" name="tanggal_sk_bln" placeholder="BB">
 									</div>
-									<div class="col">
+									<div class="col-4">
 										<input type="text" class="form-control" id="tanggal_sk" name="tanggal_sk_thn" placeholder="TTTT">
 									</div>
 								</div>
@@ -97,13 +97,13 @@
 							<div class="form-group">
 								<label class="text-info" for="tanggal_mulai">TANGGAL MULAI</label>
 								<div class="row">
-									<div class="col">
+									<div class="col-4">
 										<input type="text" class="form-control" id="tanggal_mulai" name="tanggal_mulai_hr" placeholder="HH" >
 									</div>
-									<div class="col">
+									<div class="col-4">
 										<input type="text" class="form-control" id="tanggal_mulai" name="tanggal_mulai_bln" placeholder="BB" >
 									</div>
-									<div class="col">
+									<div class="col-4">
 										<input type="text" class="form-control" id="tanggal_mulai" name="tanggal_mulai_thn" placeholder="TTTT">
 									</div>
 								</div>
@@ -111,13 +111,13 @@
 							<div class="form-group">
 								<label class="text-info" for="tanggal_selesai">TANGGAL SELESAI</label>
 								<div class="row">
-									<div class="col">
+									<div class="col-4">
 										<input type="text" class="form-control" id="tanggal_selesai" name="tanggal_selesai_hr" placeholder="HH" >
 									</div>
-									<div class="col">
+									<div class="col-4">
 										<input type="text" class="form-control" id="tanggal_selesai" name="tanggal_selesai_bln" placeholder="BB" >
 									</div>
-									<div class="col">
+									<div class="col-4">
 										<input type="text" class="form-control" id="tanggal_selesai" name="tanggal_selesai_thn" placeholder="TTTT">
 									</div>
 								</div>

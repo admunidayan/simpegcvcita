@@ -4,7 +4,7 @@
 			<h4>Unit Organisasi</h4>
 		</div>
 		<div class="media-right">
-			<button type="button" class="btn btn-outline-success btn-sm" data-toggle="modal" data-target="#addorganisasi"><i class="material-icons">note_add</i> Tambah Data Organisasi</button>
+			<button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#addorganisasi"><i class="fa fa-plus-circle"></i> Tambah Data Organisasi</button>
 		</div>
 	</div>
 	<hr/>
@@ -73,13 +73,13 @@
 							<div class="form-group">
 								<label class="text-info" for="tanggal">TANGGAL</label>
 								<div class="row">
-									<div class="col">
+									<div class="col-md-4">
 										<input type="text" class="form-control" id="tanggal" name="tanggal_hr" placeholder="HH" >
 									</div>
-									<div class="col">
+									<div class="col-md-4">
 										<input type="text" class="form-control" id="tanggal" name="tanggal_bln" placeholder="BB" >
 									</div>
-									<div class="col">
+									<div class="col-md-4">
 										<input type="text" class="form-control" id="tanggal" name="tanggal_thn" placeholder="TTTT">
 									</div>
 								</div>

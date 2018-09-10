@@ -4,7 +4,7 @@
 			<h4>Pendidikan</h4>
 		</div>
 		<div class="media-right">
-			<button type="button" class="btn btn-outline-success btn-sm" data-toggle="modal" data-target="#addpendidikan"><i class="material-icons">note_add</i> Tambah Data Pendidikan</button>
+			<button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#addpendidikan"><i class="fa fa-plus-circle"></i> Tambah Data Pendidikan</button>
 		</div>
 	</div>
 	<hr/>
@@ -87,13 +87,13 @@
 							<div class="form-group">
 								<label class="text-info" for="tanggal_lulus">TANGGAL IJAZAH</label>
 								<div class="row">
-									<div class="col">
+									<div class="col-md-4">
 										<input type="text" class="form-control" id="tanggal_lulus" name="tanggal_lulus_hr" placeholder="HH">
 									</div>
-									<div class="col">
+									<div class="col-md-4">
 										<input type="text" class="form-control" id="tanggal_lulus" name="tanggal_lulus_bln" placeholder="BB">
 									</div>
-									<div class="col">
+									<div class="col-md-4">
 										<input type="text" class="form-control" id="tanggal_lulus" name="tanggal_lulus_thn" placeholder="TTTT">
 									</div>
 								</div>

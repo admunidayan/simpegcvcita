@@ -146,4 +146,76 @@ class Admin_m extends CI_Model
 		$query = $this->db->get('data_pegawai');
 		return $query->result();
 	}
+	public function last_id_p(){
+		$this->db->select('id_pegawai');
+		$this->db->order_by('id_pegawai','desc');
+		$query = $this->db->get('data_pegawai');
+		return $query->row();
+	}
+	function data_pegawai2($idgol){
+		$this->db->select('data_riwayat_golongan.*,data_pegawai.nip,data_pegawai.nama_pegawai,data_pegawai.id_satuan_kerja');
+		$this->db->where('data_riwayat_golongan.id_golongan',$idgol);
+		$this->db->join('data_pegawai', 'data_pegawai.id_pegawai = data_riwayat_golongan.id_pegawai');
+		$query = $this->db->get('data_riwayat_golongan');
+		return $query->result();
+	}
+	function data_pegawai3($idpelatihan){
+		// $this->db->select('data_pelatihan.*,data_pegawai.nip,data_pegawai.nama_pegawai,data_pegawai.id_satuan_kerja');
+		$this->db->where('data_pelatihan.id_pelatihan',$idpelatihan);
+		$this->db->join('data_pegawai', 'data_pegawai.id_pegawai = data_pelatihan.id_pegawai');
+		$query = $this->db->get('data_pelatihan');
+		return $query->result();
+	}
+	function data_pegawai4($jab){
+		// $this->db->select('data_pelatihan.*,data_pegawai.nip,data_pegawai.nama_pegawai,data_pegawai.id_satuan_kerja');
+		$this->db->where('data_riwayat_jabatan.id_jabatan',$jab);
+		$this->db->join('data_pegawai', 'data_pegawai.id_pegawai = data_riwayat_jabatan.id_pegawai');
+		$query = $this->db->get('data_riwayat_jabatan');
+		return $query->result();
+	}
+	function data_pegawai5($eselon){
+		// $this->db->select('data_pelatihan.*,data_pegawai.nip,data_pegawai.nama_pegawai,data_pegawai.id_satuan_kerja');
+		$this->db->where('data_riwayat_jabatan.id_eselon',$eselon);
+		$this->db->join('data_pegawai', 'data_pegawai.id_pegawai = data_riwayat_jabatan.id_pegawai');
+		$query = $this->db->get('data_riwayat_jabatan');
+		return $query->result();
+	}
+	function data_pegawai6($skpd){
+		$this->db->where('id_satuan_kerja',$skpd);
+		$query = $this->db->get('data_pegawai');
+		return $query->result();
+	}
+	// public function last_jab(){
+	// 	$this->db->where('')
+	// 	$this->db->order_by('','desc');
+	// 	$query = $this->db->get('data_riwayat_jabatan');
+	// 	return $query->row();
+	// }
+	public function select_data_gol(){
+		$this->db->join('data_pegawai', 'data_pegawai.id_pegawai = data_riwayat_golongan.id_pegawai');
+		$this->db->join('master_golongan', 'master_golongan.id_golongan = data_riwayat_golongan.id_golongan');
+		$query = $this->db->get('data_riwayat_golongan');
+		return $query->result();
+	}
+	public function select_data_keluarga(){
+		$this->db->join('master_status_kawin', 'master_status_kawin.id = data_keluarga.status_kawin');
+		$this->db->join('master_status_dalam_keluarga', 'master_status_dalam_keluarga.id = data_keluarga.status_keluarga');
+		$query = $this->db->get('data_keluarga');
+		return $query->result();
+	}
+	public function select_data_jabatan(){
+		$this->db->join('data_pegawai', 'data_pegawai.id_pegawai = data_riwayat_jabatan.id_pegawai');
+		$this->db->join('master_jenis_jabatan', 'master_jenis_jabatan.id_jenis_jabatan = data_riwayat_jabatan.id_jenis_jabatan');
+		$this->db->join('master_eselon', 'master_eselon.id_eselon = data_riwayat_jabatan.id_eselon');
+		$this->db->join('master_satuan_kerja', 'master_satuan_kerja.id_satuan_kerja = data_riwayat_jabatan.id_satuan_kerja');
+		$query = $this->db->get('data_riwayat_jabatan');
+		return $query->result();
+	}
+	public function select_data_pendidikan(){
+		$this->db->select('data_pegawai.nip,data_pegawai.nama_pegawai,master_pendidikan.*,data_pendidikan.*');
+		$this->db->join('data_pegawai', 'data_pegawai.id_pegawai = data_pendidikan.id_pegawai');
+		$this->db->join('master_pendidikan', 'master_pendidikan.id = data_pendidikan.tingkat_pendidikan');
+		$query = $this->db->get('data_pendidikan');
+		return $query->result();
+	}
 }

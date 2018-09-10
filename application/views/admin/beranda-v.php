@@ -1,8 +1,8 @@
 <script src="<?php echo base_url('asset/grafik/code/highcharts.js') ?>"></script>
 <script src="<?php echo base_url('asset/grafik/code/modules/exporting.js') ?>"></script>
 <div class="row" style="margin-top: 14px; background-color: white;padding: 30px">
-    <div class="col-md-8">
-        <div>
+    <div class="col-md-12">
+        <div class="x_panel">
             <div id="container" style="min-width: 600px; height: 600px; margin: 0 auto"></div>
             
             <script type="text/javascript">
@@ -60,22 +60,26 @@
     </script>
 </div>
 </div>
-<div class="col-md-4">
-    <table border="1" style="font-size: 12px">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nama SKPD</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($fmgol as $data): ?>
-                <tr>
-                    <td class="text-center"><?php echo $data->id_satuan_kerja; ?></td>
-                    <td><?php echo $data->nama_satuan_kerja; ?></td>
-                </tr>
-            <?php endforeach ?>
-        </tbody>
-    </table>
+<div class="col-md-12">
+    <div class="x_panel">
+        <div class="xcontent">
+            <table class="table table-striped" >
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nama SKPD</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($fmgol as $data): ?>
+                        <tr>
+                            <td class="text-center"><?php echo $data->id_satuan_kerja; ?></td>
+                            <td><?php echo $data->nama_satuan_kerja; ?></td>
+                        </tr>
+                    <?php endforeach ?>
+                </tbody>
+            </table>
+        </div> 
+    </div>
 </div>
 </div>
