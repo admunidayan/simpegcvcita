@@ -191,68 +191,99 @@ class Admin_m extends CI_Model
 	// 	$query = $this->db->get('data_riwayat_jabatan');
 	// 	return $query->row();
 	// }
-	public function select_data_gol(){
+	public function select_data_gol($limit){
 		$this->db->join('data_pegawai', 'data_pegawai.id_pegawai = data_riwayat_golongan.id_pegawai');
 		$this->db->join('master_golongan', 'master_golongan.id_golongan = data_riwayat_golongan.id_golongan');
+		if ($limit == TRUE) {
+			$this->db->limit($limit);
+		}
 		$query = $this->db->get('data_riwayat_golongan');
 		return $query->result();
 	}
-	public function select_data_keluarga(){
+	public function select_data_keluarga($limit){
 		$this->db->join('master_status_kawin', 'master_status_kawin.id = data_keluarga.status_kawin');
 		$this->db->join('master_status_dalam_keluarga', 'master_status_dalam_keluarga.id = data_keluarga.status_keluarga');
+		// $this->db->limit(20);
+		if ($limit == TRUE) {
+			$this->db->limit($limit);
+		}
 		$query = $this->db->get('data_keluarga');
 		return $query->result();
 	}
-	public function select_data_jabatan(){
+	public function select_data_jabatan($limit){
 		$this->db->join('data_pegawai', 'data_pegawai.id_pegawai = data_riwayat_jabatan.id_pegawai');
 		$this->db->join('master_jenis_jabatan', 'master_jenis_jabatan.id_jenis_jabatan = data_riwayat_jabatan.id_jenis_jabatan');
 		$this->db->join('master_eselon', 'master_eselon.id_eselon = data_riwayat_jabatan.id_eselon');
 		$this->db->join('master_satuan_kerja', 'master_satuan_kerja.id_satuan_kerja = data_riwayat_jabatan.id_satuan_kerja');
+		if ($limit == TRUE) {
+			$this->db->limit($limit);
+		}
 		$query = $this->db->get('data_riwayat_jabatan');
 		return $query->result();
 	}
-	public function select_data_pendidikan(){
+	public function select_data_pendidikan($limit){
 		$this->db->select('data_pegawai.nip,data_pegawai.nama_pegawai,master_pendidikan.*,data_pendidikan.*');
 		$this->db->join('data_pegawai', 'data_pegawai.id_pegawai = data_pendidikan.id_pegawai');
 		$this->db->join('master_pendidikan', 'master_pendidikan.id = data_pendidikan.tingkat_pendidikan');
+		if ($limit == TRUE) {
+			$this->db->limit($limit);
+		}
 		$query = $this->db->get('data_pendidikan');
 		return $query->result();
 	}
-	public function select_data_diklat(){
+	public function select_data_diklat($limit){
 		$this->db->select('data_pegawai.nip,data_pegawai.nama_pegawai,data_pelatihan.*');
 		$this->db->join('data_pegawai', 'data_pegawai.id_pegawai = data_pelatihan.id_pegawai');
 		$query = $this->db->get('data_pelatihan');
+		if ($limit == TRUE) {
+			$this->db->limit($limit);
+		}
 		return $query->result();
 	}
-	public function select_data_penghargaan(){
+	public function select_data_penghargaan($limit){
 		$this->db->select('data_pegawai.nip,data_pegawai.nama_pegawai,data_penghargaan.*');
 		$this->db->join('data_pegawai', 'data_pegawai.id_pegawai = data_penghargaan.id_pegawai');
 		$query = $this->db->get('data_penghargaan');
+		if ($limit == TRUE) {
+			$this->db->limit($limit);
+		}
 		return $query->result();
 	}
-	public function select_data_seminar(){
+	public function select_data_seminar($limit){
 		$this->db->select('data_pegawai.nip,data_pegawai.nama_pegawai,data_seminar.*');
 		$this->db->join('data_pegawai', 'data_pegawai.id_pegawai = data_seminar.id_pegawai');
 		$query = $this->db->get('data_seminar');
+		if ($limit == TRUE) {
+			$this->db->limit($limit);
+		}
 		return $query->result();
 	}
-	public function select_data_unitorg(){
+	public function select_data_unitorg($limit){
 		$this->db->select('data_pegawai.nip,data_pegawai.nama_pegawai,master_satuan_kerja.*,data_organisasi.*');
 		$this->db->join('data_pegawai', 'data_pegawai.id_pegawai = data_organisasi.id_pegawai');
 		$this->db->join('master_satuan_kerja', 'master_satuan_kerja.id_satuan_kerja = data_organisasi.id_satuan_kerja');
 		$query = $this->db->get('data_organisasi');
+		if ($limit == TRUE) {
+			$this->db->limit($limit);
+		}
 		return $query->result();
 	}
-	public function select_data_disiplin(){
+	public function select_data_disiplin($limit){
 		$this->db->select('data_pegawai.nip,data_pegawai.nama_pegawai,data_hukuman.*');
 		$this->db->join('data_pegawai', 'data_pegawai.id_pegawai = data_hukuman.id_pegawai');
 		$query = $this->db->get('data_hukuman');
+		if ($limit == TRUE) {
+			$this->db->limit($limit);
+		}
 		return $query->result();
 	}
-	public function select_data_skp(){
+	public function select_data_skp($limit){
 		$this->db->select('data_pegawai.nip,data_pegawai.nama_pegawai,data_dp3.*');
 		$this->db->join('data_pegawai', 'data_pegawai.id_pegawai = data_dp3.id_pegawai');
 		$query = $this->db->get('data_dp3');
+		if ($limit == TRUE) {
+			$this->db->limit($limit);
+		}
 		return $query->result();
 	}
 }

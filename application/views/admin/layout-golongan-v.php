@@ -1,4 +1,5 @@
 <a href="<?php echo base_url('index.php/admin/export/ex_by_gol/'); ?>" class="btn btn-success btn-sm">Export Excel</a>
+<div class="table-responsive">
 <table class="table table-bordered table-hover table-responsive">
 	<tr>
 		<th>No</th>
@@ -25,3 +26,4 @@
 		<?php $no++ ?>
 	<?php endforeach ?>
 </table>
+</div>

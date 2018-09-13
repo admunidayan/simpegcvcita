@@ -49,7 +49,7 @@ class Export_excel extends CI_Controller {
                 $data['users'] = $this->ion_auth->user()->row();
                 $data['aside'] = 'nav/nav';
                 $data['page'] = 'admin/layout-keluarga-v';
-				$data['hasil'] = $this->Admin_m->select_data_keluarga();
+				$data['hasil'] = $this->Admin_m->select_data_keluarga(20);
 				// echo "<pre>";print_r($data['hasil']);echo "<pre/>";exit();
 				$this->load->view('admin/dashboard-v', $data);
 			}
@@ -73,7 +73,7 @@ class Export_excel extends CI_Controller {
                 $data['users'] = $this->ion_auth->user()->row();
                 $data['aside'] = 'nav/nav';
                 $data['page'] = 'admin/layout-jabatan-v';
-				$data['hasil'] = $this->Admin_m->select_data_jabatan();
+				$data['hasil'] = $this->Admin_m->select_data_jabatan(20);
 				// echo "<pre>";print_r($data['hasil']);echo "<pre/>";exit();
 				$this->load->view('admin/dashboard-v', $data);
 			}
@@ -97,7 +97,7 @@ class Export_excel extends CI_Controller {
                 $data['users'] = $this->ion_auth->user()->row();
                 $data['aside'] = 'nav/nav';
                 $data['page'] = 'admin/layout-pendidikan-v';
-				$data['hasil'] = $this->Admin_m->select_data_pendidikan();
+				$data['hasil'] = $this->Admin_m->select_data_pendidikan(20);
 				// echo "<pre>";print_r($data['hasil']);echo "<pre/>";exit();
 				$this->load->view('admin/dashboard-v', $data);
 			}
@@ -121,7 +121,7 @@ class Export_excel extends CI_Controller {
                 $data['users'] = $this->ion_auth->user()->row();
                 $data['aside'] = 'nav/nav';
                 $data['page'] = 'admin/layout-diklat-v';
-				$data['hasil'] = $this->Admin_m->select_data_diklat();
+				$data['hasil'] = $this->Admin_m->select_data_diklat(20);
 				// echo "<pre>";print_r($data['hasil']);echo "<pre/>";exit();
 				$this->load->view('admin/dashboard-v', $data);
 			}
@@ -145,7 +145,7 @@ class Export_excel extends CI_Controller {
                 $data['users'] = $this->ion_auth->user()->row();
                 $data['aside'] = 'nav/nav';
                 $data['page'] = 'admin/layout-penghargaan-v';
-				$data['hasil'] = $this->Admin_m->select_data_penghargaan();
+				$data['hasil'] = $this->Admin_m->select_data_penghargaan(20);
 				// echo "<pre>";print_r($data['hasil']);echo "<pre/>";exit();
 				$this->load->view('admin/dashboard-v', $data);
 			}
@@ -169,7 +169,7 @@ class Export_excel extends CI_Controller {
                 $data['users'] = $this->ion_auth->user()->row();
                 $data['aside'] = 'nav/nav';
                 $data['page'] = 'admin/layout-seminar-v';
-				$data['hasil'] = $this->Admin_m->select_data_seminar();
+				$data['hasil'] = $this->Admin_m->select_data_seminar(20);
 				// echo "<pre>";print_r($data['hasil']);echo "<pre/>";exit();
 				$this->load->view('admin/dashboard-v', $data);
 			}
@@ -193,7 +193,7 @@ class Export_excel extends CI_Controller {
                 $data['users'] = $this->ion_auth->user()->row();
                 $data['aside'] = 'nav/nav';
                 $data['page'] = 'admin/layout-unitorg-v';
-				$data['hasil'] = $this->Admin_m->select_data_unitorg();
+				$data['hasil'] = $this->Admin_m->select_data_unitorg(20);
 				// echo "<pre>";print_r($data['hasil']);echo "<pre/>";exit();
 				$this->load->view('admin/dashboard-v', $data);
 			}
@@ -217,7 +217,7 @@ class Export_excel extends CI_Controller {
                 $data['users'] = $this->ion_auth->user()->row();
                 $data['aside'] = 'nav/nav';
                 $data['page'] = 'admin/layout-disiplin-v';
-				$data['hasil'] = $this->Admin_m->select_data_disiplin();
+				$data['hasil'] = $this->Admin_m->select_data_disiplin(20);
 				// echo "<pre>";print_r($data['hasil']);echo "<pre/>";exit();
 				$this->load->view('admin/dashboard-v', $data);
 			}
@@ -241,7 +241,7 @@ class Export_excel extends CI_Controller {
                 $data['users'] = $this->ion_auth->user()->row();
                 $data['aside'] = 'nav/nav';
                 $data['page'] = 'admin/layout-skp-v';
-				$data['hasil'] = $this->Admin_m->select_data_skp();
+				$data['hasil'] = $this->Admin_m->select_data_skp(20);
 				// echo "<pre>";print_r($data['hasil']);echo "<pre/>";exit();
 				$this->load->view('admin/dashboard-v', $data);
 			}
@@ -265,7 +265,7 @@ class Export_excel extends CI_Controller {
                 $data['users'] = $this->ion_auth->user()->row();
                 $data['aside'] = 'nav/nav';
                 $data['page'] = 'admin/layout-golongan-v';
-				$data['hasil'] = $this->Admin_m->select_data_gol();
+				$data['hasil'] = $this->Admin_m->select_data_gol(20);
 				// echo "<pre>";print_r($data['hasil']);echo "<pre/>";exit();
 				$this->load->view('admin/dashboard-v', $data);
 			}
