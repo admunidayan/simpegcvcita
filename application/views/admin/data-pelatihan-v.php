@@ -86,8 +86,8 @@
 									</div>
 								</div>
 								<div class="form-group">
-								<label class="text-info" for="nomor_sertifikat">NOMOR SERTIFIKAT</label>
-								<input type="text" class="form-control" id="nomor_sertifikat" name="nomor_sertifikat" placeholder="NOMOR SERTIFIKAT" >
+								<label class="text-info" for="no_sertifikat">NOMOR SERTIFIKAT</label>
+								<input type="text" class="form-control" id="no_sertifikat" name="no_sertifikat" placeholder="NOMOR SERTIFIKAT" >
 							</div>
 							<div class="form-group">
 								<label class="text-info" for="instansi">INSTANSI</label>

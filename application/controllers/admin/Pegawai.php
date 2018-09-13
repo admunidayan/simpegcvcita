@@ -643,9 +643,6 @@ class Pegawai extends CI_Controller {
                     'nama_kursus' => $post['nama_kursus'],
                     'id_pegawai' => $idpegawai,
                     'lama_kursus'=>$post['lama_kursus'],
-                    'nomor'=>$post['nomor'],
-                    'tanggal'=>$post['tanggal_hr'].'-'.$post['tanggal_bln'],
-                    'tahun'=>$post['tahun'],
                     'tanggal'=>$post['tanggal_thn'].'-'.$post['tanggal_bln'].'-'.$post['tanggal_hr'],
                     'no_sertifikat'=>$post['no_sertifikat'],
                     'instansi'=>$post['instansi'],
@@ -1163,14 +1160,8 @@ class Pegawai extends CI_Controller {
             }else{
                 $post = $this->input->post();
                 $datainput = array(
-                 'uraian' => $post['uraian'],
-                 'lokasi'=>$post['lokasi'],
-                 'nomor'=>$post['nomor'],
-                 'tanggal'=>$post['tanggal_hr'].'-'.$post['tanggal_bln'],
-                 'tahun'=>$post['tahun'],
                     'nama_kursus' => $post['nama_kursus'],
                     'lama_kursus'=>$post['lama_kursus'],
-                    'nomor'=>$post['nomor'],
                     'tanggal'=>$post['tanggal_thn'].'-'.$post['tanggal_bln'].'-'.$post['tanggal_hr'],
                     'no_sertifikat'=>$post['no_sertifikat'],
                     'instansi'=>$post['instansi'],
@@ -1226,13 +1217,6 @@ class Pegawai extends CI_Controller {
             }else{
                 $post = $this->input->post();
                 $datainput = array(
-
-
-                 'jenis_penghargaan' => $post['jenis_penghargaan'],
-                 'no_keputusan' => $post['no_keputusan'],
-                 'tanggal'=>$post['tanggal_hr'].'-'.$post['tanggal_bln'],
-                 'tahun' => $post['tahun'],
-   
 
                    'jenis_penghargaan' => $post['jenis_penghargaan'],
                    'no_keputusan' => $post['no_keputusan'],
@@ -1323,6 +1307,7 @@ class Pegawai extends CI_Controller {
                 $data['hasil'] = $result;
                 $data['detail'] = $this->Pegawai_m->detail_data('data_organisasi','id_organisasi',$idr);
                 $data['status'] = $this->Pegawai_m->select_data('master_status_pegawai');
+                $data['satuankerja'] = $this->Pegawai_m->select_data('master_satuan_kerja');
                 $data['bagian'] = 'admin/edit-organisasi-v';
                 $data['page'] = 'admin/detail-pegawai-v';
                 // pagging setting

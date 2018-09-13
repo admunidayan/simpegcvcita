@@ -32,13 +32,13 @@
 					<div class="form-group">
 						<label class="text-info" for="tanggal_sk_rj">TANGGAL SK</label>
 						<div class="row">
-							<div class="col">
+							<div class="col-md-4">
 								<input type="text" class="form-control" id="tanggal_sk_rj" name="tanggal_sk_rj_hr" placeholder="HH" value="<?php echo substr($detail->tanggal_sk_rj,8,2)?>">
 							</div>
-							<div class="col">
+							<div class="col-md-4">
 								<input type="text" class="form-control" id="tanggal_sk_rj" name="tanggal_sk_rj_bln" placeholder="BB" value="<?php echo substr($detail->tanggal_sk_rj,5,2)?>">
 							</div>
-							<div class="col">
+							<div class="col-md-4">
 								<input type="text" class="form-control" id="tanggal_sk_rj" name="tanggal_sk_rj_thn" placeholder="TTTT" value="<?php echo substr($detail->tanggal_sk_rj,0,4)?>">
 							</div>
 						</div>
@@ -46,13 +46,13 @@
 					<div class="form-group">
 						<label class="text-info" for="tmt_jabatan_rj">TMT JABATAN</label>
 						<div class="row">
-							<div class="col">
+							<div class="col-md-4">
 								<input type="text" class="form-control" id="tmt_jabatan_rj" name="tmt_jabatan_rj_hr" placeholder="HH" value="<?php echo substr($detail->tmt_jabatan_rj,8,2)?>">
 							</div>
-							<div class="col">
+							<div class="col-md-4">
 								<input type="text" class="form-control" id="tmt_jabatan_rj" name="tmt_jabatan_rj_bln" placeholder="BB" value="<?php echo substr($detail->tmt_jabatan_rj,5,2)?>">
 							</div>
-							<div class="col">
+							<div class="col-md-4">
 								<input type="text" class="form-control" id="tmt_jabatan_rj" name="tmt_jabatan_rj_thn" placeholder="TTTT" value="<?php echo substr($detail->tmt_jabatan_rj,0,4)?>">
 							</div>
 						</div>
@@ -60,13 +60,13 @@
 					<div class="form-group">
 						<label class="text-info" for="tmt_pelantikan_rj">TMT PELANTIKAN</label>
 						<div class="row">
-							<div class="col">
+							<div class="col-md-4">
 								<input type="text" class="form-control" id="tmt_pelantikan_rj" name="tmt_pelantikan_rj_hr" placeholder="HH" value="<?php echo substr($detail->tmt_pelantikan_rj,8,2)?>">
 							</div>
-							<div class="col">
+							<div class="col-md-4">
 								<input type="text" class="form-control" id="tmt_pelantikan_rj" name="tmt_pelantikan_rj_bln" placeholder="BB" value="<?php echo substr($detail->tmt_pelantikan_rj,5,2)?>">
 							</div>
-							<div class="col">
+							<div class="col-md-4">
 								<input type="text" class="form-control" id="tmt_pelantikan_rj" name="tmt_pelantikan_rj_thn" placeholder="TTTT" value="<?php echo substr($detail->tmt_pelantikan_rj,0,4)?>">
 							</div>
 						</div>

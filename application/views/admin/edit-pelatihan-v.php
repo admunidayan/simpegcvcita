@@ -5,40 +5,39 @@
 			<div class="col-md-12">
 				<div class="col-md-12">
 					<div class="form-group">
-						<label class="text-info" for="uraian">URAIAN</label>
-						<input type="text" class="form-control" id="uraian" name="uraian" placeholder="URAIAN" value="<?php echo $detail->uraian?>">
+						<label class="text-info" for="nama_kursus">NAMA KURSUS</label>
+						<input type="text" class="form-control" id="nama_kursus" name="nama_kursus" placeholder="NAMA KURSUS" value="<?php echo $detail->nama_kursus?>">
 					</div>
 					<div class="form-group">
-						<label class="text-info" for="lokasi">LOKASI</label>
-						<input type="text" class="form-control" id="lokasi" name="lokasi" placeholder="LOKASI" value="<?php echo $detail->lokasi?>">
+						<label class="text-info" for="lama_kursus">LAMA KURSUS (JAM)</label>
+						<input type="text" class="form-control" id="lama_kursus" name="lama_kursus" placeholder="LAMA KURSUS (JAM)" value="<?php echo $detail->lama_kursus?>">
 					</div>
 					<div class="form-group">
-						<label for="nomor">Nomor</label>
-						<input type="text" class="form-control" id="nomor" name="nomor" placeholder="nomor" value="<?php echo $detail->nomor?>">
-					</div>
-					<div class="form-group">
-						<label for="nomor">Nomor</label>
-						<input type="text" class="form-control" id="nomor" name="nomor" placeholder="nomor" value="<?php echo $detail->nomor?>">
-					</div>
-						<div class="form-group">
-						<label for="tanggal">TANGGAL</label>
+						<label class="text-info" for="tanggal">TANGGAL</label>
 						<div class="row">
-							<div class="col">
-								<input type="text" class="form-control" id="tanggal" name="tanggal_hr" placeholder="HH" value="<?php echo substr($detail->tanggal,3,2)?>">
+							<div class="col-md-4">
+								<input type="text" class="form-control" id="tanggal" name="tanggal_hr" placeholder="HH" value="<?php echo substr($detail->tanggal,8,2)?>">
 							</div>
-							<div class="col">
-								<input type="text" class="form-control" id="tanggal" name="tanggal_bln" placeholder="BB" value="<?php echo substr($detail->tanggal,0,2)?>">
+							<div class="col-md-4">
+								<input type="text" class="form-control" id="tanggal" name="tanggal_bln" placeholder="BB" value="<?php echo substr($detail->tanggal,5,2)?>">
 							</div>
-					   </div>
+							<div class="col-md-4">
+								<input type="text" class="form-control" id="tanggal" name="tanggal_thn" placeholder="TTTT" value="<?php echo substr($detail->tanggal,0,4)?>">
+							</div>
+						</div>
 					</div>
 					<div class="form-group">
-		     			<label for="tahun">tahun</label>
-						<input type="text" class="form-control" id="tahun" name="tahun" placeholder="tahun" value="<?php echo $detail->tahun?>">
+						<label for="no_sertifikat">NOMOR SERTIFIKAT</label>
+						<input type="text" class="form-control" id="no_sertifikat" name="no_sertifikat" placeholder="NO SERTIFIKAT" value="<?php echo $detail->no_sertifikat?>">
 					</div>
-				
-					
-
-					
+					<div class="form-group">
+						<label for="instansi">INSTANSI</label>
+						<input type="text" class="form-control" id="instansi" name="instansi" placeholder="INSTANSI" value="<?php echo $detail->instansi?>">
+					</div>
+					<div class="form-group">
+		     			<label for="instansi_penyelenggara">INSTANSI PENYELENGGARA</label>
+						<input type="text" class="form-control" id="instansi_penyelenggara" name="instansi_penyelenggara" placeholder="INSTANSI PENYELENGGARA" value="<?php echo $detail->instansi_penyelenggara?>">
+					</div>
 				</div>
 			</div>
 			<button type="submit" name="submit" value="submit" class="btn btn-success">Simpan data</button>

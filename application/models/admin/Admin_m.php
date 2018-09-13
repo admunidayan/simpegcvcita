@@ -218,4 +218,41 @@ class Admin_m extends CI_Model
 		$query = $this->db->get('data_pendidikan');
 		return $query->result();
 	}
+	public function select_data_diklat(){
+		$this->db->select('data_pegawai.nip,data_pegawai.nama_pegawai,data_pelatihan.*');
+		$this->db->join('data_pegawai', 'data_pegawai.id_pegawai = data_pelatihan.id_pegawai');
+		$query = $this->db->get('data_pelatihan');
+		return $query->result();
+	}
+	public function select_data_penghargaan(){
+		$this->db->select('data_pegawai.nip,data_pegawai.nama_pegawai,data_penghargaan.*');
+		$this->db->join('data_pegawai', 'data_pegawai.id_pegawai = data_penghargaan.id_pegawai');
+		$query = $this->db->get('data_penghargaan');
+		return $query->result();
+	}
+	public function select_data_seminar(){
+		$this->db->select('data_pegawai.nip,data_pegawai.nama_pegawai,data_seminar.*');
+		$this->db->join('data_pegawai', 'data_pegawai.id_pegawai = data_seminar.id_pegawai');
+		$query = $this->db->get('data_seminar');
+		return $query->result();
+	}
+	public function select_data_unitorg(){
+		$this->db->select('data_pegawai.nip,data_pegawai.nama_pegawai,master_satuan_kerja.*,data_organisasi.*');
+		$this->db->join('data_pegawai', 'data_pegawai.id_pegawai = data_organisasi.id_pegawai');
+		$this->db->join('master_satuan_kerja', 'master_satuan_kerja.id_satuan_kerja = data_organisasi.id_satuan_kerja');
+		$query = $this->db->get('data_organisasi');
+		return $query->result();
+	}
+	public function select_data_disiplin(){
+		$this->db->select('data_pegawai.nip,data_pegawai.nama_pegawai,data_hukuman.*');
+		$this->db->join('data_pegawai', 'data_pegawai.id_pegawai = data_hukuman.id_pegawai');
+		$query = $this->db->get('data_hukuman');
+		return $query->result();
+	}
+	public function select_data_skp(){
+		$this->db->select('data_pegawai.nip,data_pegawai.nama_pegawai,data_dp3.*');
+		$this->db->join('data_pegawai', 'data_pegawai.id_pegawai = data_dp3.id_pegawai');
+		$query = $this->db->get('data_dp3');
+		return $query->result();
+	}
 }
