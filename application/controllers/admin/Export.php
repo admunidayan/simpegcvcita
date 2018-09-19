@@ -367,6 +367,7 @@ function data_pegawai(){
       $hasil = $this->Admin_m->data_pegawai();
                 // echo "<pre>";print_r($hasil);echo "</pre>";exit();
       foreach ($hasil as $data) {
+        // echo "<pre>";print_r($this->Admin_m->jabatan_min2($data->id_pegawai));echo "<pre>";
         $sheet->setCellValue ( "A".$nocel, $nomor );
         $sheet->setCellValue ( "B".$nocel, $data->nip );
         $sheet->setCellValue ( "C".$nocel, $data->nip_lama );
@@ -385,15 +386,21 @@ function data_pegawai(){
         $sheet->setCellValue ( "P".$nocel, @$this->Admin_m->riwayat_max($data->id_pegawai)->masa_kerja_tahun );
         $sheet->setCellValue ( "Q".$nocel, @$this->Admin_m->detail_data_order('master_eselon','id_eselon',$data->id_eselon)->nama_eselon );
         $sheet->setCellValue ( "R".$nocel, @$this->Admin_m->jabatan_min($data->id_pegawai)->tanggal_mulai);
-        $sheet->setCellValue ( "S".$nocel, @$this->Admin_m->jabatan_min($data->id_pegawai)->nama_jabatan );
-        $sheet->setCellValue ( "T".$nocel, $data->nip_lama );
-        $sheet->setCellValue ( "U".$nocel, $data->nip_lama );
+        if (@$this->Admin_m->detail_data_order('data_riwayat_jabatan','id_pegawai',$data->id_pegawai)->id_jenis_jabatan == 1) {
+          $sheet->setCellValue ( "S".$nocel, @$this->Admin_m->jabatan_min2($data->id_pegawai)->nm_jabatan );
+        }
+        if (@$this->Admin_m->detail_data_order('data_riwayat_jabatan','id_pegawai',$data->id_pegawai)->id_jenis_jabatan == 2) {
+           $sheet->setCellValue ( "T".$nocel, @$this->Admin_m->jabatan_min2($data->id_pegawai)->nm_jabatan );
+        }
+        if (@$this->Admin_m->detail_data_order('data_riwayat_jabatan','id_pegawai',$data->id_pegawai)->id_jenis_jabatan == 3) {
+            $sheet->setCellValue ( "U".$nocel, @$this->Admin_m->jabatan_min2($data->id_pegawai)->nm_jabatan );
+        }
         $sheet->setCellValue ( "V".$nocel, @$this->Admin_m->detail_data_order('master_jabatan','id_jabatan',$data->id_jabatn)->nama_jabatan );
         $sheet->setCellValue ( "W".$nocel, @$this->Admin_m->detail_data_order('master_satuan_kerja','id_satuan_kerja',$data->id_satuan_kerja)->nama_satuan_kerja);
         $sheet->setCellValue ( "X".$nocel, @$this->Admin_m->detail_data_order('master_satuan_kerja','id_satuan_kerja',$data->id_satuan_kerja)->parent_unit);
-        $sheet->setCellValue ( "Y".$nocel, @$this->Admin_m->detail_data_order('data_pendidikan','id_pegawai',$data->id_pegawai)->tingkat_pendidikan );
+        $sheet->setCellValue ( "Y".$nocel, @$this->Admin_m->detail_data_order('data_pendidikan','id_pegawai',$data->id_pegawai)->sekolah );
         $sheet->setCellValue ( "Z".$nocel, @$this->Admin_m->detail_data_order('data_pendidikan','id_pegawai',$data->id_pegawai)->tanggal_lulus );
-        $sheet->setCellValue ( "AA".$nocel, $data->nip_lama );
+        $sheet->setCellValue ( "AA".$nocel, $this->Admin_m->detail_data_order('master_status_pegawai','id_status_pegawai',$data->status_pegawai)->nama_status );
         $nomor++;
         $nocel++;
       }

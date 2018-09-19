@@ -119,6 +119,12 @@ class Admin_m extends CI_Model
 		$query = $this->db->get('data_riwayat_jabatan');
 		return $query->row();
 	}
+	public function jabatan_min2($id){
+		// $this->db->join('master_jabatan', 'master_jabatan.id_jabatan = data_riwayat_jabatan.id_jabatan');
+		$this->db->where('id_pegawai', $id);
+		$query = $this->db->get('data_riwayat_jabatan');
+		return $query->row();
+	}
 	public function jabatan_max($id){
 		$this->db->where('id_pegawai', $id);
 		$this->db->join('master_jabatan', 'master_jabatan.id_jabatan = data_riwayat_jabatan.id_jabatan');
